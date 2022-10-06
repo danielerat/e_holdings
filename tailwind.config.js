@@ -21,11 +21,11 @@ module.exports = {
         "site-gray-4": "#9FB3C8",
         "site-gray-5": "#334E68",
 
-        "site-green-1": "##014D40",
-        "site-green-2": "##147D64",
-        "site-green-3": "##27AB83",
-        "site-green-4": "##3EBD93",
-        "site-green-5": "##8EEDC7",
+        "site-green-1": "#014D40",
+        "site-green-2": "#147D64",
+        "site-green-3": "#27AB83",
+        "site-green-4": "#3EBD93",
+        "site-green-5": "#8EEDC7",
 
         "site-white-1": "#abbbcb",
         "site-white-2": "#BCCCDC",
@@ -46,7 +46,7 @@ module.exports = {
         "site-yellow-5": "#FFF3C4",
       },
       boxShadow: {
-        blue: "0 0 3px 3px #4285f4",
+        blue: "0 0 3px 3px #102A43",
       },
     },
   },
