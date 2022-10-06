@@ -28,25 +28,25 @@
           </h5>
           <div class="mt-6 lg:mb-0 mb-6">
             <button
-              class="bg-white text-site-green-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              class="bg-site-green-5 text-site-gray-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <fa :icon="['fab', 'youtube']" />
             </button>
             <button
-              class="bg-white text-site-green-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              class="bg-site-green-5 text-site-gray-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <fa :icon="['fab', 'twitter']" />
             </button>
             <button
-              class="bg-white text-site-green-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              class="bg-site-green-5 text-site-gray-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <fa :icon="['fab', 'facebook']" />
             </button>
             <button
-              class="bg-white text-site-green-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              class="bg-site-green-5 text-site-gray-1 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <fa :icon="['fab', 'whatsapp']" />
