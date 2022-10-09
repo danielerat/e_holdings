@@ -24,7 +24,7 @@
         <div class="w-full lg:w-6/12 px-4">
           <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
           <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-            Find us on any of these platforms, we respond 1-2 business days.
+            Find us on any of these platforms, we respond within 24 hours.
           </h5>
           <div class="mt-6 lg:mb-0 mb-6">
             <button
@@ -130,11 +130,10 @@
       >
         <div class="w-full md:w-4/12 px-4 mx-auto text-center">
           <div class="text-sm text-blueGray-500 font-semibold py-1">
-            Copyright © {{ date }} E-Holdings
-            <a href="#" class="text-blueGray-500 hover:text-blueGray-800">
-              Inforcement
-            </a>
-            .
+            Copyright © {{ date }} E-Holdings.
+            <!-- <a href="#" class="text-blueGray-500 hover:text-blueGray-800">
+              Enforcement
+            </a> -->
           </div>
         </div>
       </div>
