@@ -16,6 +16,10 @@ import {
   faGauge,
   faGears,
   faMicrochip,
+  faFingerprint,
+  faLock,
+  faCircleInfo,
+  faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -36,7 +40,11 @@ library.add(
   faTimes,
   faGauge,
   faGears,
-  faMicrochip
+  faMicrochip,
+  faCircleInfo,
+  faFingerprint,
+  faLock,
+  faCircleCheck
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

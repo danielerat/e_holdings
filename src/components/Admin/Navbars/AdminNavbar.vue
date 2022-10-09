@@ -8,10 +8,10 @@
     >
       <!-- Brand -->
       <a
-        class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+        class="text-site-gray-1 text-sm uppercase hidden lg:inline-block font-semibold"
         href="javascript:void(0)"
       >
-        Dashboard
+        {{ path }}
       </a>
 
       <!-- User -->
@@ -28,6 +28,13 @@ import UserDropdown from "@/components/Admin/Dropdowns/AdminUserDropdown";
 export default {
   components: {
     UserDropdown,
+  },
+  props: {
+    path: {
+      type: String,
+      default: "Dashboard",
+      required: false,
+    },
   },
 };
 </script>
