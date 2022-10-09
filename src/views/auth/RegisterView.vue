@@ -156,16 +156,16 @@
       </div>
     </div>
   </section>
-  <!-- <footer></footer> -->
+  <footer-simple />
 </template>
 <script>
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
-// import Footer from "@/components/Footers/Footer.vue";
+import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
 export default {
   name: "Index",
   components: {
-    // Footer,
+    FooterSimple,
     IndexNavbar,
   },
 };

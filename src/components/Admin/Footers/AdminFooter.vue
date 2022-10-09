@@ -14,7 +14,7 @@
               href="#"
               class="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
             >
-              Creative Tim
+              E-Holdings
             </a>
           </div>
         </div>
@@ -25,7 +25,7 @@
                 href="#"
                 class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
               >
-                Creative Tim
+                Home
               </a>
             </li>
             <li>
@@ -41,7 +41,7 @@
                 href="http://blog.creative-tim.com?ref=vn-footer-admin"
                 class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
               >
-                Blog
+                Contact
               </a>
             </li>
             <li>
@@ -49,7 +49,7 @@
                 href="#"
                 class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
               >
-                MIT License
+                Sign In
               </a>
             </li>
           </ul>
