@@ -1,5 +1,6 @@
 <template>
   <index-navbar></index-navbar>
+  <div><h2 class="text-4xl">Hello it's me</h2></div>
   <Footer />
 </template>
 

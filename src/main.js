@@ -4,12 +4,25 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // Registering FontAwesomeIcon TO be used in the site
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faBell,
+  faTimes,
+  faGauge,
+  faGears,
+  faMicrochip,
+} from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faYoutube,
+  faFacebook,
+  faWhatsapp,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-library.add(fas);
-library.add(fab);
+library.add(faBars, faBell, faTimes, faGauge, faGears, faMicrochip);
+
+library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
 // library.add(faFacebook);
 
 import "./assets/tailwind.css";
