@@ -5,7 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // Registering FontAwesomeIcon TO be used in the site
 import {
+  faArrowUp,
   faBars,
+  faChartBar,
+  faUsers,
+  faChartPie,
+  faPercent,
   faBell,
   faTimes,
   faGauge,
@@ -20,7 +25,19 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faBars, faBell, faTimes, faGauge, faGears, faMicrochip);
+library.add(
+  faBars,
+  faChartBar,
+  faUsers,
+  faChartPie,
+  faPercent,
+  faArrowUp,
+  faBell,
+  faTimes,
+  faGauge,
+  faGears,
+  faMicrochip
+);
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
 // library.add(faFacebook);

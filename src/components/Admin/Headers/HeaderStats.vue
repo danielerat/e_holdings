@@ -7,49 +7,49 @@
         <div class="flex flex-wrap">
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="TRAFFIC"
+              statSubtitle="Sample"
               statTitle="350,897"
               statArrow="up"
               statPercent="3.48"
               statPercentColor="text-emerald-500"
               statDescripiron="Since last month"
-              statIconName="far fa-chart-bar"
+              statIconName="chart-bar"
               statIconColor="bg-red-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="NEW USERS"
+              statSubtitle="Sample USERS"
               statTitle="2,356"
               statArrow="down"
               statPercent="3.48"
               statPercentColor="text-red-500"
               statDescripiron="Since last week"
-              statIconName="fas fa-chart-pie"
+              statIconName="chart-pie"
               statIconColor="bg-orange-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="SALES"
+              statSubtitle="Sample"
               statTitle="924"
               statArrow="down"
               statPercent="1.10"
               statPercentColor="text-orange-500"
               statDescripiron="Since yesterday"
-              statIconName="fas fa-users"
+              statIconName="users"
               statIconColor="bg-pink-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="PERFORMANCE"
+              statSubtitle="Sample"
               statTitle="49,65%"
               statArrow="up"
               statPercent="12"
               statPercentColor="text-emerald-500"
               statDescripiron="Since last month"
-              statIconName="fas fa-percent"
+              statIconName="percent"
               statIconColor="bg-site-green-2"
             />
           </div>
