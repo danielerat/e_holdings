@@ -4,6 +4,7 @@ import Admin from "@/views/admin/IndexView.vue";
 import Settings from "@/views/admin/SettingsView.vue";
 import SampleComponents from "@/views/admin/SampleComponents.vue";
 import Register from "@/views/auth/RegisterView.vue";
+import Login from "@/views/auth/LoginView.vue";
 
 const routes = [
   {
@@ -26,11 +27,7 @@ const routes = [
     name: "admin",
     component: Admin,
   },
-  {
-    path: "/register",
-    name: "register",
-    component: Register,
-  },
+
   {
     path: "/admin/settings",
     name: "settings",
@@ -40,6 +37,16 @@ const routes = [
     path: "/admin/components",
     name: "components",
     component: SampleComponents,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
   },
 ];
 
