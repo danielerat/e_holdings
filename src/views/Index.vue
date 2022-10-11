@@ -1,19 +1,21 @@
 <template>
   <index-navbar></index-navbar>
-  <div><h2 class="text-4xl">Hello it's me</h2></div>
-  <Footer />
+  <hero></hero>
+  <main-footer />
 </template>
 
 <script>
 // @ is an alias to /src
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
-import Footer from "@/components/Footers/Footer.vue";
+import MainFooter from "@/components/Footers/Footer.vue";
+import Hero from "@/components/Hero.vue";
 
 export default {
   name: "Index",
   components: {
-    Footer,
+    MainFooter,
     IndexNavbar,
+    Hero,
   },
 };
 </script>
