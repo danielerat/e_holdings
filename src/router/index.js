@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import IndexView from "@/views/Index.vue";
 import Admin from "@/views/admin/IndexView.vue";
-import Settings from "@/views/admin/SettingsView.vue";
+import SettingsView from "@/views/admin/SettingsView.vue";
 import SampleComponents from "@/views/admin/SampleComponents.vue";
-import Register from "@/views/auth/RegisterView.vue";
-import Login from "@/views/auth/LoginView.vue";
-
+import RegisterView from "@/views/auth/RegisterView.vue";
+import LoginView from "@/views/auth/LoginView.vue";
+import ContactView from "@/views/ContactView.vue";
 const routes = [
   {
     path: "/",
@@ -31,7 +31,7 @@ const routes = [
   {
     path: "/admin/settings",
     name: "settings",
-    component: Settings,
+    component: SettingsView,
   },
   {
     path: "/admin/components",
@@ -41,17 +41,22 @@ const routes = [
   {
     path: "/register",
     name: "register",
-    component: Register,
+    component: RegisterView,
   },
   {
     path: "/login",
     name: "login",
-    component: Login,
+    component: LoginView,
   },
   {
     path: "/sample",
     name: "sample",
     component: SampleComponents,
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: ContactView,
   },
 ];
 

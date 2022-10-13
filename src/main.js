@@ -20,6 +20,9 @@ import {
   faLock,
   faCircleInfo,
   faCircleCheck,
+  faPhone,
+  faHouse,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -44,7 +47,10 @@ library.add(
   faCircleInfo,
   faFingerprint,
   faLock,
-  faCircleCheck
+  faCircleCheck,
+  faPhone,
+  faHouse,
+  faEnvelope
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

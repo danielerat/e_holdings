@@ -13,7 +13,7 @@
     <div class="">
       <div class="mx-auto container relative z-20 lg:px-0 px-4">
         <div
-          class="flex lg:flex-row flex-col-reverse items-center justify-between lg:mt-24"
+          class="flex lg:flex-row flex-col-reverse items-center justify-between my-10"
         >
           <div class="lg:w-1/2 lg:pt-0 pt-8">
             <h1
