@@ -1,9 +1,9 @@
 <template>
-  <div class="relative pb-24 lg:pb-96">
+  <div class="relative pb-24 lg:pb-12">
     <img
       loading="lazy"
       :src="rectanglebg"
-      class="absolute right-0 z-0 h-full w-2/5 lg:block hidden"
+      class="absolute right-0 z-0 h-screen w-2/5 lg:block hidden"
     />
     <img
       loading="lazy"
@@ -88,7 +88,7 @@
             <img loading="lazy" :src="heroimg" class="w-200" />
           </div>
           <div class="xl:w-1/3 xl:hidden block">
-            <img loading="lazy" :src="heroimg" class="object-cover" />
+            <img loading="lazy" :src="heroimg" class="mt-4 object-cover" />
           </div>
         </div>
       </div>
@@ -101,6 +101,7 @@
 import rectanglebg from "@/assets/img/rectanglebg.png";
 import heroimg from "@/assets/img/hero_image.png";
 export default {
+  name: "Hero",
   data() {
     return {
       rectanglebg,
