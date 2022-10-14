@@ -39,6 +39,7 @@
             <li>
               <a
                 href="http://blog.creative-tim.com?ref=vn-footer-admin"
+                target="_blank"
                 class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
               >
                 Contact
