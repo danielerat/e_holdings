@@ -77,11 +77,13 @@
             </li>
 
             <li class="flex items-center">
-              <router-link
-                to="/admin"
-                class="bg-site-gray-1 text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ease-linear transition-all duration-150"
-              >
-                Sign In
+              <router-link to="/admin">
+                <action-button
+                  type="secondary"
+                  size="sm"
+                  text="Sign In"
+                  class=""
+                />
               </router-link>
             </li>
           </div>
@@ -94,9 +96,13 @@
 
 <script>
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
-
+import ActionButton from "@/components/shared/ActionButton";
 export default {
   name: "IndexNavbar",
+  components: {
+    ActionButton,
+    IndexDropdown,
+  },
   data() {
     return {
       navbarOpen: true,
@@ -106,9 +112,6 @@ export default {
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },
-  },
-  components: {
-    IndexDropdown,
   },
 };
 </script>
