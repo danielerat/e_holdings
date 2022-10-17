@@ -2,7 +2,7 @@
   <div class="container mx-auto my-24">
     <div class="lg:flex">
       <div
-        class="xl:w-2/5 lg:w-2/5 text-white bg-site-green-1 py-16 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none"
+        class="xl:w-2/5 lg:w-2/5 text-white border-r-8 border-site-yellow-2 bg-site-green-1 py-16 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none"
       >
         <div class="xl:w-5/6 xl:px-0 px-8 mx-auto">
           <h1 class="xl:text-4xl text-3xl pb-4 text-white font-bold">
@@ -42,7 +42,7 @@
       >
         <form
           id="contact"
-          class="bg-site-white-4 py-4 px-8 rounded-tr rounded-br"
+          class="bg-site-white-5 border-l-8 border-site-yellow-2 py-4 px-8 rounded-tr rounded-br"
         >
           <h1 class="text-4xl text-site-gray-2 font-extrabold mb-6">
             Enter Details
@@ -111,7 +111,7 @@
           <div class="w-full mt-6">
             <div class="flex flex-col">
               <label
-                class="text-sm font-semibold text-gray-800 mb-2"
+                class="text-sm font-semibold text-site-gray-1 mb-2"
                 for="message"
               >
                 Message
@@ -124,12 +124,7 @@
                 id="message"
               ></textarea>
             </div>
-            <button
-              type="submit"
-              class="focus:outline-none bg-site-green-1 transition duration-150 ease-in-out hover:bg-site-green-2 rounded text-white px-8 py-3 text-sm leading-6"
-            >
-              Submit
-            </button>
+            <action-button type="primary" size="md" text="Sign In" class="" />
           </div>
         </form>
       </div>
@@ -138,10 +133,14 @@
 </template>
 
 <script>
+import ActionButton from "@/components/shared/ActionButton";
 export default {
   name: "ContactIndigo",
   mounted() {
     this.submit();
+  },
+  components: {
+    ActionButton,
   },
   methods: {
     submit() {
