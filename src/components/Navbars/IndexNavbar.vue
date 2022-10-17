@@ -72,7 +72,7 @@
                   :icon="['fab', 'whatsapp']"
                   class="text-site-gray-1 text-2xl"
                 />
-                <span class="lg:hidden inline-block ml-2">Star</span>
+                <span class="lg:hidden inline-block">Chat</span>
               </a>
             </li>
 
@@ -105,7 +105,7 @@ export default {
   },
   data() {
     return {
-      navbarOpen: true,
+      navbarOpen: false,
     };
   },
   methods: {
