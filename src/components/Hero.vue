@@ -28,18 +28,20 @@
             </h1>
             <div class="sm:flex items-center justify-center mt-12">
               <a href="javascript:void(0)">
-                <button
-                  class="w-full sm:w-auto xl:py-5 py-2 xl:px-16 px-6 bg-site-green-1 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-white focus:outline-none hover:bg-site-green-3 border-2 rounded-xl sm:mr-10"
-                >
-                  Sign Up
-                </button>
+                <action-button
+                  type="primary"
+                  size="lg"
+                  text="Sign up"
+                  class="mr-5"
+                />
               </a>
               <a href="javascript:void(0)">
-                <button
-                  class="w-full sm:w-auto mt-4 sm:mt-0 xl:py-5 py-2 xl:px-16 px-6 border-site-gray-1 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-site-gray-1 focus:outline-none border-2 rounded-xl hover:bg-site-gray-2 hover:text-white"
-                >
-                  Learn More
-                </button>
+                <action-button
+                  type="tertiary"
+                  size="lg"
+                  text="Learn More"
+                  class="mr-5"
+                />
               </a>
             </div>
             <div
@@ -90,8 +92,13 @@
 <script>
 import rectanglebg from "@/assets/img/rectanglebg.png";
 import heroimg from "@/assets/img/hero_image2.png";
+
+import ActionButton from "@/components/shared/ActionButton.vue";
 export default {
   name: "Hero",
+  components: {
+    ActionButton,
+  },
   data() {
     return {
       rectanglebg,
