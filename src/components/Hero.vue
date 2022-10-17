@@ -1,15 +1,8 @@
 <template>
-  <div class="relative pb-24 lg:pb-12">
-    <img
-      loading="lazy"
-      :src="rectanglebg"
-      class="absolute right-0 z-0 h-screen w-2/5 lg:block hidden"
-    />
-    <img
-      loading="lazy"
-      :src="rectanglebg"
-      class="absolute right-0 z-0 lg:h-96 lg:hidden block"
-    />
+  <div
+    class="relative pb-24 lg:pb-12 bg-no-repeat bg-fixed md:bg-[length:400px_700px] bg-[length:200px_200px] bg-right-top"
+    :style="{ backgroundImage: 'url(' + rectanglebg + ')' }"
+  >
     <div class="">
       <div class="mx-auto container relative z-20 lg:px-0 px-4">
         <div
@@ -17,7 +10,7 @@
         >
           <div class="lg:w-1/2 lg:pt-0 pt-8">
             <h1
-              class="lg:text-6xl text-3xl leading-8 text-site-gray-1 border-l-8 border-site-green-1 lg:pl-12 pl-2 xl:mt-0 mt-8"
+              class="lg:text-6xl text-3xl leading-8 text-site-gray-1 border-l-8 border-site-yellow-3 lg:pl-12 pl-2 xl:mt-0 mt-8"
             >
               E-Holdings
               <br />
@@ -36,7 +29,7 @@
             <div class="sm:flex items-center justify-center mt-12">
               <a href="javascript:void(0)">
                 <button
-                  class="w-full sm:w-auto xl:py-5 py-2 xl:px-16 px-6 bg-site-green-1 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-white focus:outline-none hover:bg-site-green-3 border-2 rounded-xl mr-10"
+                  class="w-full sm:w-auto xl:py-5 py-2 xl:px-16 px-6 bg-site-green-1 2xl:text-3xl lg:text-xl text-base font-semibold leading-loose text-white focus:outline-none hover:bg-site-green-3 border-2 rounded-xl sm:mr-10"
                 >
                   Sign Up
                 </button>
@@ -84,11 +77,8 @@
               </a>
             </div>
           </div>
-          <div class="lg:w-1/2 height-main-hero xl:block hidden">
-            <img loading="lazy" :src="heroimg" class="w-200" />
-          </div>
-          <div class="xl:w-1/3 xl:hidden block">
-            <img loading="lazy" :src="heroimg" class="mt-4 object-cover" />
+          <div class="block">
+            <img loading="lazy" :src="heroimg" class="mt-4 md:w-full w-96" />
           </div>
         </div>
       </div>
@@ -99,7 +89,7 @@
 
 <script>
 import rectanglebg from "@/assets/img/rectanglebg.png";
-import heroimg from "@/assets/img/hero_image.png";
+import heroimg from "@/assets/img/hero_image2.png";
 export default {
   name: "Hero",
   data() {

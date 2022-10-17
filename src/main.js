@@ -23,6 +23,10 @@ import {
   faPhone,
   faHouse,
   faEnvelope,
+  faHandshakeSimple,
+  faCubesStacked,
+  faHeadset,
+  faFileContract,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -50,7 +54,11 @@ library.add(
   faCircleCheck,
   faPhone,
   faHouse,
-  faEnvelope
+  faEnvelope,
+  faHandshakeSimple,
+  faCubesStacked,
+  faHeadset,
+  faFileContract
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

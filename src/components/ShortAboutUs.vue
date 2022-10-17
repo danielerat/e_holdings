@@ -24,7 +24,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-r md:border-r sm:border-r-0 border-site-green-1 pb-10 lg:pt-10"
           >
             <div class="mr-5 text-site-gray-1">
-              <fa icon="cubes-stacked" class="text-4xl text-site-green-1"></fa>
+              <fa icon="cubes-stacked" class="text-4xl text-site-green-3"></fa>
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4 class="text-lg font-bold leading-tight text-site-gray-1">
@@ -42,7 +42,7 @@
           </div>
           <div class="flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10">
             <div class="sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-site-gray-1">
-              <fa icon="handshake-simple" class="text-4xl text-site-green-1" />
+              <fa icon="handshake-simple" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4 class="text-lg font-bold leading-tight text-site-gray-1">
@@ -62,7 +62,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-site-green-1 pt-10 lg:pb-20"
           >
             <div class="mr-5 text-site-gray-1">
-              <fa icon="headset" class="text-4xl text-site-green-1" />
+              <fa icon="headset" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4 class="text-lg font-bold leading-tight text-site-gray-1">
@@ -82,7 +82,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 border-site-green-1 pt-10 lg:pb-20"
           >
             <div class="sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-site-gray-1">
-              <fa icon="file-contract" class="text-4xl text-site-green-1" />
+              <fa icon="file-contract" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4 class="text-lg font-bold leading-tight text-site-gray-1">
