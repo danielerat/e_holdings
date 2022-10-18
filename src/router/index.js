@@ -54,7 +54,7 @@ const routes = [
     component: SampleComponents,
   },
   {
-    path: "/contact",
+    path: "/Contact",
     name: "contact",
     component: ContactView,
   },

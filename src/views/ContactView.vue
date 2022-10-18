@@ -11,7 +11,7 @@ import MainFooter from "@/components/Footers/Footer.vue";
 import Contact from "@/components/Contact.vue";
 
 export default {
-  name: "Index",
+  name: "ContactView",
   components: {
     MainFooter,
     IndexNavbar,

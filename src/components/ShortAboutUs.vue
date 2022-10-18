@@ -12,7 +12,7 @@
           <h2
             class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-gray-800 lg:w-7/12 md:w-9/12"
           >
-            All your electronics managed in one place for smooth ownership
+            All your electronics managed in one place for indubitable ownership
           </h2>
         </div>
       </div>

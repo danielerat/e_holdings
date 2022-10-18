@@ -27,14 +27,14 @@
               Repellendus earum maiores odit, dolor ea
             </h1>
             <div class="sm:flex items-center justify-center mt-12">
-              <a href="javascript:void(0)">
+              <router-link to="/register">
                 <action-button
                   type="primary"
                   size="lg"
                   text="Sign up"
                   class="mr-5"
                 />
-              </a>
+              </router-link>
               <a href="javascript:void(0)">
                 <action-button
                   type="tertiary"

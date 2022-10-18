@@ -11,7 +11,7 @@
         <router-link to="/">
           <a
             class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-            href="#pablo"
+            href="/"
           >
             E-Holdings
           </a>
@@ -37,7 +37,7 @@
             <li class="flex">
               <a
                 class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-                href=""
+                href="https:/www.facebook.com"
                 target="_blank"
               >
                 <fa
@@ -51,7 +51,7 @@
             <li class="flex items-center">
               <a
                 class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-                href=""
+                href="https:/www.twitter.com"
                 target="_blank"
               >
                 <fa
@@ -65,7 +65,7 @@
             <li class="flex items-center">
               <a
                 class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-                href=""
+                href="https:/www.whatsapp.com"
                 target="_blank"
               >
                 <fa
