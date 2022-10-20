@@ -1,5 +1,6 @@
 <template>
   <index-navbar></index-navbar>
+  <hero-about></hero-about>
   <all-you-need />
   <fixed-image-scroll-layout type="left" title="Something really else">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquam
@@ -14,6 +15,7 @@
 // @ is an alias to /src
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import MainFooter from "@/components/Footers/Footer.vue";
+import HeroAbout from "@/components/About/HeroAbout.vue";
 import AllYouNeed from "@/components/About/AllYouNeedToKnow.vue";
 import FixedImageScrollLayout from "@/components/shared/FixedImageScrollLayout.vue";
 
@@ -24,6 +26,7 @@ export default {
     IndexNavbar,
     MainFooter,
     AllYouNeed,
+    HeroAbout,
 
     FixedImageScrollLayout,
   },
