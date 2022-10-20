@@ -77,7 +77,7 @@
             </li>
 
             <li class="flex items-center">
-              <router-link to="/admin">
+              <router-link to="/login">
                 <action-button
                   type="secondary"
                   size="sm"

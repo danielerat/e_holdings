@@ -29,6 +29,7 @@ import {
   faFileContract,
   faAngleDown,
   faAngleUp,
+  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -62,7 +63,8 @@ library.add(
   faHeadset,
   faFileContract,
   faAngleDown,
-  faAngleUp
+  faAngleUp,
+  faAngleRight
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

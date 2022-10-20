@@ -1,80 +1,4 @@
 <template>
-  <div class="mx-auto container px-4 xl:px-0 my-24">
-    <h1
-      class="text-center text-color-gray text-2xl lg:text-5xl font-bold tracking-wider leading-10"
-    >
-      Frequently Asked Questions
-    </h1>
-    <h2
-      class="text-center text-color-gray-light text-base lg:text-lg tracking-wide mt-5"
-    >
-      We try to answer most of your Questions.
-    </h2>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:flex-row my-20 justify-around"
-    >
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-      <div class="my-5">
-        <accordion header="this is just some random things you know">
-          And inside here is somemore randomestestthing you can possibly ask
-          yourlse you kno
-        </accordion>
-      </div>
-    </div>
-  </div>
   <div class="mx-auto container px-4 xl:px-0 mt-16 lg:mt-32 f-f-p">
     <h1
       class="text-center text-3xl lg:text-5xl tracking-wider text-color-heading"
@@ -159,12 +83,9 @@
   </section>
 </template>
 <script>
-import Accordion from "@/components/shared/Accordion.vue/";
 export default {
   name: "faq",
-  components: {
-    Accordion,
-  },
+  components: {},
 };
 </script>
 <style scoped>

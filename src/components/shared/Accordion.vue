@@ -1,15 +1,16 @@
 <template>
-  <div class="border-b-2 border-site-gray-5 border-solid">
+  <div class="border-b-2 border-site-white-4 border-solid my-2">
     <div
-      class="py-1 flex h-full flex-wrap items-center justify-between cursor-pointer"
+      class="py-1 h-full items-center justify-between cursor-pointer"
       @click="open"
     >
-      <h3 class="text-base font-semibold">{{ header }}</h3>
-      <span
-        class="ml-4 text-site-white-4 bg-site-green-2 p-2 px-3 rounded-full"
-      >
-        <fa :icon="caratIcon" />
-      </span>
+      <h3 class="flex flex-row text-base font-semibold">
+        <span>{{ header }}</span>
+        <span class="ml-4 text-site-gray-2 rounded-full">
+          <fa :icon="caratIcon" />
+        </span>
+      </h3>
+
       <div v-if="isOpen" class="">
         <div class="block p-2">
           <slot class="">
