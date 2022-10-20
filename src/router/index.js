@@ -6,6 +6,7 @@ import SampleComponents from "@/views/admin/SampleComponents.vue";
 import RegisterView from "@/views/auth/RegisterView.vue";
 import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
+import SupportView from "@/views/SupportView.vue";
 const routes = [
   {
     path: "/",
@@ -57,6 +58,11 @@ const routes = [
     path: "/Contact",
     name: "contact",
     component: ContactView,
+  },
+  {
+    path: "/support",
+    name: "support",
+    component: SupportView,
   },
 ];
 

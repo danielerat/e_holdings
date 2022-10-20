@@ -14,7 +14,7 @@
         y="0"
       >
         <polygon
-          class="text-blueGray-200 fill-current"
+          class="text-site-gray-1 fill-current"
           points="2560 0 2560 100 0 100"
         ></polygon>
       </svg>

@@ -27,6 +27,8 @@ import {
   faCubesStacked,
   faHeadset,
   faFileContract,
+  faAngleDown,
+  faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -58,7 +60,9 @@ library.add(
   faHandshakeSimple,
   faCubesStacked,
   faHeadset,
-  faFileContract
+  faFileContract,
+  faAngleDown,
+  faAngleUp
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
