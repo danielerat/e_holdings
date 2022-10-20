@@ -10,7 +10,7 @@
         <div class="mx-auto">
           <card-faq
             title="Account related questions"
-            color="text-site-yellow-1"
+            color="text-site-yellow-2"
             icon="fingerprint"
           >
             <accordion header="Just some random things you know">
@@ -32,7 +32,7 @@
         <div class="mx-auto">
           <card-faq
             title="Security"
-            color="text-site-yellow-1"
+            color="text-site-green-2"
             icon="file-contract"
           >
             <accordion header="Just some random things you know">
