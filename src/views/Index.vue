@@ -3,9 +3,16 @@
   <hero></hero>
   <short-about-us />
   <section class="bg-site-white-5">
-    <div class="container mx-auto py-6">
+    <div class="content-center container mx-auto py-6">
+      <div class="text-center w-4/5 mx-auto">
+        <h2 class="text-2xl">Can't Find something?</h2>
+        <h2 class="text-1xl">
+          You might want to check our FAQ, or simply contact us for more
+          explanations
+        </h2>
+      </div>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 items-center"
+        class="min-h-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 items-center"
       >
         <div class="mx-auto">
           <card-faq
@@ -56,11 +63,17 @@
           <h2 class="text-2xl mt-5">
             Check out our FAQ you may find some useful tips
           </h2>
+          <action-button
+            type="tertiary"
+            size="sm"
+            text="Explore Our FAQ >>"
+            class="mx-2"
+          />
         </div>
       </div>
     </div>
   </section>
-
+  <!-- Component--------------------- -->
   <center-img-design
     title_left="Our Story"
     sub_title_left="Lorem ipsum dolor sit amet consectetur"
