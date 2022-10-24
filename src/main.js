@@ -30,6 +30,10 @@ import {
   faAngleDown,
   faAngleUp,
   faAngleRight,
+  faStar,
+  faMapMarker,
+  faQuoteLeft,
+  faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -64,7 +68,11 @@ library.add(
   faFileContract,
   faAngleDown,
   faAngleUp,
-  faAngleRight
+  faAngleRight,
+  faStar,
+  faMapMarker,
+  faQuoteLeft,
+  faQuoteRight
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

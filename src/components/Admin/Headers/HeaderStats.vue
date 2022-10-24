@@ -1,6 +1,6 @@
 <template>
   <!-- Header -->
-  <div class="relative bg-site-green-5 md:pt-32 pb-32 pt-12">
+  <div class="relative bg-site-green-1 md:pt-32 pb-32 pt-12">
     <div class="px-4 md:px-10 mx-auto w-full">
       <div>
         <!-- Card stats -->
@@ -14,7 +14,7 @@
               statPercentColor="text-emerald-500"
               statDescripiron="Since last month"
               statIconName="chart-bar"
-              statIconColor="bg-red-500"
+              statIconColor="bg-site-yellow-1"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
@@ -26,7 +26,7 @@
               statPercentColor="text-red-500"
               statDescripiron="Since last week"
               statIconName="chart-pie"
-              statIconColor="bg-orange-500"
+              statIconColor="bg-site-gray-2"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
@@ -38,7 +38,7 @@
               statPercentColor="text-orange-500"
               statDescripiron="Since yesterday"
               statIconName="users"
-              statIconColor="bg-pink-500"
+              statIconColor="bg-site-yellow-2"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">

@@ -20,6 +20,8 @@
       </ul>
     </div>
   </nav>
+
+  <div v-if="down" class="xl:h-40 md:h-20"></div>
   <!-- End Navbar -->
 </template>
 
@@ -33,6 +35,11 @@ export default {
     path: {
       type: String,
       default: "Dashboard",
+      required: false,
+    },
+    down: {
+      type: Boolean,
+      default: false,
       required: false,
     },
   },

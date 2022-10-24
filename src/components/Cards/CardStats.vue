@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words outline outline-site-white-5 outline-4 bg-site-white-5 rounded mb-6 xl:mb-0 shadow-lg"
+    class="relative flex flex-col min-w-0 break-words bg-site-white-3 rounded mb-6 xl:mb-0 shadow-lg ring-4 ring-site-white-3 hover:ring-site-white-2 ring-inset"
   >
     <div class="flex-auto p-4">
       <div class="flex flex-wrap">
