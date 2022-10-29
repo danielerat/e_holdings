@@ -5,9 +5,7 @@
       <admin-navbar path="Assign Device To a User" down="true" />
 
       <!-- Settings -->
-      <div
-        class="flex flex-wrap mx-auto align-baseline max-w-3xl border border-red-300 p-6"
-      >
+      <div class="flex flex-wrap mx-auto align-baseline max-w-3xl p-6">
         <assign-device-form></assign-device-form>
       </div>
       <!-- ---- -->
