@@ -141,7 +141,7 @@
           </li>
           <li class="items-center">
             <router-link
-              to="/admin/assigndevice"
+              to="/admin/assign-device"
               v-slot="{ href, navigate, isActive }"
             >
               <a

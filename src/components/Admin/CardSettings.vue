@@ -17,70 +17,35 @@
       <form>
         <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
         <div class="flex flex-wrap">
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Phone Number
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-gray-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Mumbere@mumbere"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Email address
-              </label>
-              <input
-                type="email"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="eholdings@holdings.com"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                First Name
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Mumbere"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Last Name
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Mumbere"
-                readonly
-              />
-            </div>
-          </div>
+          <input-text
+            placeholder="088..."
+            label="Phone Number"
+            name="phone"
+            value=""
+            readonly="true"
+          />
+          <input-text
+            placeholder="119.."
+            label="National Id"
+            name="national_id"
+            value=""
+            readonly="true"
+          />
+
+          <input-text
+            placeholder="119.."
+            label="First Name"
+            name="first_name"
+            value=""
+            readonly="true"
+          />
+          <input-text
+            placeholder="119.."
+            label="Last Name"
+            name="last_name"
+            value=""
+            readonly="true"
+          />
         </div>
 
         <hr class="mt-6 border-b-1 border-site-white-2" />
@@ -90,65 +55,38 @@
         </h6>
         <div class="flex flex-wrap">
           <div class="w-full lg:w-12/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Address
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="KN 123 Str Mumbere Mosque House 1"
-              />
-            </div>
+            <input-text
+              placeholder="KN 123 Str Mumbere Mosque House 1"
+              label="Address"
+              name="address"
+              value=""
+              size="lg"
+              readonly="true"
+            />
           </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Province
-              </label>
-              <input
-                type="email"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Kigali"
-              />
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                District
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Nyarugenge"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Sector
-              </label>
-              <input
-                type="text"
-                class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                value="Nyarugenge"
-              />
-            </div>
+
+          <div class="flex flex-nowrap">
+            <input-text
+              placeholder=".."
+              label="Province"
+              name="province"
+              value=""
+              readonly="true"
+            />
+            <input-text
+              placeholder=" .."
+              label="District"
+              name="province"
+              value=""
+              readonly="true"
+            />
+            <input-text
+              placeholder=" .."
+              label="Sector"
+              name="province"
+              value=""
+              readonly="true"
+            />
           </div>
         </div>
 
@@ -182,7 +120,11 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab ipsam saepe volupta
 </template>
 
 <script>
+import InputText from "@/components/shared/InputText.vue";
 export default {
   name: "UserSettings",
+  components: {
+    InputText,
+  },
 };
 </script>

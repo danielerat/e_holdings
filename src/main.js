@@ -38,6 +38,7 @@ import {
   faLaptop,
   faPlug,
   faShareNodes,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -80,7 +81,8 @@ library.add(
   faQuoteRight,
   faMobileButton,
   faLaptop,
-  faPlug
+  faPlug,
+  faSearch
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
