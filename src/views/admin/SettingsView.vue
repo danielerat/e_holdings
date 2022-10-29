@@ -1,7 +1,9 @@
 <template>
   <div>
     <sidebar />
-    <div class="relative md:ml-64 bg-blueGray-100">
+    <div
+      class="relative md:ml-64 bg-gradient-to-b from-site-white-4 to-site-white-2"
+    >
       <admin-navbar path="Account Settings" down="true" />
 
       <!-- Settings -->

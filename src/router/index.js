@@ -7,6 +7,7 @@ import RegisterView from "@/views/auth/RegisterView.vue";
 import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
 import SupportView from "@/views/SupportView.vue";
+import AssignDeviceView from "@/views/admin/AssignDevice.vue";
 const routes = [
   {
     path: "/",
@@ -63,6 +64,11 @@ const routes = [
     path: "/support",
     name: "support",
     component: SupportView,
+  },
+  {
+    path: "/admin/assign-device",
+    name: "assign-device",
+    component: AssignDeviceView,
   },
 ];
 

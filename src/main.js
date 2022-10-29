@@ -34,6 +34,10 @@ import {
   faMapMarker,
   faQuoteLeft,
   faQuoteRight,
+  faMobileButton,
+  faLaptop,
+  faPlug,
+  faShareNodes,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -54,6 +58,7 @@ library.add(
   faTimes,
   faGauge,
   faGears,
+  faShareNodes,
   faMicrochip,
   faCircleInfo,
   faFingerprint,
@@ -72,7 +77,10 @@ library.add(
   faStar,
   faMapMarker,
   faQuoteLeft,
-  faQuoteRight
+  faQuoteRight,
+  faMobileButton,
+  faLaptop,
+  faPlug
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

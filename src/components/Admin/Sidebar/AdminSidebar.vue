@@ -139,6 +139,30 @@
               </a>
             </router-link>
           </li>
+          <li class="items-center">
+            <router-link
+              to="/admin/assigndevice"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-green-1 hover:text-site-green-2'
+                    : 'text-site-gray-1 hover:text-site-gray-5',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'share-nodes']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
+                ></fa>
+                AssignDevice
+              </a>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
