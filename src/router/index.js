@@ -7,8 +7,9 @@ import RegisterView from "@/views/auth/RegisterView.vue";
 import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
 import SupportView from "@/views/SupportView.vue";
-import AssignDeviceView from "@/views/admin/AssignDevice.vue";
+import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
 import CheckDeviceView from "@/views/CheckDeviceView.vue";
+import Invoice from "@/views/admin/InvoiceView.vue";
 const routes = [
   {
     path: "/",
@@ -40,6 +41,11 @@ const routes = [
     path: "/admin/components",
     name: "components",
     component: SampleComponents,
+  },
+  {
+    path: "/admin/invoice",
+    name: "invoice",
+    component: Invoice,
   },
   {
     path: "/register",

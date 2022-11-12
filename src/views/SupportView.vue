@@ -1,6 +1,21 @@
 <template>
   <index-navbar></index-navbar>
 
+  <div class="my-5">
+    <div class="flex justify-around">
+      <div>
+        <h2 class="text-3xl font-bold">Need Support? you can find it here</h2>
+      </div>
+      <div>
+        <input
+          type="text border "
+          class="border px-2 py-2 bg-site-white-4 rounded-lg mx-2 focus:outline-none"
+        />
+        <fa icon="search" class="font-bold text-xl"></fa>
+      </div>
+    </div>
+  </div>
+
   <div class="container mx-auto px-6 my-10 xl:px-0">
     <div
       class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pb-6 gap-8"
@@ -136,9 +151,10 @@ import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 
 import MainFooter from "@/components/Footers/Footer.vue";
 
-import Accordion from "@/components/shared/Accordion.vue/";
+import Accordion from "@/components/shared/Accordion.vue";
 import CardFaq from "@/components/Cards/CardFaq.vue";
 import Faq from "@/components/Faq";
+
 export default {
   name: "FaqView",
   components: {

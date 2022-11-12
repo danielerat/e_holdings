@@ -63,12 +63,14 @@
           <h2 class="text-2xl mt-5">
             Check out our FAQ you may find some useful tips
           </h2>
-          <action-button
-            type="tertiary"
-            size="sm"
-            text="Explore Our FAQ >>"
-            class="mx-2"
-          />
+          <router-link to="support">
+            <action-button
+              type="tertiary"
+              size="sm"
+              text="Explore Our FAQ >>"
+              class="mx-2"
+            />
+          </router-link>
         </div>
       </div>
     </div>

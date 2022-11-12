@@ -50,7 +50,7 @@
                 href="#"
                 class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
               >
-                Sign In
+                Sign Out
               </a>
             </li>
           </ul>

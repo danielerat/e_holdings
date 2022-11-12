@@ -107,11 +107,35 @@
                 ]"
               >
                 <fa
-                  :icon="['fa', 'gears']"
+                  :icon="['fa', 'mobile-button']"
                   class="text-xl"
                   :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
                 ></fa>
                 Devices
+              </a>
+            </router-link>
+          </li>
+          <li class="items-center">
+            <router-link
+              to="/admin/invoice"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-green-1 hover:text-site-green-2'
+                    : 'text-site-gray-1 hover:text-site-gray-5',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'file-contract']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
+                ></fa>
+                Invoices
               </a>
             </router-link>
           </li>

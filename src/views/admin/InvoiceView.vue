@@ -5,8 +5,8 @@
       <admin-navbar path="Assign Device To a User" down="true" />
 
       <!-- Settings -->
-      <div class="flex flex-wrap mx-auto align-baseline max-w-3xl p-6">
-        <assign-device-form></assign-device-form>
+      <div class="flex flex-wrap justify-center align-baseline">
+        <invoice></invoice>
       </div>
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">
@@ -20,11 +20,11 @@ import AdminNavbar from "@/components/Admin/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 
-import AssignDeviceForm from "@/components/AssignDeviceForm.vue";
+import Invoice from "@/components/Admin/Invoices/Invoice.vue";
 export default {
   name: "AssignDevice",
   components: {
-    AssignDeviceForm,
+    Invoice,
     AdminNavbar,
     Sidebar,
     FooterAdmin,
