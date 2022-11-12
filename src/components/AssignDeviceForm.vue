@@ -160,17 +160,24 @@
           </div>
         </div>
       </div>
-
+      <action-button
+        text="Give Ownsership"
+        type="primary"
+        size="md"
+        class="table m-auto"
+      ></action-button>
       <hr class="mt-6 border-b-1 border-site-white-2" />
     </form>
   </div>
 </template>
 <script>
 import InputText from "@/components/shared/InputText.vue";
+import ActionButton from "@/components/shared/ActionButton.vue";
 export default {
   name: "AssignDeviceForm",
   components: {
     InputText,
+    ActionButton,
   },
 };
 </script>
