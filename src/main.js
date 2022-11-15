@@ -1,4 +1,7 @@
-import { createApp } from "vue";
+import * as Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+// import { createApp } from "vue";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -97,4 +100,7 @@ import App from "./App.vue";
 
 import router from "@/router";
 
-createApp(App).use(router).component("fa", FontAwesomeIcon).mount("#app");
+const app = Vue.createApp(App);
+
+app.use(VueAxios, axios);
+app.use(router).component("fa", FontAwesomeIcon).mount("#app");
