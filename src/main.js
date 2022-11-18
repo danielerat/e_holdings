@@ -2,6 +2,8 @@ import * as Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 // import { createApp } from "vue";
+import VueSweetalert2 from "vue-sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -16,6 +18,7 @@ import {
   faPercent,
   faBell,
   faTimes,
+  faCheck,
   faGauge,
   faGears,
   faMicrochip,
@@ -62,6 +65,7 @@ library.add(
   faArrowUp,
   faBell,
   faTimes,
+  faCheck,
   faGauge,
   faGears,
   faShareNodes,
@@ -103,4 +107,5 @@ import router from "@/router";
 const app = Vue.createApp(App);
 
 app.use(VueAxios, axios);
+app.use(VueSweetalert2);
 app.use(router).component("fa", FontAwesomeIcon).mount("#app");
