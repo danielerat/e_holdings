@@ -48,28 +48,12 @@
 
       <h6 class="text-sm mt-3 mb-6 font-bold uppercase">Device Information</h6>
       <div class="flex flex-wrap">
-        <div class="w-full lg:w-6/12 px-4">
-          <div class="relative w-full mb-3">
-            <label
-              class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
-              Category
-            </label>
+        <input-select-list
+          label="Category"
+          name="category"
+          :options="options"
+        />
 
-            <select
-              id="countries"
-              class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-            >
-              <option>Device Category</option>
-              <option>Phone</option>
-              <option>Computer</option>
-              <option>Tablet</option>
-              <option>Smart Watch</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
         <input-text
           placeholder="Name of your device"
           label="Device Name"
@@ -88,6 +72,17 @@
           label="Serial Number"
           name="serial_number"
           value=""
+        />
+        <input-text
+          placeholder="IMEI / MAC ADDRESS"
+          label="imei "
+          name="imei"
+          value=""
+        />
+        <input-select-list
+          label="Category"
+          name="category"
+          :options="warranty"
         />
 
         <div class="w-full lg:w-6/12 px-4">
@@ -171,6 +166,7 @@
   </div>
 </template>
 <script>
+import InputSelectList from "@/components/shared/InputSelectList.vue";
 import InputText from "@/components/shared/InputText.vue";
 import ActionButton from "@/components/shared/ActionButton.vue";
 export default {
@@ -178,6 +174,14 @@ export default {
   components: {
     InputText,
     ActionButton,
+    InputSelectList,
+  },
+  data() {
+    return {
+      options: ["Phone", "Computer", "Tablet", "Whatever"],
+      warranty: ["1 Week", "1 Month", "3Months", "6 Months", "9 Months"],
+      //Category of item to assign
+    };
   },
 };
 </script>

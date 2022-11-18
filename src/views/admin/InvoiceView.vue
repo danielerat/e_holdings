@@ -2,7 +2,7 @@
   <div>
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-4">
-      <admin-navbar path="Assign Device To a User" down="true" />
+      <admin-navbar path="List of all Invoices " down="true" />
 
       <!-- Settings -->
       <div class="flex flex-wrap justify-center align-baseline">
