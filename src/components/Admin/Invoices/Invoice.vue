@@ -18,7 +18,7 @@
         <tr
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
         >
-          <td class="py-4 px-6 text-site-gray-1">
+          <td class="py-4 px-6 text-site-gray-1 dark:text-site-white-2">
             #568
             <span class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1">
               <fa icon="laptop"></fa>
@@ -29,7 +29,9 @@
             class="py-4 px-6 font-medium whitespace-nowrap dark:text-white"
           >
             <ul>
-              <li class="text-site-gray-1 font-bold">Apple MacBook Pro 17"</li>
+              <li class="text-site-gray-1 font-bold dark:text-site-white-5">
+                Apple MacBook Pro 17"
+              </li>
               <li>Computer</li>
             </ul>
           </th>
@@ -311,18 +313,12 @@
             </ul>
           </td>
           <td class="py-4 px-6">
-            <ul class="text-xs">
-              <li class="text-site-gray-1 font-bold">Mumbere Carlos</li>
-              <li class="my-1">+250783305114</li>
-            </ul>
-          </td>
-          <td class="py-4 px-6 hidden lg:inline-block">
             <span class="mt text-site-gray-2 px-2 rounded-full bg-site-white-4">
               July/22/2022
             </span>
             <p>
               <span
-                class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
+                class="mt text-xs text-site-yellow-2 px-1 rounded-full bg-site-yellow-5"
               >
                 Expired Warranty
               </span>
