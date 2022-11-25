@@ -82,7 +82,7 @@
                 class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
               >
                 Warranty
-                <fa icon="times" class="text-site-yellow-1" />
+                <fa icon="xmark-circle" class="text-site-yellow-1" />
               </span>
             </p>
           </td>
@@ -148,7 +148,7 @@
                 class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
               >
                 Warranty
-                <fa icon="times" class="text-site-yellow-1" />
+                <fa icon="xmark-circle" class="text-site-yellow-1" />
               </span>
             </p>
           </td>
@@ -213,7 +213,7 @@
                 class="mt text-site-green-2 px-2 rounded-full bg-site-green-5"
               >
                 Warranty
-                <fa icon="check" class="text-site-green-1" />
+                <fa icon="check-to-slot" class="text-site-green-1" />
               </span>
             </p>
           </td>
@@ -275,10 +275,10 @@
             </span>
             <p>
               <span
-                class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
+                class="mt text-site-green-2 px-2 rounded-full bg-site-green-5"
               >
                 Warranty
-                <fa icon="times" class="text-site-yellow-1" />
+                <fa icon="check-to-slot" class="text-site-green-1" />
               </span>
             </p>
           </td>

@@ -1,0 +1,292 @@
+[33mcommit b280154c679391671bcb2518c98e6838169846ff[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Nov 18 12:43:15 2022 +0200
+
+    Final touch on the invoice section
+
+[33mcommit a5e7be5d1dc568221c9074119301096622d3745f[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Nov 18 09:11:29 2022 +0200
+
+    fix merging conflict
+
+[33mcommit 5849c30e68bbe0f7bb1e776ee757ae22b9e471e4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Nov 18 08:10:13 2022 +0200
+
+    Modify the AssignDeviceForm file addisng inputSelectList
+
+[33mcommit 169331192fb20e37f6c82e8b8fa481317254ef40[m
+Author: izamha <glcode40@gmail.com>
+Date:   Tue Nov 15 12:24:15 2022 +0200
+
+    Working on store/index.js
+
+[33mcommit 9ad45d5c1a70874c7eee03a69be52fc8bfcadd15[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Nov 12 13:10:48 2022 +0200
+
+    Invoice section
+
+[33mcommit 39ce81e9a9da72b2d6b3c5ba4b5e91e8a307e5a8[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Nov 12 06:00:22 2022 +0200
+
+    Adding an action button on assign-device page
+
+[33mcommit 3fd4937071e050547d87fd600c997bbd12c22387[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Oct 29 23:22:56 2022 +0200
+
+    Create Device checking page
+
+[33mcommit e08a226ebb29670ecccb052a73a8850685c8fa3d[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Oct 29 23:22:38 2022 +0200
+
+    Creating design form to assign devices to users
+
+[33mcommit ceb32f222ef693e8e9c1883d1adff3d4d4d8ecd9[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Oct 29 12:20:22 2022 +0200
+
+    Adding the amdin device Assigning page
+
+[33mcommit 3a51661c9984cd5e65ce3546e779428c4f3a465d[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sat Oct 29 12:19:32 2022 +0200
+
+    Adding An Input Type Text shared Component
+
+[33mcommit 41efeb4acbf0e12a31aa97b3c6b3f508f236214f[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 24 12:26:56 2022 +0200
+
+    Adding the User Settings Page
+
+[33mcommit d7397439cda3c05cf7af681f07cca0f30a8f89a8[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 24 08:06:34 2022 +0200
+
+    Fixind some margin Issues on the home page
+
+[33mcommit 87ad1797a2cf4bdd15595911d4d3d284cddf9ab0[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 23:14:01 2022 +0200
+
+    Fixing links
+
+[33mcommit 5e04194dea93e328194e7181fe280831cd3cec8a[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 23:09:20 2022 +0200
+
+    Faq page
+
+[33mcommit aa3d4983ce8421989d8c549e53b5867e47917e4e[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 19:39:59 2022 +0200
+
+    Adding the Accordion component
+
+[33mcommit 8c0be68d766fe4c4f54676092008129394d50ada[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 19:39:39 2022 +0200
+
+    Adding the FAQ page
+
+[33mcommit 39c070f198f925a473cad35b4ddfd70953ede194[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 08:44:24 2022 +0200
+
+    Fixing navigation manue problem
+
+[33mcommit bf0d7c765e614991ca7e39530d5499084d10979a[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 08:43:43 2022 +0200
+
+    Adding the about us page section
+
+[33mcommit 34562f7a51e0f1744fa11941148a000bc9ec67a7[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 20 08:15:46 2022 +0200
+
+    The About Section
+
+[33mcommit 4e1413a70cfd46b180e45c50a063740282cd54b0[m
+Author: izamha <glcode40@gmail.com>
+Date:   Tue Oct 18 17:21:17 2022 +0200
+
+    Insignificant adds: here and there
+
+[33mcommit 5395f8b5f74254d03d55de1ea7649458297635df[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 20:32:10 2022 +0200
+
+    Fixing navigation Sign In button size overflow
+
+[33mcommit bff39aade065db9e1a3252b04d1f4e43a7a70880[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 20:19:03 2022 +0200
+
+    Adding component of centered design and side contents
+
+[33mcommit 9451374c15b89c08f20a5b43b74b645606215f24[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 19:31:26 2022 +0200
+
+    Refactoring button components
+
+[33mcommit 2a61d5566f803aaf7a8722a84778037492990426[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 19:23:03 2022 +0200
+
+    Refactore menu button to use action button
+
+[33mcommit 4641d547ffc97b691f1f29930a965d2803f93e45[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 19:20:13 2022 +0200
+
+    Creating different flavors of a button
+
+[33mcommit 2e1c83f89e3a85f4769a1ba165125a2cf6f039e7[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 17 18:43:38 2022 +0200
+
+    Adding the home about section
+
+[33mcommit b22056bcaebbfaf3bef765bc01b7f5af41fc54f4[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 13 18:24:56 2022 +0200
+
+    Adding the contact page
+
+[33mcommit e1d1896e736e3fbc1022cc296eeb0364ff701050[m
+Merge: 3731463 4e89e01
+Author: izamha <glcode40@gmail.com>
+Date:   Fri Oct 14 10:41:21 2022 +0200
+
+    Learning
+
+[33mcommit 3731463ae3f14237e2dd9eab4621c252c03dbf18[m
+Author: izamha <glcode40@gmail.com>
+Date:   Fri Oct 14 10:10:54 2022 +0200
+
+    Working home
+
+[33mcommit 4e89e0128274e163edc9b4d5ced82b7ef864adb7[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 11 10:45:14 2022 +0200
+
+    Hero Section of the home page
+
+[33mcommit 3a2dd4f8ad592b8f68fdfcfc59e7cba5e6a8ca5a[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 11 09:20:03 2022 +0200
+
+    Modify the login section
+
+[33mcommit 8e4dd49a58546c27e6f073527f70724a7e566d28[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Mon Oct 10 09:44:13 2022 +0200
+
+    Adding the login Page
+
+[33mcommit db4dae3c60976ce84f9e2e65324929ffb24a49d9[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 23:48:56 2022 +0200
+
+    Refactoring the registration page
+
+[33mcommit 1a7e49926256aec97af6c69393b7982ad1134070[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 23:43:04 2022 +0200
+
+    CReating the restration page
+
+[33mcommit ead7c107916c0b68d753c445152adaa75f5d3754[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 22:13:07 2022 +0200
+
+    adding card icon
+
+[33mcommit bba2956a43b878209cbf618fb69d960e386c7d42[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 06:31:17 2022 +0200
+
+    Linking components together
+
+[33mcommit 37d7ac7f71745c3ef47d0f02565a083d4341b8b0[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 06:30:53 2022 +0200
+
+     Adding card Components
+
+[33mcommit c479f65e923598b759a31297c35244dde0cec18e[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Sun Oct 9 06:30:24 2022 +0200
+
+    Adding admin Components
+    -DrowDowns
+    -Footer
+    -Header-
+    -Side navbar
+
+[33mcommit 2c5cd6c88ff4639716a8d1f9726e027ac9890988[m
+Author: izamha <glcode40@gmail.com>
+Date:   Sun Oct 9 07:41:42 2022 +0200
+
+    Jumping aboard
+
+[33mcommit 88cdf412e10217db3d996a017f73a4be42f32260[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 6 18:56:08 2022 +0200
+
+    Adding The Home Responsible Menu
+
+[33mcommit df50ae596b7d59cdfc31afdb655ef9b3d0930666[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 6 16:28:28 2022 +0200
+
+    Adding the Footer Of the site
+
+[33mcommit 653698964e4292e997bb2318e302a0ee26be6951[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Oct 6 14:50:30 2022 +0200
+
+    Configuring Site Colors
+
+[33mcommit c32c4aff56106b0c5018690be1f28461e42645d8[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 10:35:16 2022 +0200
+
+    Tailwind Css Configuration Sample
+
+[33mcommit 603dbcfafbb8bfcd0051b9678b1b55c8650ff2de[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 10:18:10 2022 +0200
+
+    Adding Font Awesome To the project
+
+[33mcommit 9a3f9660c4e3eac9b790e9cb2cc925f72de3fb6e[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 10:09:45 2022 +0200
+
+    Adding Vue Router
+
+[33mcommit 290eabc7101b011850e176346dd709d8cb46a778[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 10:06:42 2022 +0200
+
+    Adding Vuex For State management
+
+[33mcommit 1f0b0769e019badaec9fb43162287d936e509ef1[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 09:53:35 2022 +0200
+
+    Adding Tailwind Css
+
+[33mcommit e2861aaf902b080b5b07e158d734954afd29ad19[m
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Tue Oct 4 08:56:49 2022 +0200
+
+    init

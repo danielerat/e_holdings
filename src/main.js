@@ -47,6 +47,9 @@ import {
   faSearch,
   faEye,
   faDownload,
+  faCheckToSlot,
+  faXmarkCircle,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -66,6 +69,8 @@ library.add(
   faBell,
   faTimes,
   faCheck,
+  faCheckToSlot,
+  faXmarkCircle,
   faGauge,
   faGears,
   faShareNodes,
@@ -93,7 +98,8 @@ library.add(
   faPlug,
   faSearch,
   faEye,
-  faDownload
+  faDownload,
+  faShare
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

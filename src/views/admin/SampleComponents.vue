@@ -1,137 +1,188 @@
 <template>
-  <div class="bg-gray-100">
-    <div class="container mx-auto">
-      <div role="article" class="bg-gray-100 py-12 md:px-8">
-        <div class="px-4 xl:px-0 py-10">
-          <div class="flex flex-col lg:flex-row flex-wrap">
-            <div class="mt-4 lg:mt-0 lg:w-3/5">
-              <div>
-                <h1
-                  class="text-3xl ml-2 lg:ml-0 lg:text-4xl font-bold text-gray-900 tracking-normal lg:w-11/12"
-                >
-                  Frequently asked questions
-                </h1>
-              </div>
-            </div>
-            <div
-              class="lg:w-2/5 flex mt-10 ml-2 lg:ml-0 lg:mt-0 lg:justify-end"
+  <div class="flex flex-col md:flex-row justify-around flex-wrap">
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      status="lost"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      status="lost"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      status="lost"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      status="lost"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+    <device-card
+      class="basis-1/4"
+      name="Mappel Touch 45"
+      model="Mappel45 Ht 2028"
+      imei="MR2212M2111"
+      status="active"
+      type="laptop"
+      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+    />
+  </div>
+  <!-- ----------------------------- -->
+
+  <section class="text-gray-400 body-font bg-gray-900">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white"
+          >
+            Pitchfork Kickstarter Taxidermy
+          </h1>
+          <div class="h-1 w-20 bg-red-500 rounded"></div>
+        </div>
+        <p
+          class="lg:w-1/2 w-full leading-relaxed text-gray-400 text-opacity-90"
+        >
+          Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+          gentrify, subway tile poke farm-to-table. Franzen you probably haven't
+          heard of them man bun deep jianbing selfies heirloom prism food truck
+          ugh squid celiac humblebrag.
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://dummyimage.com/720x400"
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-red-400 text-xs font-medium title-font"
             >
-              <div class="pt-2 relative text-gray-600">
-                <input
-                  class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                  type="search"
-                  name="search"
-                  placeholder="Search"
-                />
-                <button
-                  type="submit"
-                  class="focus:ring-2 focus:ring-offset-2 text-gray-600 focus:text-indigo-700 focus:rounded-full focus:bg-gray-100 focus:ring-indigo-700 bg-white focus:outline-none absolute right-0 top-0 mt-5 mr-4"
-                >
-                  <svg
-                    class="h-4 w-4 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    version="1.1"
-                    id="Capa_1"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 56.966 56.966"
-                    style="enable-background: new 0 0 56.966 56.966"
-                    xml:space="preserve"
-                    width="512px"
-                    height="512px"
-                  >
-                    <path
-                      d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+              SUBTITLE
+            </h3>
+            <h2 class="text-lg text-white font-medium title-font mb-4">
+              Chichen Itza
+            </h2>
+            <p class="leading-relaxed text-base">
+              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.
+            </p>
           </div>
         </div>
-        <div class="px-6 xl:px-0">
-          <div
-            class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pb-6 gap-8"
-          >
-            <card-faq
-              title="Account related questions"
-              color="text-site-yellow-1"
-              icon="fingerprint"
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://dummyimage.com/721x401"
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-red-400 text-xs font-medium title-font"
             >
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-              <accordion header="Just some random things you know">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Deserunt tempora doloribus velit, illo accusamus error
-                necessitatibus atque nemo at nisi? Est perferendis repudiandae
-                eius distinctio
-              </accordion>
-            </card-faq>
-            <card-faq
-              title="Account related questions"
-              color="text-site-gray-2"
-              icon="lock"
+              SUBTITLE
+            </h3>
+            <h2 class="text-lg text-white font-medium title-font mb-4">
+              Colosseum Roma
+            </h2>
+            <p class="leading-relaxed text-base">
+              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.
+            </p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://dummyimage.com/722x402"
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-red-400 text-xs font-medium title-font"
             >
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-              <accordion header="Just some random things you know">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Deserunt tempora doloribus velit, illo accusamus error
-                necessitatibus atque nemo at nisi? Est perferendis repudiandae
-                eius distinctio
-              </accordion>
-            </card-faq>
-            <card-faq
-              title="Account related questions"
-              color="text-site-green-3"
-              icon="file-contract"
+              SUBTITLE
+            </h3>
+            <h2 class="text-lg text-white font-medium title-font mb-4">
+              Great Pyramid of Giza
+            </h2>
+            <p class="leading-relaxed text-base">
+              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.
+            </p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-6"
+              src="https://dummyimage.com/723x403"
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-red-400 text-xs font-medium title-font"
             >
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-
-              <accordion header="Just some random things you know">
-                And inside here is somemore randomestestthing you can possibly
-                ask yourlse you kno
-              </accordion>
-              <accordion header="Just some random things you know">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Deserunt tempora doloribus velit, illo accusamus error
-                necessitatibus atque nemo at nisi? Est perferendis repudiandae
-                eius distinctio
-              </accordion>
-            </card-faq>
+              SUBTITLE
+            </h3>
+            <h2 class="text-lg text-white font-medium title-font mb-4">
+              San Francisco
+            </h2>
+            <p class="leading-relaxed text-base">
+              Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- -------------------------------------------- -->
 </template>
 
 <script>
-import Accordion from "@/components/shared/Accordion.vue/";
-import CardFaq from "@/components/Cards/CardFaq.vue";
+import wave from "@/assets/img/wave.svg";
+import waveyellow from "@/assets/img/waveyellow.svg";
+import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
 export default {
   name: "MyComponent",
+  data() {
+    return {
+      wave,
+      waveyellow,
+    };
+  },
   components: {
-    CardFaq,
-    Accordion,
+    DeviceCard,
   },
 };
 </script>
+DeviceCard
