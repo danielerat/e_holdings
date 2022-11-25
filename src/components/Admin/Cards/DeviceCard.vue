@@ -1,7 +1,7 @@
 <template>
   <div
-    class="basis-1/4 relative rounded-xl bg-gradient-to-tr from-site-white-4 to-site-white-5 border border-site-white-3 hover:bg-gradient-to-br cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
-    :style="{ backgroundImage: 'url(' + waveyellow + ')' }"
+    class="relative rounded-xl bg-gradient-to-tr from-site-white-4 to-site-white-5 border border-site-white-3 hover:bg-gradient-to-br cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
+    :style="{ backgroundImage: 'url(' + picture + ')' }"
   >
     <span
       class="absolute top-4 rounded-full py-1.5 text-xs font-medium text-gray-1"
@@ -9,29 +9,30 @@
       Since: July,15,2022
     </span>
     <span
-      class="absolute right-4 top-4 rounded-full bg-site-yellow-4 px-3 py-1.5 text-xs font-medium text-site-yellow-1"
+      class="absolute right-4 top-4 rounded-full px-3 py-1.5 text-xs font-medium"
+      :class="[typeClass]"
     >
-      Lost
+      {{ status }}
     </span>
 
-    <div class="mt-4 text-gray-500 sm:pr-8">
+    <div class="mt-4 text-gray-500">
       <div class="flex justify-around">
         <p>
-          <fa icon="mobile-button" class="text-xl" />
+          <fa :icon="type" class="text-xl" />
         </p>
-        <p class="text-xs">SN/IMEI: S14525MKGP3572</p>
+        <p class="text-xs">SN/IMEI: {{ imei }}</p>
       </div>
 
       <h3 class="mt-4 text-sm text-site-gray-1">
-        <p class="font-bold">Apple MacBook Pro Gen 13</p>
+        <p class="font-bold">{{ name }}</p>
 
-        <p class="text-xs text-site-gray-2">Model: MacBookPro18,3</p>
+        <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
 
         <p></p>
       </h3>
 
-      <p class="mt-2 hidden text-xs sm:block">
-        Lorem whatever is the what that we actually care about nothing else...
+      <p class="border mt-2 hidden text-xs text-gray-4 sm:block">
+        {{ text }}
       </p>
 
       <div class="flex mt-5 text-lg sm:block">
@@ -56,9 +57,66 @@
 </template>
 
 <script>
+import waveblue from "@/assets/img/wave.svg";
+import waveyellow from "@/assets/img/waveyellow.svg";
 export default {
   name: "DeviceCard",
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    model: {
+      type: String,
+      required: true,
+    },
+    imei: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: false,
+      default: "mobile-button",
+      validator(value) {
+        return ["mobile-button", "laptop", "plug"].includes(value);
+      },
+    },
+    status: {
+      type: String,
+      required: false,
+      default: "active",
+      validator(value) {
+        return ["active", "lost"].includes(value);
+      },
+    },
+  },
+  data() {
+    return {
+      waveblue,
+      waveyellow,
+    };
+  },
+  computed: {
+    picture() {
+      if (this.status == "active") return this.waveblue;
+      return this.waveyellow;
+    },
+    typeClass() {
+      return { [this.status]: true };
+    },
+  },
 };
 </script>
-
-<style></style>
+<style scoped>
+.lost {
+  @apply bg-site-yellow-4 text-site-yellow-1;
+}
+.active {
+  @apply bg-green-100 text-green-600;
+}
+</style>
