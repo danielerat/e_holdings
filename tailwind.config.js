@@ -19,7 +19,7 @@ module.exports = {
         "site-gray-2": "#334E68",
         "site-gray-3": "#627D98",
         "site-gray-4": "#9FB3C8",
-        "site-gray-5": "#334E68",
+        "site-gray-5": "#c8dde3",
 
         "site-green-1": "#014D40",
         "site-green-2": "#147D64",

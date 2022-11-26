@@ -59,6 +59,7 @@
           </div>
         </div>
 
+        <hr class="my-4 md:min-w-full" />
         <!-- Heading -->
         <h6
           class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
@@ -78,67 +79,20 @@
                 class="text-xs uppercase py-3 font-bold block"
                 :class="[
                   isActive
-                    ? 'text-site-green-1 hover:text-site-green-2'
-                    : 'text-site-gray-1 hover:text-site-gray-5',
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
                 ]"
               >
                 <fa
                   :icon="['fa', 'gauge']"
                   class="text-xl"
-                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
                 Dashboard
               </a>
             </router-link>
           </li>
-          <li class="items-center">
-            <router-link
-              to="/admin/devices"
-              v-slot="{ href, navigate, isActive }"
-            >
-              <a
-                :href="href"
-                @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
-                :class="[
-                  isActive
-                    ? 'text-site-green-1 hover:text-site-green-2'
-                    : 'text-site-gray-1 hover:text-site-gray-5',
-                ]"
-              >
-                <fa
-                  :icon="['fa', 'mobile-button']"
-                  class="text-xl"
-                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
-                ></fa>
-                Devices
-              </a>
-            </router-link>
-          </li>
-          <li class="items-center">
-            <router-link
-              to="/admin/invoice"
-              v-slot="{ href, navigate, isActive }"
-            >
-              <a
-                :href="href"
-                @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
-                :class="[
-                  isActive
-                    ? 'text-site-green-1 hover:text-site-green-2'
-                    : 'text-site-gray-1 hover:text-site-gray-5',
-                ]"
-              >
-                <fa
-                  :icon="['fa', 'file-contract']"
-                  class="text-xl"
-                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
-                ></fa>
-                Invoices
-              </a>
-            </router-link>
-          </li>
+
           <li class="items-center">
             <router-link
               to="/admin/settings"
@@ -150,16 +104,53 @@
                 class="text-xs uppercase py-3 font-bold block"
                 :class="[
                   isActive
-                    ? 'text-site-green-1 hover:text-site-green-2'
-                    : 'text-site-gray-1 hover:text-site-gray-5',
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
                 ]"
               >
                 <fa
                   :icon="['fa', 'gears']"
                   class="text-xl"
-                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
                 Settings
+              </a>
+            </router-link>
+          </li>
+        </ul>
+        <hr class="my-4 md:min-w-full" />
+        <!-- Heading -->
+        <h6
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Device Management
+        </h6>
+        <!-- Navigation -->
+
+        <ul
+          class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
+        >
+          <li class="items-center">
+            <router-link
+              to="/admin/devices"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'mobile-button']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Devices
               </a>
             </router-link>
           </li>
@@ -174,16 +165,40 @@
                 class="text-xs uppercase py-3 font-bold block"
                 :class="[
                   isActive
-                    ? 'text-site-green-1 hover:text-site-green-2'
-                    : 'text-site-gray-1 hover:text-site-gray-5',
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
                 ]"
               >
                 <fa
                   :icon="['fa', 'share-nodes']"
                   class="text-xl"
-                  :class="[isActive ? 'text-site-green-1' : 'opacity-75']"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
                 AssignDevice
+              </a>
+            </router-link>
+          </li>
+          <li class="items-center">
+            <router-link
+              to="/admin/invoice"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'file-contract']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Invoices
               </a>
             </router-link>
           </li>
