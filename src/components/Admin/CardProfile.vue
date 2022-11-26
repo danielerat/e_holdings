@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words bg-site-white-4 w-full mb-6 shadow-xl rounded-lg mt-16"
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-xl rounded-lg mt-16 lithopedion"
   >
     <div class="px-6">
       <div class="flex flex-wrap justify-center">
@@ -98,3 +98,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.lithopedion {
+  background: #f0f4f8 url("@/assets/img/wavelayer.svg") right no-repeat;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

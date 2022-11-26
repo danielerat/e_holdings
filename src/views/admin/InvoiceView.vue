@@ -1,7 +1,7 @@
 <template>
   <div>
     <sidebar />
-    <div class="relative md:ml-64 bg-site-white-4">
+    <div class="relative md:ml-64 bg-site-white-5">
       <admin-navbar path="List of all Invoices " down="true" />
 
       <div class="flex justify-around flex-wrap mb-6">

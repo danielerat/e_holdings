@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words bg-site-white-3 rounded mb-6 xl:mb-0 shadow-lg ring-4 ring-site-white-3 hover:ring-site-white-2 ring-inset"
+    class="relative flex flex-col min-w-0 break-words rounded mb-6 xl:mb-0 shadow-lg ring-2 ring-site-yellow-3 hover:ring-site-white-2 lithopedion"
   >
     <div class="flex-auto p-4">
       <div class="flex flex-wrap">
@@ -28,7 +28,7 @@
           ></fa>
           {{ statPercent }}%
         </span>
-        <span class="whitespace-nowrap">{{ statDescripiron }}</span>
+        <span class="whitespace-nowrap font-bold">{{ statDescripiron }}</span>
       </p>
     </div>
   </div>
@@ -79,3 +79,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.lithopedion {
+  background: #fff3c4 url("@/assets/img/wavecard.svg") top no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+</style>

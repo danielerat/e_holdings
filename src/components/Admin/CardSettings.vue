@@ -1,8 +1,8 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0"
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0 lithopedion"
   >
-    <div class="rounded-t bg-site-white-5 mb-0 px-6 py-6">
+    <div class="rounded-t bg-site-green-5 mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
         <h6 class="text-site-gray-1 text-xl font-bold">My account</h6>
         <button
@@ -13,7 +13,7 @@
         </button>
       </div>
     </div>
-    <div class="flex-auto px-4 lg:px-10 py-10 pt-0 bg-site-white-4">
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
       <form>
         <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
         <div class="flex flex-wrap">
@@ -128,3 +128,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.lithopedion {
+  background: #f0f4f8 url("@/assets/img/wavelayer.svg") top no-repeat;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

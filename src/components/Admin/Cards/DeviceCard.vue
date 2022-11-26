@@ -31,7 +31,7 @@
         <p></p>
       </h3>
 
-      <p class="border mt-2 hidden text-xs text-gray-4 sm:block">
+      <p class="mt-2 hidden text-xs text-gray-4 sm:block">
         {{ text }}
       </p>
 

@@ -61,7 +61,7 @@
 
         <!-- Heading -->
         <h6
-          class="md:min-w-full text-site-gray-4 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
           Admin Layout Pages
         </h6>
