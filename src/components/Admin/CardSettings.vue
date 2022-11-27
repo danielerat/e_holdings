@@ -1,8 +1,8 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0 lithopedion"
+    class="flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0 lithopedion"
   >
-    <div class="rounded-t bg-site-green-5 mb-0 px-6 py-6">
+    <div class="rounded-t bg-site-yellow-4 mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
         <h6 class="text-site-gray-1 text-xl font-bold">My account</h6>
         <button
@@ -130,9 +130,8 @@ export default {
 </script>
 <style scoped>
 .lithopedion {
-  background: #f0f4f8 url("@/assets/img/wavelayer.svg") top no-repeat;
-  background-position: right;
-  background-repeat: no-repeat;
+  background: #f0f4f8 url("@/assets/img/wavelayergreen.svg");
+  background-position: right center;
   background-size: cover;
 }
 </style>

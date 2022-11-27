@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative rounded-xl bg-gradient-to-tr from-site-white-4 to-site-white-5 border border-site-white-3 hover:bg-gradient-to-br cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
+    class="relative rounded-xl bg-site-white-5 border-site-white-3 cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
     :style="{ backgroundImage: 'url(' + picture + ')' }"
   >
     <span
@@ -118,5 +118,13 @@ export default {
 }
 .active {
   @apply bg-green-100 text-green-600;
+}
+</style>
+<style scoped>
+.lithopedion {
+  background: #fff3c4 url("@/assets/img/wavecard.svg") top no-repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 </style>

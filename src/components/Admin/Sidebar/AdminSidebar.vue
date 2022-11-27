@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="md:left-0 text-left md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-site-white-5 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+    class="md:left-0 text-left md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-site-white-5 flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6 dark:bg-site-gray-2"
   >
     <div
       class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
@@ -11,11 +11,14 @@
         type="button"
         v-on:click="toggleCollapseShow('bg-white m-2 py-3 px-6')"
       >
-        <fa :icon="['fa', 'bars']" class="text-site-gray-1 text-2xl" />
+        <fa
+          :icon="['fa', 'bars']"
+          class="text-site-gray-1 text-2xl dark:text-site-yellow-3"
+        />
       </button>
       <!-- Brand -->
       <router-link
-        class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+        class="md:block text-left md:pb-2 text-site-green-5 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 dark:text-site-white-5"
         to="/"
       >
         E-Holdings
@@ -36,12 +39,12 @@
       >
         <!-- Collapse header -->
         <div
-          class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
+          class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-site-yellow-2"
         >
           <div class="flex flex-wrap">
             <div class="w-6/12">
               <router-link
-                class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                 to="/"
               >
                 E-Holdings
@@ -53,7 +56,10 @@
                 class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border-solid border-transparent"
                 v-on:click="toggleCollapseShow('hidden')"
               >
-                <fa :icon="['fa', 'times']" class="text-site-green-1 text-xl" />
+                <fa
+                  :icon="['fa', 'times']"
+                  class="text-site-green-1 text-xl dark:text-site-yellow-3"
+                />
               </button>
             </div>
           </div>
@@ -62,7 +68,7 @@
         <hr class="my-4 md:min-w-full" />
         <!-- Heading -->
         <h6
-          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
         >
           Admin Layout Pages
         </h6>
@@ -121,7 +127,7 @@
         <hr class="my-4 md:min-w-full" />
         <!-- Heading -->
         <h6
-          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
         >
           Device Management
         </h6>

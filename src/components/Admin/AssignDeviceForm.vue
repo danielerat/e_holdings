@@ -1,22 +1,22 @@
 <template>
-  <div class="w-full mb-5">
+  <div class="w-full py-5 bg-site-yellow-4 rounded-t-lg">
     <div class="flex justify-around">
       <div
-        class="flex w-20 hover:bg-site-white-3 h-20 rounded-full align-center justify-center border border-site-white-4 shadow-xl overflow-hidden"
+        class="flex w-20 hover:bg-site-green-3 h-20 rounded-full align-center justify-center border border-site-gray-1 shadow-xl overflow-hidden"
       >
         <button class="">
           <fa icon="mobile-button" class="text-5xl text-site-gray-1"></fa>
         </button>
       </div>
       <div
-        class="flex w-20 hover:bg-site-white-3 h-20 rounded-full align-center justify-center border border-site-white-4 shadow-xl overflow-hidden"
+        class="flex w-20 hover:bg-site-green-3 h-20 rounded-full align-center justify-center border border-site-gray-1 shadow-xl overflow-hidden"
       >
         <button class="">
           <fa icon="laptop" class="text-5xl text-site-gray-1"></fa>
         </button>
       </div>
       <div
-        class="flex w-20 hover:bg-site-white-3 h-20 rounded-full align-center justify-center border border-site-white-4 shadow-xl overflow-hidden"
+        class="flex w-20 hover:bg-site-green-3 h-20 rounded-full align-center justify-center border border-site-gray-1 shadow-xl overflow-hidden"
       >
         <button class="">
           <fa icon="plug" class="text-5xl text-site-gray-1"></fa>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="lithopedion p-4 rounded-b-lg">
     <form>
       <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
       <div class="flex flex-wrap">
@@ -185,3 +185,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.lithopedion {
+  background: #f0f4f8 url("@/assets/img/wavelayergreen.svg") top no-repeat;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

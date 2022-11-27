@@ -8,7 +8,7 @@
         <h1 class="font-bold text-3xl text-site-green-2">
           CHECK YOUR DEVICE TO MAKE SURE IT'S CLEAN
         </h1>
-        <h1 class="text px-5">
+        <h1 class="text w-1/2 mx-auto text-site-gray-2 px-5 my-5">
           This section will help you check wether the device you are buying has
           beel stolen reported lost or simply belongs to the person claiming so
         </h1>

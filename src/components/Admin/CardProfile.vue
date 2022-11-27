@@ -101,9 +101,9 @@ export default {
 
 <style scoped>
 .lithopedion {
-  background: #f0f4f8 url("@/assets/img/wavelayer.svg") right no-repeat;
-
-  background-repeat: no-repeat;
+  /* @apply dark:bg-site-gray-1; */
+  background: #f0f4f8 url("@/assets/img/wavelayergreen.svg");
+  background-position: right center;
   background-size: cover;
 }
 </style>

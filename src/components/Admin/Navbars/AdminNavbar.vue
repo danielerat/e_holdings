@@ -8,7 +8,7 @@
     >
       <!-- Brand -->
       <a
-        class="text-site-gray-1 text-sm uppercase hidden lg:inline-block font-semibold"
+        class="text-site-gray-1 text-sm uppercase hidden lg:inline-block font-semibold dark:text-site-white-5"
         href="javascript:void(0)"
       >
         {{ path }}

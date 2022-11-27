@@ -1,14 +1,14 @@
 <template>
   <div>
     <a
-      class="text-blueGray-500 block"
+      class="text-site-gray-1 block dark:text-site-yellow-3"
       href="#pablo"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >
       <div class="items-center flex">
         <span
-          class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+          class="w-12 h-12 text-sm text-white inline-flex items-center justify-center rounded-full"
         >
           <img
             alt="..."
@@ -20,7 +20,7 @@
     </a>
     <div
       ref="popoverDropdownRef"
-      class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+      class="bg-site-white-4 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 dark:bg-site-gray-1 dark:text-site-gray-5"
       v-bind:class="{
         hidden: !dropdownPopoverShow,
         block: dropdownPopoverShow,
@@ -28,26 +28,27 @@
     >
       <a
         href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap dark:text-site-white-5"
       >
         Action
       </a>
       <a
         href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap dark:text-site-white-5"
       >
         Another action
       </a>
       <a
         href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap dark:text-site-white-5"
       >
         Something else here
       </a>
-      <div class="h-0 my-2 border border-solid border-blueGray-100" />
+
+      <hr class="my-4 md:min-w-full" />
       <a
         href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap dark:text-site-white-5"
       >
         Seprated link
       </a>
