@@ -9,7 +9,11 @@
       <button
         class="cursor-pointer text-site-gray-1 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border-solid border-transparent"
         type="button"
-        v-on:click="toggleCollapseShow('bg-white m-2 py-3 px-6')"
+        v-on:click="
+          toggleCollapseShow(
+            'bg-site-white-4 dark:bg-site-gray-2 m-2 py-3 px-6'
+          )
+        "
       >
         <fa
           :icon="['fa', 'bars']"
@@ -44,7 +48,7 @@
           <div class="flex flex-wrap">
             <div class="w-6/12">
               <router-link
-                class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 text-site-green-5"
                 to="/"
               >
                 E-Holdings

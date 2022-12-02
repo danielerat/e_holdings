@@ -4,7 +4,7 @@
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="My Device " down="true" />
 
-      <!-- Settings -->
+      <!-- Settpings -->
       <single-device :timeline="timeline" />
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">

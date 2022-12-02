@@ -27,7 +27,7 @@
             <fa icon="flag" class="text-site-yellow-1" />
             <span class="ml-4 flex items-start flex-col leading-none">
               <span class="text-xs text-gray-600 mb-1">Lost or Stolen</span>
-              <span class="title-font font-medium">Report as Device</span>
+              <span class="title-font font-medium">Report your Device</span>
             </span>
           </button>
           <button
@@ -35,7 +35,7 @@
           >
             <fa icon="circle-info" class="text-site-yellow-1" />
             <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Dispose Device</span>
+              <span class="text-xs text-gray-600 mb-1">Dispose it</span>
               <span class="title-font font-medium">Report as Dead</span>
             </span>
           </button>
@@ -133,6 +133,19 @@
         </div>
       </div>
     </section>
+
+    <div class="mb-6 text-center">
+      <h2
+        class="text-xs text-site-yellow-3 tracking-widest font-medium title-font mb-1"
+      >
+        YOUR DEVICE TIMELINE
+      </h2>
+      <h1
+        class="md:text-3xl text-2xl font-medium title-font text-site-gray-1 dark:text-site-white-4"
+      >
+        From The Shop To Your Hand
+      </h1>
+    </div>
     <device-timeline :timeline="timeline"></device-timeline>
   </div>
 </template>
