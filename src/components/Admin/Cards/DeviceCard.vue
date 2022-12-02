@@ -40,7 +40,7 @@
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
-            <fa icon="eye" />
+            <router-link to="/admin/device"><fa icon="eye" /></router-link>
           </div>
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"

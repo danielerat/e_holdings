@@ -7,7 +7,7 @@
     >
       <div class="flex items-center">
         <div
-          class="flex z-10 justify-center items-center w-16 h-16 bg-site-gray-4 rounded-full ring-site-gray-5 dark:bg-site-yellow-4 ring-8 dark:ring-site-yellow-5 shrink-0"
+          class="flex justify-center items-center w-16 h-16 bg-site-gray-4 rounded-full ring-site-gray-5 dark:bg-site-yellow-4 ring-8 dark:ring-site-yellow-5 shrink-0"
         >
           <fa
             icon="calendar-day"
@@ -24,7 +24,7 @@
           v-if="index != Object.keys(timeline).length - 1"
           class="text-sm md:text-base font-semibold text-site-gray-2 dark:text-site-white-4"
         >
-          {{ index }}{{ device.name }}
+          {{ device.name }}
         </h3>
         <a
           v-if="index == Object.keys(timeline).length - 1"
