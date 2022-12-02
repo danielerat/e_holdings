@@ -51,6 +51,7 @@ import {
   faXmarkCircle,
   faShare,
   faCalendarDay,
+  faFlag,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -101,7 +102,8 @@ library.add(
   faEye,
   faDownload,
   faShare,
-  faCalendarDay
+  faCalendarDay,
+  faFlag
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

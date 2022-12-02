@@ -1,62 +1,64 @@
 <template>
-  <div class="flex flex-col md:flex-row justify-around flex-wrap">
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      status="lost"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      status="lost"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      status="lost"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      status="lost"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-    <device-card
-      class="basis-1/4"
-      name="Mappel Touch 45"
-      model="Mappel45 Ht 2028"
-      imei="MR2212M2111"
-      status="active"
-      type="laptop"
-      text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-    />
-  </div>
+  <ol class="items-center sm:flex">
+    <li v-for="device in path" :key="device" class="relative mb-6 sm:mb-0">
+      <div class="flex items-center">
+        <div
+          class="flex z-10 justify-center items-center w-16 h-16 bg-site-gray-4 rounded-full ring-0 ring-site-gray-5 dark:bg-site-yellow-4 sm:ring-8 dark:ring-site-yellow-5 shrink-0"
+        >
+          <fa
+            icon="calendar-day"
+            class="text-2xl text-site-gray-2 dark:text-site-yellow-2"
+          />
+        </div>
+        <div
+          class="hidden sm:flex w-full bg-site-gray-2 h-0.5 dark:bg-site-yellow-2"
+        ></div>
+      </div>
+      <div class="mt-3 sm:pr-8">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-site-white-4">
+          Mumbere Electronics
+        </h3>
+        <time
+          class="block mb-2 text-sm font-normal leading-none text-site-green-3"
+        >
+          On December 2, 2021
+        </time>
+      </div>
+    </li>
+    <li class="relative mb-6 sm:mb-0">
+      <div class="flex items-center">
+        <div
+          class="flex z-10 justify-center items-center w-16 h-16 bg-site-gray-4 rounded-full ring-0 ring-site-gray-5 dark:bg-site-yellow-4 sm:ring-8 dark:ring-site-yellow-5 shrink-0"
+        >
+          <fa
+            icon="calendar-day"
+            class="text-2xl text-site-gray-2 dark:text-site-yellow-2"
+          />
+        </div>
+      </div>
+      <div class="mt-3 sm:pr-8">
+        <a
+          href="#"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-site-green-5 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          <fa
+            icon="file-contract"
+            class="text-site-gray-2 mr-2 dark:text-site-yellow-2"
+          />
+          Download ZIP
+        </a>
+        <time
+          class="block mb-2 text-sm font-normal leading-none text-site-green-3"
+        >
+          On December 2, 2021
+        </time>
+      </div>
+    </li>
+  </ol>
+
   <!-- ----------------------------- -->
 
-  <section class="text-gray-400 body-font bg-gray-900">
+  <section class="my-96 text-gray-400 body-font bg-gray-900">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full mb-20">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -171,17 +173,31 @@
 <script>
 import wave from "@/assets/img/wave.svg";
 import waveyellow from "@/assets/img/waveyellow.svg";
-import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
+// import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
 export default {
   name: "MyComponent",
   data() {
     return {
       wave,
       waveyellow,
+      path: {
+        1: {
+          name: "Mumbere Electronics",
+          date: "December 31, 2021",
+        },
+        2: {
+          name: "New Ownser ",
+          date: "December 31, 2021",
+        },
+        3: {
+          name: "New Ownser ",
+          date: "December 31, 2021",
+        },
+      },
     };
   },
   components: {
-    DeviceCard,
+    // DeviceCard,
   },
 };
 </script>
