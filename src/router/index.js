@@ -10,7 +10,8 @@ import SupportView from "@/views/SupportView.vue";
 import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
 import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
-import Device from "@/views/admin/Devices.vue";
+import DevicesView from "@/views/admin/DevicesView.vue";
+import DeviceView from "@/views/admin/DeviceView.vue";
 const routes = [
   {
     path: "/",
@@ -81,7 +82,12 @@ const routes = [
   {
     path: "/admin/devices",
     name: "devices",
-    component: Device,
+    component: DevicesView,
+  },
+  {
+    path: "/admin/device",
+    name: "device",
+    component: DeviceView,
   },
   {
     path: "/admin/assign-device",

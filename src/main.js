@@ -50,6 +50,7 @@ import {
   faCheckToSlot,
   faXmarkCircle,
   faShare,
+  faCalendarDay,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -99,7 +100,8 @@ library.add(
   faSearch,
   faEye,
   faDownload,
-  faShare
+  faShare,
+  faCalendarDay
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
