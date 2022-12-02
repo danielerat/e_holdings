@@ -1,5 +1,8 @@
 <template>
-  <button :class="[buttonClass, sizeClass]">{{ text }}</button>
+  <button :class="[buttonClass, sizeClass]">
+    <fa v-if="icon != ''" :icon="frontIcon"></fa>
+    {{ text }}
+  </button>
 </template>
 <script>
 export default {
@@ -14,7 +17,9 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary", "tertiary"].includes(value);
+        return ["primary", "secondary", "tertiary", "quaternary"].includes(
+          value
+        );
       },
     },
     size: {
@@ -24,6 +29,11 @@ export default {
       validator(value) {
         return ["sm", "md", "lg"].includes(value);
       },
+    },
+    frontIcon: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
 
@@ -48,6 +58,9 @@ button {
   @apply text-white bg-site-gray-1 hover:bg-site-gray-2 active:bg-site-gray-3;
 }
 .tertiary {
+  @apply bg-site-white-5 text-site-green-1 border-2 border-site-green-1 hover:bg-site-green-2 hover:text-site-white-5 active:bg-site-green-3;
+}
+.quaternary {
   @apply bg-site-white-5 text-site-gray-1 border-2 border-site-gray-1 hover:bg-site-gray-2 hover:text-site-white-5 active:bg-site-gray-3;
 }
 .sm {
