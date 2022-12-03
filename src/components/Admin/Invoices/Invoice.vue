@@ -90,7 +90,7 @@
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
               <li class="hover:text-site-green-4">
-                <fa icon="eye"></fa>
+                <fa icon="eye" @click="showInvoice"></fa>
               </li>
               <li class="hover:text-site-green-4" @click="donloadInvoice">
                 <fa icon="download"></fa>
@@ -302,6 +302,7 @@
 <script>
 export default {
   name: "Invoice",
+
   methods: {
     donloadInvoice() {
       const Toast = this.$swal.mixin({
@@ -319,6 +320,14 @@ export default {
       Toast.fire({
         icon: "success",
         title: "Document Generated, Download string in a few",
+      });
+    },
+    showInvoice() {
+      this.$swal.fire({
+        imageUrl:
+          "https://img.freepik.com/free-vector/consent-concept-illustration_114360-8739.jpg?w=740&t=st=1670101469~exp=1670102069~hmac=71707c4078b8cac7ed325721b0679863a16202cdb50f553712b401159849dcb4",
+        imageHeight: 500,
+        imageAlt: "A tall image",
       });
     },
   },

@@ -17,6 +17,12 @@
           >
             Report Your Device For Assistence
           </h1>
+          <h2
+            class="w-3/4 text-sm text-center text-site-gray-4 tracking-widest font-medium title-font mb-1"
+          >
+            Report Your device if lost or stolen so that no one would be able to
+            legally sell it anywhere
+          </h2>
         </div>
         <div
           class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4"
