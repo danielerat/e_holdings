@@ -2,6 +2,9 @@
   <index-navbar></index-navbar>
   <hero></hero>
   <short-about-us />
+
+  <device-lookup />
+
   <section class="bg-site-white-5">
     <div class="content-center container mx-auto py-6">
       <div class="text-center w-4/5 mx-auto">
@@ -122,6 +125,7 @@ import ActionButton from "@/components/shared/ActionButton.vue";
 import documentspill from "@/assets/img/documentpill.jpg";
 import Accordion from "@/components/shared/Accordion.vue/";
 import CardFaq from "@/components/Cards/CardFaq.vue";
+import DeviceLookup from "@/components/Admin/DeviceLookup.vue";
 
 export default {
   name: "Index",
@@ -135,6 +139,7 @@ export default {
     ActionButton,
     CardFaq,
     Accordion,
+    DeviceLookup,
   },
   data() {
     return {

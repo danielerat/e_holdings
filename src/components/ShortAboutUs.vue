@@ -1,12 +1,14 @@
 <template>
   <section
-    class="main-section bg-no-repeat bg-fixed md:bg-[length:300px_300px] bg-[length:200px_200px]"
+    class="main-section bg-no-repeat bg-fixed bg-cover"
     :style="{ backgroundImage: 'url(' + pattern + ')' }"
   >
     <section class="mx-auto container">
       <div class="px-4 lg:px-0">
         <div class="flex items-center flex-col px-4">
-          <p class="uppercase text-lg text-center text-gray-600 leading-normal">
+          <p
+            class="my-5 uppercase text-lg text-center text-gray-600 leading-normal"
+          >
             What do we do for you ?
           </p>
           <h2
@@ -105,7 +107,7 @@
 </template>
 
 <script>
-import pattern from "@/assets/img/pattern.png";
+import pattern from "@/assets/img/yellowbizarewave.svg";
 export default {
   name: "ShortAboutUs",
   data() {
