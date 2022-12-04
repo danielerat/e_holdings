@@ -52,6 +52,7 @@ import {
   faShare,
   faCalendarDay,
   faFlag,
+  faCertificate,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -103,7 +104,8 @@ library.add(
   faDownload,
   faShare,
   faCalendarDay,
-  faFlag
+  faFlag,
+  faCertificate
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

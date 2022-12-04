@@ -12,6 +12,7 @@ import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
 import DevicesView from "@/views/admin/DevicesView.vue";
 import DeviceView from "@/views/admin/DeviceView.vue";
+import TransferDeviceView from "@/views/admin/TransferDeviceView.vue";
 const routes = [
   {
     path: "/",
@@ -88,6 +89,11 @@ const routes = [
     path: "/admin/device",
     name: "device",
     component: DeviceView,
+  },
+  {
+    path: "/admin/transfer",
+    name: "transfer",
+    component: TransferDeviceView,
   },
   {
     path: "/admin/assign-device",

@@ -52,10 +52,12 @@
       <div class="container px-3 py-24 mx-auto">
         <div class="lg:w-4/5 mx-auto flex flex-wrap justify-around">
           <div
-            class="relative lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0 bg-no-repeat"
+            class="relative lg:w-1/2 w-full lg:p-10 lg:py-6 mb-6 lg:mb-0 bg-no-repeat place-self-center dark:bg-site-white-1"
             :style="{ backgroundImage: 'url(' + picture + ')' }"
           >
-            <h2 class="text-sm title-font text-site-white-4 tracking-widest">
+            <h2
+              class="text-sm title-font text-site-white-4 tracking-widest dark:text-site-gray-1"
+            >
               Device Name
             </h2>
             <h1
@@ -104,7 +106,7 @@
             </span>
           </div> -->
             <span
-              class="absolute bg-site-white-3 text-site-gray-1 right-0 top-0 rounded-full px-3 title-font py-1.5 text-sm font-medium"
+              class="absolute bg-site-white-3 text-site-gray-1 right-0 top-0 rounded-full px-3 title-font py-1.5 text-sm font-medium dark:bg-site-gray-1 dark:text-site-yellow-3"
             >
               Frw 325,000
             </span>
@@ -122,19 +124,21 @@
                   text="contract"
                   frontIcon="file-contract"
                 />
-                <action-button
-                  type="primary"
-                  size="sm"
-                  text="Transfer"
-                  frontIcon="share"
-                />
+                <router-link to="transfer">
+                  <action-button
+                    type="primary"
+                    size="sm"
+                    text="Transfer"
+                    frontIcon="share"
+                  />
+                </router-link>
               </div>
             </div>
           </div>
           <img
             alt="ecommerce"
             class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-            src="https://images.unsplash.com/photo-1605360846332-1378e0c96955?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1904&q=80"
+            :src="mac"
           />
         </div>
       </div>
@@ -159,6 +163,7 @@
 <script>
 import DeviceTimeline from "@/components/Admin/DeviceTimeline.vue";
 import ActionButton from "@/components/shared/ActionButton.vue";
+import mac from "@/assets/img/mac.png";
 import picture from "@/assets/img/wave.svg";
 export default {
   name: "SingleDevice",
@@ -175,6 +180,7 @@ export default {
   data() {
     return {
       picture,
+      mac,
     };
   },
 };

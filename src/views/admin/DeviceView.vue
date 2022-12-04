@@ -1,14 +1,11 @@
 <template>
   <div>
     <sidebar />
-    <div
-      class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1 lithopedion"
-    >
+    <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="My Device " down="true" />
 
-      <!-- Settpings -->
       <single-device :timeline="timeline" />
-      <!-- ---- -->
+
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
       </div>
@@ -53,12 +50,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.lithopedion {
-  background: #f0f4f8 url("@/assets/img/wave_top_light_green.svg") no-repeat;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-</style>
+<style scoped></style>
