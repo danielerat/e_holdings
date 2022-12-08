@@ -1,6 +1,6 @@
 <template>
   <index-navbar />
-  <section class="mt-24">
+  <section class="py-24 lithopedion">
     <div class="container mx-auto px-4 h-full">
       <div class="flex content-center items-center justify-center h-full">
         <div class="w-full lg:w-6/12 px-4">
@@ -92,3 +92,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.lithopedion {
+  background: #f0f4f8 url("@/assets/img/roadWave.svg") top no-repeat;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

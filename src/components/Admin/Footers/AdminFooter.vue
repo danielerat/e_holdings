@@ -31,11 +31,7 @@
               </router-link>
             </li>
             <li>
-              <a
-                href="#"
-                target="_blank"
-                class="text-sm font-semibold block py-1 px-3"
-              >
+              <a href="#/contact" class="text-sm font-semibold block py-1 px-3">
                 Contact
               </a>
             </li>

@@ -86,6 +86,14 @@
                     Location
                   </a>
                 </li>
+                <li>
+                  <a
+                    class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                    href="#/check-device"
+                  >
+                    Check Device
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="w-full lg:w-4/12 px-4">

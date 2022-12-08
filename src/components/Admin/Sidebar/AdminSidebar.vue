@@ -166,6 +166,68 @@
           </li>
           <li class="items-center">
             <router-link
+              to="/admin/invoice"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'file-contract']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Invoices
+              </a>
+            </router-link>
+          </li>
+          <li class="items-center">
+            <router-link
+              to="/admin/assign-device"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'circle-plus']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Add Device
+              </a>
+            </router-link>
+          </li>
+        </ul>
+
+        <hr class="my-4 md:min-w-full" />
+        <!-- Heading -->
+        <h6
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
+        >
+          Business
+        </h6>
+        <!-- Navigation -->
+
+        <ul
+          class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
+        >
+          <li class="items-center">
+            <router-link
               to="/admin/assign-device"
               v-slot="{ href, navigate, isActive }"
             >
@@ -184,7 +246,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                AssignDevice
+                Assign Device
               </a>
             </router-link>
           </li>
@@ -209,6 +271,41 @@
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
                 Invoices
+              </a>
+            </router-link>
+          </li>
+        </ul>
+
+        <hr class="my-4 md:min-w-full" />
+        <!-- Heading -->
+        <h6
+          class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
+        >
+          Authentication
+        </h6>
+        <!-- Navigation -->
+
+        <ul
+          class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
+        >
+          <li class="items-center">
+            <router-link to="/login" v-slot="{ href, navigate, isActive }">
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'right-from-bracket']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Logout
               </a>
             </router-link>
           </li>
