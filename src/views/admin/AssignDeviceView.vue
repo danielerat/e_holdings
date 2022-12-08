@@ -2,7 +2,7 @@
   <div>
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
-      <admin-navbar path="Assign Device To a User" down="true" />
+      <admin-navbar path="Assign Device To a User" down="small" />
 
       <!-- Settings -->
       <div class="flex flex-wrap mx-auto align-baseline max-w-3xl p-6">

@@ -21,7 +21,7 @@
     </div>
   </nav>
 
-  <div v-if="down" class="xl:h-40 md:h-20"></div>
+  <div v-if="down" :class="[down]"></div>
   <!-- End Navbar -->
 </template>
 
@@ -38,10 +38,23 @@ export default {
       required: false,
     },
     down: {
-      type: Boolean,
-      default: false,
-      required: false,
+      type: String,
+      default: "",
+      validator(value) {
+        return ["small", "medium", "large"].includes(value);
+      },
     },
   },
 };
 </script>
+<style scoped>
+.small {
+  @apply xl:h-20 md:h-10;
+}
+.medium {
+  @apply xl:h-28 md:h-16;
+}
+.large {
+  @apply xl:h-40 md:h-20;
+}
+</style>

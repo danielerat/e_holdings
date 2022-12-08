@@ -2,7 +2,7 @@
   <div>
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
-      <admin-navbar path="List of all Invoices " down="true" />
+      <admin-navbar path="List of all Invoices " down="medium" />
 
       <div class="flex justify-around flex-wrap mb-6">
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">

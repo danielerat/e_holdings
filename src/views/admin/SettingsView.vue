@@ -2,7 +2,7 @@
   <div class="dark:bg-site-gray-1">
     <sidebar />
     <div class="relative md:ml-64">
-      <admin-navbar path="Account Settings" down="true" />
+      <admin-navbar path="Account Settings" down="medium" />
 
       <!-- Settings -->
       <div class="flex flex-wrap align-baseline">
