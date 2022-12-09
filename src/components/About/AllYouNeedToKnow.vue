@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24" style="height: 1100px">
+  <section class="py-24 dark:bg-site-gray-2" style="height: 1100px">
     <div class="xl:container xl:mx-auto">
       <div class="flex flex-col md:flex-row items-strech justify-center">
         <div class="md:w-3/5 relative">

@@ -1,17 +1,14 @@
 <template>
-  <body
-    class="py-12 2xl:px-20 px-6 xl:mx-auto xl:container overflow-y-hidden"
+  <div
+    class="py-12 2xl:px-20 px-6 xl:mx-auto xl:container overflow-y-hidden text-site-gray-1 dark:bg-site-gray-1 dark:text-site-yellow-5"
     style="overflow-y: hidden"
   >
     <div class="md:flex items-center justify-between">
       <div class="xl:w-5/12 md:w-1/2 xl:pr-16 md:pr-8">
-        <h1
-          role="heading"
-          class="lg:text-5xl text-3xl font-bold leading-tight text-gray-800"
-        >
+        <h1 role="heading" class="lg:text-5xl text-3xl font-bold leading-tight">
           Why we do what we do?
         </h1>
-        <p role="contentinfo" class="mt-4 text-base leading-6 text-gray-600">
+        <p role="contentinfo" class="mt-4 text-base leading-6">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod
           obcaecati dolores necessitatibus dignissimos unde impedit aperiam, ut
           exercitationem! Ab sequi reprehenderit voluptatibus cum repudiandae
@@ -27,11 +24,15 @@
         </button>
       </div>
       <div class="xl:w-2/5 md:w-1/2 w-full md:mt-0 mt-4">
-        <img :src="allyouneed" alt="woman working" class="md:w-auto w-full" />
+        <img
+          :src="allyouneed"
+          alt="woman working"
+          class="md:w-auto w-full dark:rounded-full"
+        />
       </div>
     </div>
     <div
-      class="flex flex-wrap md:mt-16 mt-8 gap-6 flex items-center justify-between"
+      class="flex flex-wrap md:mt-16 mt-8 gap-6 items-center justify-between"
     >
       <div>
         <div class="flex items-center">
@@ -40,11 +41,11 @@
           >
             <fa icon="bars"></fa>
           </div>
-          <h2 class="ml-4 text-base font-semibold leading-4 text-gray-800">
+          <h2 class="ml-4 text-base font-semibold leading-4">
             Lorem, ipsum dolor.
           </h2>
         </div>
-        <p class="sm:w-72 w-full text-base mt-5 leading-6 text-gray-600">
+        <p class="sm:w-72 w-full text-base mt-5 leading-6">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
           voluptates, explicabo expedita totam quia odio pariatur dolore nisi
           repudiandae, hic harum! Nihil commodi molestiae reprehenderit, iste
@@ -58,11 +59,11 @@
           >
             <fa icon="bars"></fa>
           </div>
-          <h2 class="ml-4 text-base font-semibold leading-4 text-gray-800">
+          <h2 class="ml-4 text-base font-semibold leading-4">
             lorem ipsum dolor
           </h2>
         </div>
-        <p class="sm:w-72 w-full text-base mt-5 leading-6 text-gray-600">
+        <p class="sm:w-72 w-full text-base mt-5 leading-6">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut eveniet
           ea inventore facilis illum sapiente. Eligendi laboriosam enim
           praesentium aliquid perspiciatis doloribus! Voluptate delectus
@@ -76,11 +77,11 @@
           >
             <fa icon="bars"></fa>
           </div>
-          <h2 class="ml-4 text-base font-semibold leading-4 text-gray-800">
+          <h2 class="ml-4 text-base font-semibold leading-4">
             Extraordinary Performance
           </h2>
         </div>
-        <p class="sm:w-72 w-full text-base mt-5 leading-6 text-gray-600">
+        <p class="sm:w-72 w-full text-base mt-5 leading-6">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi rerum
           qui quam expedita quibusdam beatae nemo minima hic autem reprehenderit
           consequatur, non nobis earum soluta quos accusantium quaerat nihil
@@ -88,7 +89,7 @@
         </p>
       </div>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
