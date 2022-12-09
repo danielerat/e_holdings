@@ -1,7 +1,10 @@
 <template>
   <div class="flex justify-center">
-    <h2 class="text-xl my-10 font-bold text-site-green-1 text-center">
-      E-Holdings Enforcement
+    <h2
+      class="text-xl my-10 font-bold text-site-green-1 text-center"
+      @click="CHANGE_DARKMODE"
+    >
+      E-Holdings Enforcement:{{ darkmode }}
     </h2>
     <div class="w-1/2 lithopedion">
       <p class="text-right my-5">Dated: …....../…..…/.……</p>
@@ -81,6 +84,7 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
 // import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
 export default {
   name: "MyComponent",
@@ -104,6 +108,12 @@ export default {
   },
   components: {
     // DeviceCard,
+  },
+  computed: {
+    ...mapState("darkmode"),
+  },
+  methods: {
+    ...mapMutations(["CHANGE_DARKMODE"]),
   },
 };
 </script>

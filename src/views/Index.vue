@@ -1,9 +1,8 @@
 <template>
   <index-navbar></index-navbar>
   <hero></hero>
-  <short-about-us />
-
   <device-lookup />
+  <short-about-us />
 
   <section class="bg-site-white-5">
     <div class="content-center container mx-auto py-6">

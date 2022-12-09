@@ -9,6 +9,7 @@ export default createStore({
     userInfo: null,
     soughtItem: [], // An item being looked up
     itemsAll: [],
+    darkmode: false,
   },
   getters: {
     isAuthenticated(state) {
@@ -34,6 +35,7 @@ export default createStore({
         state.isAuthenticated = false;
       }
     },
+
     // refreshing the token. When it expires
     updateToken(state, { accessToken, refreshToken }) {
       state.accessToken = accessToken;
@@ -78,6 +80,9 @@ export default createStore({
         // Unlikely to get here tho
         console.log("There has been an issue!");
       }
+    },
+    CHANGE_DARKMODE(state) {
+      state.darkmode = !state.darkmode;
     },
   },
   actions: {
@@ -137,24 +142,26 @@ export default createStore({
           });
       });
     },
-    
+
     amIAuthenticated(context) {
       this.state.isAuthenticated = context.getters.isAuthenticated;
       if (this.state.isAuthenticated) {
-        this.axios.get('e-hold/v1/auth/').then((response) => {
-          this.state.userInfo = response.data;
-          // Do something else here
-        }).catch((error) => {
-          // Nagging a user to their submission(of the login form)
-          console.log(error.response.status);
-        });
+        this.axios
+          .get("e-hold/v1/auth/")
+          .then((response) => {
+            this.state.userInfo = response.data;
+            // Do something else here
+          })
+          .catch((error) => {
+            // Nagging a user to their submission(of the login form)
+            console.log(error.response.status);
+          });
       }
     },
 
     lookUpAnItem: (context, payload) => {
-      context.commit('lookUpAnItem', payload);
+      context.commit("lookUpAnItem", payload);
     },
-
   },
   modules: {},
 });
