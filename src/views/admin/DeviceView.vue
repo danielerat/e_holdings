@@ -34,15 +34,15 @@ export default {
           date: "December 31, 2021",
         },
         two: {
-          name: "New Ownser ",
+          name: "New Owner",
           date: "December 31, 2021",
         },
         three: {
-          name: "New Ownser ",
+          name: "New Owner",
           date: "December 31, 2021",
         },
         four: {
-          name: "New Ownser ",
+          name: "New Owner",
           date: "December 31, 2021",
         },
       },
