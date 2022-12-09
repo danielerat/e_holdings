@@ -55,7 +55,7 @@ button {
   @apply text-white bg-site-green-1 hover:bg-site-green-2 active:bg-site-green-3;
 }
 .secondary {
-  @apply text-white bg-site-gray-1 hover:bg-site-gray-2 active:bg-site-gray-3;
+  @apply text-white bg-site-gray-1 hover:bg-site-gray-2 active:bg-site-gray-3 dark:bg-site-gray-2 dark:hover:bg-site-gray-3;
 }
 .tertiary {
   @apply bg-site-white-5 text-site-green-1 border-2 border-site-green-1 hover:bg-site-green-2 hover:text-site-white-5 active:bg-site-green-3;

@@ -10,7 +10,7 @@
       >
         <router-link to="/">
           <a
-            class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+            class="text-site-gray-1 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase dark:text-site-green-5"
             href="#pablo"
             @click="CHANGE_DARKMODE"
           >
@@ -22,7 +22,10 @@
           type="button"
           v-on:click="setNavbarOpen"
         >
-          <fa :icon="['fa', 'bars']" class="text-site-gray-1 text-2xl" />
+          <fa
+            :icon="['fa', 'bars']"
+            class="text-site-gray-1 text-2xl dark:text-site-yellow-3"
+          />
         </button>
       </div>
       <div
@@ -43,9 +46,13 @@
               >
                 <fa
                   :icon="['fab', 'facebook']"
-                  class="text-site-gray-1 text-2xl"
+                  class="text-site-gray-1 text-2xl dark:text-site-yellow-5"
                 />
-                <span class="lg:hidden inline-block ml-2">Share</span>
+                <span
+                  class="lg:hidden inline-block ml-2 dark:text-site-yellow-5"
+                >
+                  Share
+                </span>
               </a>
             </li>
 
@@ -57,9 +64,13 @@
               >
                 <fa
                   :icon="['fab', 'twitter']"
-                  class="text-site-gray-1 text-2xl"
+                  class="text-site-gray-1 text-2xl dark:text-site-yellow-5"
                 />
-                <span class="lg:hidden inline-block ml-2">Tweet</span>
+                <span
+                  class="lg:hidden inline-block ml-2 dark:text-site-yellow-5"
+                >
+                  Tweet
+                </span>
               </a>
             </li>
 
@@ -71,9 +82,13 @@
               >
                 <fa
                   :icon="['fab', 'whatsapp']"
-                  class="text-site-gray-1 text-2xl"
+                  class="text-site-gray-1 text-2xl dark:text-site-yellow-5"
                 />
-                <span class="lg:hidden inline-block">Chat</span>
+                <span
+                  class="lg:hidden inline-block ml-2 dark:text-site-yellow-5"
+                >
+                  Chat
+                </span>
               </a>
             </li>
 
@@ -101,7 +116,7 @@
                   type="secondary"
                   size="sm"
                   text="Sign In"
-                  class=""
+                  class="dark:bg-site-gray-2"
                 />
               </router-link>
             </li>

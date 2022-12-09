@@ -9,7 +9,7 @@ export default createStore({
     userInfo: null,
     soughtItem: [], // An item being looked up
     itemsAll: [],
-    dark: true,
+    dark: false,
   },
   getters: {
     isAuthenticated(state) {
