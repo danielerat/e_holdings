@@ -1,5 +1,7 @@
 <template>
-  <section class="text-gray-600 body-font lithopedion">
+  <section
+    class="text-gray-600 body-font lithopedion dark bg-site-gray-1 dark:bg-site-yellow-2"
+  >
     <div
       class="container mx-auto flex flex-col px-5 py-24 justify-center items-center"
     >
@@ -60,6 +62,7 @@
 </template>
 <script>
 import SearchIllustration from "@/assets/img/searchillustration.svg";
+import bg from "@/assets/img/greencircle.svg";
 
 // import SearchInput from "@/components/shared/SearchInput.vue";
 export default {
@@ -70,13 +73,13 @@ export default {
   data() {
     return {
       SearchIllustration,
+      bg,
     };
   },
 };
 </script>
 <style scoped>
 .lithopedion {
-  background: url("@/assets/img/greencircle.svg") no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: 100;

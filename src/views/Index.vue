@@ -7,7 +7,7 @@
   <section class="bg-site-white-5 dark:bg-site-gray-1">
     <div class="content-center container mx-auto py-6">
       <div class="text-center w-4/5 mx-auto">
-        <h2 class="text-2xl dark:text-site-dark-1">Can't Find something?</h2>
+        <h2 class="text-2xl">Can't Find something?</h2>
         <h2 class="text-1xl">
           You might want to check our FAQ, or simply contact us for more
           explanations

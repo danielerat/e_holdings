@@ -108,8 +108,8 @@
                 rows="4"
                 readonly
               >
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab ipsam saepe voluptatibus reiciendis fugit numquam.
-                    </textarea
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab ipsam saepe voluptatibus reiciendis fugit numquam.
+                      </textarea
               >
             </div>
           </div>

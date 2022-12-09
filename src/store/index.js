@@ -86,6 +86,12 @@ export default createStore({
     },
     CHANGE_DARKMODE(state) {
       state.dark = !state.dark;
+      //Work The Bug
+      if (state.dark) {
+        document.querySelector("html").classList.add("dark");
+      } else {
+        document.querySelector("html").classList.remove("dark");
+      }
     },
   },
   actions: {
