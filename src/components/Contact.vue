@@ -1,8 +1,8 @@
 <template>
-  <div class="container mx-auto my-24">
+  <div class="container mx-auto py-24 dark:bg-site-gray-1">
     <div class="lg:flex">
       <div
-        class="xl:w-2/5 lg:w-2/5 text-white border-r-8 border-site-yellow-2 bg-site-yellow-3 dark:bg-site-green-1 py-16 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none"
+        class="xl:w-2/5 lg:w-2/5 text-white border-r-8 border-site-yellow-2 bg-site-gray-1 dark:bg-site-green-1 py-16 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none"
       >
         <div class="xl:w-5/6 xl:px-0 px-8 mx-auto">
           <h1 class="xl:text-4xl text-3xl pb-4 text-white font-bold">
@@ -42,11 +42,9 @@
       >
         <form
           id="contact"
-          class="bg-site-white-5 border-l-8 border-site-yellow-2 py-4 px-8 rounded-tr rounded-br"
+          class="text-site-gray-1 bg-site-white-5 border-l-8 border-site-yellow-2 py-4 px-8 rounded-tr rounded-br dark:bg-site-gray-1 dark:text-site-gray-5"
         >
-          <h1 class="text-4xl text-site-gray-2 font-extrabold mb-6">
-            Enter Details
-          </h1>
+          <h1 class="text-4xl font-extrabold mb-6">Enter Details</h1>
           <div class="flex sm:flex-row flex-col justify-around mb-6">
             <div class="mb-6 xl:mb-0">
               <div class="flex flex-col">
@@ -110,10 +108,7 @@
           <!-- ------------- -->
           <div class="w-full mt-6">
             <div class="flex flex-col">
-              <label
-                class="text-sm font-semibold text-site-gray-1 mb-2"
-                for="message"
-              >
+              <label class="text-sm font-semibold mb-2" for="message">
                 Message
               </label>
               <textarea
