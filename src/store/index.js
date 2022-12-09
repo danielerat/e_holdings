@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import axios from "axios";
+// import axios from "axios";
 
 export default createStore({
   state: {
@@ -9,7 +9,7 @@ export default createStore({
     userInfo: null,
     soughtItem: [], // An item being looked up
     itemsAll: [],
-    darkmode: false,
+    dark: true,
   },
   getters: {
     isAuthenticated(state) {
@@ -17,6 +17,9 @@ export default createStore({
     },
     // Flagging items coming soon...
     // i.e Something got stolen for instance
+    darkmode(state) {
+      return state.dark;
+    },
   },
   mutations: {
     // Initializing the store
@@ -82,7 +85,7 @@ export default createStore({
       }
     },
     CHANGE_DARKMODE(state) {
-      state.darkmode = !state.darkmode;
+      state.dark = !state.dark;
     },
   },
   actions: {
