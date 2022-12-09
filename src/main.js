@@ -1,5 +1,6 @@
-import * as Vue from "vue";
+import { createApp } from "vue";
 import axios from "axios";
+import store from "@/store";
 import VueAxios from "vue-axios";
 // import { createApp } from "vue";
 import VueSweetalert2 from "vue-sweetalert2";
@@ -55,6 +56,8 @@ import {
   faCertificate,
   faCirclePlus,
   faRightFromBracket,
+  faLightbulb,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -109,7 +112,9 @@ library.add(
   faFlag,
   faCertificate,
   faCirclePlus,
-  faRightFromBracket
+  faRightFromBracket,
+  faLightbulb,
+  faMoon
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
@@ -120,8 +125,17 @@ import App from "./App.vue";
 
 import router from "@/router";
 
-const app = Vue.createApp(App);
+// const app = Vue.createApp(App);
 
-app.use(VueAxios, axios);
-app.use(VueSweetalert2);
-app.use(router).component("fa", FontAwesomeIcon).mount("#app");
+// app.use(VueAxios, axios);
+// app.use(VueSweetalert2);
+// app.use(store);
+// app.use(router).component("fa", FontAwesomeIcon).mount("#app");
+
+createApp(App)
+  .use(VueAxios, axios)
+  .use(VueSweetalert2)
+  .use(store)
+  .use(router)
+  .component("fa", FontAwesomeIcon)
+  .mount("#app");

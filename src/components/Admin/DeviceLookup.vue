@@ -34,7 +34,7 @@
                 <input
                   type="text"
                   id="simple-search"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+                  class="bg-site-gray-5 border border-site-gray-1 text-gray-900 text-sm shadow-xl rounded-lg block w-full pl-10 p-2.5"
                   placeholder="Serial Number or IMEI"
                   required=""
                 />
@@ -49,8 +49,8 @@
             </form>
           </div>
         </div>
-        <p class="text-sm mt-2 text-gray-500 mb-8 w-full">
-          <router-link to="check-device" class="text-site-green-2 underline">
+        <p class="text-sm mt-5 mb-8 w-full">
+          <router-link to="check-device" class="text-site-green-3 underline">
             Place to check your devices
           </router-link>
         </p>
@@ -76,7 +76,7 @@ export default {
 </script>
 <style scoped>
 .lithopedion {
-  background: #f0f4f8 url("@/assets/img/greencircle.svg") no-repeat;
+  background: url("@/assets/img/greencircle.svg") no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: 100;

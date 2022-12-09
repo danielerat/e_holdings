@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import axios from "axios";
+// import axios from "axios";
 
 export default createStore({
   state: {
@@ -9,6 +9,7 @@ export default createStore({
     userInfo: null,
     soughtItem: [], // An item being looked up
     itemsAll: [],
+    dark: true,
   },
   getters: {
     isAuthenticated(state) {
@@ -16,6 +17,9 @@ export default createStore({
     },
     // Flagging items coming soon...
     // i.e Something got stolen for instance
+    darkmode(state) {
+      return state.dark;
+    },
   },
   mutations: {
     // Initializing the store
@@ -34,6 +38,7 @@ export default createStore({
         state.isAuthenticated = false;
       }
     },
+
     // refreshing the token. When it expires
     updateToken(state, { accessToken, refreshToken }) {
       state.accessToken = accessToken;
@@ -78,6 +83,9 @@ export default createStore({
         // Unlikely to get here tho
         console.log("There has been an issue!");
       }
+    },
+    CHANGE_DARKMODE(state) {
+      state.dark = !state.dark;
     },
   },
   actions: {
@@ -137,24 +145,26 @@ export default createStore({
           });
       });
     },
-    
+
     amIAuthenticated(context) {
       this.state.isAuthenticated = context.getters.isAuthenticated;
       if (this.state.isAuthenticated) {
-        this.axios.get('e-hold/v1/auth/').then((response) => {
-          this.state.userInfo = response.data;
-          // Do something else here
-        }).catch((error) => {
-          // Nagging a user to their submission(of the login form)
-          console.log(error.response.status);
-        });
+        this.axios
+          .get("e-hold/v1/auth/")
+          .then((response) => {
+            this.state.userInfo = response.data;
+            // Do something else here
+          })
+          .catch((error) => {
+            // Nagging a user to their submission(of the login form)
+            console.log(error.response.status);
+          });
       }
     },
 
     lookUpAnItem: (context, payload) => {
-      context.commit('lookUpAnItem', payload);
+      context.commit("lookUpAnItem", payload);
     },
-
   },
   modules: {},
 });
