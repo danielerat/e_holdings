@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
+    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow bg-white dark:bg-site-gray-1"
   >
     <div
       class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -12,8 +12,9 @@
           <a
             class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
             href="#pablo"
+            @click="CHANGE_DARKMODE"
           >
-            E-Holdings {{ darkmode }}
+            E-Holdings
           </a>
         </router-link>
         <button
@@ -77,6 +78,24 @@
             </li>
 
             <li class="flex items-center">
+              <a
+                class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+                @click="CHANGE_DARKMODE"
+              >
+                <fa
+                  v-if="darkmode"
+                  icon="moon"
+                  class="text-site-yellow-4 text-2xl"
+                />
+                <fa
+                  v-else
+                  icon="lightbulb"
+                  class="text-site-yellow-4 text-2xl"
+                />
+              </a>
+            </li>
+
+            <li class="flex items-center">
               <router-link to="/login">
                 <action-button
                   type="secondary"
@@ -95,6 +114,7 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from "vuex";
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
 import ActionButton from "@/components/shared/ActionButton";
 export default {
@@ -108,15 +128,15 @@ export default {
       navbarOpen: false,
     };
   },
+  computed: {
+    ...mapGetters(["darkmode"]),
+  },
   methods: {
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },
-  },
-  computed: {
-    darkmode() {
-      return this.$store.state.darkmode;
-    },
+
+    ...mapMutations(["CHANGE_DARKMODE"]),
   },
 };
 </script>

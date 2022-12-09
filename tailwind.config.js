@@ -7,6 +7,7 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {

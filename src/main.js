@@ -56,6 +56,8 @@ import {
   faCertificate,
   faCirclePlus,
   faRightFromBracket,
+  faLightbulb,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -110,7 +112,9 @@ library.add(
   faFlag,
   faCertificate,
   faCirclePlus,
-  faRightFromBracket
+  faRightFromBracket,
+  faLightbulb,
+  faMoon
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

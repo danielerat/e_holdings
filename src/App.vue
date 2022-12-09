@@ -1,6 +1,16 @@
 <template>
-  <router-view />
+  <!-- Swtich the light and dark mode things -->
+  <router-view :class="darkmode ? 'dark' : ''" />
 </template>
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["darkmode"]),
+  },
+};
+</script>
 
 <style scopped>
 nav a {
