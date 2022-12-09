@@ -1,6 +1,7 @@
 <template>
   <section
-    class="text-gray-600 body-font lithopedion dark bg-site-gray-1 dark:bg-site-yellow-2"
+    class="text-site-gray-2 body-font lithopedion dark bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-4"
+    :style="{ backgroundImage: 'url(' + bg + ')' }"
   >
     <div
       class="container mx-auto flex flex-col px-5 py-24 justify-center items-center"
@@ -12,7 +13,7 @@
       />
       <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
         <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-site-gray-2 dark:text-site-white-5"
         >
           Not sure about the device you are about to buy?
         </h1>
@@ -36,14 +37,14 @@
                 <input
                   type="text"
                   id="simple-search"
-                  class="bg-site-gray-5 border border-site-gray-1 text-gray-900 text-sm shadow-xl rounded-lg block w-full pl-10 p-2.5"
+                  class="bg-site-gray-5 border border-site-gray-1 text-site-gray-2 text-sm shadow-xl rounded-lg block w-full pl-10 p-2.5 dark:bg-site-green-5"
                   placeholder="Serial Number or IMEI"
                   required=""
                 />
               </div>
               <button
                 type="submit"
-                class="p-2.5 ml-2 text-sm font-medium text-white bg-site-gray-1 rounded-lg border border-site-gray-2 hover:bg-site-gray-2 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                class="p-2.5 ml-2 text-sm font-medium text-site-white-5 bg-site-gray-1 rounded-lg border border-site-gray-2 hover:bg-site-gray-2 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-site-yellow-2"
               >
                 <fa icon="search" />
                 <span class="sr-only">Search</span>
