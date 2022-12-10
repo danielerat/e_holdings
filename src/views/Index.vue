@@ -4,7 +4,7 @@
   <device-lookup />
   <short-about-us />
 
-  <section class="bg-site-white-5 dark:bg-site-gray-1">
+  <section class="bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-5">
     <div class="content-center container mx-auto py-6">
       <div class="text-center w-4/5 mx-auto">
         <h2 class="text-2xl">Can't Find something?</h2>

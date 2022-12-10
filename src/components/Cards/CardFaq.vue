@@ -1,6 +1,8 @@
 <template>
-  <div role="cell" class="bg-site-white-5">
-    <div class="bg-site-white-4 p-5 rounded-md relative h-full w-full">
+  <div role="cell" class="">
+    <div
+      class="bg-site-white-4 p-5 rounded-md relative h-full w-full dark:bg-site-gray-2"
+    >
       <!-- class="absolute inset-0 object-center object-cover h-full w-full"  -->
       <span>
         <fa

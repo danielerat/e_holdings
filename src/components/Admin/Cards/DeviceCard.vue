@@ -47,9 +47,11 @@
           >
             <fa icon="gauge" />
           </div>
-          <div class="px-2 text-site-green-3 hover:text-site-green-1">
-            <fa icon="share" />
-          </div>
+          <router-link to="/admin/device">
+            <div class="px-2 text-site-green-3 hover:text-site-green-1">
+              <fa icon="share" />
+            </div>
+          </router-link>
         </div>
       </div>
     </div>

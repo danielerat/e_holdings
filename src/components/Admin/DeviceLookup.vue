@@ -13,9 +13,9 @@
       />
       <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
         <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-site-gray-2 dark:text-site-white-5"
+          class="title-font sm:text-4xl text-3xl mb-4 font-bold text-site-gray-2 dark:text-site-white-5"
         >
-          Not sure about the device you are about to buy?
+          Not sure about the device you are about to buy? I got you.
         </h1>
         <p class="mb-8 leading-relaxed">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
@@ -37,7 +37,7 @@
                 <input
                   type="text"
                   id="simple-search"
-                  class="bg-site-gray-5 border border-site-gray-1 text-site-gray-2 text-sm shadow-xl rounded-lg block w-full pl-10 p-2.5 dark:bg-site-green-5"
+                  class="bg-site-gray-5 border border-site-gray-1 text-sm shadow-xl rounded-lg block w-full pl-10 p-2.5 dark:bg-site-gray-2"
                   placeholder="Serial Number or IMEI"
                   required=""
                 />
