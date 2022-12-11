@@ -16,19 +16,7 @@
 
       <!-- User -->
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-        <li class="flex items-center">
-          <a
-            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            @click="CHANGE_DARKMODE"
-          >
-            <fa
-              v-if="darkmode"
-              icon="moon"
-              class="text-site-yellow-4 text-2xl"
-            />
-            <fa v-else icon="lightbulb" class="text-site-yellow-4 text-2xl" />
-          </a>
-        </li>
+        <DarkModeSwitcher />
         <user-dropdown />
       </ul>
     </div>
@@ -40,11 +28,11 @@
 
 <script>
 import UserDropdown from "@/components/Admin/Dropdowns/AdminUserDropdown";
-import { mapGetters, mapMutations } from "vuex";
-
+import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher.vue";
 export default {
   components: {
     UserDropdown,
+    DarkModeSwitcher,
   },
   props: {
     path: {
@@ -59,12 +47,6 @@ export default {
         return ["small", "medium", "large"].includes(value);
       },
     },
-  },
-  computed: {
-    ...mapGetters(["darkmode"]),
-  },
-  methods: {
-    ...mapMutations(["CHANGE_DARKMODE"]),
   },
 };
 </script>

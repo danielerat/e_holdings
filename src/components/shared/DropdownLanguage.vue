@@ -82,12 +82,17 @@ export default {
       } else {
         this.dropdownPopoverShow = true;
         createPopper(this.$refs.btnDropdownRef, this.$refs.popoverDropdownRef, {
-          placement: "bottom-start",
+          placement: "top-end",
         });
       }
     },
     changeLocale(locale) {
-      this.$i18n.locale = locale;
+      if (this.$i18n.locale != locale) {
+        this.$i18n.locale = locale;
+        this.$router.push({
+          params: { lang: locale },
+        });
+      }
     },
     onClickAway() {
       this.dropdownPopoverShow = false;

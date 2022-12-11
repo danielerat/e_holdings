@@ -91,23 +91,7 @@
               </a>
             </li>
 
-            <li class="flex items-center">
-              <a
-                class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-                @click="CHANGE_DARKMODE"
-              >
-                <fa
-                  v-if="darkmode"
-                  icon="moon"
-                  class="text-site-yellow-4 text-2xl"
-                />
-                <fa
-                  v-else
-                  icon="lightbulb"
-                  class="text-site-yellow-3 text-2xl"
-                />
-              </a>
-            </li>
+            <li class="flex items-center"><dark-mode-switcher /></li>
 
             <li class="flex items-center">
               <router-link to="/login">
@@ -131,7 +115,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher";
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
 import ActionButton from "@/components/shared/ActionButton";
 import drop from "@/components/shared/DropdownLanguage";
@@ -141,6 +125,7 @@ export default {
   components: {
     ActionButton,
     IndexDropdown,
+    DarkModeSwitcher,
     drop,
   },
   data() {
@@ -148,15 +133,11 @@ export default {
       navbarOpen: false,
     };
   },
-  computed: {
-    ...mapGetters(["darkmode"]),
-  },
+
   methods: {
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },
-
-    ...mapMutations(["CHANGE_DARKMODE"]),
   },
 };
 </script>
