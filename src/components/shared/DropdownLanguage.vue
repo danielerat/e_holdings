@@ -5,6 +5,7 @@
       href="#pablo"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
+      v-click-away="onClickAway"
     >
       <div class="items-center flex">
         <span
@@ -46,12 +47,18 @@
 </template>
 
 <script>
+import { directive } from "vue3-click-away";
+
 import { createPopper } from "@popperjs/core";
 
 import rwanda from "@/assets/img/rwanda.svg";
 import usa from "@/assets/img/usa.svg";
 
 export default {
+  name: "DropdownLanguage",
+  directives: {
+    ClickAway: directive,
+  },
   data() {
     return {
       dropdownPopoverShow: false,
@@ -61,7 +68,7 @@ export default {
   },
   computed: {
     country() {
-      if (this.$i18n.locale == "en") {
+      if (this.$i18n.locale == "kin") {
         return this.rwanda;
       }
       return this.usa;
@@ -81,6 +88,10 @@ export default {
     },
     changeLocale(locale) {
       this.$i18n.locale = locale;
+    },
+    onClickAway() {
+      this.dropdownPopoverShow = false;
+      console.log("I was trigered");
     },
   },
 };

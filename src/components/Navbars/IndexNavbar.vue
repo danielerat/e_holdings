@@ -35,6 +35,7 @@
           <li class="flex justify-center items-end">
             <index-dropdown />
           </li>
+
           <div class="mt-4 flex justify-between items-center">
             <li class="flex">
               <a
@@ -103,7 +104,7 @@
                 <fa
                   v-else
                   icon="lightbulb"
-                  class="text-site-yellow-4 text-2xl"
+                  class="text-site-yellow-3 text-2xl"
                 />
               </a>
             </li>
@@ -118,13 +119,15 @@
                 />
               </router-link>
             </li>
+            <li class="flex justify-center items-end">
+              <drop></drop>
+            </li>
           </div>
         </ul>
       </div>
     </div>
   </nav>
   <div class="h-20"></div>
-  <drop></drop>
 </template>
 
 <script>
@@ -132,6 +135,7 @@ import { mapMutations, mapGetters } from "vuex";
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
 import ActionButton from "@/components/shared/ActionButton";
 import drop from "@/components/shared/DropdownLanguage";
+
 export default {
   name: "IndexNavbar",
   components: {

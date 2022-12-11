@@ -13,7 +13,7 @@
               class="lg:text-6xl text-3xl leading-8 text-site-gray-1 border-l-8 border-site-yellow-3 lg:pl-12 pl-2 xl:mt-0 mt-8"
             >
               E-Holdings
-              {{ $t("appTitle") }}
+
               <br />
               <span class="2xl:text-8xl xl:text-7xl text-4xl font-bold">
                 We track for you

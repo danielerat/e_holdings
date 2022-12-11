@@ -1,3 +1,7 @@
 {
-  "appTitle": "hello i18n !!"
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "contact": "contact"
+  }
 }

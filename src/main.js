@@ -8,7 +8,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
+import VueClickAway from "vue3-click-away";
 // Registering FontAwesomeIcon TO be used in the site
 import {
   faArrowUp,
@@ -141,6 +141,7 @@ createApp(App)
   .use(VueAxios, axios)
   .use(VueSweetalert2)
   .use(store)
+  .use(VueClickAway)
   .use(router)
   .use(i18n)
   .component("fa", FontAwesomeIcon)

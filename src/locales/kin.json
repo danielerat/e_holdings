@@ -1,3 +1,7 @@
 {
-  "appTitle": "0000---Rwanda Rwacu"
+  "nav": {
+    "home": "Murugo",
+    "about": "Ibitwerekeye",
+    "contact": "Twandikire"
+  }
 }
