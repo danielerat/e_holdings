@@ -7,6 +7,8 @@
         <div class="xl:w-5/6 xl:px-0 px-8 mx-auto">
           <h1 class="xl:text-4xl text-3xl pb-4 text-white font-bold">
             Get in touch
+
+            {{ $t("appTitle") }}
           </h1>
           <p class="text-xl pb-8 leading-relaxed font-normal lg:pr-4">
             Got a question about us? Are you interested in partnering with us?

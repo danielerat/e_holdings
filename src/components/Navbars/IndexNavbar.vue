@@ -11,8 +11,6 @@
         <router-link to="/">
           <a
             class="text-site-gray-1 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase dark:text-site-green-5"
-            href="#pablo"
-            @click="CHANGE_DARKMODE"
           >
             E-Holdings
           </a>
@@ -126,17 +124,20 @@
     </div>
   </nav>
   <div class="h-20"></div>
+  <drop></drop>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
 import ActionButton from "@/components/shared/ActionButton";
+import drop from "@/components/shared/DropdownLanguage";
 export default {
   name: "IndexNavbar",
   components: {
     ActionButton,
     IndexDropdown,
+    drop,
   },
   data() {
     return {
