@@ -56,7 +56,10 @@
                   <label class="inline-flex items-center cursor-pointer">
                     <span class="ml-2 text-sm font-semibold text-blueGray-600">
                       Don't have an account?
-                      <router-link to="/register" class="text-site-green-3">
+                      <router-link
+                        :to="`/${$i18n.locale}/register`"
+                        class="text-site-green-3"
+                      >
                         Sign up
                       </router-link>
                     </span>
@@ -99,5 +102,7 @@ export default {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+
+  background-attachment: fixed;
 }
 </style>

@@ -94,7 +94,7 @@
             <li class="flex items-center"><dark-mode-switcher /></li>
 
             <li class="flex items-center">
-              <router-link to="/login">
+              <router-link :to="`/${$i18n.locale}/login`">
                 <action-button
                   type="secondary"
                   size="sm"

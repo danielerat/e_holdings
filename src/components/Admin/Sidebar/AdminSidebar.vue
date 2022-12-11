@@ -82,7 +82,10 @@
           class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
         >
           <li class="items-start">
-            <router-link to="/admin" v-slot="{ href, navigate, isActive }">
+            <router-link
+              :to="`/${$i18n.locale}/admin`"
+              v-slot="{ href, navigate, isActive }"
+            >
               <a
                 :href="href"
                 @click="navigate"
@@ -105,7 +108,7 @@
 
           <li class="items-center">
             <router-link
-              to="/admin/settings"
+              :to="`/${$i18n.locale}/admin/settings`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -142,7 +145,7 @@
         >
           <li class="items-center">
             <router-link
-              to="/admin/devices"
+              :to="`/${$i18n.locale}/admin/devices`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -166,7 +169,7 @@
           </li>
           <li class="items-center">
             <router-link
-              to="/admin/invoice"
+              :to="`/${$i18n.locale}/admin/invoice`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -190,7 +193,7 @@
           </li>
           <li class="items-center">
             <router-link
-              to="/admin/assign-device"
+              :to="`/${$i18n.locale}/admin/assign-device`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -228,7 +231,7 @@
         >
           <li class="items-center">
             <router-link
-              to="/admin/assign-device"
+              :to="`/${$i18n.locale}/admin/assign-device`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -289,7 +292,10 @@
           class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
         >
           <li class="items-center">
-            <router-link to="/login" v-slot="{ href, navigate, isActive }">
+            <router-link
+              :to="`/${$i18n.locale}/login`"
+              v-slot="{ href, navigate, isActive }"
+            >
               <a
                 :href="href"
                 @click="navigate"

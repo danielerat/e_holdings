@@ -1,11 +1,12 @@
 <template>
   <index-navbar />
-  <section class="mt-24">
+
+  <section class="py-24 lithopedion">
     <div class="container mx-auto px-4 h-full">
       <div class="flex content-center items-center justify-center h-full">
         <div class="w-full lg:w-6/12 px-4">
           <div
-            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"
+            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-site-white-4 border-0"
           >
             <div class="rounded-t mb-0 px-6 py-6">
               <div class="mb-3">
@@ -170,3 +171,12 @@ export default {
   },
 };
 </script>
+<style scoped>
+.lithopedion {
+  background: #f0f4f8 url("@/assets/img/roadWave.svg") top no-repeat;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+</style>

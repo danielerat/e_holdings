@@ -21,24 +21,37 @@
         <div class="w-full md:w-8/12 px-4">
           <ul class="flex flex-wrap list-none md:justify-end justify-center">
             <li>
-              <router-link to="#" class="text-sm font-semibold block py-1 px-3">
+              <router-link
+                :to="`/${$i18n.locale}/`"
+                class="text-sm font-semibold block py-1 px-3"
+              >
                 Home
               </router-link>
             </li>
             <li>
-              <router-link to="#" class="text-sm font-semibold block py-1 px-3">
+              <router-link
+                :to="`/${$i18n.locale}/about`"
+                class="text-sm font-semibold block py-1 px-3"
+              >
                 About Us
               </router-link>
             </li>
             <li>
-              <a href="#/contact" class="text-sm font-semibold block py-1 px-3">
+              <router-link
+                :to="`/${$i18n.locale}/contact`"
+                class="text-sm font-semibold block py-1 px-3"
+              >
                 Contact
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#" class="text-sm font-semibold block py-1 px-3">
+              <router-link
+                :to="`/${$i18n.locale}/login`"
+                href="#"
+                class="text-sm font-semibold block py-1 px-3"
+              >
                 Sign Out
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>

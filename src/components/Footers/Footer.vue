@@ -59,26 +59,26 @@
           <div class="flex flex-wrap items-top mb-6">
             <div class="w-full lg:w-4/12 px-4 ml-auto">
               <span
-                class="block uppercase text-site-gray-1 dark:text-site-yellow-2 text-sm font-semibold mb-2"
+                class="block uppercase text-site-gray-3 dark:text-site-yellow-2 text-sm font-semibold mb-2"
               >
                 Useful Links
               </span>
               <ul class="list-unstyled">
                 <li>
-                  <a
+                  <router-link
+                    :to="`/${$i18n.locale}/about`"
                     class="text-site-gray-1 hover:text-site-gray-2 font-semibold block pb-2 text-sm dark:text-site-yellow-4 dark:hover:text-site-yellow-3"
-                    href=""
                   >
                     About Us
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a
+                  <router-link
+                    :to="`/${$i18n.locale}/support`"
                     class="text-site-gray-1 hover:text-site-gray-2 font-semibold block pb-2 text-sm dark:text-site-yellow-4 dark:hover:text-site-yellow-3"
-                    href=""
                   >
                     FAQ
-                  </a>
+                  </router-link>
                 </li>
                 <li>
                   <a
@@ -89,18 +89,18 @@
                   </a>
                 </li>
                 <li>
-                  <a
+                  <router-link
+                    :to="`/${$i18n.locale}/check-device`"
                     class="text-site-gray-1 hover:text-site-gray-2 font-semibold block pb-2 text-sm dark:text-site-yellow-4 dark:hover:text-site-yellow-3"
-                    href="#/check-device"
                   >
                     Check Device
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </div>
             <div class="w-full lg:w-4/12 px-4">
               <span
-                class="block uppercase text-site-gray-1 dark:text-site-yellow-2 text-sm font-semibold mb-2"
+                class="block uppercase text-site-gray-3 dark:text-site-yellow-2 text-sm font-semibold mb-2"
               >
                 Other Resources
               </span>
@@ -122,12 +122,12 @@
                   </a>
                 </li>
                 <li>
-                  <a
+                  <router-link
+                    :to="`/${$i18n.locale}/contact`"
                     class="text-site-gray-1 hover:text-site-gray-2 font-semibold block pb-2 text-sm dark:text-site-yellow-4 dark:hover:text-site-yellow-3"
-                    href=""
                   >
                     Contact Us
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </div>
