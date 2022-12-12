@@ -127,6 +127,7 @@ import App from "./App.vue";
 
 import router from "@/router";
 import i18n from "@/i18n";
+import { vfmPlugin } from "vue-final-modal";
 router.beforeEach((to, from, next) => {
   // use the language from the routing param or default language
   let language = to.params.lang;
@@ -144,6 +145,7 @@ createApp(App)
   .use(VueSweetalert2)
   .use(store)
   .use(VueClickAway)
+  .use(vfmPlugin)
   .use(router)
   .use(i18n)
   .component("fa", FontAwesomeIcon)

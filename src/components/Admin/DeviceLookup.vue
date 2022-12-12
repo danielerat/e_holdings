@@ -53,7 +53,10 @@
           </div>
         </div>
         <p class="text-sm mt-5 mb-8 w-full">
-          <router-link to="check-device" class="text-site-green-3 underline">
+          <router-link
+            :to="`/${$i18n.locale}/check-device`"
+            class="text-site-green-3 underline"
+          >
             Place to check your devices
           </router-link>
         </p>
