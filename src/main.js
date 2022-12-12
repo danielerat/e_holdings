@@ -59,6 +59,7 @@ import {
   faLightbulb,
   faMoon,
   faArrowRight,
+  faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -107,6 +108,7 @@ library.add(
   faPlug,
   faSearch,
   faEye,
+  faEyeSlash,
   faDownload,
   faShare,
   faCalendarDay,

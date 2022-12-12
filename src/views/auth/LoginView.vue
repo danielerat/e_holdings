@@ -32,6 +32,7 @@
                   <input
                     id="national_id"
                     type="text"
+                    required
                     class="border-0 px-3 py-3 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Your phone number"
                   />
@@ -46,9 +47,15 @@
                   </label>
                   <input
                     id="password"
-                    type="text"
+                    :type="show ? 'password' : 'text'"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Your password"
+                    required
+                  />
+                  <fa
+                    @click="show = !show"
+                    :icon="eyeIcon()"
+                    class="text-2xl text-site-gray-2 absolute bottom-3 right-3"
                   />
                 </div>
 
@@ -67,12 +74,12 @@
                 </div>
 
                 <div class="text-center mt-6">
-                  <button
+                  <input
+                    type="submit"
+                    value="Login"
+                    @click="Authentication"
                     class="bg-site-gray-2 text-site-white-5 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg hover:bg-site-gray-1 outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                    type="button"
-                  >
-                    Login
-                  </button>
+                  />
                 </div>
               </form>
             </div>
@@ -89,9 +96,40 @@ import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
 export default {
   name: "Index",
+  data() {
+    return {
+      show: true,
+    };
+  },
   components: {
     FooterSimple,
     IndexNavbar,
+  },
+  methods: {
+    eyeIcon() {
+      if (this.show) return "eye";
+      return "eye-slash";
+    },
+    Authentication() {
+      const Toast = this.$swal.mixin({
+        toast: true,
+        timer: 5000,
+        position: "top-end",
+        showConfirmButton: false,
+        showCloseButton: true,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", this.$swal.stopTimer);
+          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+        },
+      });
+
+      Toast.fire({
+        icon: "error",
+        title: "Unknwon username or password",
+        // text: "Something went wrong!",
+      });
+    },
   },
 };
 </script>
@@ -102,7 +140,6 @@ export default {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
-
   background-attachment: fixed;
 }
 </style>
