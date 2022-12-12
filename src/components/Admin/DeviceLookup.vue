@@ -1,6 +1,6 @@
 <template>
   <section
-    class="text-site-gray-2 body-font lithopedion dark bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-4"
+    class="body-font lithopedion dark bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-4"
     :style="{ backgroundImage: 'url(' + bg + ')' }"
   >
     <div
@@ -13,7 +13,7 @@
       />
       <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
         <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-bold text-site-gray-2 dark:text-site-white-5"
+          class="title-font sm:text-4xl text-2xl mb-4 font-bold text-site-gray-3 dark:dark:text-site-yellow-4"
         >
           Not sure about the device you are about to buy? I got you.
         </h1>

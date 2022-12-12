@@ -32,7 +32,7 @@
                 <action-button
                   type="primary"
                   size="lg"
-                  text="Sign up"
+                  text="btn.signUp"
                   class="mr-5"
                 />
               </router-link>
@@ -40,7 +40,7 @@
                 <action-button
                   type="tertiary"
                   size="lg"
-                  text="Learn More"
+                  text="btn.learnMore"
                   class="mr-5"
                 />
               </a>

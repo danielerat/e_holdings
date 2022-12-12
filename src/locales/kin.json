@@ -3,5 +3,20 @@
     "home": "Murugo",
     "about": "Ibitwerekeye",
     "contact": "Twandikire"
+  },
+  "btn": {
+    "signIn": "injira",
+    "signUp": "iyandikishe",
+    "learnMore": "iga byinshi",
+    "transfer": "ohereza",
+    "send": "ohereza",
+    "confirm": "emeza",
+    "contract": "amasezerano",
+    "ownership": "nyirubwite",
+    "exploreOurFaq": "ibikunze kubazwa",
+    "readMore": "soma byinshi",
+    "giveOwnership": "tanga nyirubwite",
+    "reportDevice": "menyesha ikibazo",
+    "reportDeviceDead": "menyesha igikoresho cyapfuye "
   }
 }

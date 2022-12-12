@@ -67,9 +67,10 @@
           </h2>
           <router-link to="support">
             <action-button
+              frontIcon="arrow-right"
               type="tertiary"
               size="sm"
-              text="Explore Our FAQ >>"
+              text="btn.exploreOurFaq"
               class="mx-2"
             />
           </router-link>
@@ -100,9 +101,10 @@
       <div class="flex justify-end">
         <router-link to="support">
           <action-button
+            front-icon="arrow-right"
             type="tertiary"
             size="xl"
-            text="Explore Our FAQ >>"
+            text="btn.exploreOurFaq"
             class="mx-2"
           />
         </router-link>

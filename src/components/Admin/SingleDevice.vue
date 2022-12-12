@@ -115,20 +115,20 @@
                 <action-button
                   type="tertiary"
                   size="sm"
-                  text="Ownership"
+                  text="btn.ownership"
                   frontIcon="download"
                 />
                 <action-button
                   type="tertiary"
                   size="sm"
-                  text="contract"
+                  text="btn.contract"
                   frontIcon="file-contract"
                 />
                 <router-link to="transfer">
                   <action-button
                     type="primary"
                     size="sm"
-                    text="Transfer"
+                    text="btn.transfer"
                     frontIcon="share"
                   />
                 </router-link>

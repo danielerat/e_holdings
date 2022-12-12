@@ -41,7 +41,7 @@
           type="primary"
           frontIcon="share"
           size="md"
-          text="confirm"
+          text="btn.confirm"
         ></action-button>
         <p class="text-xs text-site-yellow-2 mt-3">
           You are about to give the ownership of this device, you wont be able

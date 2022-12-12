@@ -156,7 +156,7 @@
         </div>
       </div>
       <action-button
-        text="Give Ownsership"
+        text="btn.giveOwnership"
         type="primary"
         size="md"
         class="table m-auto"

@@ -3,5 +3,20 @@
     "home": "home",
     "about": "about",
     "contact": "contact"
+  },
+  "btn": {
+    "signIn": "sign in",
+    "signUp": "sign up",
+    "learnMore": "learn more",
+    "transfer": "transfer",
+    "send": "send",
+    "confirm": "confirm",
+    "contract": "contract",
+    "ownership": "ownership",
+    "exploreOurFaq": "explore our Faq",
+    "readMore": "read more",
+    "giveOwnership": "give ownership",
+    "reportDevice": "report your device",
+    "reportDeviceDead": "report as dead"
   }
 }

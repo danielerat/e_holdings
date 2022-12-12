@@ -11,7 +11,7 @@
       <div class="text-site-gray-3 my-5">
         {{ text_left }}
       </div>
-      <action-button type="secondary" text="Read More"></action-button>
+      <action-button type="secondary" text="btn.readMore"></action-button>
     </div>
 
     <div class="basis-2/5 mb-20">
@@ -24,7 +24,7 @@
       <div class="text-site-gray-3 my-5">
         {{ text_right }}
       </div>
-      <action-button type="secondary" text="Read More"></action-button>
+      <action-button type="secondary" text="btn.readMore"></action-button>
     </div>
   </section>
 </template>

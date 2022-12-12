@@ -1,7 +1,7 @@
 <template>
   <button :class="[buttonClass, sizeClass]">
     <fa v-if="icon != ''" :icon="frontIcon"></fa>
-    {{ text }}
+    {{ $t(text) }}
   </button>
 </template>
 <script>

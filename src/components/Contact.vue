@@ -119,7 +119,7 @@
                 id="message"
               ></textarea>
             </div>
-            <action-button type="primary" size="md" text="Sign In" class="" />
+            <action-button type="primary" size="md" text="btn.send" class="" />
           </div>
         </form>
       </div>

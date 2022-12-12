@@ -98,7 +98,7 @@
                 <action-button
                   type="secondary"
                   size="sm"
-                  text="Sign In"
+                  text="btn.signIn"
                   class="dark:bg-site-gray-2"
                 />
               </router-link>
