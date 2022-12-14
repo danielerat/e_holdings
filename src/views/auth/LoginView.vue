@@ -21,20 +21,34 @@
               <hr class="mt-4 border-b-1 text-site-gray-1" />
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form>
+              <form
+                id="app"
+                @submit.prevent="checkForm"
+                action="text.com"
+                method="post"
+              >
+                <span
+                  class="text-xs text-site-yellow-1"
+                  v-if="this.errors.length"
+                >
+                  <span v-for="error in errors" :key="error">{{ error }}</span>
+                </span>
                 <div class="relative w-full mb-3">
                   <label
                     class="block text-site-gray-1 text-xs font-bold mb-2"
-                    htmlFor="national_id"
+                    htmlFor="phoneNumber"
                   >
                     Phone Number
                   </label>
                   <input
-                    id="national_id"
+                    v-model="phoneNumber"
+                    id="phoneNumber"
+                    name="phoneNumber"
                     type="text"
                     required
                     class="border-0 px-3 py-3 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Your phone number"
+                    autocomplete="off"
                   />
                 </div>
 
@@ -46,14 +60,16 @@
                     Password
                   </label>
                   <input
+                    :type="showPassword ? 'text' : 'password'"
+                    v-model="password"
+                    name="password"
                     id="password"
-                    :type="show ? 'password' : 'text'"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Your password"
                     required
                   />
                   <fa
-                    @click="show = !show"
+                    @click="showPassword = !showPassword"
                     :icon="eyeIcon()"
                     class="text-2xl text-site-gray-2 absolute bottom-3 right-3"
                   />
@@ -74,12 +90,11 @@
                 </div>
 
                 <div class="text-center mt-6">
-                  <input
-                    type="submit"
-                    value="Login"
-                    @click="Authentication"
+                  <button
                     class="bg-site-gray-2 text-site-white-5 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg hover:bg-site-gray-1 outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                  />
+                  >
+                    Login
+                  </button>
                 </div>
               </form>
             </div>
@@ -91,6 +106,10 @@
   <footer-simple />
 </template>
 <script>
+import AlertMe from "@/utils/alerts";
+import CheckPhone from "@/utils/CheckPhone";
+import CheckPassword from "@/utils/CheckPassword";
+
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
@@ -98,7 +117,10 @@ export default {
   name: "Index",
   data() {
     return {
-      show: true,
+      showPassword: false,
+      password: "",
+      phoneNumber: "",
+      errors: "",
     };
   },
   components: {
@@ -106,29 +128,23 @@ export default {
     IndexNavbar,
   },
   methods: {
+    // Shwo and hide password , using the eye thing
     eyeIcon() {
-      if (this.show) return "eye";
+      if (this.showPassword) return "eye";
       return "eye-slash";
     },
-    Authentication() {
-      const Toast = this.$swal.mixin({
-        toast: true,
-        timer: 5000,
-        position: "top-end",
-        showConfirmButton: false,
-        showCloseButton: true,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", this.$swal.stopTimer);
-          toast.addEventListener("mouseleave", this.$swal.resumeTimer);
-        },
-      });
 
-      Toast.fire({
-        icon: "error",
-        title: "Unknwon username or password",
-        // text: "Something went wrong!",
-      });
+    checkForm: function (e) {
+      console.log("I was sumbitted");
+
+      if (CheckPhone(this.phoneNumber) && CheckPassword(this.password)) {
+        AlertMe({ title: "Successfull Authentication.", type: "success" });
+      } else {
+        this.errors = "* Error Authenticating";
+        AlertMe({ title: "Unknown phone number or password" });
+      }
+
+      e.preventDefault();
     },
   },
 };

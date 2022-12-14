@@ -65,7 +65,7 @@
           <h2 class="text-2xl mt-5">
             Check out our FAQ you may find some useful tips
           </h2>
-          <router-link to="support">
+          <router-link :to="`/${$i18n.locale}/support`">
             <action-button
               frontIcon="arrow-right"
               type="tertiary"
@@ -99,7 +99,7 @@
     </slot>
     <slot name="footer">
       <div class="flex justify-end">
-        <router-link to="support">
+        <router-link :to="`/${$i18n.locale}/support`">
           <action-button
             front-icon="arrow-right"
             type="tertiary"

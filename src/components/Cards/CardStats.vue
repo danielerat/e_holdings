@@ -23,9 +23,7 @@
       </div>
       <p class="text-sm text-blueGray-400 mt-4">
         <span class="mr-2" :class="[statPercentColor]">
-          <fa
-            :icon="statArrow === 'up' ? ['fa', 'arrow-up'] : ['fa', 'arrow-up']"
-          ></fa>
+          <fa :icon="statArrow === 'up' ? 'arrow-up' : 'arrow-down'"></fa>
           {{ statPercent }}%
         </span>
         <span class="whitespace-nowrap font-bold">{{ statDescripiron }}</span>

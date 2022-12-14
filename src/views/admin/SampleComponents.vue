@@ -110,7 +110,7 @@ export default {
     // DeviceCard,
   },
   computed: {
-    ...mapState("darkmode"),
+    ...mapState(["darkmode"]),
   },
   methods: {
     ...mapMutations(["CHANGE_DARKMODE"]),

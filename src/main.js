@@ -60,6 +60,7 @@ import {
   faMoon,
   faArrowRight,
   faEyeSlash,
+  faArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -118,7 +119,9 @@ library.add(
   faRightFromBracket,
   faLightbulb,
   faMoon,
-  faArrowRight
+  faArrowRight,
+  faArrowDown,
+  faArrowUp
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

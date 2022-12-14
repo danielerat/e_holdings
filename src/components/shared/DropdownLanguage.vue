@@ -96,7 +96,6 @@ export default {
     },
     onClickAway() {
       this.dropdownPopoverShow = false;
-      console.log("I was trigered");
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <button :class="[buttonClass, sizeClass]">
-    <fa v-if="icon != ''" :icon="frontIcon"></fa>
+    <fa v-if="frontIcon != ''" :icon="frontIcon"></fa>
     {{ $t(text) }}
   </button>
 </template>
@@ -27,7 +27,7 @@ export default {
       required: false,
       default: "sm",
       validator(value) {
-        return ["sm", "md", "lg"].includes(value);
+        return ["sm", "md", "lg", "xl"].includes(value);
       },
     },
     frontIcon: {

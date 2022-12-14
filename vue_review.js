@@ -352,7 +352,7 @@ The Code bellow will make sure only one item is showing ,
 <p v-show="have">Hello there cake</p>
 <p v-show="!have">Not there cake</p>
 
-daga(){
+data(){
 return{
 have:false
 }
