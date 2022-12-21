@@ -22,7 +22,7 @@
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
               <form
-                id="app"
+                id="form"
                 @submit.prevent="checkForm"
                 action="text.com"
                 method="post"
@@ -53,25 +53,14 @@
                 </div>
 
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block text-site-gray-1 text-xs font-bold mb-2"
-                    htmlFor="password"
-                  >
-                    Password
-                  </label>
-                  <input
-                    :type="showPassword ? 'text' : 'password'"
-                    v-model="password"
-                    name="password"
+                  <field
+                    v-model="this.password"
                     id="password"
-                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="Your password"
-                    required
-                  />
-                  <fa
-                    @click="showPassword = !showPassword"
-                    :icon="eyeIcon()"
-                    class="text-2xl text-site-gray-2 absolute bottom-3 right-3"
+                    label="Password"
+                    size="lg"
+                    name="password"
+                    placeholder="password"
+                    type="password"
                   />
                 </div>
 
@@ -83,7 +72,7 @@
                         :to="`/${$i18n.locale}/register`"
                         class="text-site-green-3"
                       >
-                        Sign up
+                        {{ $te("btn.register") }}
                       </router-link>
                     </span>
                   </label>
@@ -113,6 +102,8 @@ import CheckPassword from "@/utils/CheckPassword";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
+import Field from "@/components/shared/InputText.vue";
+
 export default {
   name: "Index",
   data() {
@@ -126,13 +117,10 @@ export default {
   components: {
     FooterSimple,
     IndexNavbar,
+    Field,
   },
   methods: {
     // Shwo and hide password , using the eye thing
-    eyeIcon() {
-      if (this.showPassword) return "eye";
-      return "eye-slash";
-    },
 
     checkForm: function (e) {
       console.log("I was sumbitted");
