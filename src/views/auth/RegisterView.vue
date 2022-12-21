@@ -6,124 +6,58 @@
       <div class="flex content-center items-center justify-center h-full">
         <div class="w-full lg:w-6/12 px-4">
           <div
-            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-site-white-4 border-0"
+            class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-site-white-4 border-0 dark:bg-site-gray-1"
           >
             <div class="rounded-t mb-0 px-6 py-6">
               <div class="mb-3">
-                <h6 class="text-site-gray-1 text-sm font-bold">Sign up with</h6>
+                <h6
+                  class="text-site-gray-1 text-sm font-bold dark:text-site-white-4"
+                >
+                  Sign up with
+                </h6>
               </div>
               <div class="btn-wrapper">
-                <h2 class="font-bold text-lg mb-5 text-site-gray-1">
+                <h2
+                  class="font-bold text-lg mb-5 text-site-gray-1 dark:text-site-white-4"
+                >
                   Let's Set your account up
                 </h2>
-                <ol class="flex justify-center">
-                  <li class="relative mb-6 sm:mb-0">
-                    <div class="flex items-center">
-                      <div
-                        class="flex z-10 justify-center items-center w-6 h-6 text-site-white-5 bg-site-green-4 rounded-full ring-0 ring-site-white-3 dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                      >
-                        <fa icon="circle-info"></fa>
-                      </div>
-                      <div
-                        class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                      ></div>
-                    </div>
-                    <div class="mt-3 sm:pr-8">
-                      <h3
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                      >
-                        Your Info
-                      </h3>
-                    </div>
-                  </li>
-                  <li class="relative mb-6 sm:mb-0">
-                    <div class="flex items-center">
-                      <div
-                        class="flex z-10 justify-center items-center w-6 h-6 bg-site-green-4 rounded-full ring-0 ring-site-white-5 dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                      >
-                        <fa icon="fingerprint"></fa>
-                      </div>
-                      <div
-                        class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                      ></div>
-                    </div>
-                    <div class="mt-3 sm:pr-8">
-                      <h3
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                      >
-                        Account Verification
-                      </h3>
-                    </div>
-                  </li>
-                  <li class="relative mb-6 sm:mb-0">
-                    <div class="flex items-center">
-                      <div
-                        class="flex z-10 justify-center items-center w-6 h-6 bg-site-green-4 rounded-full ring-0 ring-site-white-5 dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                      >
-                        <fa icon="lock"></fa>
-                      </div>
-                      <div
-                        class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"
-                      ></div>
-                    </div>
-                    <div class="mt-3 sm:pr-8">
-                      <h3
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                      >
-                        Password Setup
-                      </h3>
-                    </div>
-                  </li>
-                  <li class="relative mb-6 sm:mb-0">
-                    <div class="flex items-center">
-                      <div
-                        class="flex z-10 justify-center items-center w-6 h-6 bg-site-green-4 rounded-full ring-0 ring-site-white-5 dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0"
-                      >
-                        <fa icon="circle-check"></fa>
-                      </div>
-                    </div>
-                    <div class="mt-3 sm:pr-8">
-                      <h3
-                        class="text-sm font-semibold text-gray-900 dark:text-white"
-                      >
-                        Done
-                      </h3>
-                    </div>
-                  </li>
-                </ol>
+                <step-form :step="step" />
               </div>
               <hr class="mt-4 border-b-1 text-site-gray-1" />
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form>
+              <form id="form" @submit.prevent="checkForm" action="text.com">
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block text-site-gray-1 text-xs font-bold mb-2"
-                    htmlFor="national_id"
-                  >
-                    NATIONAL ID
-                  </label>
-                  <input
-                    id="national_id"
-                    type="text"
-                    class="border-0 px-3 py-3 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="Your National ID Number"
+                  <input-text
+                    id="nationalId"
+                    placeholder="119..."
+                    label="National Id"
+                    size="lg"
+                    v-on:update:data="nationalId = $event"
                   />
+                  <span
+                    class="text-xs text-site-yellow-1"
+                    v-if="this.errors.nationalId"
+                  >
+                    <span>{{ this.errors.nationalId }}</span>
+                  </span>
                 </div>
 
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block text-site-gray-1 text-xs font-bold mb-2"
-                    htmlFor="phone_number"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone_number"
-                    type="text"
-                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="+2507..."
+                  <input-text
+                    id="phoneNumber"
+                    placeholder="07...."
+                    label="Phone Number"
+                    size="lg"
+                    v-on:update:data="phoneNumber = $event"
                   />
+                  <span
+                    class="text-xs text-site-yellow-1"
+                    v-if="this.errors.phoneNumber"
+                  >
+                    <span>{{ this.errors.phoneNumber }}</span>
+                  </span>
                 </div>
 
                 <div>
@@ -131,7 +65,9 @@
                     <input
                       id="customCheckLogin"
                       type="checkbox"
+                      checked
                       class="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
+                      disabled
                     />
                     <span class="ml-2 text-sm font-semibold text-blueGray-600">
                       I agree with the
@@ -144,8 +80,7 @@
 
                 <div class="text-center mt-6">
                   <button
-                    class="bg-site-gray-1 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                    type="button"
+                    class="bg-site-gray-2 text-site-white-5 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg hover:bg-site-gray-1 outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                   >
                     Create Account
                   </button>
@@ -160,14 +95,64 @@
   <footer-simple />
 </template>
 <script>
+// import nextElementInList from "@/utils/nextElementInList.js";
+import AlertMe from "@/utils/alerts";
+import CheckPhone from "@/utils/CheckPhone";
+import CheckId from "@/utils/CheckId";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
-
+import StepForm from "@/components/shared/StepForm.vue";
+import InputText from "@/components/shared/InputText.vue";
 export default {
   name: "Index",
   components: {
     FooterSimple,
     IndexNavbar,
+    StepForm,
+    InputText,
+  },
+  data() {
+    return {
+      nationalId: "",
+      parentMessage: "",
+      phoneNumber: "",
+      errors: {
+        nationalId: "",
+        phoneNumber: "",
+      },
+      step: 1,
+    };
+  },
+  methods: {
+    checkForm: function (e) {
+      if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
+        // You are good to go
+        AlertMe({ title: "Successfull Check", type: "success" });
+      } else {
+        AlertMe({ title: "Error Signing Up" });
+        //    Set the error of the id
+        if (!CheckId(this.nationalId)) {
+          this.errors.nationalId = "* Ivalid Id";
+          console.log(this.errors);
+        } else {
+          this.errors.nationalId = "";
+        }
+        //    Set the error of the phone Number
+        if (!CheckPhone(this.phoneNumber)) {
+          this.errors.phoneNumber = "* Invalid Phone Number";
+        } else {
+          this.errors.phoneNumber = "";
+        }
+      }
+      e.preventDefault();
+    },
+
+    updateNationalId(newMessage) {
+      this.nationalId = newMessage;
+    },
+    updatePhoneNumber(newMessage) {
+      this.phoneNumber = newMessage;
+    },
   },
 };
 </script>

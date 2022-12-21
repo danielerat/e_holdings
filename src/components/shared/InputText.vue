@@ -2,19 +2,37 @@
   <div class="w-full px-4" :class="[sizeClass]">
     <div class="relative w-full mb-3">
       <label
-        class="block uppercase text-site-gray-1 text-xs font-bold mb-2"
+        v-if="label"
+        class="block uppercase text-site-gray-1 text-xs font-bold mb-2 dark:text-site-white-5"
         :htmlFor="name"
       >
         {{ label }}
       </label>
       <input
+        v-if="type != 'password'"
         :id="name"
         :type="type"
         :placeholder="placeholder"
         class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-        :value="value"
-        :name="name"
+        v-model="data"
+        @input="$emit('update:data', data)"
         :readonly="readonly"
+      />
+      <input
+        v-else
+        :id="name"
+        :type="showText ? 'text' : 'password'"
+        :placeholder="placeholder"
+        class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+        v-model="data"
+        @input="$emit('update:data', data)"
+        :readonly="readonly"
+      />
+      <fa
+        v-if="type == 'password'"
+        @click="showText = !showText"
+        :icon="eyeIcon()"
+        class="text-2xl text-site-gray-2 absolute bottom-3 right-3"
       />
     </div>
   </div>
@@ -33,22 +51,20 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      required: false,
     },
     placeholder: {
       type: String,
       required: false,
       default: "",
     },
-    value: {
+
+    id: {
       type: String,
       required: false,
       default: "",
     },
-    name: {
-      type: String,
-      required: true,
-    },
+
     readonly: {
       type: Boolean,
       required: false,
@@ -63,9 +79,22 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      data: "",
+      showText: false,
+    };
+  },
   computed: {
     sizeClass() {
       return { [this.size]: true };
+    },
+  },
+
+  methods: {
+    eyeIcon() {
+      if (this.showText) return "eye";
+      return "eye-slash";
     },
   },
 };
