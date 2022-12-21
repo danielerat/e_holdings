@@ -8,8 +8,8 @@ function alert(param = { title: "xxxxx", type: "error" }) {
     showCloseButton: true,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.addEventListener("mouseenter", this.$swal.stopTimer);
-      toast.addEventListener("mouseleave", this.$swal.resumeTimer);
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
     },
   });
 
