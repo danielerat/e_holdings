@@ -14,8 +14,7 @@
         :type="type"
         :placeholder="placeholder"
         class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-        v-model="data"
-        @input="$emit('update:data', data)"
+        v-model="changeValue"
         :readonly="readonly"
       />
       <input
@@ -24,8 +23,7 @@
         :type="showText ? 'text' : 'password'"
         :placeholder="placeholder"
         class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-        v-model="data"
-        @input="$emit('update:data', data)"
+        v-model="changeValue"
         :readonly="readonly"
       />
       <fa
@@ -50,6 +48,10 @@ export default {
       },
     },
     label: {
+      type: String,
+      required: false,
+    },
+    data: {
       type: String,
       required: false,
     },
@@ -81,13 +83,21 @@ export default {
   },
   data() {
     return {
-      data: "",
       showText: false,
     };
   },
   computed: {
     sizeClass() {
       return { [this.size]: true };
+    },
+    changeValue: {
+      get() {
+        return this.data;
+      },
+      set(newValue) {
+        // Emit the update-message event when the messageChanged computed property is set
+        this.$emit("update", newValue);
+      },
     },
   },
 
