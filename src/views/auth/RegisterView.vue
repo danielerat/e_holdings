@@ -28,7 +28,8 @@
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
               <form id="form" @submit.prevent="checkForm" action="text.com">
-                <div class="relative w-full mb-3">
+                <!-- Basic Information of the User National Id Phone number -->
+                <div v-if="step == 1" class="relative w-full mb-3">
                   <input-text
                     id="nationalId"
                     placeholder="119..."
@@ -44,7 +45,7 @@
                   </span>
                 </div>
 
-                <div class="relative w-full mb-3">
+                <div v-if="step == 1" class="relative w-full mb-3">
                   <input-text
                     id="phoneNumber"
                     placeholder="07...."
@@ -60,7 +61,24 @@
                   </span>
                 </div>
 
-                <div>
+                <!-- Account Verification We send some Kind of code to the user -->
+                <div v-if="step == 2" class="relative w-full mb-3">
+                  <input-text
+                    id="verificationCode"
+                    placeholder="Your Verification Code"
+                    size="lg"
+                    label="Enter Code sent to:{{ phoneNumber }}"
+                    v-on:update:data="verificationCode = $event"
+                  />
+                  <span
+                    class="text-xs text-site-yellow-1"
+                    v-if="this.errors.verificationCode"
+                  >
+                    <span>{{ this.errors.verificationCode }}</span>
+                  </span>
+                </div>
+
+                <div v-if="step == 1">
                   <label class="inline-flex items-center cursor-pointer">
                     <input
                       id="customCheckLogin"
@@ -113,12 +131,13 @@ export default {
   },
   data() {
     return {
-      nationalId: "",
-      parentMessage: "",
-      phoneNumber: "",
+      nationalId: "1199487844234242",
+      phoneNumber: "0783345442",
+      verificationCode: "",
       errors: {
         nationalId: "",
         phoneNumber: "",
+        verificationCode: "",
       },
       step: 1,
     };
@@ -126,8 +145,32 @@ export default {
   methods: {
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
-        // You are good to go
-        AlertMe({ title: "Successfull Check", type: "success" });
+        // Your Phone Number and ID are Good
+        if (this.step == 1) {
+          AlertMe({
+            title: "Enter The verification Vode You received bellow",
+            type: "info",
+          });
+          // Change Step form to go to the second step
+          this.step = 2;
+        }
+
+        //Check verification Vode and change step
+        if (this.verificationCode == "007" && this.step == 2) {
+          // Change Step form to go to the second step
+          this.step = 3;
+          AlertMe({
+            title: "Enter The verification Vode You received bellow",
+            type: "success",
+          });
+        } else if (this.verificationCode != "") {
+          this.errors.verificationCode =
+            "* Ivalid Code, Please Enter A correct Code.";
+          AlertMe({
+            title: "Invalid Verification Code",
+            type: "error",
+          });
+        }
       } else {
         AlertMe({ title: "Error Signing Up" });
         //    Set the error of the id
@@ -145,13 +188,6 @@ export default {
         }
       }
       e.preventDefault();
-    },
-
-    updateNationalId(newMessage) {
-      this.nationalId = newMessage;
-    },
-    updatePhoneNumber(newMessage) {
-      this.phoneNumber = newMessage;
     },
   },
 };
