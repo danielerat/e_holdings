@@ -34,21 +34,14 @@
                   <span v-for="error in errors" :key="error">{{ error }}</span>
                 </span>
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block text-site-gray-1 text-xs font-bold mb-2"
-                    htmlFor="phoneNumber"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    v-model="phoneNumber"
+                  <field
+                    v-model="this.phoneNumber"
                     id="phoneNumber"
+                    label="Phone Number"
+                    size="lg"
                     name="phoneNumber"
+                    placeholder="07..."
                     type="text"
-                    required
-                    class="border-0 px-3 py-3 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="Your phone number"
-                    autocomplete="off"
                   />
                 </div>
 
@@ -72,7 +65,7 @@
                         :to="`/${$i18n.locale}/register`"
                         class="text-site-green-3"
                       >
-                        {{ $te("btn.register") }}
+                        {{ $t("btn.signUp") }}
                       </router-link>
                     </span>
                   </label>
