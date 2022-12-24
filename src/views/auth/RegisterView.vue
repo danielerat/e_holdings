@@ -35,7 +35,8 @@
                     placeholder="119..."
                     label="National Id"
                     size="lg"
-                    v-on:update:data="nationalId = $event"
+                    v-bind:data="nationalId"
+                    v-on:update="nationalId = $event"
                   />
                   <span
                     class="text-xs text-site-yellow-1"
@@ -51,7 +52,8 @@
                     placeholder="07...."
                     label="Phone Number"
                     size="lg"
-                    v-on:update:data="phoneNumber = $event"
+                    v-bind:data="phoneNumber"
+                    v-on:update="phoneNumber = $event"
                   />
                   <span
                     class="text-xs text-site-yellow-1"
@@ -67,7 +69,7 @@
                     id="verificationCode"
                     placeholder="Your Verification Code"
                     size="lg"
-                    label="Enter Code sent to:{{ phoneNumber }}"
+                    :label="'Enter Code Send to: ' + phoneNumber"
                     v-on:update:data="verificationCode = $event"
                   />
                   <span
@@ -142,6 +144,7 @@ export default {
       step: 1,
     };
   },
+  computed: {},
   methods: {
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
