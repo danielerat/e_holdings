@@ -1656,3 +1656,82 @@ VUE LIFE Cycle HOOKS IN COMPOSITION API
 before in out options api we used to have things like mounted(lifecycle hook)in out vue file
 but in the composition api we now have access to all those hooks under the form of functions
 onMounted, onBeforeMount, etc...
+
+
+
+
+
+Regular Expression
+------------------
+Starts with / and ends with /
+/str/
+Global Search
+----
+/str/g
+Look for all occurences 
+
+Case insensitive Search
+----------
+/str/gi
+
+Optional Search
+----------------
+/eat?/g
+T is Optional, either it is found or not
+ear, year eat etc.
+
+
+Match 0 or more
+---------------
+/re*/gi
+
+Match anything
+--------------
+/.at/g
+cat , hat, sat will be matched
+
+Escape Character \
+----------------
+The back slash is used to escape characters
+/\./g 
+you will be finding for a point
+
+Match word character
+----------
+/\w /g :will match every word
+/\W /g :will match every none word character
+
+Match any white spave \s
+---------------------
+All white spaces will be matched
+/\s/g :all white spaces
+/\S/ : all non white space
+
+Match Set of character
+-------------------
+/\w{2,5}/: match two to 5 character long word
+/\w{4,}/: match 4 and above characters
+
+
+Match a set elemet 
+--------------
+/[fc]at/: match word that start with either f or c and ends with at
+/[a-z]at/: Range from a-z and ends with at
+
+Or Symbol | 
+-----------
+/dog|god/: match with or
+
+grouping () are used for grouping
+------------------
+
+/(d|p)og/: match with dog or pog 
+
+Beginning of line ^
+------------
+The ^ symbol will match the beginning of the line
+/^The/
+
+$ Match End of the statement.
+----------------------
+/\.$/

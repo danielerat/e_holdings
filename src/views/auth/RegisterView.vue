@@ -70,7 +70,8 @@
                     placeholder="Your Verification Code"
                     size="lg"
                     :label="'Enter Code Send to: ' + phoneNumber"
-                    v-on:update:data="verificationCode = $event"
+                    v-bind:data="verificationCode"
+                    v-on:update="verificationCode = $event"
                   />
                   <span
                     class="text-xs text-site-yellow-1"
@@ -78,6 +79,42 @@
                   >
                     <span>{{ this.errors.verificationCode }}</span>
                   </span>
+                </div>
+
+                <!-- Password Setup -->
+                <div v-if="step == 3" class="relative w-full mb-3">
+                  <input-text
+                    id="password"
+                    placeholder="Create Your password"
+                    size="lg"
+                    type="password"
+                    label="Create Your password "
+                    v-bind:data="password"
+                    v-on:update="password = $event"
+                  />
+                  <span
+                    class="text-xs text-site-yellow-1"
+                    v-if="this.errors.password"
+                  >
+                    <span>{{ this.errors.password }}</span>
+                  </span>
+                </div>
+                <!-- Accound Successfully Created -->
+                <div v-if="step == 4">
+                  <div class="w-2/3 mx-auto">
+                    <h3
+                      class="font-bold text-lg mb-3 leading-5 text-site-gray-1 dark:text-site-yellow-3"
+                    >
+                      Account Successfully Created!
+                      <router-link
+                        :to="`/${$i18n.locale}/login`"
+                        class="text-site-green-3"
+                      >
+                        {{ $t("btn.signIn") }}
+                      </router-link>
+                    </h3>
+                    <img class="w-2/3 mx-20" :src="SuccessPicture" />
+                  </div>
                 </div>
 
                 <div v-if="step == 1">
@@ -98,7 +135,7 @@
                   </label>
                 </div>
 
-                <div class="text-center mt-6">
+                <div v-if="step !== 4" class="text-center mt-6">
                   <button
                     class="bg-site-gray-2 text-site-white-5 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg hover:bg-site-gray-1 outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                   >
@@ -117,12 +154,17 @@
 <script>
 // import nextElementInList from "@/utils/nextElementInList.js";
 import AlertMe from "@/utils/alerts";
+// Regular Expressions
 import CheckPhone from "@/utils/CheckPhone";
 import CheckId from "@/utils/CheckId";
+import CheckPassword from "@/utils/CheckPassword";
+
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 import StepForm from "@/components/shared/StepForm.vue";
 import InputText from "@/components/shared/InputText.vue";
+import SuccessPicture from "@/assets/img/account_success_creation.svg";
+
 export default {
   name: "Index",
   components: {
@@ -136,11 +178,14 @@ export default {
       nationalId: "1199487844234242",
       phoneNumber: "0783345442",
       verificationCode: "",
+      password: "",
       errors: {
         nationalId: "",
         phoneNumber: "",
         verificationCode: "",
+        password: "",
       },
+      SuccessPicture,
       step: 1,
     };
   },
@@ -159,20 +204,40 @@ export default {
         }
 
         //Check verification Vode and change step
-        if (this.verificationCode == "007" && this.step == 2) {
-          // Change Step form to go to the second step
-          this.step = 3;
-          AlertMe({
-            title: "Enter The verification Vode You received bellow",
-            type: "success",
-          });
-        } else if (this.verificationCode != "") {
-          this.errors.verificationCode =
-            "* Ivalid Code, Please Enter A correct Code.";
-          AlertMe({
-            title: "Invalid Verification Code",
-            type: "error",
-          });
+        if (this.step == 2) {
+          if (this.verificationCode == "007" && this.step == 2) {
+            // Change Step form to go to the second step
+            this.step = 3;
+            AlertMe({
+              title: "Enter The verification Vode You received bellow",
+              type: "success",
+            });
+          } else if (this.verificationCode != "") {
+            this.errors.verificationCode =
+              "* Ivalid Code, Please Enter A correct Code.";
+            AlertMe({
+              title: "Invalid Verification Code",
+              type: "error",
+            });
+          }
+        }
+
+        //Create Password
+        if (this.step == 3) {
+          if (CheckPassword(this.password)) {
+            // Correct password, accound can be created
+            this.step = 4;
+            AlertMe({
+              title: "Accound Successfully Created",
+              type: "success",
+            });
+          } else {
+            this.errors.password = "* Password Must be Strong ";
+            AlertMe({
+              title: "Password Not Strong Enough",
+              type: "error",
+            });
+          }
         }
       } else {
         AlertMe({ title: "Error Signing Up" });
