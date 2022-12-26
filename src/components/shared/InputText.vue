@@ -4,13 +4,13 @@
       <label
         v-if="label"
         class="block uppercase text-site-gray-1 text-xs font-bold mb-2 dark:text-site-white-5"
-        :htmlFor="name"
+        :htmlFor="id"
       >
         {{ label }}
       </label>
       <input
         v-if="type != 'password'"
-        :id="name"
+        :id="id"
         :type="type"
         :placeholder="placeholder"
         class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -19,7 +19,7 @@
       />
       <input
         v-else
-        :id="name"
+        :id="id"
         :type="showText ? 'text' : 'password'"
         :placeholder="placeholder"
         class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
