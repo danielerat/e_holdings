@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 const mutations = {
   // Initializing the store
   initStore(state) {
@@ -62,12 +63,16 @@ const mutations = {
     }
   },
   CHANGE_DARKMODE(state) {
-    state.dark = !state.dark;
+    let current = state.theme;
     //Work The Bug
-    if (state.dark) {
+    if (current == "light") {
       document.querySelector("html").classList.add("dark");
-    } else {
+      state.theme = "dark";
+      Cookies.set("theme", "dark");
+    } else if (current == "dark") {
       document.querySelector("html").classList.remove("dark");
+      state.theme = "light";
+      Cookies.set("theme", "light");
     }
   },
 };

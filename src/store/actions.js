@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 const actions = {
   refreshToken(context) {
     return new Promise((resolve, reject) => {
@@ -74,6 +75,15 @@ const actions = {
 
   lookUpAnItem: (context, payload) => {
     context.commit("lookUpAnItem", payload);
+  },
+  fetchTheme({ state, commit }) {
+    if (Cookies.get("theme")) {
+      let theme = Cookies.get("theme");
+      //   Change the theme if the cookie does not match the current theme
+      if (theme !== state.theme) {
+        commit("CHANGE_DARKMODE");
+      }
+    }
   },
 };
 export default actions;

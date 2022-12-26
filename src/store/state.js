@@ -6,7 +6,7 @@ const state = () => {
     userInfo: null,
     soughtItem: [], // An item being looked up
     itemsAll: [],
-    dark: false,
+    theme: "light",
   };
 };
 export default state;

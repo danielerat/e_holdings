@@ -42,7 +42,8 @@ export default {
     },
     down: {
       type: String,
-      default: "",
+      required: false,
+      default: "small",
       validator(value) {
         return ["small", "medium", "large"].includes(value);
       },

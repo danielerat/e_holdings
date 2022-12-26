@@ -4,8 +4,8 @@ const getters = {
   },
   // Flagging items coming soon...
   // i.e Something got stolen for instance
-  darkmode(state) {
-    return state.dark;
+  CURRENT_THEME(state) {
+    return state.theme;
   },
 };
 export default getters;

@@ -1,13 +1,13 @@
 <template>
   <!-- Swtich the light and dark mode things -->
-  <router-view :class="darkmode ? 'dark' : ''" />
+  <router-view :class="CURRENT_THEME == 'dark' ? 'dark' : 'light'" />
 </template>
 <script>
 import { mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["darkmode"]),
+    ...mapGetters(["CURRENT_THEME"]),
   },
 };
 </script>
