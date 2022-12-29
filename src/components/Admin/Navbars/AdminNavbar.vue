@@ -16,6 +16,7 @@
 
       <!-- User -->
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+        <notification-dropdown />
         <dark-mode-switcher />
         <user-dropdown />
       </ul>
@@ -27,11 +28,13 @@
 </template>
 
 <script>
+import NotificationDropdown from "@/components/Admin/Dropdowns/AdminNotificationDropdown";
 import UserDropdown from "@/components/Admin/Dropdowns/AdminUserDropdown";
 import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher.vue";
 export default {
   components: {
     UserDropdown,
+    NotificationDropdown,
     DarkModeSwitcher,
   },
   props: {

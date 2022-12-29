@@ -22,7 +22,7 @@
       </button>
       <!-- Brand -->
       <router-link
-        class="md:block text-left md:pb-2 text-site-green-5 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 dark:text-site-white-5"
+        class="md:block text-left md:pb-2 text-site-green-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 dark:text-site-white-5"
         to="/"
       >
         E-Holdings
@@ -51,7 +51,7 @@
           <div class="flex flex-wrap">
             <div class="w-6/12">
               <router-link
-                class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 text-site-green-5"
+                class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 text-site-green-2"
                 to="/"
               >
                 E-Holdings
