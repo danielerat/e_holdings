@@ -33,6 +33,9 @@
           <notification-dropdown />
         </li>
         <li class="inline-block relative">
+          <dark-mode-switcher />
+        </li>
+        <li class="inline-block relative">
           <user-dropdown />
         </li>
       </ul>
@@ -325,8 +328,13 @@
 <script>
 import NotificationDropdown from "@/components/Admin/Dropdowns/AdminNotificationDropdown";
 import UserDropdown from "@/components/Admin/Dropdowns/AdminUserDropdown.vue";
-
+import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher.vue";
 export default {
+  components: {
+    NotificationDropdown,
+    UserDropdown,
+    DarkModeSwitcher,
+  },
   data() {
     return {
       //   collapseShow: "bg-white m-2 py-3 px-6",
@@ -337,10 +345,6 @@ export default {
     toggleCollapseShow: function (classes) {
       this.collapseShow = classes;
     },
-  },
-  components: {
-    NotificationDropdown,
-    UserDropdown,
   },
 };
 </script>

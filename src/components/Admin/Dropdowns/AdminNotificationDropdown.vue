@@ -1,7 +1,7 @@
 <template>
   <div>
     <a
-      class="text-site-yellow-3 block py-1 px-3"
+      class="text-site-gray-1 block py-1 px-3 dark:text-site-yellow-3"
       ref="btnDropdownRef"
       v-on:click="toggleDropdown($event)"
     >

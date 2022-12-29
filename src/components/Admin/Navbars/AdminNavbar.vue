@@ -16,7 +16,7 @@
 
       <!-- User -->
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-        <DarkModeSwitcher />
+        <dark-mode-switcher />
         <user-dropdown />
       </ul>
     </div>
