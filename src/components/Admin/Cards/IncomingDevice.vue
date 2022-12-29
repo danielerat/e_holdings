@@ -1,6 +1,6 @@
 <template>
   <section class="text-gray-400 body-font">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container mx-auto">
       <div
         class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 flex-col"
         :class="pos ? 'sm:flex-row' : 'sm:flex-row-reverse'"
@@ -30,14 +30,18 @@
             </a>
           </div>
           <p class="leading-relaxed text-base mr-3">
-            <slot></slot>
+            <slot>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus
+              placeat, omnis suscipit, ex necessitatibus quasi neque ab
+              voluptate
+            </slot>
           </p>
 
           <div class="mt-5">
             <div class="flex justify-around">
               <!-- Base -->
               <a
-                class="group flex items-center basis-2/5 justify-between rounded-lg border border-current px-5 py-3 text-site-green-2 transition-colors hover:bg-site-green-1 focus:outline-none focus:ring active:bg-site-green-3"
+                class="text-xs group flex items-center basis-2/5 justify-between rounded-lg border border-current px-2 text-site-green-2 transition-colors hover:bg-site-green-1 focus:outline-none focus:ring active:bg-site-green-3"
               >
                 <span
                   class="font-medium transition-colors group-hover:text-white"
@@ -50,14 +54,14 @@
                 <span
                   class="ml-4 flex-shrink-0 rounded-full border border-current bg-white p-2 text-site-green-2 group-active:text-indigo-500"
                 >
-                  <fa icon="check" class="h-5 w-6" />
+                  <fa icon="check" class="h-3 w-4" />
                 </span>
               </a>
 
               <!-- Border -->
 
               <a
-                class="group flex basis-2/5 items-center justify-between rounded-lg border border-current px-5 py-3 text-site-yellow-2 transition-colors hover:bg-site-yellow-1 focus:outline-none focus:ring active:bg-site-yellow-2"
+                class="text-xs group flex basis-2/5 items-center justify-between rounded-lg border border-current p-2 text-site-yellow-2 transition-colors hover:bg-site-yellow-1 focus:outline-none focus:ring active:bg-site-yellow-2"
               >
                 <span
                   class="font-medium transition-colors group-hover:text-white"
@@ -70,7 +74,7 @@
                 <span
                   class="ml-4 flex-shrink-0 rounded-full border border-site-yellow-2 bg-white p-2 group-active:border-site-yellow-1"
                 >
-                  <fa icon="times" class="h-5 w-6" />
+                  <fa icon="times" class="h-3 w-4" />
                 </span>
               </a>
             </div>

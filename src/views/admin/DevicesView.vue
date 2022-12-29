@@ -3,7 +3,7 @@
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="List of all Invoices " down="medium" />
-
+      <!-- Card Devices -->
       <div class="flex justify-around flex-wrap mb-6">
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
           <card-stats
@@ -42,8 +42,25 @@
             statIconColor="bg-site-green-2"
           />
         </div>
+        <div class="self-center w-full lg:w-6/12 xl:w-3/12 px-4">
+          <router-link
+            :to="`/${$i18n.locale}/admin/devices/pending`"
+            class="cursor-pointer group flex items-center basis-2/5 justify-between rounded-lg border border-current px-5 py-3 text-site-green-2 transition-colors hover:bg-site-green-1 focus:outline-none focus:ring active:bg-site-green-3"
+          >
+            <span class="font-medium transition-colors group-hover:text-white">
+              My Pending Device
+            </span>
+
+            <span
+              class="ml-4 flex-shrink-0 rounded-full border border-current bg-white p-2 text-site-green-2 group-active:text-site-green-1"
+            >
+              <fa icon="arrow-right" class="h-5 w-6" />
+            </span>
+          </router-link>
+        </div>
       </div>
-      <!-- Settings -->
+
+      <!-- Devices -->
       <div class="w-full justify-center my-2">
         <div class="flex w-2/4 mx-auto">
           <input

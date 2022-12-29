@@ -49,6 +49,9 @@ module.exports = {
       boxShadow: {
         blue: "0 0 3px 3px #102A43",
       },
+      cursor: {
+        fancy: "url(hand.cur), pointer",
+      },
     },
   },
   variants: {

@@ -8,6 +8,7 @@ import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
 import SupportView from "@/views/SupportView.vue";
 import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
+import PendingDeviceVue from "@/views/admin/PendingDeviceVue.vue";
 import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
 import DevicesView from "@/views/admin/DevicesView.vue";
@@ -93,6 +94,11 @@ const routes = [
         path: "admin/devices",
         name: "devices",
         component: DevicesView,
+      },
+      {
+        path: "admin/devices/pending",
+        name: "pending",
+        component: PendingDeviceVue,
       },
       {
         path: "admin/device",
