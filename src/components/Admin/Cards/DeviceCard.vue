@@ -40,14 +40,16 @@
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
-            <router-link to="/admin/device"><fa icon="eye" /></router-link>
+            <router-link :to="`/${$i18n.locale}/admin/device`">
+              <fa icon="eye" />
+            </router-link>
           </div>
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
             <fa icon="gauge" />
           </div>
-          <router-link to="/admin/device">
+          <router-link :to="`/${$i18n.locale}/admin/device`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
               <fa icon="share" />
             </div>
