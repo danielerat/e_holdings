@@ -66,6 +66,7 @@ import {
   faCloudArrowUp,
   faCloud,
   faCloudArrowDown,
+  faCircleUser,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -79,6 +80,7 @@ library.add(
   faBars,
   faChartBar,
   faUsers,
+  faCircleUser,
   faChartPie,
   faPercent,
   faArrowUp,
@@ -98,8 +100,8 @@ library.add(
   faPhone,
   faHouse,
   faEnvelope,
-  faHandshakeSimple,
   faCubesStacked,
+  faHandshakeSimple,
   faHeadset,
   faFileContract,
   faAngleDown,
