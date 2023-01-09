@@ -63,6 +63,9 @@ import {
   faArrowDown,
   faFilter,
   faSortUp,
+  faCloudArrowUp,
+  faCloud,
+  faCloudArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -125,7 +128,10 @@ library.add(
   faArrowDown,
   faArrowUp,
   faFilter,
-  faSortUp
+  faSortUp,
+  faCloudArrowUp,
+  faCloudArrowDown,
+  faCloud
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
