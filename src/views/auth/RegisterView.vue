@@ -152,6 +152,7 @@
   <footer-simple />
 </template>
 <script>
+import axios from "axios";
 // import nextElementInList from "@/utils/nextElementInList.js";
 import AlertMe from "@/utils/alerts";
 // Regular Expressions
@@ -187,10 +188,39 @@ export default {
       },
       SuccessPicture,
       step: 1,
+      inTouchUsername: "danielerat",
+      inTouchPassword: "GUcR@.xY59VypWh",
+      inTouchVerifCode: "",
     };
   },
   computed: {},
+  created() {
+    this.createVerificationCode();
+  },
   methods: {
+    createVerificationCode() {
+      for (let i = 0; i < 6; i++) {
+        this.inTouchVerifCode = Math.floor(Math.random() * 9) + 1;
+        console.log(this.inTouchVerifCode);
+      }
+    },
+    testingIntouch() {
+      let data = {
+        recipients: this.phoneNumber,
+        message: `Hello, this is your verification code: ${this.inTouchVerifCode}`,
+        sender: "E-Holdings",
+        username: this.inTouchUsername,
+        password: this.inTouchPassword,
+      };
+      axios
+        .post(`https://www.intouchsms.co.rw/api/sendsms/.json`, data)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
         // Your Phone Number and ID are Good
@@ -203,20 +233,20 @@ export default {
           this.step = 2;
         }
 
-        //Check verification Vode and change step
+        //Check verification code and change step
         if (this.step == 2) {
           if (this.verificationCode == "007" && this.step == 2) {
             // Change Step form to go to the second step
             this.step = 3;
             AlertMe({
-              title: "Enter The verification Vode You received bellow",
+              title: "Enter the verification code you received below",
               type: "success",
             });
           } else if (this.verificationCode != "") {
             this.errors.verificationCode =
-              "* Ivalid Code, Please Enter A correct Code.";
+              "* Invalid code, Please Enter A correct Code.";
             AlertMe({
-              title: "Invalid Verification Code",
+              title: "Invalid verification code",
               type: "error",
             });
           }

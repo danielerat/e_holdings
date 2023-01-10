@@ -4,20 +4,20 @@ import axios from "axios";
 const actions = {
   refreshToken(context) {
     return new Promise((resolve, reject) => {
-      this.axios
+      axios
         .post("e-hold/v1/token/refresh/", {
           refresh: context.state.refreshToken,
         })
         .then((response) => {
           console.log("New AccessToken successfully generated");
           context.commit("updateToken", {
-            accessToken: response.data.accessToken,
-            refreshToken: response.data.refreshToken,
+            accessToken: response.data.access,
+            refreshToken: response.data.refresh,
           });
-          this.axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.accessToken;
-          localStorage.setItem("accessToken", response.data.accessToken);
-          localStorage.setItem("refreshToken", response.data.refreshToken);
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.access;
+          localStorage.setItem("accessToken", response.data.access);
+          localStorage.setItem("refreshToken", response.data.refresh);
           resolve();
         })
         .catch((err) => {
@@ -33,7 +33,7 @@ const actions = {
   },
   userSignIn(context, formData) {
     return new Promise((resolve, reject) => {
-      this.axios
+      axios
         .post("e-hold/v1/login/", {
           phone: formData.phone,
           password: formData.password,
@@ -43,14 +43,14 @@ const actions = {
           // window.location.reload();
 
           context.commit("updateToken", {
-            accessToken: response.data.accessToken,
-            refreshToken: response.data.refreshToken,
+            accessToken: response.data.access,
+            refreshToken: response.data.refresh,
           });
           // Now, set the accessToken for the Bearer
-          this.axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.accessToken;
-          localStorage.setItem("accessToken", response.data.accessToken);
-          localStorage.setItem("refreshToken", response.data.refreshToken);
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.access;
+          localStorage.setItem("accessToken", response.data.access);
+          localStorage.setItem("refreshToken", response.data.refresh);
           resolve();
         })
         .catch((err) => {

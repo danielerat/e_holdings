@@ -21,12 +21,7 @@
               <hr class="mt-4 border-b-1 text-site-gray-1" />
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form
-                id="form"
-                @submit.prevent="checkForm"
-                action="text.com"
-                method="post"
-              >
+              <form id="form" @submit.prevent="checkForm" method="post">
                 <span
                   class="text-xs text-site-yellow-1"
                   v-if="this.errors.length"
@@ -34,7 +29,12 @@
                   <span v-for="error in errors" :key="error">{{ error }}</span>
                 </span>
                 <div class="relative w-full mb-3">
-                  <field
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    v-model="this.phoneNumber"
+                  />
+                  <!-- <field
                     v-model="this.phoneNumber"
                     id="phoneNumber"
                     label="Phone Number"
@@ -42,11 +42,16 @@
                     name="phoneNumber"
                     placeholder="07..."
                     type="text"
-                  />
+                  /> -->
                 </div>
 
                 <div class="relative w-full mb-3">
-                  <field
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    v-model="this.password"
+                  />
+                  <!-- <field
                     v-model="this.password"
                     id="password"
                     label="Password"
@@ -54,7 +59,7 @@
                     name="password"
                     placeholder="password"
                     type="password"
-                  />
+                  /> -->
                 </div>
 
                 <div>
@@ -90,12 +95,12 @@
 <script>
 import AlertMe from "@/utils/alerts";
 import CheckPhone from "@/utils/CheckPhone";
-import CheckPassword from "@/utils/CheckPassword";
+// import CheckPassword from "@/utils/CheckPassword";
 
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
-import Field from "@/components/shared/InputText.vue";
+// import Field from "@/components/shared/InputText.vue";
 
 export default {
   name: "Index",
@@ -110,21 +115,28 @@ export default {
   components: {
     FooterSimple,
     IndexNavbar,
-    Field,
+    // Field,
   },
   methods: {
-    // Shwo and hide password , using the eye thing
-
+    // Show and hide password , using the eye thing
     checkForm: function (e) {
-      console.log("I was sumbitted");
-
-      if (CheckPhone(this.phoneNumber) && CheckPassword(this.password)) {
-        AlertMe({ title: "Successfull Authentication.", type: "success" });
+      if (CheckPhone(this.phoneNumber)) {
+        this.$store
+          .dispatch("userSignIn", {
+            phone: this.phoneNumber,
+            password: this.password,
+          })
+          .then(() => {
+            AlertMe({ title: "Successfull Authentication.", type: "success" });
+            this.$router.push("/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
         this.errors = "* Error Authenticating";
         AlertMe({ title: "Unknown phone number or password" });
       }
-
       e.preventDefault();
     },
   },
