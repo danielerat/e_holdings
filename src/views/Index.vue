@@ -98,10 +98,10 @@
     title="Save yourself from organizing all these bills"
   >
     <slot>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-      aliquam incidunt id voluptatibus vitae, architecto ut nostrum ratione
-      porro quod dolorum autem natus repellat voluptatem similique, assumenda
-      ipsum cupiditate molestias?
+      Bonjousr {{ coun }} Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Repellendus aliquam incidunt id voluptatibus vitae, architecto ut
+      nostrum ratione porro quod dolorum autem natus repellat voluptatem
+      similique, assumenda ipsum cupiditate molestias?
     </slot>
     <slot name="footer">
       <div class="flex justify-end">
@@ -155,6 +155,11 @@ export default {
     return {
       documentspill,
     };
+  },
+  computed: {
+    coun() {
+      return this.$store.state.theme;
+    },
   },
 };
 </script>

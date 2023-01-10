@@ -6,6 +6,8 @@ import SampleComponents from "@/views/admin/SampleComponents.vue";
 import RegisterView from "@/views/auth/RegisterView.vue";
 import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
+import PublishedDevicesView from "@/views/PublishedDevicesVue.vue";
+import SinglePublishedDevicesView from "@/views/SinglePublishedDeviceView.vue";
 import SupportView from "@/views/SupportView.vue";
 import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
 import AddDeviceView from "@/views/admin/AddDeviceView.vue";
@@ -40,28 +42,8 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
       },
-      //   Admin Routes
-      {
-        path: "admin",
-        name: "admin",
-        component: Admin,
-      },
 
-      {
-        path: "admin/settings",
-        name: "settings",
-        component: SettingsView,
-      },
-      {
-        path: "admin/components",
-        name: "components",
-        component: SampleComponents,
-      },
-      {
-        path: "admin/invoice",
-        name: "invoice",
-        component: Invoice,
-      },
+      //   Users Routes
       {
         path: "register",
         name: "register",
@@ -91,6 +73,38 @@ const routes = [
         path: "support",
         name: "support",
         component: SupportView,
+      },
+      {
+        path: "selling-devices",
+        name: "selling-devices",
+        component: PublishedDevicesView,
+      },
+      {
+        path: "selling-devices/device",
+        name: "selling-devices/device",
+        component: SinglePublishedDevicesView,
+      },
+      //   Admin Routes
+      {
+        path: "admin",
+        name: "admin",
+        component: Admin,
+      },
+
+      {
+        path: "admin/settings",
+        name: "settings",
+        component: SettingsView,
+      },
+      {
+        path: "admin/components",
+        name: "components",
+        component: SampleComponents,
+      },
+      {
+        path: "admin/invoice",
+        name: "invoice",
+        component: Invoice,
       },
       {
         path: "admin/devices",
