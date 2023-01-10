@@ -61,6 +61,12 @@ import {
   faArrowRight,
   faEyeSlash,
   faArrowDown,
+  faFilter,
+  faSortUp,
+  faCloudArrowUp,
+  faCloud,
+  faCloudArrowDown,
+  faCircleUser,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -74,6 +80,7 @@ library.add(
   faBars,
   faChartBar,
   faUsers,
+  faCircleUser,
   faChartPie,
   faPercent,
   faArrowUp,
@@ -93,8 +100,8 @@ library.add(
   faPhone,
   faHouse,
   faEnvelope,
-  faHandshakeSimple,
   faCubesStacked,
+  faHandshakeSimple,
   faHeadset,
   faFileContract,
   faAngleDown,
@@ -121,7 +128,12 @@ library.add(
   faMoon,
   faArrowRight,
   faArrowDown,
-  faArrowUp
+  faArrowUp,
+  faFilter,
+  faSortUp,
+  faCloudArrowUp,
+  faCloudArrowDown,
+  faCloud
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);

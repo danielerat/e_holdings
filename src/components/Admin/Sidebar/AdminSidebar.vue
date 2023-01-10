@@ -196,7 +196,7 @@
           </li>
           <li class="items-center">
             <router-link
-              :to="`/${$i18n.locale}/admin/assign-device`"
+              :to="`/${$i18n.locale}/admin/add-device`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -252,13 +252,13 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Assign Device
+                Assign New Device
               </a>
             </router-link>
           </li>
           <li class="items-center">
             <router-link
-              to="/admin/invoice"
+              :to="`/${$i18n.locale}/admin/publish-device`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -276,7 +276,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Invoices
+                Publish Device
               </a>
             </router-link>
           </li>

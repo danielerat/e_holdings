@@ -6,34 +6,23 @@
     <span
       class="absolute top-4 rounded-full py-1.5 text-xs font-medium text-gray-1"
     >
-      Since: July,15,2022
+      <p class="font-bold">{{ name }}</p>
+      <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
     </span>
     <span
-      class="absolute right-4 top-4 rounded-full px-3 py-1.5 text-xs font-medium"
+      class="absolute right-0 top-1 rounded-full px-3 py-1.5 text-xs font-medium"
       :class="[typeClass]"
     >
-      {{ status }}
+      <fa icon="cloud" />
     </span>
 
-    <div class="mt-4 text-gray-500">
+    <div class="mt-5 text-gray-500">
       <div class="flex justify-around">
         <p>
           <fa :icon="type" class="text-xl" />
         </p>
         <p class="text-xs">SN/IMEI: {{ imei }}</p>
       </div>
-
-      <h3 class="mt-4 text-sm text-site-gray-1">
-        <p class="font-bold">{{ name }}</p>
-
-        <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
-
-        <p></p>
-      </h3>
-
-      <p class="mt-2 hidden text-xs text-gray-4 sm:block">
-        {{ text }}
-      </p>
 
       <div class="flex mt-5 text-lg sm:block">
         <div class="flex">
@@ -44,16 +33,30 @@
               <fa icon="eye" />
             </router-link>
           </div>
-          <div
-            class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
-          >
-            <fa icon="gauge" />
-          </div>
+
           <router-link :to="`/${$i18n.locale}/admin/device`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
               <fa icon="share" />
             </div>
           </router-link>
+
+          <a
+            v-if="status"
+            class="inline-flex items-center px-1 rounded border border-site-yellow-1 text-site-yellow-1 hover:bg-transparent hover:text-site-yellow-2 focus:outline-none focus:ring active:text-site-yellow-2 active:bg-site-yellow-5"
+            href="#"
+          >
+            <span class="text-xs font-medium">Unpublish&nbsp;</span>
+            <fa icon="cloud-arrow-down" />
+          </a>
+
+          <a
+            v-else
+            class="inline-flex items-center px-1 rounded border border-site-green-5 text-site-green-1 hover:bg-transparent hover:text-site-green-2 focus:outline-none focus:ring active:text-site-green-2 active:bg-site-green-5"
+            href="#"
+          >
+            <span class="text-xs font-medium">Publish&nbsp;</span>
+            <fa icon="cloud-arrow-up" />
+          </a>
         </div>
       </div>
     </div>
@@ -61,10 +64,10 @@
 </template>
 
 <script>
-import waveblue from "@/assets/img/wave.svg";
-import waveyellow from "@/assets/img/waveyellow.svg";
+import published_waved from "@/assets/img/wave.svg";
+import unpublished_wave from "@/assets/img/waveyellow.svg";
 export default {
-  name: "DeviceCard",
+  name: "DeviceCardPublish",
   props: {
     name: {
       type: String,
@@ -91,37 +94,41 @@ export default {
       },
     },
     status: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: "active",
+      default: false,
       validator(value) {
-        return ["active", "lost"].includes(value);
+        return [true, false].includes(value);
       },
     },
   },
   data() {
     return {
-      waveblue,
-      waveyellow,
+      published_waved,
+      unpublished_wave,
     };
   },
   computed: {
     picture() {
-      if (this.status == "active") return this.waveblue;
-      return this.waveyellow;
+      if (this.status == true) return this.published_waved;
+      return this.unpublished_wave;
     },
     typeClass() {
-      return { [this.status]: true };
+      if (this.status == true) {
+        return "online";
+      } else {
+        return "offline";
+      }
     },
   },
 };
 </script>
 <style scoped>
-.lost {
-  @apply bg-site-yellow-4 text-site-yellow-1;
+.offline {
+  @apply bg-site-yellow-5 text-site-yellow-1;
 }
-.active {
-  @apply bg-green-100 text-green-600;
+.online {
+  @apply bg-site-gray-5 text-site-green-1;
 }
 </style>
 <style scoped>

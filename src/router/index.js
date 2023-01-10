@@ -8,6 +8,8 @@ import LoginView from "@/views/auth/LoginView.vue";
 import ContactView from "@/views/ContactView.vue";
 import SupportView from "@/views/SupportView.vue";
 import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
+import AddDeviceView from "@/views/admin/AddDeviceView.vue";
+import PublishDeviceView from "@/views/admin/PublishDeviceVue.vue";
 import PendingDeviceVue from "@/views/admin/PendingDeviceVue.vue";
 import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
@@ -100,6 +102,7 @@ const routes = [
         name: "pending",
         component: PendingDeviceVue,
       },
+
       {
         path: "admin/device",
         name: "device",
@@ -114,6 +117,16 @@ const routes = [
         path: "admin/assign-device",
         name: "assign-device",
         component: AssignDeviceView,
+      },
+      {
+        path: "admin/add-device",
+        name: "add-device",
+        component: AddDeviceView,
+      },
+      {
+        path: "admin/publish-device",
+        name: "publich-device",
+        component: PublishDeviceView,
       },
     ],
   },

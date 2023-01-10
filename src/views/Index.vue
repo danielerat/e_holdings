@@ -78,7 +78,13 @@
       </div>
     </div>
   </section>
+
+  <!-- Published Devices -->
+
+  <published-device-short></published-device-short>
+
   <!-- Component--------------------- -->
+
   <center-img-design
     title_left="Our Story"
     sub_title_left="Lorem ipsum dolor sit amet consectetur"
@@ -111,6 +117,7 @@
       </div>
     </slot>
   </fixed-image-scroll-layout>
+
   <main-footer />
 </template>
 
@@ -127,6 +134,7 @@ import documentspill from "@/assets/img/documentpill.jpg";
 import Accordion from "@/components/shared/Accordion.vue/";
 import CardFaq from "@/components/Cards/CardFaq.vue";
 import DeviceLookup from "@/components/Admin/DeviceLookup.vue";
+import PublishedDeviceShort from "@/components/PublishedDeviceShort.vue";
 
 export default {
   name: "Index",
@@ -141,6 +149,7 @@ export default {
     CardFaq,
     Accordion,
     DeviceLookup,
+    PublishedDeviceShort,
   },
   data() {
     return {
