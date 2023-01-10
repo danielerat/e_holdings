@@ -5,7 +5,8 @@ const state = () => {
     isAuthenticated: false,
     userInfo: null,
     soughtItem: [], // An item being looked up
-    itemsAll: [],
+    devices: [],
+    invoices: [],
     theme: "light",
   };
 };

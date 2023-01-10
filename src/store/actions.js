@@ -1,4 +1,6 @@
 import Cookies from "js-cookie";
+import axios from "axios";
+
 const actions = {
   refreshToken(context) {
     return new Promise((resolve, reject) => {
@@ -84,6 +86,26 @@ const actions = {
         commit("CHANGE_DARKMODE");
       }
     }
+  },
+  async fetchAllDevices({ state }) {
+    await axios
+      .get("e-hold/v1/device/all/")
+      .then((response) => {
+        state.devices = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  async fetchAllInvoices({ state }) {
+    await axios
+      .get("e-hold/v1/invoice/all/")
+      .then((response) => {
+        state.invoices = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 export default actions;

@@ -145,6 +145,8 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+axios.defaults.baseURL = "http://localhost:8000";
+
 createApp(App)
   .use(VueAxios, axios)
   .use(VueSweetalert2)
