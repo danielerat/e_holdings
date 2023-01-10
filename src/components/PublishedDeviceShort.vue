@@ -11,13 +11,14 @@
           <br />
           Check Out The devices currently being sold!
         </h1>
-
-        <action-button
-          type="tertiary"
-          text="btn.onMarket"
-          size="sm"
-          frontIcon="arrow-right"
-        ></action-button>
+        <router-link :to="`/${$i18n.locale}/selling-devices`">
+          <action-button
+            type="tertiary"
+            text="btn.onMarket"
+            size="sm"
+            frontIcon="arrow-right"
+          ></action-button>
+        </router-link>
       </div>
     </div>
     <div class="container px-5 py-10 mx-auto">

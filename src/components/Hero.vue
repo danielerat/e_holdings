@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative pb-24 lg:pb-12 bg-no-repeat bg-fixed md:bg-[length:400px_700px] bg-[length:200px_200px] bg-right-top"
+    class="relative pb-24 lg:pb-12 bg-no-repeat bg-fixed md:bg-[length:400px_700px] bg-[length:200px_200px] bg-right-top dark:bg-site-gray-1"
     :style="{ backgroundImage: 'url(' + rectanglebg + ')' }"
   >
     <div class="">
@@ -10,18 +10,20 @@
         >
           <div class="lg:w-1/2 lg:pt-0 pt-8">
             <h1
-              class="lg:text-6xl text-3xl leading-8 text-site-gray-1 border-l-8 border-site-yellow-3 lg:pl-12 pl-2 xl:mt-0 mt-8"
+              class="lg:text-6xl text-3xl leading-8 text-site-gray-1 border-l-8 border-site-yellow-3 lg:pl-12 pl-2 xl:mt-0 mt-8 dark:text-site-green-5"
             >
               E-Holdings
 
               <br />
-              <span class="2xl:text-8xl xl:text-7xl text-4xl font-bold">
+              <span
+                class="2xl:text-8xl xl:text-7xl text-4xl font-bold dark:text-site-green-5"
+              >
                 We track for you
               </span>
             </h1>
 
             <h1
-              class="lg:text-2xl text-lg text-gray-800 lg:leading-8 leading-6 mt-6 border-l-8 border-site-green-1 lg:pl-12 pl-2 py-2"
+              class="lg:text-2xl text-lg text-gray-800 lg:leading-8 leading-6 mt-6 border-l-8 lg:pl-12 pl-2 py-2 dark:text-site-green-5"
             >
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Repellendus earum maiores odit, dolor ea adipisci sapien
