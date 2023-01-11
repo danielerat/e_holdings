@@ -29,37 +29,27 @@
                   <span v-for="error in errors" :key="error">{{ error }}</span>
                 </span>
                 <div class="relative w-full mb-3">
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    v-model="this.phoneNumber"
-                  />
-                  <!-- <field
-                    v-model="this.phoneNumber"
+                  <field
                     id="phoneNumber"
-                    label="Phone Number"
+                    placeholder="Create Your password"
                     size="lg"
-                    name="phoneNumber"
-                    placeholder="07..."
                     type="text"
-                  /> -->
+                    label="Create Your password "
+                    v-bind:data="phoneNumber"
+                    v-on:update="phoneNumber = $event"
+                  />
                 </div>
 
                 <div class="relative w-full mb-3">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    v-model="this.password"
-                  />
-                  <!-- <field
-                    v-model="this.password"
+                  <field
                     id="password"
-                    label="Password"
+                    placeholder="Create Your password"
                     size="lg"
-                    name="password"
-                    placeholder="password"
                     type="password"
-                  /> -->
+                    label="Create Your password "
+                    v-bind:data="password"
+                    v-on:update="password = $event"
+                  />
                 </div>
 
                 <div>
@@ -100,7 +90,7 @@ import CheckPhone from "@/utils/CheckPhone";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 
-// import Field from "@/components/shared/InputText.vue";
+import Field from "@/components/shared/InputText.vue";
 
 export default {
   name: "Index",
@@ -115,7 +105,7 @@ export default {
   components: {
     FooterSimple,
     IndexNavbar,
-    // Field,
+    Field,
   },
   methods: {
     // Show and hide password , using the eye thing
