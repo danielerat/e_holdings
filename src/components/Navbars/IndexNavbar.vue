@@ -93,7 +93,18 @@
 
             <li class="flex items-center"><dark-mode-switcher /></li>
 
-            <li class="flex items-center">
+            <li class="flex items-center" v-if="isAuthenticated">
+              <router-link :to="`/${$i18n.locale}/logout`">
+                <action-button
+                  type="secondary"
+                  size="sm"
+                  text="Sign Out"
+                  class="dark:bg-site-gray-2"
+                  @click="saySomething"
+                />
+              </router-link>
+            </li>
+            <li class="flex items-center" v-else>
               <router-link :to="`/${$i18n.locale}/login`">
                 <action-button
                   type="secondary"
@@ -115,6 +126,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher";
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown";
 import ActionButton from "@/components/shared/ActionButton";
@@ -133,8 +145,14 @@ export default {
       navbarOpen: false,
     };
   },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+  },
 
   methods: {
+    saySomething() {
+      console.log("Country Grammar!");
+    },
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },

@@ -2,15 +2,15 @@ import Cookies from "js-cookie";
 import axios from "axios";
 
 const actions = {
-  refreshToken(context) {
+  refreshToken({ state }) {
     return new Promise((resolve, reject) => {
       axios
         .post("e-hold/v1/token/refresh/", {
-          refresh: context.state.refreshToken,
+          refresh: state.refreshToken,
         })
         .then((response) => {
           console.log("New AccessToken successfully generated");
-          context.commit("updateToken", {
+          this.commit("updateToken", {
             accessToken: response.data.access,
             refreshToken: response.data.refresh,
           });
@@ -25,7 +25,7 @@ const actions = {
         });
     });
   },
-  userSignOut(context) {
+  userSignOut({ context }) {
     if (context.getters.isAuthenticated) {
       context.commit("deleteToken");
       window.location.reload();
@@ -42,7 +42,7 @@ const actions = {
           // refresh the page
           // window.location.reload();
 
-          context.commit("updateToken", {
+          this.commit("updateToken", {
             accessToken: response.data.access,
             refreshToken: response.data.refresh,
           });
@@ -59,19 +59,24 @@ const actions = {
     });
   },
 
-  amIAuthenticated(context) {
-    this.state.isAuthenticated = context.getters.isAuthenticated;
-    if (this.state.isAuthenticated) {
-      this.axios
-        .get("e-hold/v1/auth/")
+  getCurrentUser({ state }) {
+    if (state.isAuthenticated) {
+      axios
+        .get("e-hold/v1/auth/", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
         .then((response) => {
-          this.state.userInfo = response.data;
+          state.userInfo = response.data;
           // Do something else here
         })
         .catch((error) => {
           // Nagging a user to their submission(of the login form)
           console.log(error.response.status);
         });
+    } else {
+      console.log("Something else is going on...");
     }
   },
 

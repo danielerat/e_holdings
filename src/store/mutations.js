@@ -7,7 +7,6 @@ const mutations = {
       localStorage.getItem("refreshToken")
     ) {
       state.accessToken = localStorage.getItem("accessToken");
-      state.accessToken = localStorage.getItem("accessToken");
       state.refreshToken = localStorage.getItem("refreshToken");
       state.isAuthenticated = true; // Set the auth status to true
     } else {

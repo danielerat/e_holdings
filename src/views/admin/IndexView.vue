@@ -3,6 +3,7 @@
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="Quick Overview" />
+      <p>{{ userInfo }}</p>
       <header-stats />
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
@@ -27,12 +28,14 @@ export default {
   },
   computed: {
     ...mapState({
+      userInfo: (state) => state.userInfo,
       devices: (state) => state.devices,
       invoices: (state) => state.invoices,
     }),
   },
   mounted() {
     // get all the items
+    this.$store.dispatch("getCurrentUser");
     this.$store.dispatch("fetchAllDevices");
     this.$store.dispatch("fetchAllInvoices");
   },

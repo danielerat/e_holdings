@@ -1,11 +1,12 @@
-// import state from "./state";
-
 const getters = {
-  isAuthenticated(state) {
+  isAuthenticated: (state) => {
     return state.accessToken != "";
   },
   CURRENT_THEME(state) {
     return state.theme;
+  },
+  userInfo: (state) => {
+    return state.userInfo;
   },
   // All the items
   devices: (state) => {
