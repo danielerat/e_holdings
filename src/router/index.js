@@ -5,6 +5,7 @@ import SettingsView from "@/views/admin/SettingsView.vue";
 import SampleComponents from "@/views/admin/SampleComponents.vue";
 import RegisterView from "@/views/auth/RegisterView.vue";
 import LoginView from "@/views/auth/LoginView.vue";
+import LogoutView from "@/views/auth/LogoutView.vue";
 import ContactView from "@/views/ContactView.vue";
 import PublishedDevicesView from "@/views/PublishedDevicesVue.vue";
 import SinglePublishedDevicesView from "@/views/SinglePublishedDeviceView.vue";
@@ -53,6 +54,11 @@ const routes = [
         path: "login",
         name: "login",
         component: LoginView,
+      },
+      {
+        path: "logout",
+        name: "logout",
+        component: LogoutView,
       },
       {
         path: "sample",

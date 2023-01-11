@@ -25,10 +25,9 @@ const actions = {
         });
     });
   },
-  userSignOut({ context }) {
-    if (context.getters.isAuthenticated) {
-      context.commit("deleteToken");
-      window.location.reload();
+  userSignOut({ state }) {
+    if (state.isAuthenticated) {
+      this.commit("deleteToken");
     }
   },
   userSignIn(context, formData) {

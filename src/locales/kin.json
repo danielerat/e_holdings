@@ -5,8 +5,9 @@
     "contact": "Twandikire"
   },
   "btn": {
-    "signIn": "injira",
-    "signUp": "iyandikishe",
+    "signIn": "Injira",
+    "signOut": "Sohoka",
+    "signUp": "Iyandikishe",
     "learnMore": "iga byinshi",
     "transfer": "ohereza",
     "send": "ohereza",

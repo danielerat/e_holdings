@@ -224,6 +224,7 @@
         <!-- Heading -->
         <h6
           class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
+          v-if="userInfo !== null && userInfo.account_type === 'business'"
         >
           Business
         </h6>
@@ -293,10 +294,11 @@
 
         <ul
           class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
+          v-if="isAuthenticated"
         >
           <li class="items-center">
             <router-link
-              :to="`/${$i18n.locale}/login`"
+              :to="`/${$i18n.locale}/logout`"
               v-slot="{ href, navigate, isActive }"
             >
               <a
@@ -323,9 +325,9 @@
     </div>
   </nav>
 </template>
-); }
 
 <script>
+import { mapState, mapGetters } from "vuex";
 import NotificationDropdown from "@/components/Admin/Dropdowns/AdminNotificationDropdown";
 import UserDropdown from "@/components/Admin/Dropdowns/AdminUserDropdown.vue";
 import DarkModeSwitcher from "@/components/shared/DarkModeSwitcher.vue";
@@ -340,6 +342,12 @@ export default {
       //   collapseShow: "bg-white m-2 py-3 px-6",
       collapseShow: "hidden",
     };
+  },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
   },
   methods: {
     toggleCollapseShow: function (classes) {

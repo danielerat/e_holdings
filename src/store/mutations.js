@@ -1,3 +1,4 @@
+import axios from "axios";
 import Cookies from "js-cookie";
 const mutations = {
   // Initializing the store
@@ -34,7 +35,7 @@ const mutations = {
     // And the localStorage
     localStorage.setItem("accessToken", "");
     localStorage.setItem("refreshToken", "");
-    this.axios.defaults.headers.common["Authorization"] = "";
+    axios.defaults.headers.common["Authorization"] = "";
   },
   // Mutating the auth status
   authStatus(state) {

@@ -13,7 +13,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.$store.dispatch("refreshToken");
-    }, 1800000);
+    }, 1800000); // 30 mins, I guess.
   },
   beforeCreate() {
     this.$store.commit("initStore");

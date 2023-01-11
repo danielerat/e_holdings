@@ -98,9 +98,8 @@
                 <action-button
                   type="secondary"
                   size="sm"
-                  text="Sign Out"
+                  text="btn.signOut"
                   class="dark:bg-site-gray-2"
-                  @click="saySomething"
                 />
               </router-link>
             </li>
@@ -150,9 +149,6 @@ export default {
   },
 
   methods: {
-    saySomething() {
-      console.log("Country Grammar!");
-    },
     setNavbarOpen: function () {
       this.navbarOpen = !this.navbarOpen;
     },
