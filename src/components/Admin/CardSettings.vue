@@ -17,13 +17,7 @@
       <form>
         <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
         <div class="flex flex-wrap">
-          <input-text
-            placeholder="088..."
-            label="Phone Number"
-            name="phone"
-            value=""
-            readonly="true"
-          />
+          <input-text placeholder="088..." label="Phone Number" name="phone" />
           <input-text
             placeholder="119.."
             label="National Id"
@@ -107,6 +101,7 @@
                 class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 rows="4"
                 readonly
+                v-model="info.about"
               >
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab ipsam saepe voluptatibus reiciendis fugit numquam.
                       </textarea
@@ -123,6 +118,23 @@
 import InputText from "@/components/shared/InputText.vue";
 export default {
   name: "UserSettings",
+  data() {
+    return {
+      info: {
+        first_name: "",
+        last_name: "",
+        phone: "",
+        about: "",
+        nid: "",
+      },
+      contact: {
+        address: "",
+        province: "",
+        district: "",
+        sector: "",
+      },
+    };
+  },
   components: {
     InputText,
   },
