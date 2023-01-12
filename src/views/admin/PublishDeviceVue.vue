@@ -96,52 +96,15 @@
       </div>
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
         <device-card
+          v-for="(device, index) in devices"
+          :key="index"
+          :device="device"
           class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          :status="true"
-          type="laptop"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
+          :name="device.name"
+          :model="device.device_model"
+          :imei="device.mac_address"
           :status="false"
-          type="laptop"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          :status="false"
-          type="laptop"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          :status="false"
-          type="laptop"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          :status="false"
-          type="laptop"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          :status="true"
-          type="laptop"
+          :type="device.category"
         />
       </div>
       <!-- ---- -->

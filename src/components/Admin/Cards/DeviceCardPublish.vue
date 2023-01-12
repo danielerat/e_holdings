@@ -52,7 +52,7 @@
           <a
             v-else
             class="inline-flex items-center px-1 rounded border border-site-green-5 text-site-green-1 hover:bg-transparent hover:text-site-green-2 focus:outline-none focus:ring active:text-site-green-2 active:bg-site-green-5"
-            href="#"
+            @click="publishDevice(device)"
           >
             <span class="text-xs font-medium">Publish&nbsp;</span>
             <fa icon="cloud-arrow-up" />
@@ -64,11 +64,17 @@
 </template>
 
 <script>
+import axios from "axios";
+import AlertMe from "@/utils/alerts";
 import published_waved from "@/assets/img/wave.svg";
 import unpublished_wave from "@/assets/img/waveyellow.svg";
 export default {
   name: "DeviceCardPublish",
   props: {
+    device: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -119,6 +125,26 @@ export default {
       } else {
         return "offline";
       }
+    },
+  },
+  methods: {
+    publishDevice(item) {
+      let formData = new FormData();
+      formData.append("device", item.id);
+      axios
+        .post(`e-hold/v1/publish/create/`, formData, {})
+        .then(() => {
+          AlertMe({
+            title: `Successfully published ${item.name} to public!`,
+            type: "success",
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+          AlertMe({
+            title: `Something went wrong. Err(${error.response.status})`,
+          });
+        });
     },
   },
 };
