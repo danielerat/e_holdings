@@ -67,6 +67,7 @@ import {
   faCloud,
   faCloudArrowDown,
   faCircleUser,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 // Brand Icon
 import {
@@ -133,6 +134,7 @@ library.add(
   faSortUp,
   faCloudArrowUp,
   faCloudArrowDown,
+  faSpinner,
   faCloud
 );
 
