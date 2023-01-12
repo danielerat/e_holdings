@@ -8,8 +8,9 @@
         <button
           class="bg-site-green-1 hover:bg-site-green-2 text-white active:bg-site-green-3 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
           type="button"
+          @click="editPersonalSettings"
         >
-          Edit-Settings
+          Edit Settings
         </button>
       </div>
     </div>
@@ -19,26 +20,29 @@
         <div class="flex flex-wrap">
           <input-text placeholder="088..." label="Phone Number" name="phone" />
           <input-text
-            placeholder="119.."
+            type="number"
+            placeholder="National ID"
             label="National Id"
             name="national_id"
-            value=""
-            readonly="true"
+            v-bind:data="info.nid"
+            v-on:update="info.nid = $event"
           />
 
           <input-text
-            placeholder="119.."
+            type="text"
+            placeholder="First Name"
             label="First Name"
             name="first_name"
-            value=""
-            readonly="true"
+            v-bind:data="info.first_name"
+            v-on:update="info.first_name = $event"
           />
           <input-text
-            placeholder="119.."
+            type="text"
+            placeholder="Last Name"
             label="Last Name"
             name="last_name"
-            value=""
-            readonly="true"
+            v-bind:data="info.last_name"
+            v-on:update="info.last_name = $event"
           />
         </div>
 
@@ -50,36 +54,40 @@
         <div class="flex flex-wrap">
           <div class="w-full lg:w-12/12 px-4">
             <input-text
-              placeholder="KN 123 Str Mumbere Mosque House 1"
+              type="text"
+              placeholder="KN 123 St 132"
               label="Address"
               name="address"
-              value=""
               size="lg"
-              readonly="true"
+              v-bind:data="contact.address"
+              v-on:update="contact.address = $event"
             />
           </div>
 
           <div class="flex flex-nowrap">
             <input-text
-              placeholder=".."
+              type="text"
+              placeholder="Province"
               label="Province"
               name="province"
-              value=""
-              readonly="true"
+              v-bind:data="contact.province"
+              v-on:update="contact.province = $event"
             />
             <input-text
-              placeholder=" .."
+              type="text"
+              placeholder="Disctrict"
               label="District"
               name="province"
-              value=""
-              readonly="true"
+              v-bind:data="contact.district"
+              v-on:update="contact.district = $event"
             />
             <input-text
-              placeholder=" .."
+              type="text"
+              placeholder="Sector"
               label="Sector"
               name="province"
-              value=""
-              readonly="true"
+              v-bind:data="contact.sector"
+              v-on:update="contact.sector = $event"
             />
           </div>
         </div>
@@ -100,7 +108,6 @@
                 type="text"
                 class="border-0 px-3 py-3 placeholder-site-white-1 text-site-gray-1 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 rows="4"
-                readonly
                 v-model="info.about"
               >
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab ipsam saepe voluptatibus reiciendis fugit numquam.
@@ -115,6 +122,8 @@
 </template>
 
 <script>
+// import axios from "axios";
+import { mapState, mapGetters } from "vuex";
 import InputText from "@/components/shared/InputText.vue";
 export default {
   name: "UserSettings",
@@ -137,6 +146,21 @@ export default {
   },
   components: {
     InputText,
+  },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
+  },
+  created() {},
+  methods: {
+    editPersonalSettings() {
+      console.log("editPersonalSettings...");
+    },
+    editBusinessSettings() {
+      console.log("editBusinessSettings...");
+    },
   },
 };
 </script>
