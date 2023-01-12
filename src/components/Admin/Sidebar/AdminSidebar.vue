@@ -26,6 +26,7 @@
         to="/"
       >
         E-Holdings
+        <p v-if="userInfo !== null">{{ userInfo.account_type }}</p>
       </router-link>
       <!-- User -->
       <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -220,7 +221,10 @@
           </li>
         </ul>
 
-        <hr class="my-4 md:min-w-full" />
+        <hr
+          class="my-4 md:min-w-full"
+          v-if="userInfo !== null && userInfo.account_type === 'business'"
+        />
         <!-- Heading -->
         <h6
           class="md:min-w-full text-site-gray-2 text-xs uppercase font-bold block pt-1 pb-4 no-underline dark:text-site-yellow-5"
@@ -232,6 +236,7 @@
 
         <ul
           class="md:flex-co justify-start md:min-w-full flex flex-col list-none"
+          v-if="userInfo !== null && userInfo.account_type === 'business'"
         >
           <li class="items-center">
             <router-link

@@ -154,6 +154,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import AdminNavbar from "@/components/Admin/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
@@ -169,5 +170,18 @@ export default {
     CardStats,
     FooterAdmin,
   },
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+      devices: (state) => state.devices,
+    }),
+  },
+  created() {
+    // get current user
+    this.$store.dispatch("getCurrentUser");
+    // get devices
+    this.$store.dispatch("fetchAllDevices");
+  },
+  methods: {},
 };
 </script>
