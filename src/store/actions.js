@@ -74,8 +74,6 @@ const actions = {
           // Nagging a user to their submission(of the login form)
           console.log(error.response.status);
         });
-    } else {
-      console.log("Something else is going on...");
     }
   },
 

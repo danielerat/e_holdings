@@ -3,6 +3,7 @@
     <sidebar />
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="Quick Overview" />
+
       <header-stats />
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />

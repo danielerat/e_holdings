@@ -117,7 +117,7 @@ export default {
             password: this.password,
           })
           .then(() => {
-            AlertMe({ title: "Successfull Authentication.", type: "success" });
+            AlertMe({ title: "Successful Authentication.", type: "success" });
             this.$router.push("/");
           })
           .catch((error) => {

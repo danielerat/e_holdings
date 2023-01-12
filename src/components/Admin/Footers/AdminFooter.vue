@@ -46,8 +46,7 @@
             </li>
             <li>
               <router-link
-                :to="`/${$i18n.locale}/login`"
-                href="#"
+                :to="`/${$i18n.locale}/logout`"
                 class="text-sm font-semibold block py-1 px-3"
               >
                 Sign Out
