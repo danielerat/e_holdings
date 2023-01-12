@@ -140,7 +140,6 @@ export default {
           });
         })
         .catch((error) => {
-          console.log(error);
           AlertMe({
             title: `Something went wrong. Err(${error.response.status})`,
           });

@@ -30,13 +30,14 @@
       <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
       <div class="flex flex-wrap">
         <input-text
+          v-if="userInfo"
           placeholder="078..."
           type="text"
           label="Phone Number"
           name="phone"
           v-bind:data="user.phone"
           v-on:update="user.phone = $event"
-          readonly
+          :readonly="userInfo.account_type === 'business' ? false : true"
         />
         <input-text
           placeholder="119.."
@@ -45,7 +46,6 @@
           type="number"
           v-bind:data="user.nid"
           v-on:update="user.nid = $event"
-          readonly
         />
       </div>
 

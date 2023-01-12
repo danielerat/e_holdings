@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+import { mapState, mapGetters } from "vuex";
 import AdminNavbar from "@/components/Admin/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
@@ -39,5 +40,16 @@ export default {
     Sidebar,
     FooterAdmin,
   },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
+  },
+  created() {
+    // Get Current Authenticated user
+    this.$store.dispatch("getCurrentUser");
+  },
+  methods: {},
 };
 </script>
