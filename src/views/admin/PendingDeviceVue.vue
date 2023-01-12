@@ -35,10 +35,19 @@
       </section>
       <!-- ------ -->
       <incoming-device
-        v-for="n in 10"
-        :key="n"
-        :pos="n % 2 == 1"
-      ></incoming-device>
+        v-for="(device, cnt) in devices"
+        :key="device"
+        :name="device.name"
+        :type="device.type"
+        :date="device.date"
+        :model="device.model"
+        :from="device.from"
+        :pos="cnt % 2 == 1"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima,
+        quibusdam! Doloribus, nulla molestias. Accusantium consequatur ullam hic
+        distinctio sequi cum?
+      </incoming-device>
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
@@ -59,6 +68,40 @@ export default {
     Sidebar,
     FooterAdmin,
     IncomingDevice,
+  },
+  data() {
+    return {
+      devices: {
+        1: {
+          type: "computer",
+          date: "December-23-2021",
+          model: "Bionic Beaver 32",
+          name: "Mac Book Pro",
+          from: "James Harden",
+        },
+        2: {
+          type: "computer",
+          date: "December-23-2021",
+          model: "Bionic Beaver 32",
+          name: "Mac Book Pro",
+          from: "James Harden",
+        },
+        3: {
+          type: "computer",
+          date: "December-23-2021",
+          model: "Bionic Beaver 32",
+          name: "Mac Book Pro",
+          from: "James Harden",
+        },
+        4: {
+          type: "computer",
+          date: "December-23-2021",
+          model: "Bionic Beaver 32",
+          name: "Mac Book Pro",
+          from: "James Harden",
+        },
+      },
+    };
   },
 };
 </script>

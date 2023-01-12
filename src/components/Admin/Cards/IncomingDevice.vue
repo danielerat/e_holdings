@@ -7,9 +7,23 @@
       >
         <!-- Device Category -->
         <div
-          class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-site-gray-2 bg-site-white-3 flex-shrink-0"
+          class="sm:w-32 sm:h-32 h-20 w-20 sm:mx-10 inline-flex items-center justify-center rounded-full text-site-gray-2 bg-site-white-3 flex-shrink-0"
         >
-          <fa icon="laptop" class="md:text-6xl text-4xl" />
+          <fa
+            v-if="type == 'computer'"
+            icon="laptop"
+            class="md:text-6xl text-4xl"
+          />
+          <fa
+            v-else-if="type == 'phone'"
+            icon="mobile-button"
+            class="md:text-6xl text-4xl"
+          />
+          <fa
+            v-else-if="type == 'electronic'"
+            icon="plug"
+            class="md:text-6xl text-4xl"
+          />
         </div>
         <!-- Description -->
         <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
@@ -17,24 +31,23 @@
             {{ name }}
           </h2>
           <div class="flex justify-around">
-            <a class="mt-3 text-site-gray-3 inline-flex items-center">
+            <a
+              v-if="from"
+              class="mt-3 text-site-gray-3 inline-flex items-center"
+            >
               <span>{{ from }}&nbsp;</span>
               <fa icon="share" />
             </a>
             <a class="align-top text-xs text-site-green-2 items-center">
-              <p class="font-bold">
+              <p v-if="date" class="font-bold">
                 <fa icon="calendar-day" />
                 &nbsp;{{ date }}
               </p>
-              <p>{{ model }}</p>
+              <p v-if="model">{{ model }}</p>
             </a>
           </div>
           <p class="leading-relaxed text-base mr-3">
-            <slot>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos natus
-              placeat, omnis suscipit, ex necessitatibus quasi neque ab
-              voluptate
-            </slot>
+            <slot></slot>
           </p>
 
           <div class="mt-5">
@@ -88,6 +101,14 @@
 <script>
 export default {
   props: {
+    type: {
+      type: String,
+      required: false,
+      default: "phone",
+      validator(value) {
+        return ["computer", "phone", "electronic"].includes(value);
+      },
+    },
     pos: {
       type: Boolean,
       required: false,
@@ -101,7 +122,7 @@ export default {
     model: {
       type: String,
       required: false,
-      default: "MacBook Pro (13-inch, M2, 2022)",
+      default: "",
     },
     name: {
       type: String,
@@ -111,7 +132,7 @@ export default {
     from: {
       type: String,
       required: false,
-      default: "Mumbere Carlos",
+      default: "",
     },
   },
 };
