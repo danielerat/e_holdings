@@ -19,15 +19,15 @@
           <slot></slot>
         </div>
       </div>
-      <a
-        class="hover:text-site-green-3 hover:underline absolute bottom-5 text-sm text-site-green-1 font-bold cursor-pointer flex items-center"
-        href="javascript:void(0)"
+      <router-link
+        class="hover:text-site-green-3 hover:underline absolute bottom-5 text-sm text-site-green-1 font-bold cursor-pointer flex items-center dark:text-site-yellow-3"
+        :to="`/${$i18n.locale}/contact`"
       >
         <p>Cant find help? contact us.&nbsp;&nbsp;&nbsp;</p>
         <div>
           <fa icon="angle-right"></fa>
         </div>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>

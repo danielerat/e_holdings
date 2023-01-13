@@ -25,6 +25,103 @@
     "reportDevice": "report your device",
     "reportDeviceDead": "report as dead",
     "onMarket": "Device On Market",
-    "seeAll": "See All"
+    "seeAll": "See All",
+    "searchPlace": "Place to Check Devices"
+  },
+
+  "landingPage": {
+    "hero": {
+      "title": "E-Holdings",
+      "subtitle": "We track for you",
+      "text": "The ultimate solution for keeping track of your devices. Whether you're an individual or a business owner, our powerful and easy-to-use platform makes it simple to manage and protect your devices."
+    },
+    "deviceLookup": {
+      "title": "Not sure about the device you are about to buy? How about we help you check it.",
+      "text": "With our powerful search capabilities, you can quickly and easily loop up any device by searching with it's unique ID such as serial number, IMEI or any other identifying information to make sure that it's clean"
+    },
+    "fileOrganization": {
+      "title": "Are you a business owner?",
+      "text": "E-holdings offers you powerful tools for managing and protecting your inventory. You can easily track the devices you've sold, monitor remaining warranty, and generate detailed reports to optimize your operations.",
+      "list": {
+        "generate": "Generate Contract",
+        "keep": "Keep Track of devices under warranty",
+        "transfer": "Transfer the ownsership"
+      }
+    },
+    "publishedDevice": {
+      "title": "Need a device from reliable sources ?      check Out The devices currently being sold!"
+    },
+    "shortABoutUs": {
+      "title": "All your electronics managed in one place for indubitable ownership",
+      "subtitle": "WHAT DO WE DO FOR YOU ?",
+      "list": {
+        "track": {
+          "title": "Track you items",
+          "text": "E-holdings makes it easy to track your devices no matter the circumstances. With our powerful organization tools, you'll always find it a joke to keep track of your device, we are here to giving you peace of mind."
+        },
+        "transfer": {
+          "title": "Transfer the ownership",
+          "text": "E-holdings simplifies the process of transferring device ownership. Whether you're transferring a device to a new owner or acquiring it from an organization, our platform makes it easy."
+        },
+        "report": {
+          "title": "Report stolen devices",
+          "text": "With E-holdings, you can quickly and easily report lost or stolen devices to the authorities. Our reporting system streamlines the process, so you can rest easy knowing your devices are protected and ready to be found anytime if lost."
+        },
+        "generate": {
+          "title": "Generate all your documents",
+          "text": "E-holdings generates legally binding contracts and documents for your devices, giving you the protection you need. With our document generation feature, you can easily create and manage contracts and other important documents."
+        }
+      }
+    },
+    "centerImage": {
+      "left": {
+        "title": "We hear you out!",
+        "subTitle": "We are here to simplify your life!",
+        "text": "Our user-friendly interface and unparalleled customer support make it easy for anyone to use E-holdings. We are constantly working to improve our services and make it as user-friendly as possible, if you have any question or feature request please don't hesitate to contact us."
+      },
+      "right": {
+        "title": "Why choose us?",
+        "subTitle": "IT's not only about device tracking!",
+        "text": "E-holdings is more than just a device tracking and management tool, it's a complete solution for protecting your devices and your business. With our advanced features and intuitive user interface, you can take control of your inventory and safeguard your future."
+      }
+    },
+    "Faq": {
+      "title": "Can't Find something?",
+      "subTitle": "Can't Find something?",
+      "account": {
+        "title": "Account related questions",
+        "content": {
+          "one": {
+            "title": "What happens if I lose my E-holdings account password?",
+            "text": "If you lose your E-holdings account password, you can reset it through our password reset feature. You will be prompted the phone number you used to sign in and your id to verify your identity."
+          },
+          "two": {
+            "title": "Who can access my device data and personal information?",
+            "text": "Only authorized users with the correct credentials can access your device data and personal information"
+          }
+        }
+      },
+      "security": {
+        "title": "Security",
+        "content": {
+          "one": {
+            "title": "What happens if one of my devices is lost or stolen?",
+            "text": "If one of your devices is lost or stolen, you can report it through E-holdings. Our platform allows you to easily report lost or stolen devices to the authorities and track their whereabouts"
+          },
+          "two": {
+            "title": "How does E-holdings protect my devices and my personal information?",
+            "text": "E-holdings uses industry-standard security protocols and encryption to protect your devices and personal information. All data is transmitted and stored securely, and access is controlled through user authentication and authorization."
+          }
+        }
+      },
+      "help": {
+        "title": "Need More Help ?",
+        "subTitle": "Check out our FAQ you may find some useful tips"
+      }
+    }
+  },
+  "footer": {
+    "titel": "Let's keep in touch!",
+    "subTitle": "Find us on any of these platforms, we respond within 24 hours."
   }
 }

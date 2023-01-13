@@ -7,6 +7,7 @@
 
   <short-about-us />
 
+  <!-- Why us sectoin  -->
   <center-img-design
     title_left="We hear you out!"
     sub_title_left="We are here
