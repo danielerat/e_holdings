@@ -123,6 +123,7 @@
 
 <script>
 // @ is an alias to /src
+import { mapGetters, mapState } from "vuex";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import MainFooter from "@/components/Footers/Footer.vue";
 import Hero from "@/components/Hero.vue";
@@ -157,9 +158,16 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
     coun() {
       return this.$store.state.theme;
     },
+  },
+  created() {
+    this.$store.dispatch("getCurrentUser");
   },
 };
 </script>

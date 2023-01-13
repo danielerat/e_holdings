@@ -30,7 +30,7 @@ const actions = {
       this.commit("deleteToken");
     }
   },
-  userSignIn(context, formData) {
+  userSignIn(state, formData) {
     return new Promise((resolve, reject) => {
       axios
         .post("e-hold/v1/login/", {
@@ -38,9 +38,6 @@ const actions = {
           password: formData.password,
         })
         .then((response) => {
-          // refresh the page
-          // window.location.reload();
-
           this.commit("updateToken", {
             accessToken: response.data.access,
             refreshToken: response.data.refresh,
@@ -50,6 +47,7 @@ const actions = {
             "Bearer " + response.data.access;
           localStorage.setItem("accessToken", response.data.access);
           localStorage.setItem("refreshToken", response.data.refresh);
+          state.isAuthenticated = true;
           resolve();
         })
         .catch((err) => {
