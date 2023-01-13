@@ -6,7 +6,7 @@
     <span
       class="absolute top-4 rounded-full py-1.5 text-xs font-medium text-gray-1"
     >
-      Since: July,15,2022
+      Since: {{ date }}
     </span>
     <span
       class="absolute right-4 top-4 rounded-full px-3 py-1.5 text-xs font-medium"
@@ -41,8 +41,8 @@
           >
             <router-link :to="`/${$i18n.locale}/admin/device`">
               <popover
-                title="Report lost or Stolen"
-                text="Did you lose this device? report it as lost."
+                title="Check out device"
+                text="View your device for further actions"
               >
                 <fa icon="eye" />
               </popover>
@@ -90,6 +90,11 @@ export default {
     imei: {
       type: String,
       required: true,
+    },
+    date: {
+      type: String,
+      required: false,
+      default: "xx-xx-xx",
     },
     text: {
       type: String,
