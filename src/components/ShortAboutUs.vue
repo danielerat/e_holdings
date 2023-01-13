@@ -12,7 +12,7 @@
             What do we do for you ?
           </p>
           <h2
-            class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-gray-800 lg:w-7/12 md:w-9/12 dark:text-site-yellow-4 dark:drop-shadow-2xl"
+            class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-site-gray-1 lg:w-7/12 md:w-9/12 dark:text-site-yellow-4 dark:drop-shadow-2xl"
           >
             All your electronics managed in one place for indubitable ownership
           </h2>
@@ -26,7 +26,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-r md:border-r sm:border-r-0 border-site-green-1 pb-10 lg:pt-10"
           >
             <div class="mr-5 text-site-gray-1">
-              <fa icon="cubes-stacked" class="text-4xl text-site-green-3"></fa>
+              <fa icon="cubes-stacked" class="text-4xl text-site-yellow-3"></fa>
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4
@@ -37,16 +37,16 @@
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, deleniti quibusdam necessitatibus quas non dolorum
-                quod a totam libero voluptas praesentium obcaecati officia at
-                beatae esse? Veniam laudantium dicta harum.
+                "E-holdings makes it easy to track your devices no matter the
+                circumstances. With our powerful organization tools, you'll
+                always find it a joke to keep track of your device, we are here
+                to giving you peace of mind."
               </p>
             </div>
           </div>
           <div class="flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10">
             <div class="sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-site-gray-1">
-              <fa icon="handshake-simple" class="text-4xl text-site-green-3" />
+              <fa icon="handshake-simple" class="text-4xl text-site-yellow-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4
@@ -57,10 +57,10 @@
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, quo nobis doloribus temporibus vel eius consectetur
-                recusandae iure deserunt nostrum sapiente sint dolorem quos
-                consequuntur.
+                "E-holdings simplifies the process of transferring device
+                ownership. Whether you're transferring a device to a new owner
+                or acquiring it from an organization, our platform makes it
+                easy."
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-site-green-1 pt-10 lg:pb-20"
           >
             <div class="mr-5 text-site-gray-1">
-              <fa icon="headset" class="text-4xl text-site-green-3" />
+              <fa icon="headset" class="text-4xl text-site-yellow-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4
@@ -79,10 +79,10 @@
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Eveniet, numquam doloremque optio dignissimos similique minima
-                quo alias! Ipsum, quo sit. Quas ratione eveniet error nisi
-                libero, earum ut corrupti fugiat!
+                "With E-holdings, you can quickly and easily report lost or
+                stolen devices to the authorities. Our reporting system
+                streamlines the process, so you can rest easy knowing your
+                devices are protected and ready to be found anytime if lost."
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@
             class="flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 border-site-green-1 pt-10 lg:pb-20"
           >
             <div class="sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-site-gray-1">
-              <fa icon="file-contract" class="text-4xl text-site-green-3" />
+              <fa icon="file-contract" class="text-4xl text-site-yellow-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
               <h4
@@ -101,10 +101,10 @@
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-                totam ea. Voluptatum culpa quo quam illo maiores praesentium
-                totam ex assumenda officiis nemo. Minus incidunt vel numquam
-                deleniti expedita quo.
+                "E-holdings generates legally binding contracts and documents
+                for your devices, giving you the protection you need. With our
+                document generation feature, you can easily create and manage
+                contracts and other important documents."
               </p>
             </div>
           </div>

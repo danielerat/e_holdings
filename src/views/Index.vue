@@ -8,12 +8,21 @@
   <short-about-us />
 
   <center-img-design
-    title_left="Our Story"
-    sub_title_left="Lorem ipsum dolor sit amet consectetur"
-    text_left="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    title_left="We hear you out!"
+    sub_title_left="We are here
+  to simplify your life!"
+    text_left="Our user-friendly interface and
+  unparalleled customer support make it easy for anyone to use E-holdings. We
+  are constantly working to improve our services and make it as user-friendly as
+  possible, if you have any question or feature request please don't hesitate to
+  contact us."
     title_right="Why choose us?"
-    sub_title_right="We are your best option ...."
-    text_right="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    sub_title_right="IT's not only about
+  device tracking!"
+    text_right="E-holdings is more than just a device tracking
+  and management tool, it's a complete solution for protecting your devices and
+  your business. With our advanced features and intuitive user interface, you
+  can take control of your inventory and safeguard your future."
   />
   <section class="bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-5">
     <div class="content-center container mx-auto py-6">
@@ -33,19 +42,19 @@
             color="text-site-yellow-2"
             icon="fingerprint"
           >
-            <accordion header="Just some random things you know">
-              And inside here is somemore randomestestthing you can possibly ask
-              yourlse you kno
+            <accordion
+              header="What happens if I lose my E-holdings account password?"
+            >
+              If you lose your E-holdings account password, you can reset it
+              through our password reset feature. You will be prompted the phone
+              number you used to sign in and your id to verify your identity.
             </accordion>
 
-            <accordion header="Just some random things you know">
-              And inside here is somemore randomestestthing you can possibly ask
-              yourlse you kno
-            </accordion>
-            <accordion header="Just some random things you know">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
-              tempora doloribus velit, illo accusamus error necessitatibus atque
-              nemo at nisi? Est perferendis repudiandae eius distinctio
+            <accordion
+              header=" Who can access my device data and personal information?"
+            >
+              Only authorized users with the correct credentials can access your
+              device data and personal information
             </accordion>
           </card-faq>
         </div>
@@ -55,19 +64,21 @@
             color="text-site-green-2"
             icon="file-contract"
           >
-            <accordion header="Just some random things you know">
-              And inside here is somemore randomestestthing you can possibly ask
-              yourlse you kno
+            <accordion
+              header="What happens if one of my devices is lost or stolen?"
+            >
+              If one of your devices is lost or stolen, you can report it
+              through E-holdings. Our platform allows you to easily report lost
+              or stolen devices to the authorities and track their whereabouts
             </accordion>
 
-            <accordion header="Just some random things you know">
-              And inside here is somemore randomestestthing you can possibly ask
-              yourlse you kno
-            </accordion>
-            <accordion header="Just some random things you know">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
-              tempora doloribus velit, illo accusamus error necessitatibus atque
-              nemo at nisi? Est perferendis repudiandae eius distinctio
+            <accordion
+              header="How does E-holdings protect my devices and my personal information?"
+            >
+              E-holdings uses industry-standard security protocols and
+              encryption to protect your devices and personal information. All
+              data is transmitted and stored securely, and access is controlled
+              through user authentication and authorization.
             </accordion>
           </card-faq>
         </div>

@@ -16,7 +16,7 @@
 
               <br />
               <span
-                class="2xl:text-8xl xl:text-7xl text-4xl font-bold dark:text-site-green-5"
+                class="2xl:text-8xl xl:text-4xl text-4xl font-bold dark:text-site-green-5"
               >
                 We track for you
               </span>
@@ -25,9 +25,10 @@
             <h1
               class="lg:text-2xl text-lg text-gray-800 lg:leading-8 leading-6 mt-6 border-l-8 lg:pl-12 pl-2 py-2 dark:text-site-green-5"
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus earum maiores odit, dolor ea adipisci sapien
-              Repellendus earum maiores odit, dolor ea
+              The ultimate solution for keeping track of your devices. Whether
+              you're an individual or a business owner, our powerful and
+              easy-to-use platform makes it simple to manage and protect your
+              devices.
             </h1>
             <div class="sm:flex items-center justify-center mt-12">
               <router-link to="/register">

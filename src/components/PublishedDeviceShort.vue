@@ -7,9 +7,9 @@
         class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto"
       >
         <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font">
-          Need A device fast ? We got you
+          Need a device from reliable sources ?
           <br />
-          Check Out The devices currently being sold!
+          check Out The devices currently being sold!
         </h1>
         <router-link :to="`/${$i18n.locale}/selling-devices`">
           <action-button

@@ -18,10 +18,10 @@
           Not sure about the device you are about to buy? How about we help you
           check it.
         </h1>
-        <p class="mb-8 leading-relaxed">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-          debitis sapiente nostrum dicta quis exercitationem illum architecto
-          voluptas odio sequi molestias maiores maxime, aperiam doloribus, modi
+        <p class="mb-8 leading-relaxed drop-shadow-2xl">
+          With our powerful search capabilities, you can quickly and easily loop
+          up any device by searching with it's unique ID such as serial number,
+          IMEI or any other identifying information to make sure that it's clean
         </p>
         <div class="flex w-full justify-center items-end">
           <div
@@ -59,7 +59,7 @@
             class="text-site-green-3 underline"
           >
             <action-button
-              text="Check Device"
+              text="btn.searchPlace"
               type="quaternary"
               frontIcon="arrow-right"
             ></action-button>

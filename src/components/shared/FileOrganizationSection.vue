@@ -14,13 +14,12 @@
             >
               <fa icon="gears" />
             </div>
-            <h3 class="text-3xl font-semibold">
-              All your devices in one place
-            </h3>
+            <h3 class="text-3xl font-semibold">Are you a business owner?</h3>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-              obcaecati voluptatem. Sed maxime reiciendis id vitae error quas in
-              temporibus
+              E-holdings offers you powerful tools for managing and protecting
+              your inventory. You can easily track the devices you've sold,
+              monitor remaining warranty, and generate detailed reports to
+              optimize your operations.
             </p>
             <ul class="list-none mt-6">
               <li class="py-2">
@@ -33,7 +32,7 @@
                     </span>
                   </div>
                   <div>
-                    <h4 class="text-blueGray-500">Track your device for you</h4>
+                    <h4 class="text-blueGray-500">Generate Contract</h4>
                   </div>
                 </div>
               </li>
@@ -48,7 +47,7 @@
                   </div>
                   <div>
                     <h4 class="text-blueGray-500">
-                      Report Your Devices for you
+                      Keep Track of devices under warranty
                     </h4>
                   </div>
                 </div>
