@@ -12,12 +12,7 @@
         <div
           class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
         >
-          <button
-            class="bg-site-green-2 text-white active:bg-site-green-2 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button"
-          >
-            See Devices
-          </button>
+          <action-button type="tertiary" text="btn.seeAll"></action-button>
         </div>
       </div>
     </div>
@@ -92,11 +87,13 @@
   </div>
 </template>
 <script>
+import ActionButton from "@/components/shared/ActionButton.vue";
 import ProgressBar from "@/components/shared/progress.vue";
 export default {
   name: "TableDeviceOverview",
   components: {
     ProgressBar,
+    ActionButton,
   },
 };
 </script>

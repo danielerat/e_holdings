@@ -105,7 +105,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Dashboard
+                {{ $t("nav.dashboard") }}
               </a>
             </router-link>
           </li>
@@ -130,7 +130,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Settings
+                {{ $t("nav.settings") }}
               </a>
             </router-link>
           </li>
@@ -167,7 +167,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Devices
+                {{ $t("nav.devices") }}
               </a>
             </router-link>
           </li>
@@ -191,7 +191,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Invoices
+                {{ $t("nav.invoices") }}
               </a>
             </router-link>
           </li>
@@ -215,7 +215,7 @@
                   class="text-xl"
                   :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
                 ></fa>
-                Add Device
+                {{ $t("nav.addDevice") }}
               </a>
             </router-link>
           </li>

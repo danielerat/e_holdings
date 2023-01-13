@@ -2,7 +2,12 @@
   "nav": {
     "home": "Murugo",
     "about": "Ibitwerekeye",
-    "contact": "Twandikire"
+    "contact": "Twandikire",
+    "dashboard": "Ikibaho",
+    "settings": "Igenamiterere",
+    "devices": "ibikoresho",
+    "invoices": "inyemezabuguzi",
+    "addDevice": "Ongeramo igikoresho"
   },
   "btn": {
     "signIn": "Injira",
@@ -19,6 +24,7 @@
     "giveOwnership": "tanga nyirubwite",
     "reportDevice": "menyesha ikibazo",
     "reportDeviceDead": "menyesha igikoresho cyapfuye",
-    "onMarket": "Izigurishwa"
+    "onMarket": "Izigurishwa",
+    "seeAll": "Reba Zose"
   }
 }

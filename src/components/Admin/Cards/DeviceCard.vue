@@ -27,7 +27,6 @@
         <p class="font-bold">{{ name }}</p>
 
         <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
-
         <p></p>
       </h3>
 
@@ -41,7 +40,12 @@
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
             <router-link :to="`/${$i18n.locale}/admin/device`">
-              <fa icon="eye" />
+              <popover
+                title="Report lost or Stolen"
+                text="Did you lose this device? report it as lost."
+              >
+                <fa icon="eye" />
+              </popover>
             </router-link>
           </div>
           <div
@@ -51,7 +55,12 @@
           </div>
           <router-link :to="`/${$i18n.locale}/admin/device`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
-              <fa icon="share" />
+              <popover
+                title="Report lost or Stolen"
+                text="Did you lose this device? report it as lost."
+              >
+                <fa icon="circle-info"></fa>
+              </popover>
             </div>
           </router-link>
         </div>
@@ -61,10 +70,14 @@
 </template>
 
 <script>
+import Popover from "@/components/shared/popover.vue";
 import waveblue from "@/assets/img/wave.svg";
 import waveyellow from "@/assets/img/waveyellow.svg";
 export default {
   name: "DeviceCard",
+  components: {
+    Popover,
+  },
   props: {
     name: {
       type: String,

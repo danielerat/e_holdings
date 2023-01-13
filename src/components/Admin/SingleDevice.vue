@@ -56,7 +56,7 @@
             :style="{ backgroundImage: 'url(' + picture + ')' }"
           >
             <h2
-              class="text-sm title-font text-site-white-4 tracking-widest dark:text-site-gray-1"
+              class="text-sm title-font text-site-gray-2 tracking-widest dark:text-site-gray-1"
             >
               Device Name
             </h2>

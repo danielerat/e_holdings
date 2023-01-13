@@ -2,7 +2,12 @@
   "nav": {
     "home": "home",
     "about": "about",
-    "contact": "contact"
+    "contact": "contact",
+    "dashboard": "Dashboard",
+    "settings": "settings",
+    "devices": "Devices",
+    "invoices": "Invoices",
+    "addDevice": "Add Device"
   },
   "btn": {
     "signIn": "Sign In",
@@ -19,6 +24,7 @@
     "giveOwnership": "Give Ownership",
     "reportDevice": "report your device",
     "reportDeviceDead": "report as dead",
-    "onMarket": "Device On Market"
+    "onMarket": "Device On Market",
+    "seeAll": "See All"
   }
 }

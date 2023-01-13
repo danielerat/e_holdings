@@ -7,12 +7,7 @@
         </h3>
       </div>
       <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-        <button
-          class="bg-site-green-2 text-white active:bg-site-green-2 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-          type="button"
-        >
-          See all
-        </button>
+        <action-button type="tertiary" text="btn.seeAll"></action-button>
       </div>
     </div>
   </div>
@@ -88,11 +83,13 @@
 </template>
 
 <script>
+import ActionButton from "@/components/shared/ActionButton.vue";
 import Popover from "@/components/shared/popover.vue";
 export default {
   name: "ReportedDevice",
   components: {
     Popover,
+    ActionButton,
   },
 };
 </script>

@@ -11,16 +11,21 @@
       </a>
       <div
         ref="popoverRef"
-        v-bind:class="{ hidden: !popoverShow, block: popoverShow }"
+        v-bind:class="{
+          hidden: !popoverShow,
+          block: popoverShow,
+          titleColor: true,
+        }"
         class="bg-site-green-5 border-0 mr-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg"
       >
         <div>
           <div
-            class="bg-site-green-2 text-site-green-5 opacity-75 font-semibold p-2 mb-0 border-b border-solid border-blueGray-100 uppercase rounded-t-lg"
+            class="opacity-75 font-semibold p-2 mb-0 border-b border-solid border-blueGray-100 uppercase rounded-t-lg"
+            :class="textColor"
           >
             {{ title }}
           </div>
-          <div class="p-2 text-site-green-1">
+          <div class="p-2" :class="textColor">
             {{ text }}
           </div>
         </div>
@@ -43,7 +48,16 @@ export default {
       type: String,
       required: true,
     },
+    color: {
+      type: String,
+      required: false,
+      default: "green",
+      validator(value) {
+        return ["green", "gray", "yellow"].includes(value);
+      },
+    },
   },
+
   data() {
     return {
       popoverShow: false,
@@ -59,6 +73,14 @@ export default {
           placement: "left",
         });
       }
+    },
+  },
+  computed: {
+    titleColor() {
+      return "bg-site-" + this.color + "-1 text-site-" + this.color + "-5";
+    },
+    textColor() {
+      return "bg-site-" + this.color + "-2 text-site-" + this.color + "-5";
     },
   },
 };

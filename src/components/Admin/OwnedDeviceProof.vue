@@ -7,12 +7,7 @@
         </h3>
       </div>
       <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-        <button
-          class="bg-site-green-2 text-white active:bg-site-green-2 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-          type="button"
-        >
-          See all
-        </button>
+        <action-button type="tertiary" text="btn.seeAll"></action-button>
       </div>
     </div>
   </div>
@@ -59,6 +54,7 @@
               <popover
                 title="View Proof"
                 text="View a proof that proves this device belongs to me."
+                color="yellow"
               >
                 <fa icon="eye"></fa>
               </popover>
@@ -67,6 +63,7 @@
               <popover
                 title="Download a proof"
                 text="Download a Written proof, that shows that this device belongs to me."
+                color="yellow"
               >
                 <fa icon="download"></fa>
               </popover>
@@ -75,6 +72,7 @@
               <popover
                 title="Transfer The ownership"
                 text="Did you sell of give the item away? transfer the ownership now."
+                color="yellow"
               >
                 <fa icon="share"></fa>
               </popover>
@@ -83,6 +81,7 @@
               <popover
                 title="Report lost or Stolen"
                 text="Did you lose this device? report it as lost."
+                color="yellow"
               >
                 <fa icon="circle-info"></fa>
               </popover>
@@ -96,11 +95,13 @@
 </template>
 
 <script>
+import ActionButton from "@/components/shared/ActionButton.vue";
 import Popover from "@/components/shared/popover.vue";
 export default {
   name: "ProofOfOwnserhip",
   components: {
     Popover,
+    ActionButton,
   },
 };
 </script>
