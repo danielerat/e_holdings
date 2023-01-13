@@ -31,10 +31,10 @@
                 <div class="relative w-full mb-3">
                   <field
                     id="phoneNumber"
-                    placeholder="Create Your password"
+                    placeholder="07.."
                     size="lg"
                     type="text"
-                    label="Create Your password "
+                    label="Your Phone"
                     v-bind:data="phoneNumber"
                     v-on:update="phoneNumber = $event"
                   />
@@ -43,10 +43,10 @@
                 <div class="relative w-full mb-3">
                   <field
                     id="password"
-                    placeholder="Create Your password"
+                    placeholder="What is your password?"
                     size="lg"
                     type="password"
-                    label="Create Your password "
+                    label="Your password"
                     v-bind:data="password"
                     v-on:update="password = $event"
                   />
@@ -108,7 +108,6 @@ export default {
     Field,
   },
   methods: {
-    // Show and hide password , using the eye thing
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber)) {
         this.$store

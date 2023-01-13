@@ -1,18 +1,18 @@
 <template>
   <section
-    class="main-section bg-no-repeat bg-fixed bg-cover"
+    class="main-section bg-no-repeat bg-fixed bg-cover dark:bg-site-gray-1"
     :style="{ backgroundImage: 'url(' + pattern + ')' }"
   >
     <section class="mx-auto container">
       <div class="px-4 lg:px-0">
         <div class="flex items-center flex-col px-4">
           <p
-            class="my-5 uppercase text-lg text-center text-gray-600 leading-normal"
+            class="my-5 uppercase text-lg text-center text-gray-600 leading-normal dark:text-site-yellow-4"
           >
             What do we do for you ?
           </p>
           <h2
-            class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-gray-800 lg:w-7/12 md:w-9/12"
+            class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-gray-800 lg:w-7/12 md:w-9/12 dark:text-site-yellow-4 dark:drop-shadow-2xl"
           >
             All your electronics managed in one place for indubitable ownership
           </h2>
@@ -29,11 +29,13 @@
               <fa icon="cubes-stacked" class="text-4xl text-site-green-3"></fa>
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
-              <h4 class="text-lg font-bold leading-tight text-site-gray-1">
+              <h4
+                class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
+              >
                 Track you items
               </h4>
               <p
-                class="text-base text-site-gray-1 leading-normal xl:w-10/12 pt-2"
+                class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Asperiores, deleniti quibusdam necessitatibus quas non dolorum
@@ -47,11 +49,13 @@
               <fa icon="handshake-simple" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
-              <h4 class="text-lg font-bold leading-tight text-site-gray-1">
+              <h4
+                class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
+              >
                 Transfer the ownership
               </h4>
               <p
-                class="text-base text-site-gray-1 leading-normal xl:w-10/12 pt-2"
+                class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Explicabo, quo nobis doloribus temporibus vel eius consectetur
@@ -67,11 +71,13 @@
               <fa icon="headset" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
-              <h4 class="text-lg font-bold leading-tight text-site-gray-1">
+              <h4
+                class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
+              >
                 Report stolen devices
               </h4>
               <p
-                class="text-base text-site-gray-1 leading-normal xl:w-10/12 pt-2"
+                class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Eveniet, numquam doloremque optio dignissimos similique minima
@@ -87,11 +93,13 @@
               <fa icon="file-contract" class="text-4xl text-site-green-3" />
             </div>
             <div class="md:w-9/12 lg:w-9/12 mt-1">
-              <h4 class="text-lg font-bold leading-tight text-site-gray-1">
+              <h4
+                class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
+              >
                 Generate all your documents
               </h4>
               <p
-                class="text-base text-site-gray-1 leading-normal xl:w-10/12 pt-2"
+                class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 totam ea. Voluptatum culpa quo quam illo maiores praesentium
@@ -107,7 +115,7 @@
 </template>
 
 <script>
-import pattern from "@/assets/img/yellowbizarewave.svg";
+import pattern from "@/assets/img/green_circle.svg";
 export default {
   name: "ShortAboutUs",
   data() {
