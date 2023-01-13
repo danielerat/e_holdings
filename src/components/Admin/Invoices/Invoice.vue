@@ -189,7 +189,7 @@
         </a>
       </li>
       <li class="flex basis-1/5 border-b-2 hover:border-site-green-1">
-        <a class="relative block p-4" @click="donloadInvoice">
+        <a class="relative block p-4" @click="downloadInvoice">
           <div class="flex items-center justify-center">
             <fa
               icon="download"
@@ -203,7 +203,6 @@
         </a>
       </li>
     </ul>
-
     <!-- Filters -->
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead
@@ -219,13 +218,15 @@
           <th scope="col" class="py-3 px-1">Actions</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="invoices.length">
         <tr
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          v-for="(invoice, index) in invoices"
+          :key="index"
         >
           <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
             <div class="flex">
-              <span class="">#568</span>
+              <span class="">#{{ index }}</span>
               <span
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
@@ -239,15 +240,15 @@
           >
             <ul>
               <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                Apple MacBook Pro 17"
+                {{ invoice.device.name }}
               </li>
-              <li>Computer</li>
+              <li>{{ invoice.device.category }}</li>
             </ul>
           </th>
           <td class="py-4 px-2 collapse hidden lg:table-cell">
             <ul class="text-xs">
-              <li>Model: MacBookPro18,3</li>
-              <li>SN/IMEI: S14525MKGP3572</li>
+              <li>Model: {{ invoice.device.device_model }}</li>
+              <li>SN/IMEI: {{ invoice.device.mac_address }}</li>
             </ul>
           </td>
           <td class="py-4 px-2">
@@ -255,243 +256,72 @@
               <li
                 class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
               >
-                Mumbere Carlos
+                {{ invoice.soldTo }}
               </li>
               <li class="text-xs my-1">+250783305114</li>
             </ul>
           </td>
           <td class="text-xm py-4 px-2 hidden md:table-cell">
             <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              July/22/2022
+              {{ invoice.dateOfCreation }}
             </span>
             <p>
               <span
-                class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
+                :class="
+                  invoice.hasWarranty
+                    ? 'mt text-site-black-2 px-2 rounded-full bg-site-green-5'
+                    : 'mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5'
+                "
               >
                 Warranty
-                <fa icon="xmark-circle" class="text-site-yellow-1" />
+                <fa
+                  :icon="invoice.hasWarranty ? 'check-circle' : 'xmark-circle'"
+                  :class="
+                    invoice.hasWarranty
+                      ? 'text-site-black-5'
+                      : 'text-site-yellow-1'
+                  "
+                />
               </span>
             </p>
           </td>
-          <td class="py-4 px-2 hidden lg:table-cell">Frw 200,000</td>
+          <td class="py-4 px-2 hidden lg:table-cell">
+            {{ invoice.device.price }}
+          </td>
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
               <li class="hover:text-site-green-4">
                 <fa icon="eye" @click="showInvoice"></fa>
               </li>
-              <li class="hover:text-site-green-4" @click="donloadInvoice">
+              <li class="hover:text-site-green-4" @click="downloadInvoice">
                 <fa icon="download"></fa>
               </li>
             </ul>
           </td>
         </tr>
         <!-- -------------------- -->
-        <tr
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
-          <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
-            <div class="flex">
-              <span class="">#568</span>
-              <span
-                class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
-              >
-                <fa icon="laptop"></fa>
-              </span>
-            </div>
-          </td>
-          <th
-            scope="row"
-            class="py-4 px-4 font-medium whitespace-nowrap dark:text-white"
-          >
-            <ul>
-              <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                Apple MacBook Pro 17"
-              </li>
-              <li>Computer</li>
-            </ul>
-          </th>
-          <td class="py-4 px-2 collapse hidden lg:table-cell">
-            <ul class="text-xs">
-              <li>Model: MacBookPro18,3</li>
-              <li>SN/IMEI: S14525MKGP3572</li>
-            </ul>
-          </td>
-          <td class="py-4 px-2">
-            <ul class="text-xs">
-              <li
-                class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
-              >
-                Mumbere Carlos
-              </li>
-              <li class="text-xs my-1">+250783305114</li>
-            </ul>
-          </td>
-          <td class="text-xm py-4 px-2 hidden md:table-cell">
-            <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              July/22/2022
-            </span>
-            <p>
-              <span
-                class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
-              >
-                Warranty
-                <fa icon="xmark-circle" class="text-site-yellow-1" />
-              </span>
-            </p>
-          </td>
-          <td class="py-4 px-2 hidden lg:table-cell">Frw 200,000</td>
-          <td class="py-4 px-2 text-right">
-            <ul class="flex justify-between text-site-green-5 text-md">
-              <li class="hover:text-site-green-4">
-                <fa icon="eye"></fa>
-              </li>
-              <li class="hover:text-site-green-4" @click="donloadInvoice">
-                <fa icon="download"></fa>
-              </li>
-            </ul>
-          </td>
-        </tr>
-        <tr
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
-          <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
-            <div class="flex">
-              <span class="">#568</span>
-              <span
-                class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
-              >
-                <fa icon="mobile-button"></fa>
-              </span>
-            </div>
-          </td>
-          <th
-            scope="row"
-            class="py-4 px-4 font-medium whitespace-nowrap dark:text-white"
-          >
-            <ul>
-              <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                Apple MacBook Pro 17"
-              </li>
-              <li>Computer</li>
-            </ul>
-          </th>
-          <td class="py-4 px-2 collapse hidden lg:table-cell">
-            <ul class="text-xs">
-              <li>Model: MacBookPro18,3</li>
-              <li>SN/IMEI: S14525MKGP3572</li>
-            </ul>
-          </td>
-          <td class="py-4 px-2">
-            <ul class="text-xs">
-              <li
-                class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
-              >
-                Mumbere Carlos
-              </li>
-              <li class="text-xs my-1">+250783305114</li>
-            </ul>
-          </td>
-          <td class="text-xm py-4 px-2 hidden md:table-cell">
-            <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              July/22/2022
-            </span>
-            <p>
-              <span
-                class="mt text-site-green-2 px-2 rounded-full bg-site-green-5"
-              >
-                Warranty
-                <fa icon="check-to-slot" class="text-site-green-1" />
-              </span>
-            </p>
-          </td>
-          <td class="py-4 px-2 hidden lg:table-cell">Frw 200,000</td>
-          <td class="py-4 px-2 text-right">
-            <ul class="flex justify-between text-site-green-5 text-md">
-              <li class="hover:text-site-green-4">
-                <fa icon="eye"></fa>
-              </li>
-              <li class="hover:text-site-green-4" @click="donloadInvoice">
-                <fa icon="download"></fa>
-              </li>
-            </ul>
-          </td>
-        </tr>
-        <tr
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-        >
-          <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
-            <div class="flex">
-              <span class="">#568</span>
-              <span
-                class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
-              >
-                <fa icon="plug"></fa>
-              </span>
-            </div>
-          </td>
-          <th
-            scope="row"
-            class="py-4 px-4 font-medium whitespace-nowrap dark:text-white"
-          >
-            <ul>
-              <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                Apple MacBook Pro 17"
-              </li>
-              <li>Computer</li>
-            </ul>
-          </th>
-          <td class="py-4 px-2 collapse hidden lg:table-cell">
-            <ul class="text-xs">
-              <li>Model: MacBookPro18,3</li>
-              <li>SN/IMEI: S14525MKGP3572</li>
-            </ul>
-          </td>
-          <td class="py-4 px-2">
-            <ul class="text-xs">
-              <li
-                class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
-              >
-                Mumbere Carlos
-              </li>
-              <li class="text-xs my-1">+250783305114</li>
-            </ul>
-          </td>
-          <td class="text-xm py-4 px-2 hidden md:table-cell">
-            <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              July/22/2022
-            </span>
-            <p>
-              <span
-                class="mt text-site-green-2 px-2 rounded-full bg-site-green-5"
-              >
-                Warranty
-                <fa icon="check-to-slot" class="text-site-green-1" />
-              </span>
-            </p>
-          </td>
-          <td class="py-4 px-2 hidden lg:table-cell">Frw 200,000</td>
-          <td class="py-4 px-2 text-right">
-            <ul class="flex justify-between text-site-green-5 text-md">
-              <li class="hover:text-site-green-4">
-                <fa icon="eye"></fa>
-              </li>
-              <li class="hover:text-site-green-4" @click="donloadInvoice">
-                <fa icon="download"></fa>
-              </li>
-            </ul>
-          </td>
-        </tr>
       </tbody>
     </table>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
 export default {
   name: "Invoice",
 
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      invoices: (state) => state.accountInvoices,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchInvoicesPerAccount");
+    this.$store.dispatch("getCurrentUser");
+  },
   methods: {
-    donloadInvoice() {
+    downloadInvoice() {
       const Toast = this.$swal.mixin({
         toast: true,
         position: "top-end",

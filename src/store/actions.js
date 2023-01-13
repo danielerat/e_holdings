@@ -121,5 +121,36 @@ const actions = {
         console.log(error);
       });
   },
+  async fetchInvoicesPerAccount({ state }) {
+    await axios
+      .get("e-hold/v1/invoice/all/account/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((response) => {
+        state.accountInvoices = [];
+        response.data.forEach((item) => {
+          axios
+            .get(`e-hold/v1/device/${item.device}/`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
+            })
+            .then((response) => {
+              state.accountInvoices.push({
+                id: item.id,
+                soldTo: item.sold_to,
+                hasWarranty: item.has_warranty,
+                dateOfCreation: item.date_of_creation,
+                device: response.data,
+              });
+            });
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 export default actions;

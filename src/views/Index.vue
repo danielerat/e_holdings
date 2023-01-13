@@ -97,7 +97,7 @@
 
 <script>
 // @ is an alias to /src
-import { mapGetters, mapState } from "vuex";
+// import { mapGetters, mapState } from "vuex";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import MainFooter from "@/components/Footers/Footer.vue";
 import Hero from "@/components/Hero.vue";
@@ -131,20 +131,5 @@ export default {
       documentspill,
     };
   },
-<<<<<<< HEAD
-  computed: {
-    ...mapGetters(["isAuthenticated"]),
-    ...mapState({
-      userInfo: (state) => state.userInfo,
-    }),
-    coun() {
-      return this.$store.state.theme;
-    },
-  },
-  created() {
-    this.$store.dispatch("getCurrentUser");
-  },
-=======
->>>>>>> cddef76ec4f1a7c24f040095b757b0c1b6f9d446
 };
 </script>

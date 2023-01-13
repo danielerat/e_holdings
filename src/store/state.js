@@ -8,6 +8,7 @@ const state = () => {
     devices: [],
     invoices: [],
     accountDevices: [],
+    accountInvoices: [],
     theme: "light",
   };
 };
