@@ -20,6 +20,7 @@ import DevicesView from "@/views/admin/DevicesView.vue";
 import DeviceView from "@/views/admin/DeviceView.vue";
 import TransferDeviceView from "@/views/admin/TransferDeviceView.vue";
 import i18n from "@/i18n";
+// import auth from "@/middleware/auth";
 const routes = [
   {
     path: "/",
@@ -95,6 +96,7 @@ const routes = [
         path: "admin",
         name: "admin",
         component: Admin,
+        meta: { requiresAuth: true },
       },
 
       {

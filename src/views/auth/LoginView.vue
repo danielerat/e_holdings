@@ -118,6 +118,7 @@ export default {
           .then(() => {
             AlertMe({ title: "Successful Authentication.", type: "success" });
             this.$router.push("/");
+            window.location.href = "/";
           })
           .catch((error) => {
             console.log(error);

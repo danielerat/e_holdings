@@ -7,6 +7,8 @@ const state = () => {
     soughtItem: [], // An item being looked up
     devices: [],
     invoices: [],
+    accountDevices: [],
+    accountInvoices: [],
     theme: "light",
   };
 };

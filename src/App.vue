@@ -10,6 +10,7 @@ export default {
   computed: {
     ...mapGetters(["CURRENT_THEME"]),
   },
+  created() {},
   mounted() {
     setInterval(() => {
       this.$store.dispatch("refreshToken");

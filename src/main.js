@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import axios from "axios";
 import store from "@/store";
 import VueAxios from "vue-axios";
+import auth from "@/middleware/auth";
 // import { createApp } from "vue";
 import VueSweetalert2 from "vue-sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -143,7 +144,6 @@ library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
 
 import "./assets/tailwind.css";
 import App from "./App.vue";
-
 import router from "@/router";
 import i18n from "@/i18n";
 import { vfmPlugin } from "vue-final-modal";
@@ -152,12 +152,20 @@ router.beforeEach((to, from, next) => {
   let language = to.params.lang;
   if (!language) {
     language = "en";
+  } else {
+    // set the current language for i18n.
+    i18n.global.locale = language;
+    next();
   }
-
-  // set the current language for i18n.
-  i18n.global.locale = language;
-  next();
 });
+
+//TODO
+// router.beforeEach(async (to) => {
+//   // redirect to login page if not logged in and trying to access a restricted page
+//   if (to.matched.some((record) => record.meta.requiresAuth)) {
+//     return "/login";
+//   }
+// });
 
 axios.defaults.baseURL = "http://localhost:8000";
 
@@ -168,6 +176,7 @@ createApp(App)
   .use(VueClickAway)
   .use(vfmPlugin)
   .use(router)
+  .use(auth)
   .use(i18n)
   .component("fa", FontAwesomeIcon)
   .mount("#app");
