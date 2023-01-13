@@ -2,8 +2,19 @@
   <index-navbar></index-navbar>
   <hero></hero>
   <device-lookup />
+  <file-organization-section></file-organization-section>
+  <published-device-short></published-device-short>
+
   <short-about-us />
 
+  <center-img-design
+    title_left="Our Story"
+    sub_title_left="Lorem ipsum dolor sit amet consectetur"
+    text_left="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+    title_right="Why choose us?"
+    sub_title_right="We are your best option ...."
+    text_right="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
+  />
   <section class="bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-5">
     <div class="content-center container mx-auto py-6">
       <div class="text-center w-4/5 mx-auto">
@@ -81,43 +92,6 @@
 
   <!-- Published Devices -->
 
-  <published-device-short></published-device-short>
-
-  <!-- Component--------------------- -->
-
-  <center-img-design
-    title_left="Our Story"
-    sub_title_left="Lorem ipsum dolor sit amet consectetur"
-    text_left="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
-    title_right="Why choose us?"
-    sub_title_right="We are your best option ...."
-    text_right="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur"
-  />
-  <fixed-image-scroll-layout
-    :bg="documentspill"
-    title="Save yourself from organizing all these bills"
-  >
-    <slot>
-      Bonjousr {{ coun }} Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Repellendus aliquam incidunt id voluptatibus vitae, architecto ut
-      nostrum ratione porro quod dolorum autem natus repellat voluptatem
-      similique, assumenda ipsum cupiditate molestias?
-    </slot>
-    <slot name="footer">
-      <div class="flex justify-end">
-        <router-link :to="`/${$i18n.locale}/support`">
-          <action-button
-            front-icon="arrow-right"
-            type="tertiary"
-            size="xl"
-            text="btn.exploreOurFaq"
-            class="mx-2"
-          />
-        </router-link>
-      </div>
-    </slot>
-  </fixed-image-scroll-layout>
-
   <main-footer />
 </template>
 
@@ -128,7 +102,7 @@ import MainFooter from "@/components/Footers/Footer.vue";
 import Hero from "@/components/Hero.vue";
 import ShortAboutUs from "@/components/ShortAboutUs.vue";
 import CenterImgDesign from "@/components/CenteredImgSideContents.vue";
-import FixedImageScrollLayout from "@/components/shared/FixedImageScrollLayout.vue";
+import FileOrganizationSection from "@/components/shared/FileOrganizationSection.vue";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import documentspill from "@/assets/img/documentpill.jpg";
 import Accordion from "@/components/shared/Accordion.vue/";
@@ -144,7 +118,7 @@ export default {
     Hero,
     ShortAboutUs,
     CenterImgDesign,
-    FixedImageScrollLayout,
+    FileOrganizationSection,
     ActionButton,
     CardFaq,
     Accordion,
@@ -155,11 +129,6 @@ export default {
     return {
       documentspill,
     };
-  },
-  computed: {
-    coun() {
-      return this.$store.state.theme;
-    },
   },
 };
 </script>

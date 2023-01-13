@@ -13,9 +13,10 @@
       />
       <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
         <h1
-          class="title-font sm:text-4xl text-2xl mb-4 font-bold text-site-gray-3 dark:dark:text-site-yellow-4"
+          class="title-font sm:text-4xl text-2xl mb-4 font-bold text-site-gray-2 dark:dark:text-site-yellow-4"
         >
-          Not sure about the device you are about to buy? I got you.
+          Not sure about the device you are about to buy? How about we help you
+          check it.
         </h1>
         <p class="mb-8 leading-relaxed">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
@@ -57,7 +58,11 @@
             :to="`/${$i18n.locale}/check-device`"
             class="text-site-green-3 underline"
           >
-            Place to check your devices
+            <action-button
+              text="Check Device"
+              type="quaternary"
+              frontIcon="arrow-right"
+            ></action-button>
           </router-link>
         </p>
       </div>
@@ -66,12 +71,14 @@
 </template>
 <script>
 import SearchIllustration from "@/assets/img/searchillustration.svg";
-import bg from "@/assets/img/greencircle.svg";
+import bg from "@/assets/img/yellow_circle.svg";
+import ActionButton from "../shared/ActionButton.vue";
 
 // import SearchInput from "@/components/shared/SearchInput.vue";
 export default {
   name: "DeviceLookup",
   components: {
+    ActionButton,
     // SearchInput,
   },
   data() {
