@@ -12,6 +12,9 @@ const getters = {
   devices: (state) => {
     return state.devices;
   },
+  accountDevices: (state) => {
+    return state.accountDevices;
+  },
   invoices: (state) => {
     return state.invoices;
   },

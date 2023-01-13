@@ -81,57 +81,16 @@
       </div>
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
         <device-card
+          v-for="(device, index) in devices"
+          :key="index"
+          :device="device"
           class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          status="lost"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          status="lost"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          status="lost"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          status="lost"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
-        />
-        <device-card
-          class="basis-1/4"
-          name="Mappel Touch 45"
-          model="Mappel45 Ht 2028"
-          imei="MR2212M2111"
-          status="active"
-          type="laptop"
-          text="if it was easy everyone would do it , who are you go succeed where everyone failed"
+          :name="device.name"
+          :model="device.device_model"
+          :imei="device.mac_address"
+          :status="false"
+          :type="device.category"
+          :text="device.desc"
         />
       </div>
       <!-- ---- -->
@@ -142,10 +101,10 @@
   </div>
 </template>
 <script>
+import { mapGetters, mapState } from "vuex";
 import AdminNavbar from "@/components/Admin/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
-
 import CardStats from "@/components/Cards/CardStats.vue";
 import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
 export default {
@@ -157,5 +116,15 @@ export default {
     FooterAdmin,
     CardStats,
   },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      devices: (state) => state.accountDevices,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchDevicesPerAccount");
+  },
+  methods: {},
 };
 </script>

@@ -97,6 +97,20 @@ const actions = {
         console.log(error);
       });
   },
+  async fetchDevicesPerAccount({ state }) {
+    await axios
+      .get("e-hold/v1/device/all/account", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((response) => {
+        state.accountDevices = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   async fetchAllInvoices({ state }) {
     await axios
       .get("e-hold/v1/invoice/all/")

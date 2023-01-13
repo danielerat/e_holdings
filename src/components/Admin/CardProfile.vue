@@ -18,8 +18,9 @@
             <div class="mr-4 p-3 text-center">
               <span
                 class="text-xl font-bold block uppercase tracking-wide text-blueGray-600"
+                v-if="devices"
               >
-                102
+                {{ devices.length }}
               </span>
               <span class="text-sm text-blueGray-400">Devices</span>
             </div>
@@ -46,8 +47,11 @@
         </div>
       </div>
       <div class="text-center mt-12">
-        <h3 class="text-xl font-semibold leading-normal text-blueGray-700 mb-2">
-          Mumbere Carlos
+        <h3
+          class="text-xl font-semibold leading-normal text-blueGray-700 mb-2"
+          v-if="userInfo !== null"
+        >
+          {{ userInfo.name }}
         </h3>
         <div
           class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
@@ -56,12 +60,16 @@
           Kigali Nyarugenge, Biryogo
         </div>
         <div class="mb-2 text-blueGray-600 mt-10">
-          <fa icon="envelope" class="text-site-gray-2" />
-          eholdings@holdings.com
+          <fa
+            icon="envelope"
+            class="text-site-gray-2"
+            v-if="userInfo !== null"
+          />
+          {{ userInfo.email }}
           <br />
 
           <fa icon="phone" class="text-site-gray-2" />
-          0783305114
+          {{ userInfo.phone }}
         </div>
         <div class="mb-2 text-blueGray-600">
           <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
@@ -87,6 +95,7 @@
   </div>
 </template>
 <script>
+import { mapGetters, mapState } from "vuex";
 import team2 from "@/assets/img/logo.png";
 
 export default {
@@ -96,6 +105,18 @@ export default {
       team2,
     };
   },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+      devices: (state) => state.accountDevices,
+    }),
+  },
+  created() {
+    this.$store.dispatch("getCurrentUser");
+    this.$store.dispatch("fetchDevicesPerAccount");
+  },
+  methods: {},
 };
 </script>
 
