@@ -27,12 +27,18 @@
               id="simple-search"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
               placeholder="Serial Number or IMEI"
-              required=""
+              v-model="searchString"
             />
           </div>
+          <ul>
+            <li v-for="(item, index) in soughtItem" :key="index">
+              {{ item.name }}
+            </li>
+          </ul>
           <button
             type="submit"
             class="p-2.5 ml-2 text-sm font-medium text-white bg-site-gray-1 rounded-lg border border-site-gray-2 hover:bg-site-gray-2 focus:ring-4 focus:outline-none focus:ring-blue-300"
+            @click="searchAnItem"
           >
             <fa icon="search" />
             <span class="sr-only">Search</span>
@@ -46,6 +52,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import good from "@/assets/img/good.png";
 import error from "@/assets/img/error.png";
 import DeviceSearchResponse from "@/components/shared/DeviceSearchResponse";
@@ -58,7 +65,25 @@ export default {
     return {
       good,
       error,
+      searchString: "",
     };
+  },
+  computed: {
+    ...mapState({
+      devices: (state) => state.devices,
+      soughtItem: (state) => state.soughtItem,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchAllDevices");
+  },
+  methods: {
+    searchAnItem() {
+      this.$store.dispatch("lookUpAnItem", {
+        searchString: this.searchString,
+        devices: this.devices,
+      });
+    },
   },
 };
 </script>

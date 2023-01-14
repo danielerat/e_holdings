@@ -118,6 +118,7 @@
                   size="sm"
                   text="btn.ownership"
                   frontIcon="download"
+                  @click="generatePDF"
                 />
                 <action-button
                   type="tertiary"
@@ -154,14 +155,17 @@
       <h1
         class="md:text-3xl text-2xl font-medium title-font text-site-gray-1 dark:text-site-white-4"
       >
-        From the shop to your hands
+        History of Ownership
       </h1>
     </div>
     <device-timeline :timeline="timeline"></device-timeline>
+    <div ref="pdfContent"></div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
+import jsPDF from "jspdf";
 import axios from "axios";
 import Alert from "@/utils/alerts";
 // import progress from "@/utils/progress";
@@ -171,6 +175,16 @@ import mac from "@/assets/img/mac.png";
 import picture from "@/assets/img/wave.svg";
 export default {
   name: "SingleDevice",
+  setup() {
+    const pdfContent = ref(null);
+    const generatePDF = () => {
+      const pdf = new jsPDF();
+      pdf.addHTML(pdfContent.value, () => {
+        pdf.save("download.pdf");
+      });
+    };
+    return { pdfContent, generatePDF };
+  },
   props: {
     device: {
       type: String,
@@ -193,6 +207,9 @@ export default {
     };
   },
   methods: {
+    async downloadContract(item) {
+      console.log(`Downloading Contract...${item.name}`);
+    },
     async reportItem(item) {
       console.log(`Reporting a device lost or stolen ${item}`);
     },

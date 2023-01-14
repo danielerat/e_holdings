@@ -75,8 +75,8 @@ const actions = {
     }
   },
 
-  lookUpAnItem: (context, payload) => {
-    context.commit("lookUpAnItem", payload);
+  lookUpAnItem({ commit }, payload) {
+    commit("lookUpAnItem", payload);
   },
   fetchTheme({ state, commit }) {
     if (Cookies.get("theme")) {
