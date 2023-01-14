@@ -45,8 +45,9 @@
           </button>
         </form>
 
-        <device-search-response type="negative"></device-search-response>
-        <device-search-response type="positive"></device-search-response>
+        <device-search-response
+          :type="soughtItem.length !== 0 ? 'negative' : 'positive'"
+        ></device-search-response>
       </div>
     </div>
   </div>
