@@ -132,7 +132,7 @@ const actions = {
         state.accountInvoices = [];
         response.data.forEach((item) => {
           axios
-            .get(`e-hold/v1/device/${item.device}/`, {
+            .get(`e-hold/v1/device/actions/${item.device}/`, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
               },

@@ -154,7 +154,7 @@
       <h1
         class="md:text-3xl text-2xl font-medium title-font text-site-gray-1 dark:text-site-white-4"
       >
-        From The Shop To Your Hand
+        From the shop to your hands
       </h1>
     </div>
     <device-timeline :timeline="timeline"></device-timeline>

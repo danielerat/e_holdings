@@ -29,12 +29,12 @@
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
-            <router-link :to="`/${$i18n.locale}/admin/device`">
+            <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
               <fa icon="eye" />
             </router-link>
           </div>
 
-          <router-link :to="`/${$i18n.locale}/admin/device`">
+          <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
               <fa icon="share" />
             </div>

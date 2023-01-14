@@ -53,7 +53,7 @@
           >
             <fa icon="gauge" />
           </div>
-          <router-link :to="`/${$i18n.locale}/admin/device`">
+          <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
               <popover
                 title="Report lost or Stolen"
