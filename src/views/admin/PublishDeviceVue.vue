@@ -136,14 +136,14 @@ export default {
   computed: {
     ...mapState({
       userInfo: (state) => state.userInfo,
-      devices: (state) => state.devices,
+      devices: (state) => state.accountDevices,
     }),
   },
   created() {
     // get current user
     this.$store.dispatch("getCurrentUser");
     // get devices
-    this.$store.dispatch("fetchAllDevices");
+    this.$store.dispatch("fetchDevicesPerAccount");
   },
   methods: {},
 };

@@ -226,11 +226,11 @@
         >
           <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
             <div class="flex">
-              <span class="">#{{ index }}</span>
+              <span class="">#{{ index === 0 ? index + 1 : index + 1 }}</span>
               <span
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
-                <fa icon="laptop"></fa>
+                <fa :icon="invoice.device.category"></fa>
               </span>
             </div>
           </td>
@@ -240,7 +240,7 @@
           >
             <ul>
               <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                {{ invoice.device.name }}
+                {{ truncateString(invoice.device.name, 40) }}
               </li>
               <li>{{ invoice.device.category }}</li>
             </ul>
@@ -263,7 +263,7 @@
           </td>
           <td class="text-xm py-4 px-2 hidden md:table-cell">
             <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              {{ invoice.dateOfCreation }}
+              {{ formatDate(invoice.dateOfCreation) }}
             </span>
             <p>
               <span
@@ -286,7 +286,7 @@
             </p>
           </td>
           <td class="py-4 px-2 hidden lg:table-cell">
-            {{ invoice.device.price }}
+            {{ formatPrice(invoice.device.price) }}
           </td>
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
@@ -346,6 +346,23 @@ export default {
         imageHeight: 500,
         imageAlt: "A tall image",
       });
+    },
+    formatDate(d) {
+      const date = new Date(d);
+      let year = date.getFullYear();
+      let day = date.getDate();
+      let month = date.toLocaleString("default", { month: "short" });
+      return month + " " + day + ", " + year;
+    },
+    formatPrice(price) {
+      let formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "RWF",
+      }).format(price);
+      return formatted;
+    },
+    truncateString(str, n) {
+      return str.length > n ? str.slice(0, n - 1) + `...` : str;
     },
   },
 };

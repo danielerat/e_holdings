@@ -43,7 +43,7 @@
           <a
             v-if="status"
             class="inline-flex items-center px-1 rounded border border-site-yellow-1 text-site-yellow-1 hover:bg-transparent hover:text-site-yellow-2 focus:outline-none focus:ring active:text-site-yellow-2 active:bg-site-yellow-5"
-            href="#"
+            unPublishDevice(device)
           >
             <span class="text-xs font-medium">Unpublish&nbsp;</span>
             <fa icon="cloud-arrow-down" />
@@ -128,11 +128,18 @@ export default {
     },
   },
   methods: {
+    unPublishDevice(item) {
+      console.log(item);
+    },
     publishDevice(item) {
       let formData = new FormData();
       formData.append("device", item.id);
       axios
-        .post(`e-hold/v1/publish/create/`, formData, {})
+        .post(`e-hold/v1/publish/create/`, formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
         .then(() => {
           AlertMe({
             title: `Successfully published ${item.name} to public!`,
