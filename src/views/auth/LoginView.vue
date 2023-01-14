@@ -86,10 +86,8 @@
 import AlertMe from "@/utils/alerts";
 import CheckPhone from "@/utils/CheckPhone";
 // import CheckPassword from "@/utils/CheckPassword";
-
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
-
 import Field from "@/components/shared/InputText.vue";
 
 export default {

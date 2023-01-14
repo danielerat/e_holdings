@@ -43,7 +43,7 @@
           <a
             v-if="status"
             class="inline-flex items-center px-1 rounded border border-site-yellow-1 text-site-yellow-1 hover:bg-transparent hover:text-site-yellow-2 focus:outline-none focus:ring active:text-site-yellow-2 active:bg-site-yellow-5"
-            unPublishDevice(device)
+            @click="unPublishDevice(device)"
           >
             <span class="text-xs font-medium">Unpublish&nbsp;</span>
             <fa icon="cloud-arrow-down" />
@@ -141,10 +141,13 @@ export default {
           },
         })
         .then(() => {
-          AlertMe({
-            title: `Successfully published ${item.name} to public!`,
-            type: "success",
-          });
+          setTimeout(() => {
+            // this.status = true;
+            AlertMe({
+              title: `Successfully published ${item.name} to public!`,
+              type: "success",
+            });
+          }, 2000);
         })
         .catch((error) => {
           AlertMe({

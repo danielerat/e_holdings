@@ -39,7 +39,7 @@
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
-            <router-link :to="`/${$i18n.locale}/admin/device`">
+            <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
               <popover
                 title="Check out device"
                 text="View your device for further actions"
@@ -79,6 +79,10 @@ export default {
     Popover,
   },
   props: {
+    device: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
