@@ -88,7 +88,8 @@
           :name="device.name"
           :model="device.device_model"
           :imei="device.mac_address"
-          :status="false"
+          :date="formatDate(device.date_of_creation)"
+          :status="device.availability"
           :type="device.category"
           :text="device.desc"
         />
@@ -107,6 +108,7 @@ import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 import CardStats from "@/components/Cards/CardStats.vue";
 import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
+
 export default {
   name: "AssignDevice",
   components: {
@@ -125,6 +127,14 @@ export default {
   created() {
     this.$store.dispatch("fetchDevicesPerAccount");
   },
-  methods: {},
+  methods: {
+    formatDate(d) {
+      const date = new Date(d);
+      let year = date.getFullYear();
+      let day = date.getDate();
+      let month = date.toLocaleString("default", { month: "short" });
+      return month + " " + day + ", " + year;
+    },
+  },
 };
 </script>

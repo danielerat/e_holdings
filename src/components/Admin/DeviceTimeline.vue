@@ -26,9 +26,10 @@
         >
           {{ device.name }}
         </h3>
-        <a
+
+        <button
           v-if="index == Object.keys(timeline).length - 1"
-          href="#"
+          @click="downloadContract(device)"
           class="text-xs inline-flex items-center p-2 mb-1 font-medium text-site-gray-2 rounded-lg border border-site-gray-4 hover:bg-site-green-5 dark:hover:text-site-gray-1 dark:hover:bg-site-green-5"
         >
           <fa
@@ -36,7 +37,7 @@
             class="text-site-gray-2 mr-2 dark:text-site-yellow-2"
           />
           Contract
-        </a>
+        </button>
         <time
           class="text-xs md:text-sm block mb-2 text-center font-bold leading-none text-site-green-3"
         >
@@ -60,6 +61,11 @@ export default {
     return {
       image,
     };
+  },
+  methods: {
+    downloadContract(item) {
+      console.log(`Downloading Contract...${item.name}`);
+    },
   },
 };
 </script>

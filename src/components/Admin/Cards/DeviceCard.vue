@@ -18,7 +18,8 @@
     <div class="mt-4 text-gray-500">
       <div class="flex justify-around">
         <p>
-          <fa :icon="type" class="text-xl" />
+          <fa v-if="type == 'phone'" icon="mobile-button" class="text-xl" />
+          <fa v-else :icon="type" class="text-xl" />
         </p>
         <p class="text-xs">SN/IMEI: {{ imei }}</p>
       </div>
@@ -39,7 +40,7 @@
           <div
             class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
           >
-            <router-link :to="`/${$i18n.locale}/admin/device`">
+            <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
               <popover
                 title="Check out device"
                 text="View your device for further actions"
@@ -53,7 +54,7 @@
           >
             <fa icon="gauge" />
           </div>
-          <router-link :to="`/${$i18n.locale}/admin/device`">
+          <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
             <div class="px-2 text-site-green-3 hover:text-site-green-1">
               <popover
                 title="Report lost or Stolen"
@@ -79,6 +80,10 @@ export default {
     Popover,
   },
   props: {
+    device: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -104,9 +109,6 @@ export default {
       type: String,
       required: false,
       default: "mobile-button",
-      validator(value) {
-        return ["mobile-button", "laptop", "plug"].includes(value);
-      },
     },
     status: {
       type: String,

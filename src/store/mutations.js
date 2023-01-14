@@ -42,24 +42,20 @@ const mutations = {
     state.isAuthenticated = true;
   },
   // Yea, Searching
-  lookUpAnItem: (state, payload) => {
+  lookUpAnItem(state, payload) {
     let searchString = payload.searchString.toLowerCase();
-    let searchCategory = payload.searchCategory;
-    let items = payload.items; // items to search from
+    let devices = payload.devices; // items to search from
     state.soughtItem = [];
-    if (searchString.length && items != null) {
-      items.filter((item) => {
+    if (searchString.length && devices != null) {
+      devices.filter((device) => {
         if (
-          item.name.toLowerCase().includes(searchString) &&
-          item.category === searchCategory
+          device.mac_address.toLowerCase() === searchString ||
+          device.serial_number.toLowerCase() === searchString
         ) {
-          state.soughtItem.push(item);
+          console.log(device);
+          state.soughtItem.push(device);
         }
       });
-    } else {
-      // Say something, almost heartbreaking...
-      // Unlikely to get here tho
-      console.log("There has been an issue!");
     }
   },
   CHANGE_DARKMODE(state) {

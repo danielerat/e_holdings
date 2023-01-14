@@ -126,7 +126,7 @@ const routes = [
       },
 
       {
-        path: "admin/device",
+        path: "admin/device/:uuid",
         name: "device",
         component: DeviceView,
       },

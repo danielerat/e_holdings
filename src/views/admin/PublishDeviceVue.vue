@@ -108,7 +108,6 @@
         />
       </div>
       <!-- ---- -->
-
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
@@ -136,14 +135,14 @@ export default {
   computed: {
     ...mapState({
       userInfo: (state) => state.userInfo,
-      devices: (state) => state.devices,
+      devices: (state) => state.accountDevices,
     }),
   },
   created() {
     // get current user
     this.$store.dispatch("getCurrentUser");
     // get devices
-    this.$store.dispatch("fetchAllDevices");
+    this.$store.dispatch("fetchDevicesPerAccount");
   },
   methods: {},
 };
