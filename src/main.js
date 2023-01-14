@@ -136,7 +136,8 @@ library.add(
   faCloudArrowUp,
   faCloudArrowDown,
   faSpinner,
-  faCloud
+  faCloud,
+  faSpinner
 );
 
 library.add(faYoutube, faFacebook, faWhatsapp, faTwitter);
