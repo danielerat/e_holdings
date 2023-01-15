@@ -118,13 +118,14 @@
                   size="sm"
                   text="btn.ownership"
                   frontIcon="download"
-                  @click="generatePDF"
+                  @click="downloadOwnership(device)"
                 />
                 <action-button
                   type="tertiary"
                   size="sm"
                   text="btn.contract"
                   frontIcon="file-contract"
+                  @click="downloadContract(device)"
                 />
                 <router-link
                   :to="`/${$i18n.locale}/admin/transfer/${device.uuid}`"
@@ -166,27 +167,17 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import jsPDF from "jspdf";
 import axios from "axios";
+import { mapState } from "vuex";
 import Alert from "@/utils/alerts";
-// import progress from "@/utils/progress";
+import ownershipPdf from "@/utils/ownershipPdf";
+import contractPdf from "@/utils/contractPdf";
 import DeviceTimeline from "@/components/Admin/DeviceTimeline.vue";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import mac from "@/assets/img/mac.png";
 import picture from "@/assets/img/wave.svg";
 export default {
   name: "SingleDevice",
-  setup() {
-    const pdfContent = ref(null);
-    const generatePDF = () => {
-      const pdf = new jsPDF();
-      pdf.addHTML(pdfContent.value, () => {
-        pdf.save("download.pdf");
-      });
-    };
-    return { pdfContent, generatePDF };
-  },
   props: {
     device: {
       type: String,
@@ -206,11 +197,57 @@ export default {
       picture,
       mac,
       showProgress: false,
+      deviceOwner: "",
     };
   },
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
+  },
+  created() {
+    this.$store.dispatch("getCurrentUser");
+  },
   methods: {
-    async downloadContract(item) {
-      console.log(`Downloading Contract...${item.name}`);
+    downloadContract(item) {
+      let data = {
+        device: {
+          name: item.name,
+          model: item.device_model,
+          serial: item.serial_number,
+        },
+        owner: this.userInfo.name,
+        date: this.formatDate(item.date_of_creation),
+        action: "open",
+      };
+      contractPdf(data);
+    },
+    downloadOwnership(item) {
+      let data = {
+        device: {
+          name: item.name,
+          model: item.device_model,
+          serial: item.serial_number,
+        },
+        owner: this.userInfo.name,
+        date: this.formatDate(item.date_of_creation),
+        action: "open",
+      };
+      ownershipPdf(data);
+    },
+    async getDeviceOwner(id) {
+      await axios
+        .get(`e-hold/v1/user/${id}/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          this.deviceOwner = response.data;
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
     },
     async reportItem(item) {
       console.log(`Reporting a device lost or stolen ${item}`);

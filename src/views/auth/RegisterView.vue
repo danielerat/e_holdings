@@ -258,7 +258,7 @@ export default {
             // Correct password, accound can be created
             this.step = 4;
             AlertMe({
-              title: "Accound Successfully Created",
+              title: "Account Successfully Created",
               type: "success",
             });
           } else {

@@ -44,10 +44,13 @@
             ></input-text>
           </div>
           <div v-if="step === 2">
-            <h2>Owner: {{ deviceOwner.name }}</h2>
+            <p>
+              You, the current owner, {{ deviceOwner.name }}, confirm to
+              transfer this device to a user identified by {{ user.nid }}.
+            </p>
           </div>
           <div v-if="step === 3">
-            <h2>Sent!</h2>
+            <h2>Click to confirm the transfer ticket</h2>
           </div>
           <action-button
             type="primary"
@@ -70,8 +73,8 @@
 import axios from "axios";
 import AlertMe from "@/utils/alerts";
 // // Regular Expressions
-// import CheckPhone from "@/utils/CheckPhone";
-// import CheckId from "@/utils/CheckId";
+import CheckPhone from "@/utils/CheckPhone";
+import CheckId from "@/utils/CheckId";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import InputText from "@/components/shared/InputText.vue";
 import StepMark from "@/components/shared/StepMark.vue";
@@ -111,7 +114,7 @@ export default {
         });
     },
     async getDeviceOwner(id) {
-      axios
+      await axios
         .get(`e-hold/v1/user/${id}/`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -125,7 +128,35 @@ export default {
         });
     },
     checkForm: function (e) {
-      this.showProgress = true;
+      if (CheckPhone(this.user.phone) && CheckId(this.user.nid)) {
+        this.showProgress = true;
+        let formData = new FormData();
+
+        if (this.step == 1) {
+          AlertMe({
+            title: "Enter The verification code you received below",
+            type: "info",
+          });
+          // Change Step form to go to the second step
+          this.step = 2;
+        }
+
+        if (this.step == 3) {
+          axios
+            .post(`e-hold/v1/transfer/`, formData, {})
+            .then((response) => {
+              AlertMe({
+                title: "Account Successfully Created",
+                type: "success",
+              });
+              console.log(response.data);
+            })
+            .catch((error) => {
+              console.log(`Error(${error.response.status})`);
+            });
+        }
+      }
+
       if (this.step == 1) {
         AlertMe({
           title: "Enter The verification code you received below",

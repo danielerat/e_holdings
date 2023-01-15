@@ -2,7 +2,7 @@ import pdfMake from "pdfmake/build/pdfmake.js";
 import pdfFonts from "pdfmake/build/vfs_fonts.js";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-function ownershipPdf(
+function contractPdf(
   data = {
     device: { name: "xxxxxxxxxxxx", model: "xxxxxxxxxxxx", serial: "xxxxxxxx" },
     owner: "xxxxxxxxxxxx",
@@ -52,9 +52,9 @@ function ownershipPdf(
 
       {
         stack: [
-          "Proof of Ownership",
+          "Device Contract",
           {
-            text: "This certificate serves as proof of ownership",
+            text: "This certificate serves as the certificate for your device.",
             style: "smallSubheader",
           },
         ],
@@ -163,4 +163,4 @@ function ownershipPdf(
     pdf.open();
   }
 }
-export default ownershipPdf;
+export default contractPdf;
