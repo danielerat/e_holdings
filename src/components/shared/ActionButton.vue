@@ -1,8 +1,35 @@
 <template>
-  <button :class="[buttonClass, sizeClass]">
-    <fa v-if="frontIcon != ''" :icon="frontIcon"></fa>
-    {{ $t(text) }}
-  </button>
+  <div class="relative">
+    <button :class="[buttonClass, sizeClass]">
+      <fa v-if="frontIcon != ''" :icon="frontIcon"></fa>
+      {{ $t(text) }}
+      <fa
+        v-if="isAnimated && animatedType == 'spin'"
+        icon="spinner"
+        class="animate-spin"
+      />
+    </button>
+    <span v-if="isAnimated">
+      <span
+        v-if="animatedType == 'ping'"
+        class="absolute -bottom-0 -left-0 flex h-4 w-4"
+      >
+        <span
+          class="animate-ping absolute inline-flex top-0 left-0 h-4 w-4 rounded-full bg-site-green-5 opacity-75"
+        ></span>
+        <span
+          class="absolute top-1 left-1 rounded-full h-2 w-2 bg-site-green-2"
+        ></span>
+      </span>
+
+      <span
+        v-if="animatedType == 'pulse'"
+        class="absolute top-0 -right-0 flex h-4 w-4"
+      >
+        <span class="animate-pulse h-4 w-4 rounded-full bg-site-green-5"></span>
+      </span>
+    </span>
+  </div>
 </template>
 <script>
 export default {
@@ -34,6 +61,19 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    isAnimated: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    animatedType: {
+      type: String,
+      required: false,
+      default: "ping",
+      validator(value) {
+        return ["spin", "ping", "pulse"].includes(value);
+      },
     },
   },
 

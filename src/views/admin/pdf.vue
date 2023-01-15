@@ -21,16 +21,7 @@ export default {
   },
   methods: {
     exportPdf() {
-      ownership({
-        device: {
-          name: "xxxxxxxxxxxx",
-          model: "xxxxxxxxxxxx",
-          serial: "xxxxxxxx",
-        },
-        owner: "xxxxxxxxxxxx",
-        date: "xxxxxxxxxx",
-        action: "", //open-print-download
-      });
+      ownership();
     },
   },
 };

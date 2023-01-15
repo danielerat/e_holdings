@@ -18,7 +18,8 @@
     <div class="mt-4 text-gray-500">
       <div class="flex justify-around">
         <p>
-          <fa :icon="type" class="text-xl" />
+          <fa v-if="type == 'phone'" icon="mobile-button" class="text-xl" />
+          <fa v-else :icon="type" class="text-xl" />
         </p>
         <p class="text-xs">SN/IMEI: {{ imei }}</p>
       </div>
@@ -107,9 +108,6 @@ export default {
       type: String,
       required: false,
       default: "mobile-button",
-      validator(value) {
-        return ["mobile-button", "laptop", "plug"].includes(value);
-      },
     },
     status: {
       type: String,
