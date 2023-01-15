@@ -25,7 +25,6 @@
 
       <h3 class="mt-4 text-sm text-site-gray-1">
         <p class="font-bold">{{ name }}</p>
-
         <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
         <p></p>
       </h3>

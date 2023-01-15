@@ -131,7 +131,7 @@ const routes = [
         component: DeviceView,
       },
       {
-        path: "admin/transfer",
+        path: "admin/transfer/:uuid",
         name: "transfer",
         component: TransferDeviceView,
       },

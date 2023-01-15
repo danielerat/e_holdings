@@ -2,13 +2,14 @@
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
       <div class="lg:w-3/6 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-3xl text-site-gray-3">
-          Macbook Air Gen 2
+        <h1
+          class="title-font font-medium text-3xl text-site-gray-3"
+          v-if="device !== ''"
+        >
+          {{ device.name }}
         </h1>
         <p class="leading-relaxed mt-4">
-          These walls are funny. First you hate ’em. Then you get used to ’em.
-          Enough time passes, you get so you depend on them. That’s
-          institutionalized.
+          {{ device.desc }}
         </p>
       </div>
       <div
@@ -27,6 +28,7 @@
             label="Phone Number"
             placeholder="Phone Number"
             size="lg"
+            v-model="user.phone"
           ></input-text>
         </div>
         <div class="relative mb-4">
@@ -35,6 +37,7 @@
             label="National ID"
             placeholder="ID/Passport"
             size="lg"
+            v-model="user.nid"
           ></input-text>
         </div>
         <action-button
@@ -44,14 +47,15 @@
           text="btn.confirm"
         ></action-button>
         <p class="text-xs text-site-yellow-2 mt-3">
-          You are about to give the ownership of this device, you wont be able
-          to revert this action
+          You are about to give the ownership of this device, you won't be able
+          to revert this action.
         </p>
       </div>
     </div>
   </section>
 </template>
 <script>
+import axios from "axios";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import InputText from "@/components/shared/InputText.vue";
 import StepMark from "@/components/shared/StepMark.vue";
@@ -61,6 +65,31 @@ export default {
     ActionButton,
     InputText,
     StepMark,
+  },
+  data() {
+    return {
+      device: "",
+      user: {
+        phone: "",
+        nid: "",
+      },
+    };
+  },
+  created() {
+    this.getDevice(this.$route.params.uuid);
+    this.$store.dispatch("getCurrentUser");
+  },
+  methods: {
+    getDevice(uuid) {
+      axios
+        .get(`e-hold/v1/device/${uuid}/`)
+        .then((response) => {
+          this.device = response.data;
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
+    },
   },
 };
 </script>

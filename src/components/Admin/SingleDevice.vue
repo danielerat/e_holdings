@@ -126,7 +126,9 @@
                   text="btn.contract"
                   frontIcon="file-contract"
                 />
-                <router-link to="transfer">
+                <router-link
+                  :to="`/${$i18n.locale}/admin/transfer/${device.uuid}`"
+                >
                   <action-button
                     type="primary"
                     size="sm"
