@@ -7,6 +7,7 @@
         <li class="relative text-left">
           <span
             class="absolute left-0 -bottom-[1.75rem] rounded-full border-2 border-site-green-2 bg-site-green-3 text-white"
+            :class="step == 1 ? 'text-site-white-4' : ''"
           >
             <fa icon="check" class="px-1" />
           </span>
@@ -52,5 +53,11 @@
 <script>
 export default {
   name: "StepMark",
+  props: {
+    step: {
+      type: Number,
+      required: true,
+    },
+  },
 };
 </script>
