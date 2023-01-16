@@ -230,7 +230,15 @@
               <span
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
-                <fa :icon="invoice.device.category"></fa>
+                <fa
+                  v-if="invoice.device.category == 'phone'"
+                  icon="mobile-button"
+                ></fa>
+                <fa
+                  v-else-if="invoice.device.category == 'computer'"
+                  icon="laptop"
+                ></fa>
+                <fa v-else icon="plug"></fa>
               </span>
             </div>
           </td>

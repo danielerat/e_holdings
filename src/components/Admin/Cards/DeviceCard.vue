@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative rounded-xl bg-site-white-5 border-site-white-3 cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
+    class="relative rounded-xl bg-site-white-5 dark:bg-site-gray-3 border-site-white-3 cursor-pointer p-8 shadow-xl mx-5 my-5 bg-contain bg-no-repeat"
     :style="{ backgroundImage: 'url(' + picture + ')' }"
   >
     <span
@@ -15,30 +15,35 @@
       {{ status }}
     </span>
 
-    <div class="mt-4 text-gray-500">
+    <div class="mt-4 text-gray-500 dark:text-site-yellow-5">
       <div class="flex justify-around">
-        <p>
+        <p
+          class="dark:text-site-yellow-4 dark:bg-site-gray-1 dark:p-1 dark:rounded-full"
+        >
           <fa v-if="type == 'phone'" icon="mobile-button" class="text-xl" />
+          <fa v-else-if="type == 'computer'" icon="laptop" class="text-xl" />
           <fa v-else :icon="type" class="text-xl" />
         </p>
-        <p class="text-xs">SN/IMEI: {{ imei }}</p>
+        <p class="text-xs">SN/IMEI: {{ truncated_imei }}</p>
       </div>
 
-      <h3 class="mt-4 text-sm text-site-gray-1">
-        <p class="font-bold">{{ name }}</p>
+      <h3 class="mt-4 text-xs text-site-gray-1">
+        <p class="font-bold text-ellipsis">{{ truncated_name }}</p>
 
-        <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
+        <p class="text-xs text-site-gray-3 dark:text-site-gray-1">
+          Model: {{ model }}
+        </p>
         <p></p>
       </h3>
 
-      <p class="mt-2 hidden text-xs text-gray-4 sm:block">
-        {{ text }}
+      <p class="mt-2 hidden text-xs text-gray-4 sm:block text-ellipsis">
+        {{ truncated_text }}
       </p>
 
       <div class="flex mt-5 text-lg sm:block">
         <div class="flex">
           <div
-            class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
+            class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1 dark:text-site-yellow-4"
           >
             <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
               <popover
@@ -50,12 +55,14 @@
             </router-link>
           </div>
           <div
-            class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1"
+            class="border-r-2 px-2 text-site-green-3 hover:text-site-green-1 dark:text-site-yellow-4"
           >
             <fa icon="gauge" />
           </div>
           <router-link :to="`/${$i18n.locale}/admin/device/${device.uuid}`">
-            <div class="px-2 text-site-green-3 hover:text-site-green-1">
+            <div
+              class="px-2 text-site-green-3 hover:text-site-green-1 dark:text-site-yellow-4"
+            >
               <popover
                 title="Report lost or Stolen"
                 text="Did you lose this device? report it as lost."
@@ -72,8 +79,11 @@
 
 <script>
 import Popover from "@/components/shared/popover.vue";
-import waveblue from "@/assets/img/wave.svg";
+import waveblue from "@/assets/img/waveblue.svg";
 import waveyellow from "@/assets/img/waveyellow.svg";
+import wavered from "@/assets/img/wavered.svg";
+
+import truncateString from "@/utils/truncateString";
 export default {
   name: "DeviceCard",
   components: {
@@ -123,15 +133,27 @@ export default {
     return {
       waveblue,
       waveyellow,
+      wavered,
     };
   },
   computed: {
     picture() {
       if (this.status == "active") return this.waveblue;
+      if (this.status == "inactive") return this.wavered;
       return this.waveyellow;
     },
     typeClass() {
       return { [this.status]: true };
+    },
+    // Truncated
+    truncated_text() {
+      return truncateString(this.text, 60);
+    },
+    truncated_name() {
+      return truncateString(this.name, 22);
+    },
+    truncated_imei() {
+      return truncateString(this.imei, 16);
     },
   },
 };
@@ -142,6 +164,9 @@ export default {
 }
 .active {
   @apply bg-green-100 text-green-600;
+}
+.inactive {
+  @apply bg-site-orange-2 text-site-white-4;
 }
 </style>
 <style scoped>

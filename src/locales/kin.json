@@ -32,32 +32,32 @@
   "landingPage": {
     "hero": {
       "title": "E-Holdings",
-      "subtitle": "We track for you",
-      "text": "The ultimate solution for keeping track of your devices. Whether you're an individual or a business owner, our powerful and easy-to-use platform makes it simple to manage and protect your devices."
+      "subtitle": "Turagukurikirana",
+      "text": "Waba uri umuntu ku giti cye cyangwa nyir'ubucuruzi, imbaraga zacu kandi byoroshye-gukoresha-gukoresha byoroshye kuyobora no kurinda ibikoresho byawe"
     },
     "deviceLookup": {
-      "title": "Not sure about the device you are about to buy? How about we help you check it.",
-      "text": "With our powerful search capabilities, you can quickly and easily loop up any device by searching with it's unique ID such as serial number, IMEI or any other identifying information to make sure that it's clean"
+      "title": "Ntabwo uzi neza igikoresho ugiye kugura? Reka tugufashe kugenzura.",
+      "text": "Nubushobozi bwacu bukomeye bwo gushakisha, urashobora kwihuta kandi byoroshye igikoresho icyo aricyo cyose ushakisha hamwe nindangamuntu yihariye nka numero yuruhererekane, IMEI cyangwa andi makuru yose yerekana kugirango umenye neza ko itibwe"
     },
     "fileOrganization": {
-      "title": "Are you a business owner?",
-      "text": "E-holdings offers you powerful tools for managing and protecting your inventory. You can easily track the devices you've sold, monitor remaining warranty, and generate detailed reports to optimize your operations.",
+      "title": "Uri nyir'ubucuruzi?",
+      "text": "E-gufata neza iguha ibikoresho bikomeye byo gucunga no kurinda ibarura ryawe. Urashobora gukurikirana byoroshye ibikoresho wagurishije, kugenzura garanti isigaye, no gutanga raporo zirambuye kugirango wongere ibikorwa byawe.",
       "list": {
-        "generate": "Generate Contract",
-        "keep": "Keep Track of devices under warranty",
-        "transfer": "Transfer the ownsership"
+        "generate": "Kubyara Amasezerano",
+        "keep": "Komeza ukurikirane ibikoresho biri muri garanti",
+        "transfer": "Hindura nyirubwite"
       }
     },
     "publishedDevice": {
-      "title": "Need a device from reliable sources ?      check Out The devices currently being sold!"
+      "title": "Ukeneye igikoresho kiva ahantu hizewe? reba Ibikoresho bigurishwa ubu!"
     },
     "shortABoutUs": {
       "title": "All your electronics managed in one place for indubitable ownership",
-      "subtitle": "WHAT DO WE DO FOR YOU ?",
+      "subtitle": "NIKI TUGUKORA?",
       "list": {
         "track": {
-          "title": "Track you items",
-          "text": "E-holdings makes it easy to track your devices no matter the circumstances. With our powerful organization tools, you'll always find it a joke to keep track of your device, we are here to giving you peace of mind."
+          "title": "Kurikirana ibikoresho",
+          "text": "E-gufata byoroshye gukurikirana ibikoresho byawe uko byagenda kose. Hamwe nibikoresho byacu bikomeye byumuryango, uzahora ubona ari urwenya kugirango ukurikirane ibikoresho byawe, turi hano kugirango tuguhe amahoro yo mumutima"
         },
         "transfer": {
           "title": "Transfer the ownership",

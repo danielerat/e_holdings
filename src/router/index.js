@@ -18,6 +18,7 @@ import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
 import DevicesView from "@/views/admin/DevicesView.vue";
 import DeviceView from "@/views/admin/DeviceView.vue";
+import StatsView from "@/views/admin/StatsView.vue";
 import TransferDeviceView from "@/views/admin/TransferDeviceView.vue";
 import i18n from "@/i18n";
 // import auth from "@/middleware/auth";
@@ -149,6 +150,11 @@ const routes = [
         path: "admin/publish-device",
         name: "publich-device",
         component: PublishDeviceView,
+      },
+      {
+        path: "admin/stats",
+        name: "stats",
+        component: StatsView,
       },
     ],
   },
