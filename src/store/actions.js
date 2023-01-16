@@ -152,5 +152,18 @@ const actions = {
         console.log(error);
       });
   },
+  async fetchAllTransfers({ state }) {
+    await axios
+      .get("e-hold/v1/transfers/all/")
+      .then((response) => {
+        state.transfers = response.data;
+      })
+      .catch((error) => {
+        console.log(error.response.status);
+      });
+  },
+  async declineDeviceTransfer({ commit }, payload) {
+    commit("declineDeviceTransfer", payload);
+  },
 };
 export default actions;

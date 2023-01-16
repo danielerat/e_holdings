@@ -41,7 +41,7 @@ const mutations = {
   authStatus(state) {
     state.isAuthenticated = true;
   },
-  // Yea, Searching
+  // Searching
   lookUpAnItem(state, payload) {
     let searchString = payload.searchString.toLowerCase();
     let devices = payload.devices; // items to search from
@@ -70,6 +70,19 @@ const mutations = {
       state.theme = "light";
       Cookies.set("theme", "light");
     }
+  },
+  // Decline a Transfer
+  declineDeviceTransfer(state, payload) {
+    let formData = new FormData();
+    formData.append("transfer_status", "denied");
+    axios
+      .delete(`e-hold/v1/transfer/actions/${payload.id}/`, formData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 export default mutations;

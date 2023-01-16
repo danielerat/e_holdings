@@ -119,6 +119,9 @@ export default {
             window.location.href = "/";
           })
           .catch((error) => {
+            AlertMe({
+              title: `Unknown phone number or password. Error(${error.response.status})`,
+            });
             console.log(error);
           });
       } else {

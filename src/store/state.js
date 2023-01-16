@@ -10,6 +10,7 @@ const state = () => {
     accountDevices: [],
     accountInvoices: [],
     theme: "light",
+    transfers: [],
   };
 };
 export default state;

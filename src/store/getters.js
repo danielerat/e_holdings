@@ -21,5 +21,8 @@ const getters = {
   accountInvoices: (state) => {
     return state.accountInvoices;
   },
+  transfers: (state) => {
+    return state.transfers;
+  },
 };
 export default getters;

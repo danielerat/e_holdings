@@ -41,7 +41,7 @@
             <a class="align-top text-xs text-site-green-2 items-center">
               <p v-if="date" class="font-bold">
                 <fa icon="calendar-day" />
-                &nbsp;{{ date }}
+                &nbsp;{{ formatDate(date) }}
               </p>
               <p v-if="model">{{ model }}</p>
             </a>
@@ -55,6 +55,7 @@
               <!-- Base -->
               <a
                 class="text-xs group flex items-center basis-2/5 justify-between rounded-lg border border-current px-2 text-site-green-2 transition-colors hover:bg-site-green-1 focus:outline-none focus:ring active:bg-site-green-3"
+                @click="approveDeviceTransfer(transfer)"
               >
                 <span
                   class="font-medium transition-colors group-hover:text-white"
@@ -75,6 +76,7 @@
 
               <a
                 class="text-xs group flex basis-2/5 items-center justify-between rounded-lg border border-current p-2 text-site-yellow-2 transition-colors hover:bg-site-yellow-1 focus:outline-none focus:ring active:bg-site-yellow-2"
+                @click="declineDeviceTransfer(transfer)"
               >
                 <span
                   class="font-medium transition-colors group-hover:text-white"
@@ -99,8 +101,13 @@
 </template>
 
 <script>
+import Alert from "@/utils/alerts";
 export default {
   props: {
+    transfer: {
+      type: String,
+      required: true,
+    },
     type: {
       type: String,
       required: false,
@@ -133,6 +140,35 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+  },
+  methods: {
+    approveDeviceTransfer(item) {
+      console.log(item.id);
+    },
+    declineDeviceTransfer: function (item) {
+      this.$store
+        .dispatch("declineDeviceTransfer", item)
+        .then(() => {
+          this.$store.dispatch("fetchAllTransfers");
+          Alert({
+            title: `Device transfer #${item.id} successfully!`,
+            type: "success",
+          });
+        })
+        .catch((error) => {
+          Alert({
+            title: `Couldn't decline this transfer. Try again. Error(${error.response.status})`,
+            type: "error",
+          });
+        });
+    },
+    formatDate(d) {
+      const date = new Date(d);
+      let year = date.getFullYear();
+      let day = date.getDate();
+      let month = date.toLocaleString("default", { month: "short" });
+      return month + " " + day + ", " + year;
     },
   },
 };

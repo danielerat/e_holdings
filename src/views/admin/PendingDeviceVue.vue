@@ -34,20 +34,29 @@
         </div>
       </section>
       <!-- ------ -->
-      <incoming-device
-        v-for="(device, cnt) in devices"
-        :key="device"
-        :name="device.name"
-        :type="device.type"
-        :date="device.date"
-        :model="device.model"
-        :from="device.from"
-        :pos="cnt % 2 == 1"
-      >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima,
-        quibusdam! Doloribus, nulla molestias. Accusantium consequatur ullam hic
-        distinctio sequi cum?
-      </incoming-device>
+      <div v-for="(trans, index) in transfers" :key="index">
+        <ul>
+          <li
+            v-if="
+              userInfo.id === trans.transferee.id &&
+              trans.transfer_status === 'pending'
+            "
+          >
+            <incoming-device
+              :key="index"
+              :transfer="trans"
+              :name="trans.device.name"
+              :type="trans.device.category"
+              :date="trans.device.date_of_creation"
+              :model="trans.device.device_model"
+              :from="trans.transferor.name"
+              :pos="index % 2 == 1"
+              >{{ trans.device.desc }}
+            </incoming-device>
+          </li>
+          <li v-else>There's nothing to show</li>
+        </ul>
+      </div>
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
@@ -56,6 +65,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import IncomingDevice from "@/components/Admin/Cards/IncomingDevice.vue";
 import AdminNavbar from "@/components/Admin/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
@@ -103,5 +113,16 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+      transfers: (state) => state.transfers,
+    }),
+  },
+  created() {
+    this.$store.dispatch("getCurrentUser");
+    this.$store.dispatch("fetchAllTransfers");
+  },
+  methods: {},
 };
 </script>
