@@ -17,7 +17,7 @@
       </button>
     </div>
   </div>
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <div class="w-screen px-2 overflow-x-auto relative shadow-md sm:rounded-lg">
     <!-- Table Settings -->
     <ul class="flex justify-between border-b border-site-white-3">
       <li class="flex basis-2/5 border-b-2 hover:border-site-green-1">
@@ -230,7 +230,15 @@
               <span
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
-                <fa :icon="invoice.device.category"></fa>
+                <fa
+                  v-if="invoice.device.category == 'phone'"
+                  icon="mobile-button"
+                ></fa>
+                <fa
+                  v-else-if="invoice.device.category == 'computer'"
+                  icon="laptop"
+                ></fa>
+                <fa v-else icon="plug"></fa>
               </span>
             </div>
           </td>

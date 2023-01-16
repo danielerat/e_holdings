@@ -175,7 +175,7 @@ import contractPdf from "@/utils/contractPdf";
 import DeviceTimeline from "@/components/Admin/DeviceTimeline.vue";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import mac from "@/assets/img/mac.png";
-import picture from "@/assets/img/wave.svg";
+import picture from "@/assets/img/waveblue.svg";
 export default {
   name: "SingleDevice",
   props: {
