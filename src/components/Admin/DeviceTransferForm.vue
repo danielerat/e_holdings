@@ -2,56 +2,79 @@
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
       <div class="lg:w-3/6 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-3xl text-site-gray-3">
-          Macbook Air Gen 2
+        <h1
+          class="title-font font-medium text-3xl text-site-gray-3"
+          v-if="device !== ''"
+        >
+          {{ device.name }}
         </h1>
         <p class="leading-relaxed mt-4">
-          These walls are funny. First you hate ’em. Then you get used to ’em.
-          Enough time passes, you get so you depend on them. That’s
-          institutionalized.
+          {{ device.desc }}
         </p>
       </div>
       <div
         class="lg:w-3/6 bg-site-yellow-5 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0"
       >
         <!-- Step -->
-        <step-mark></step-mark>
+        <step-mark :step="step"></step-mark>
         <!-- Step -->
         <h2 class="text-site-gray-3 text-lg font-medium title-font my-5">
           Transfer the Ownsership
         </h2>
-        <div class="relative my-4">
-          <input-text
-            type="text"
-            name="id"
-            label="Phone Number"
-            placeholder="Phone Number"
-            size="lg"
-          ></input-text>
-        </div>
-        <div class="relative mb-4">
-          <input-text
-            name="id"
-            label="National ID"
-            placeholder="ID/Passport"
-            size="lg"
-          ></input-text>
-        </div>
-        <action-button
-          type="primary"
-          frontIcon="share"
-          size="md"
-          text="btn.confirm"
-        ></action-button>
+        <form @submit.prevent="checkForm" action="text.com">
+          <div v-if="step === 1" class="relative my-4">
+            <input-text
+              type="text"
+              name="id"
+              label="Phone Number"
+              placeholder="Phone Number"
+              size="lg"
+              v-bind:data="user.phone"
+              v-on:update="user.phone = $event"
+            ></input-text>
+          </div>
+          <div v-if="step === 1" class="relative mb-4">
+            <input-text
+              name="id"
+              label="National ID"
+              placeholder="ID/Passport"
+              size="lg"
+              v-bind:data="user.nid"
+              v-on:update="user.nid = $event"
+            ></input-text>
+          </div>
+          <div v-if="step === 2">
+            <p>
+              You, the current owner, {{ deviceOwner.name }}, confirm to
+              transfer this device to a user identified by {{ user.nid }}.
+            </p>
+          </div>
+          <div v-if="step === 3">
+            <h2>Click to confirm the transfer ticket</h2>
+          </div>
+          <action-button
+            type="primary"
+            :isAnimated="showProgress"
+            animatedType="spin"
+            frontIcon="share"
+            size="md"
+            text="btn.confirm"
+          ></action-button>
+        </form>
         <p class="text-xs text-site-yellow-2 mt-3">
-          You are about to give the ownership of this device, you wont be able
-          to revert this action
+          You are about to give the ownership of this device, you won't be able
+          to revert this action.
         </p>
       </div>
     </div>
   </section>
 </template>
 <script>
+import axios from "axios";
+import AlertMe from "@/utils/alerts";
+// // Regular Expressions
+import CheckPhone from "@/utils/CheckPhone";
+import CheckId from "@/utils/CheckId";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import InputText from "@/components/shared/InputText.vue";
 import StepMark from "@/components/shared/StepMark.vue";
@@ -61,6 +84,110 @@ export default {
     ActionButton,
     InputText,
     StepMark,
+  },
+  data() {
+    return {
+      device: "",
+      deviceOwner: "",
+      user: {
+        phone: "",
+        nid: "",
+      },
+      step: 1,
+      showProgress: false,
+    };
+  },
+  created() {
+    this.getDevice(this.$route.params.uuid);
+    this.$store.dispatch("getCurrentUser");
+  },
+  methods: {
+    getDevice(uuid) {
+      axios
+        .get(`e-hold/v1/device/${uuid}/`)
+        .then((response) => {
+          this.getDeviceOwner(response.data.added_by);
+          this.device = response.data;
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
+    },
+    async getDeviceOwner(id) {
+      await axios
+        .get(`e-hold/v1/user/${id}/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          this.deviceOwner = response.data;
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
+    },
+    checkForm: function (e) {
+      if (CheckPhone(this.user.phone) && CheckId(this.user.nid)) {
+        this.showProgress = true;
+        let formData = new FormData();
+
+        if (this.step == 1) {
+          AlertMe({
+            title: "Enter The verification code you received below",
+            type: "info",
+          });
+          // Change Step form to go to the second step
+          this.step = 2;
+        }
+
+        if (this.step == 3) {
+          axios
+            .post(`e-hold/v1/transfer/`, formData, {})
+            .then((response) => {
+              AlertMe({
+                title: "Account Successfully Created",
+                type: "success",
+              });
+              console.log(response.data);
+            })
+            .catch((error) => {
+              console.log(`Error(${error.response.status})`);
+            });
+        }
+      }
+
+      if (this.step == 1) {
+        AlertMe({
+          title: "Enter The verification code you received below",
+          type: "info",
+        });
+        // Change Step form to go to the second step
+        this.step = 2;
+        this.showProgress = false;
+        e.preventDefault();
+      }
+
+      //Create Password
+      // if (this.step == 3) {
+      //   if (CheckPassword(this.password)) {
+      //     // Correct password, accound can be created
+      //     this.step = 4;
+      //     AlertMe({
+      //       title: "Accound Successfully Created",
+      //       type: "success",
+      //     });
+      //   } else {
+      //     this.errors.password = "* Password Must be Strong ";
+      //     AlertMe({
+      //       title: "Password Not Strong Enough",
+      //       type: "error",
+      //     });
+      //   }
+      // }
+      // }
+      // e.preventDefault();
+    },
   },
 };
 </script>

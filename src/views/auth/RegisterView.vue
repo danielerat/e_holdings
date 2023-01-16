@@ -226,7 +226,7 @@ export default {
         // Your Phone Number and ID are Good
         if (this.step == 1) {
           AlertMe({
-            title: "Enter The verification Vode You received bellow",
+            title: "Enter The verification code you received below",
             type: "info",
           });
           // Change Step form to go to the second step
@@ -258,7 +258,7 @@ export default {
             // Correct password, accound can be created
             this.step = 4;
             AlertMe({
-              title: "Accound Successfully Created",
+              title: "Account Successfully Created",
               type: "success",
             });
           } else {

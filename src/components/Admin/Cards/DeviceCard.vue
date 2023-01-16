@@ -27,12 +27,18 @@
         <p class="text-xs">SN/IMEI: {{ truncated_imei }}</p>
       </div>
 
+<<<<<<< HEAD
       <h3 class="mt-4 text-xs text-site-gray-1">
         <p class="font-bold text-ellipsis">{{ truncated_name }}</p>
 
         <p class="text-xs text-site-gray-3 dark:text-site-gray-1">
           Model: {{ model }}
         </p>
+=======
+      <h3 class="mt-4 text-sm text-site-gray-1">
+        <p class="font-bold">{{ name }}</p>
+        <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
+>>>>>>> aae5596da506d11b6678a707f64cfc37ff293ac0
         <p></p>
       </h3>
 

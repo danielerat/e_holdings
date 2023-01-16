@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       device: "",
+      deviceOwner: "",
       timeline: {
         one: {
           name: "Mumbere Electronics",
