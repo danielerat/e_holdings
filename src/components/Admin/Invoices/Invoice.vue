@@ -17,7 +17,7 @@
       </button>
     </div>
   </div>
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <div class="w-screen px-2 overflow-x-auto relative shadow-md sm:rounded-lg">
     <!-- Table Settings -->
     <ul class="flex justify-between border-b border-site-white-3">
       <li class="flex basis-2/5 border-b-2 hover:border-site-green-1">

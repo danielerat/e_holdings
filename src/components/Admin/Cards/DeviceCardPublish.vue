@@ -6,7 +6,7 @@
     <span
       class="absolute top-4 rounded-full py-1.5 text-xs font-medium text-gray-1"
     >
-      <p class="font-bold">{{ name }}</p>
+      <p class="font-bold">{{ truncate_name }}</p>
       <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
     </span>
     <span
@@ -68,6 +68,7 @@ import axios from "axios";
 import AlertMe from "@/utils/alerts";
 import published_waved from "@/assets/img/wave.svg";
 import unpublished_wave from "@/assets/img/waveyellow.svg";
+import truncateString from "@/utils/truncateString";
 export default {
   name: "DeviceCardPublish",
   props: {
@@ -125,6 +126,10 @@ export default {
       } else {
         return "offline";
       }
+    },
+    // Truncated
+    truncate_name() {
+      return truncateString(this.name, 30);
     },
   },
   methods: {
