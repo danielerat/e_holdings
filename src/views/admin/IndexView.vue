@@ -56,8 +56,8 @@ import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 import PieChart from "@/components/Admin/stats/PieChart.vue";
 import BarChart from "@/components/Admin/stats/BarChart.vue";
 
-import TableLatestTransaction from "@/components/Admin/Cards/TableTransaction.vue";
-import TableDeviceOverview from "@/components/Admin/Cards/TableOverview.vue";
+import TableLatestTransaction from "@/components/Admin/TableTransaction.vue";
+import TableDeviceOverview from "@/components/Admin/TableOverview.vue";
 
 // Charts
 // Bar Charts

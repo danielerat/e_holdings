@@ -14,6 +14,8 @@ import AssignDeviceView from "@/views/admin/AssignDeviceView.vue";
 import AddDeviceView from "@/views/admin/AddDeviceView.vue";
 import PublishDeviceView from "@/views/admin/PublishDeviceVue.vue";
 import PendingDeviceVue from "@/views/admin/PendingDeviceVue.vue";
+import WarrantyDeviceVue from "@/views/admin/WarrantyDeviceVue.vue";
+import TraceOwnershipVue from "@/views/admin/TraceOwnershipVue.vue";
 import CheckDeviceView from "@/views/CheckDeviceView.vue";
 import Invoice from "@/views/admin/InvoiceView.vue";
 import DevicesView from "@/views/admin/DevicesView.vue";
@@ -124,6 +126,16 @@ const routes = [
         path: "admin/devices/pending",
         name: "pending",
         component: PendingDeviceVue,
+      },
+      {
+        path: "admin/devices/warranty",
+        name: "warranty",
+        component: WarrantyDeviceVue,
+      },
+      {
+        path: "admin/trace-ownership",
+        name: "trace-ownership",
+        component: TraceOwnershipVue,
       },
 
       {
