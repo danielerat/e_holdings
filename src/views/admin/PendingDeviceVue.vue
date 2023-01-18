@@ -16,7 +16,7 @@
               All My pending Devices
             </h1>
             <a
-              class="text-xs group flex items-center basis-2/5 justify-between rounded-lg border border-current p-2 text-site-white-1 transition-colors bg-site-green-1 hover:bg-site-yellow-3 focus:outline-none focus:ring active:bg-site-green-3"
+              class="cursor-pointer text-xs group flex items-center basis-2/5 justify-between rounded-lg border border-current p-2 text-site-white-1 transition-colors bg-site-green-1 hover:bg-site-green-2 focus:outline-none focus:ring active:bg-site-green-3"
             >
               <span
                 class="font-medium transition-colors group-hover:text-white"
@@ -51,7 +51,8 @@
               :model="trans.device.device_model"
               :from="trans.transferor.name"
               :pos="index % 2 == 1"
-              >{{ trans.device.desc }}
+            >
+              {{ trans.device.desc }}
             </incoming-device>
           </li>
           <li v-else>There's nothing to show</li>
