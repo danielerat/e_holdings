@@ -286,6 +286,54 @@
               </a>
             </router-link>
           </li>
+          <li class="items-center">
+            <router-link
+              :to="`/${$i18n.locale}/admin/stats`"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'chart-simple']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Business Stats
+              </a>
+            </router-link>
+          </li>
+          <li class="items-center">
+            <router-link
+              :to="`/${$i18n.locale}/admin/trace-ownership`"
+              v-slot="{ href, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-site-yellow-2 hover:text-site-yellow-3'
+                    : 'text-site-gray-4 hover:text-site-gray-3',
+                ]"
+              >
+                <fa
+                  :icon="['fa', 'route']"
+                  class="text-xl"
+                  :class="[isActive ? 'text-site-yellow-2' : 'opacity-75']"
+                ></fa>
+                Trace Ownership
+              </a>
+            </router-link>
+          </li>
         </ul>
 
         <hr class="my-4 md:min-w-full" />
