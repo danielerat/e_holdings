@@ -44,10 +44,7 @@
             ></input-text>
           </div>
           <div v-if="step === 2">
-            <p>
-              You, the current owner, {{ deviceOwner.name }}, confirm to
-              transfer this device to a user identified by {{ user.nid }}.
-            </p>
+            <p>The current owner with {{ user.nid }} is being retrieved...</p>
           </div>
           <div v-if="step === 3">
             <h2>Click to confirm the transfer ticket</h2>
@@ -128,65 +125,53 @@ export default {
         });
     },
     checkForm: function (e) {
-      if (CheckPhone(this.user.phone) && CheckId(this.user.nid)) {
+      if (CheckPhone(this.user.phone) || CheckId(this.user.nid)) {
         this.showProgress = true;
-        let formData = new FormData();
-
-        if (this.step == 1) {
+        if (this.step === 1) {
           AlertMe({
             title: "Enter The verification code you received below",
             type: "info",
           });
           // Change Step form to go to the second step
           this.step = 2;
+        } else if (this.step === 2) {
+          this.step = 3;
+          this.retrieveUser(this.user.nid);
+        } else {
+          this.doTransfer();
         }
-
-        if (this.step == 3) {
-          axios
-            .post(`e-hold/v1/transfer/`, formData, {})
-            .then((response) => {
-              AlertMe({
-                title: "Account Successfully Created",
-                type: "success",
-              });
-              console.log(response.data);
-            })
-            .catch((error) => {
-              console.log(`Error(${error.response.status})`);
-            });
-        }
-      }
-
-      if (this.step == 1) {
+      } else {
         AlertMe({
-          title: "Enter The verification code you received below",
-          type: "info",
+          title: "Something wrong with the NID and/or Phone",
+          type: "error",
         });
-        // Change Step form to go to the second step
-        this.step = 2;
-        this.showProgress = false;
-        e.preventDefault();
       }
-
-      //Create Password
-      // if (this.step == 3) {
-      //   if (CheckPassword(this.password)) {
-      //     // Correct password, accound can be created
-      //     this.step = 4;
-      //     AlertMe({
-      //       title: "Accound Successfully Created",
-      //       type: "success",
-      //     });
-      //   } else {
-      //     this.errors.password = "* Password Must be Strong ";
-      //     AlertMe({
-      //       title: "Password Not Strong Enough",
-      //       type: "error",
-      //     });
-      //   }
-      // }
-      // }
-      // e.preventDefault();
+      e.preventDefault();
+    },
+    doTransfer() {
+      let formData = new FormData();
+      formData.append("", "");
+      axios
+        .post(`e-hold/v1/transfer/create/`, formData, {})
+        .then(() => {
+          AlertMe({
+            title: "Transfer done successfully!",
+            type: "success",
+          });
+        })
+        .catch((error) => {
+          console.log(`Error(${error.response.status})`);
+        });
+    },
+    retrieveUser(nid) {
+      axios
+        .get(`e-hold/v1/user/by/${nid}/`)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
     },
   },
 };
