@@ -12,13 +12,18 @@
             <div
               class="font-bold text-site-gray-1 indent-5 mb-3 dark:text-site-yellow-4"
             >
-              <p>Sold Device By Category</p>
+              <p>My Devices Count By Category</p>
+            </div>
+            <div class="h-64 my-4">
+              <bar-chart :data="BarData" :options="BarOptions" />
             </div>
             <div class="h-64 my-4">
               <bar-chart :data="BarData" :options="BarOptions" />
             </div>
           </div>
-          <table-latest-transaction />
+          <div class="py-5">
+            <table-latest-transaction />
+          </div>
         </div>
         <div class="w-full xl:w-4/12 -mt-7 z-10">
           <!-- Chart -->
@@ -33,7 +38,9 @@
             </div>
           </div>
           <!-- Chart -->
-          <table-device-overview />
+          <div class="py-5">
+            <table-device-overview />
+          </div>
         </div>
       </div>
 
@@ -64,7 +71,8 @@ import TableDeviceOverview from "@/components/Admin/TableOverview.vue";
 import {
   chartData as BarData,
   chartOptions as BarOptions,
-} from "@/utils/charts/BarSoldCategoryDevices.js";
+} from "@/utils/charts/BarCountDevices.js";
+
 // Pie Chart
 import {
   chartData as pieData,

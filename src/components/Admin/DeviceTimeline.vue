@@ -1,5 +1,5 @@
 <template>
-  <ol class="items-center justify-center flex flex-col sm:flex-row waveLines">
+  <ol class="items-center justify-center flex flex-fow sm:flex-row waveLines">
     <li
       v-for="(device, key, index) in timeline"
       :key="key"

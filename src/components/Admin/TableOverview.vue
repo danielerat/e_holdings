@@ -8,7 +8,7 @@
           <p class="font-semibold text-site-gray-2">Devices Under warranty</p>
         </div>
         <div
-          class="basis-1/3 relative w-full px-4 max-w-full flex-grow flex-1 text-right"
+          class="basis-1/3 relative w-full max-w-full flex-grow flex-1 text-right"
         >
           <router-link :to="`/${$i18n.locale}/admin/devices/warranty`">
             <action-button type="tertiary" text="btn.seeAll"></action-button>
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div class="block w-full overflow-x-auto">
+    <div class="block w-11/12 mx-auto overflow-x-auto">
       <!-- Projects table -->
       <table class="items-center w-full bg-transparent border-collapse">
         <thead class="thead-light">
@@ -36,48 +36,50 @@
             ></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th
-              class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
+        <tbody class="table-fixed">
+          <tr class="">
+            <td
+              class="border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap text-left py-2"
             >
               <p>Iphone 6 Plus GOld</p>
               <p class="text-xs font-bold">To:Ilunga Gisa Daniel</p>
-            </th>
+            </td>
             <td
-              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap"
             >
-              <span class="font-bold">Ending: December-25-2021</span>
+              <span class="font-bold">December-25-2021</span>
 
               <progress-bar percent="60"></progress-bar>
             </td>
           </tr>
-          <tr>
-            <th
-              class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
+          <tr class="">
+            <td
+              class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap text-left py-2"
             >
               <p>Smark Iron</p>
               <p class="text-xs font-bold">To:Carl junk</p>
-            </th>
+            </td>
             <td
-              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap"
             >
-              <span class="font-bold">Ending: December-25-2021</span>
-              <progress-bar color="yellow" percent="20"></progress-bar>
+              <div class="w-10/12">
+                <span class="font-bold text-xs">December-25-2021</span>
+                <progress-bar color="yellow" percent="20"></progress-bar>
+              </div>
             </td>
           </tr>
 
-          <tr>
-            <th
-              class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
+          <tr class="">
+            <td
+              class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap text-left py-2"
             >
               <p>MacBook Air 32</p>
               <p class="text-xs font-bold">To:Ilunga Gisa Daniel</p>
-            </th>
+            </td>
             <td
-              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+              class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap"
             >
-              <span class="font-bold">Ending: December-25-2021</span>
+              <span class="font-bold">December-25-2021</span>
               <progress-bar color="gray" percent="20"></progress-bar>
             </td>
           </tr>

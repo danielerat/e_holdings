@@ -1,8 +1,8 @@
 export const chartData = {
-  labels: ["October", "November", "December", "January"],
+  labels: ["Computer", "Phones", "Other"],
   datasets: [
     {
-      label: "Montly Sold Devices",
+      label: "Devices Count By Category",
       backgroundColor: "#F0B429",
       data: [40, 20, 12, 109],
     },

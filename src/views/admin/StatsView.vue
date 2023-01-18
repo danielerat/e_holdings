@@ -55,7 +55,7 @@ import PieChart from "@/components/Admin/stats/PieChart.vue";
 import {
   chartData as BarData,
   chartOptions as BarOptions,
-} from "@/utils/charts/BarSoldDevices.js";
+} from "@/utils/charts/BarSoldCategoryDevices.js";
 // Pie Chart
 import {
   chartData as pieData,
@@ -84,6 +84,7 @@ export default {
       //   Bar Data
       BarData,
       BarOptions,
+
       // Pie Data
       pieData,
       PieOptions,
