@@ -7,17 +7,29 @@
       <header-stats />
 
       <div class="flex flex-wrap">
-        <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+        <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 -mt-7 z-10">
+          <div class="box-border">
+            <div
+              class="font-bold text-site-gray-1 indent-5 mb-3 dark:text-site-yellow-4"
+            >
+              <p>Sold Device By Category</p>
+            </div>
+            <div class="h-64 my-4">
+              <bar-chart :data="BarData" :options="BarOptions" />
+            </div>
+          </div>
           <table-latest-transaction />
         </div>
-        <div class="w-full xl:w-4/12">
+        <div class="w-full xl:w-4/12 -mt-7 z-10">
           <!-- Chart -->
           <div class="w-full">
-            <div class="font-bold text-site-gray-1 indent-5 mb-3">
+            <div
+              class="font-bold text-site-gray-1 indent-5 mb-3 dark:text-site-yellow-4"
+            >
               <p>My Devices Under Warranty</p>
             </div>
             <div class="box-border my-2">
-              <pieChart :data="chartData" :options="chartOptions" />
+              <pieChart :data="pieData" :options="pieOptions" />
             </div>
           </div>
           <!-- Chart -->
@@ -42,10 +54,22 @@ import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 // Charts
 
 import PieChart from "@/components/Admin/stats/PieChart.vue";
+import BarChart from "@/components/Admin/stats/BarChart.vue";
 
 import TableLatestTransaction from "@/components/Admin/Cards/TableTransaction.vue";
 import TableDeviceOverview from "@/components/Admin/Cards/TableOverview.vue";
-import { chartData, chartOptions } from "@/utils/charts/PieDeviceWarranty.js";
+
+// Charts
+// Bar Charts
+import {
+  chartData as BarData,
+  chartOptions as BarOptions,
+} from "@/utils/charts/BarSoldCategoryDevices.js";
+// Pie Chart
+import {
+  chartData as pieData,
+  chartOptions as pieOptions,
+} from "@/utils/charts/PieDeviceWarranty.js";
 export default {
   name: "admin-layout",
   components: {
@@ -56,6 +80,7 @@ export default {
     TableLatestTransaction,
     TableDeviceOverview,
     PieChart,
+    BarChart,
   },
   computed: {
     ...mapState({
@@ -73,8 +98,10 @@ export default {
   methods: {},
   data() {
     return {
-      chartData: chartData,
-      chartOptions: chartOptions,
+      pieData,
+      pieOptions,
+      BarData,
+      BarOptions,
     };
   },
 };
