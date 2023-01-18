@@ -204,6 +204,7 @@
       </li>
     </ul>
     <!-- Filters -->
+
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead
         class="text-xs text-site-gray-1 uppercase bg-site-gray-5 dark:bg-site-yellow-3 dark:text-site-gray-1"
@@ -218,7 +219,8 @@
           <th scope="col" class="py-3 px-1">Actions</th>
         </tr>
       </thead>
-      <tbody v-if="invoices.length">
+      <!-- Table body -->
+      <tbody v-if="invoices.length !== 0">
         <tr
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
           v-for="(invoice, index) in invoices"
@@ -231,11 +233,11 @@
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
                 <fa
-                  v-if="invoice.device.category == 'phone'"
+                  v-if="invoice.transfer.device.category == 'phone'"
                   icon="mobile-button"
                 ></fa>
                 <fa
-                  v-else-if="invoice.device.category == 'computer'"
+                  v-else-if="invoice.transfer.device.category == 'computer'"
                   icon="laptop"
                 ></fa>
                 <fa v-else icon="plug"></fa>
@@ -248,15 +250,15 @@
           >
             <ul>
               <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                {{ truncateString(invoice.device.name, 40) }}
+                {{ truncateString(invoice.transfer.device.name, 40) }}
               </li>
-              <li>{{ invoice.device.category }}</li>
+              <li>{{ invoice.transfer.device.category }}</li>
             </ul>
           </th>
           <td class="py-4 px-2 collapse hidden lg:table-cell">
             <ul class="text-xs">
-              <li>Model: {{ invoice.device.device_model }}</li>
-              <li>SN/IMEI: {{ invoice.device.mac_address }}</li>
+              <li>Model: {{ invoice.transfer.device.device_model }}</li>
+              <li>SN/IMEI: {{ invoice.transfer.device.mac_address }}</li>
             </ul>
           </td>
           <td class="py-4 px-2">
@@ -264,9 +266,11 @@
               <li
                 class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
               >
-                {{ invoice.transfer.transferee }}
+                {{ invoice.transfer.transferee.name }}
               </li>
-              <li class="text-xs my-1">+250783305114</li>
+              <li class="text-xs my-1">
+                +25{{ invoice.transfer.transferee.phone }}
+              </li>
             </ul>
           </td>
           <td class="text-xm py-4 px-2 hidden md:table-cell">
@@ -275,26 +279,15 @@
             </span>
             <p>
               <span
-                :class="
-                  invoice.hasWarranty
-                    ? 'mt text-site-black-2 px-2 rounded-full bg-site-green-5'
-                    : 'mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5'
-                "
+                class="mt text-site-yellow-2 px-2 rounded-full bg-site-yellow-5"
               >
                 Warranty
-                <fa
-                  :icon="invoice.hasWarranty ? 'check-circle' : 'xmark-circle'"
-                  :class="
-                    invoice.hasWarranty
-                      ? 'text-site-black-5'
-                      : 'text-site-yellow-1'
-                  "
-                />
+                <fa icon="xmark-circle" class="text-site-yellow-1" />
               </span>
             </p>
           </td>
           <td class="py-4 px-2 hidden lg:table-cell">
-            {{ formatPrice(invoice.device.price) }}
+            {{ formatPrice(invoice.transfer.device.price) }}
           </td>
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
@@ -306,8 +299,8 @@
               </li>
             </ul>
           </td>
+          <!-- -------------------- -->
         </tr>
-        <!-- -------------------- -->
       </tbody>
     </table>
   </div>
@@ -321,11 +314,12 @@ export default {
   computed: {
     ...mapGetters(["isAuthenticated"]),
     ...mapState({
-      invoices: (state) => state.accountInvoices,
+      userInfo: (state) => state.userInfo,
+      invoices: (state) => state.invoices,
     }),
   },
   created() {
-    this.$store.dispatch("fetchInvoicesPerAccount");
+    this.$store.dispatch("fetchAllInvoices");
     this.$store.dispatch("getCurrentUser");
   },
   methods: {
