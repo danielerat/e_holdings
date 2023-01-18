@@ -264,14 +264,14 @@
               <li
                 class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
               >
-                {{ invoice.soldTo }}
+                {{ invoice.transfer.transferee }}
               </li>
               <li class="text-xs my-1">+250783305114</li>
             </ul>
           </td>
           <td class="text-xm py-4 px-2 hidden md:table-cell">
             <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              {{ formatDate(invoice.dateOfCreation) }}
+              {{ formatDate(invoice.date_of_creation) }}
             </span>
             <p>
               <span
