@@ -6,11 +6,21 @@
 
       <header-stats />
 
-      <div class="flex flex-wrap -mt-6">
+      <div class="flex flex-wrap">
         <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
           <table-latest-transaction />
         </div>
         <div class="w-full xl:w-4/12">
+          <!-- Chart -->
+          <div class="w-full">
+            <div class="font-bold text-site-gray-1 indent-5 mb-3">
+              <p>My Devices Under Warranty</p>
+            </div>
+            <div class="box-border my-2">
+              <pieChart :data="chartData" :options="chartOptions" />
+            </div>
+          </div>
+          <!-- Chart -->
           <table-device-overview />
         </div>
       </div>
@@ -29,8 +39,13 @@ import Sidebar from "@/components/Admin/Sidebar/AdminSidebar.vue";
 import HeaderStats from "@/components/Admin/Headers/HeaderStats.vue";
 import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 
+// Charts
+
+import PieChart from "@/components/Admin/stats/PieChart.vue";
+
 import TableLatestTransaction from "@/components/Admin/Cards/TableTransaction.vue";
 import TableDeviceOverview from "@/components/Admin/Cards/TableOverview.vue";
+import { chartData, chartOptions } from "@/utils/charts/PieDeviceWarranty.js";
 export default {
   name: "admin-layout",
   components: {
@@ -40,6 +55,7 @@ export default {
     FooterAdmin,
     TableLatestTransaction,
     TableDeviceOverview,
+    PieChart,
   },
   computed: {
     ...mapState({
@@ -55,5 +71,11 @@ export default {
     this.$store.dispatch("fetchAllInvoices");
   },
   methods: {},
+  data() {
+    return {
+      chartData: chartData,
+      chartOptions: chartOptions,
+    };
+  },
 };
 </script>
