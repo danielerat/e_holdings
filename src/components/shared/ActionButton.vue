@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <button :class="[buttonClass, sizeClass]">
+    <button :class="[buttonClass, sizeClass]" class="cursor-pointer">
       <fa v-if="frontIcon != ''" :icon="frontIcon"></fa>
       {{ $t(text) }}
       <fa

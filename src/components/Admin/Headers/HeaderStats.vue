@@ -1,7 +1,7 @@
 <template>
   <!-- Header -->
   <div
-    class="relative md:pt-32 pb-32 pt-12 bg-site-green-5 dark:bg-site-gray-1"
+    class="relative md:pt-32 pb-32 pt-5 bg-site-yellow-5 dark:bg-site-gray-1"
   >
     <div class="px-4 md:px-10 mx-auto w-full">
       <div>

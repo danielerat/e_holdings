@@ -4,13 +4,11 @@
   >
     <div class="rounded-t mb-0 px-2 py-3 border-0">
       <div class="flex flex-wrap items-center">
-        <div class="relative w-full max-w-full flex-grow flex-1">
-          <p class="font-semibold text-base text-site-gray-2">
-            Devices Under warrantee
-          </p>
+        <div class="basis-2/3 relative w-full max-w-full flex-grow flex-1">
+          <p class="font-semibold text-site-gray-2">Devices Under warranty</p>
         </div>
         <div
-          class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
+          class="basis-1/3 relative w-full px-4 max-w-full flex-grow flex-1 text-right"
         >
           <action-button type="tertiary" text="btn.seeAll"></action-button>
         </div>
@@ -42,7 +40,7 @@
               class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
             >
               <p>Iphone 6 Plus GOld</p>
-              <p class="text-xs font-light">To:Ilunga Gisa Daniel</p>
+              <p class="text-xs font-bold">To:Ilunga Gisa Daniel</p>
             </th>
             <td
               class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -57,7 +55,7 @@
               class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
             >
               <p>Smark Iron</p>
-              <p class="text-xs font-light">To:Carl junk</p>
+              <p class="text-xs font-bold">To:Carl junk</p>
             </th>
             <td
               class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -72,7 +70,7 @@
               class="text border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left"
             >
               <p>MacBook Air 32</p>
-              <p class="text-xs font-light">To:Ilunga Gisa Daniel</p>
+              <p class="text-xs font-bold">To:Ilunga Gisa Daniel</p>
             </th>
             <td
               class="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
