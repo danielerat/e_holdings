@@ -37,16 +37,27 @@
               <span class="title-font font-medium">Report your Device</span>
             </span>
           </button>
-          <button
-            class="bg-site-green-5 inline-flex py-3 px-5 rounded-lg items-center hover:bg-site-green-4 focus:outline-none"
+
+          <action-button
+            v-if="deviceAvailabilityStatus === 'inactive'"
+            type="primary"
+            size="lg"
+            text="Report Found"
+            frontIcon="circle-check"
+            :isAnimated="showProgressActive"
+            animatedType="spin"
             @click="reportInactive(device)"
-          >
-            <fa icon="circle-info" class="text-site-yellow-1" />
-            <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Dispose it</span>
-              <span class="title-font font-medium">Report as Dead</span>
-            </span>
-          </button>
+          />
+          <action-button
+            v-else
+            type="yellow-clear"
+            size="lg"
+            text="Report Dead"
+            frontIcon="circle-info"
+            :isAnimated="showProgressActive"
+            animatedType="spin"
+            @click="reportInactive(device)"
+          />
         </div>
       </div>
     </section>
@@ -180,7 +191,7 @@ export default {
   name: "SingleDevice",
   props: {
     device: {
-      type: String,
+      type: Object,
       required: true,
     },
     timeline: {
@@ -198,12 +209,18 @@ export default {
       mac,
       showProgress: false,
       deviceOwner: "",
+
+      //   Active and Inactive Device
+      showProgressActive: false,
     };
   },
   computed: {
     ...mapState({
       userInfo: (state) => state.userInfo,
     }),
+    deviceAvailabilityStatus() {
+      return this.device.availability;
+    },
   },
   created() {
     this.$store.dispatch("getCurrentUser");
@@ -253,9 +270,13 @@ export default {
       console.log(`Reporting a device lost or stolen ${item}`);
     },
     async reportInactive(item) {
+      this.showProgressActive = true;
       let formData = new FormData();
-      formData.append("availability", "inactive");
-      this.showProgress = true;
+      if (item.availability == "inactive") {
+        formData.append("availability", "active");
+      } else {
+        formData.append("availability", "inactive");
+      }
       await axios
         .put(`e-hold/v1/device/actions/${item.id}/`, formData, {})
         .then(() => {
@@ -264,12 +285,14 @@ export default {
               title: `Successfully added ${item.name} to Inactive devices!`,
               type: "success",
             });
-            this.showProgress = false;
+            // Emits to the parent so that the device.availability can change it's status
+            this.updateDeviceAvailability(formData.get("availability"));
+            this.showProgressActive = false;
           }, 2500);
         })
         .catch((error) => {
           console.log(error);
-          this.showProgress = true;
+          this.showProgressActive = true;
         });
     },
     formatDate(d) {
@@ -285,6 +308,10 @@ export default {
         currency: "RWF",
       }).format(price);
       return formatted;
+    },
+
+    updateDeviceAvailability(status) {
+      this.$emit("updateDeviceAvailability", status);
     },
   },
 };
