@@ -1,123 +1,64 @@
 <template>
-  <div>
-    <!-- First modal -->
-    <vue-final-modal
-      v-model="showModal"
-      classes="modal-container "
-      content-class="modal-content"
-      :drag="true"
-    >
-      <div class="modal__content relative">
-        <span class="modal__close absolute right-0" @click="showModal = false">
-          <fa icon="times" />
-        </span>
+  <div id="app">
+    <div class="flex flex-col items-center justify-center p-3 min-h-full">
+      <button
+        @click="onToggle"
+        class="bg-site-gray-1 border border-site-gray-2 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-md hover:shadow-lg hover:bg-site-gray-2"
+      >
+        Open
+      </button>
+    </div>
+    <transition name="fade">
+      <div v-if="isModalVisible">
+        <div
+          @click="onToggle"
+          class="absolute bg-black opacity-70 inset-0 z-0"
+        ></div>
+        <div
+          class="w-full max-w-lg p-3 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
+        >
+          <fa icon="times" class="absolute right-3"></fa>
+          <div>
+            <div class="p-3 mt-2 text-center space-x-4 md:block">
+              <!-- Buttons here -->
+            </div>
+          </div>
+        </div>
       </div>
-    </vue-final-modal>
-
-    <!-- Second modal -->
-    <vue-final-modal
-      v-model="showConfirmModal"
-      classes="modal-container"
-      content-class="modal-content"
-    >
-      <span class="modal__title">Confirm</span>
-      <div class="modal__content">Confirm to submit.</div>
-      <div class="modal__action">
-        <action-button
-          type="primary"
-          size="lg"
-          text="btn.signUp"
-          class="mr-5"
-          @click="confirm"
-        />
-        <action-button
-          type="primary"
-          size="lg"
-          text="btn.signUp"
-          class="mr-5"
-          @click="showConfirmModal = false"
-        />
-      </div>
-    </vue-final-modal>
-
-    <v-button @click="showModal = true">Open modal</v-button>
+    </transition>
   </div>
 </template>
 
 <script>
-// import DeviceCard from "@/components/Admin/Cards/DeviceCard.vue";
-
-import ActionButton from "@/components/shared/ActionButton.vue";
-// import safetyCheck from "@/components/shared/SafetyCheck.vue";
-
 export default {
-  name: "MyComponent",
+  components: {},
   data() {
     return {
-      path: {
-        1: {
-          name: "Mumbere Electronics",
-          date: "December 31, 2021",
-        },
-        2: {
-          name: "New Ownser ",
-          date: "December 31, 2021",
-        },
-        3: {
-          name: "New Ownser ",
-          date: "December 31, 2021",
-        },
-      },
-      showModal: true,
-      showConfirmModal: false,
+      isOpen: true,
     };
   },
-  methods: {
-    confirm() {
-      this.showConfirmModal = false;
-      this.showModal = false;
+
+  computed: {
+    isModalVisible() {
+      return this.isOpen;
     },
   },
-  components: {
-    // DeviceCard,
-    ActionButton,
-    // safetyCheck,
+
+  methods: {
+    onToggle() {
+      this.isOpen = !this.isOpen;
+    },
   },
 };
 </script>
-<style scoped>
-.lithopedion {
-  background: url("@/assets/img/hero_image2.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 25%;
+<style>
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
-/* 
-  ::v-deep .modal-container {
-    display: flex;
-    justify-content: center;
-    overflow-y: hidden;
-    align-items: top;
-    position: relative;
-    max-height: 90vh;
-  }
-  ::v-deep .modal-content {
-    display: flex;
-    flex-direction: column;
-    margin: 0 1rem;
-    overflow-y: auto;
-    padding: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.25rem;
-    background: #fff;
-    width: 80%;
-  }
-  .modal__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  .dark-mode div::v-deep .modal-content {
-    border-color: #2d3748;
-    background-color: #1a202c;
-  } */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 500ms ease-out;
+}
 </style>

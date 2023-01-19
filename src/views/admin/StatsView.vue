@@ -6,27 +6,43 @@
 
       <header-stats />
 
-      <div class="flex justify-around flex-wrap">
-        <div class="basis-2/5 border box-border">
-          <div class="box-border">
-            <BarChart :data="BarData" :options="BarOptions" />
-          </div>
-          <div class="w-full">
-            <div class="text-xl font-bold text-site-gray-1 indent-5 mb-3">
-              <p>Stolen Devices Per Area</p>
+      <div
+        class="flex flex-col md:flex-row justify-around flex-nowrap text-site-gray-1 dark:text-site-yellow-4"
+      >
+        <div class="md:basis-3/5 border">
+          <div class="w-full my-5">
+            <div class="text-xl font-bold indent-5 mb-3">
+              <p>My Devices Stats</p>
             </div>
-            <div class="box-border">
-              <pieChart :data="pieData" :options="PieOptions" />
+            <div class="h-60">
+              <line-chart :data="LineData" :options="LineOptions" />
+            </div>
+          </div>
+          <div class="w-full my-5">
+            <div class="text-xl font-bold indent-5 mb-3">
+              <p>My Devices Stats</p>
+            </div>
+            <div class="h-60">
+              <BarChart :data="BarData" :options="BarOptions" />
             </div>
           </div>
         </div>
-        <div class="basis-2/5 border box-border">
-          <div class="w-full">
-            <div class="text-xl font-bold text-site-gray-1 indent-5 mb-3">
+        <div class="md:basis-2/5 border">
+          <div class="w-full my-5">
+            <div class="text-xl font-bold indent-5 mb-3">
               <p>Stolen Devices Per Area</p>
             </div>
             <div class="w-3/4 mx-auto">
               <doughnut :data="DoughnutData" :options="DoughnutOptions" />
+            </div>
+          </div>
+          <!--  -->
+          <div class="w-full my-5">
+            <div class="text-xl font-bold indent-5 mb-3">
+              <p>Stolen Devices Per Category</p>
+            </div>
+            <div class="">
+              <pieChart :data="pieData" :options="PieOptions" />
             </div>
           </div>
         </div>
@@ -49,6 +65,7 @@ import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 import BarChart from "@/components/Admin/stats/BarChart";
 import Doughnut from "@/components/Admin/stats/Doughnut.vue";
 import PieChart from "@/components/Admin/stats/PieChart.vue";
+import LineChart from "@/components/Admin/stats/LineChart.vue";
 
 // Chart Data
 // Bar Charts
@@ -61,11 +78,17 @@ import {
   chartData as pieData,
   chartOptions as PieOptions,
 } from "@/utils/charts/DoughnutStolenPerArea.js";
-// Doughtnut
+// Doughtnut Chart
 import {
   chartData as DoughnutData,
   chartOptions as DoughnutOptions,
 } from "@/utils/charts/DoughnutStolenPerArea.js";
+
+// Line Chart
+import {
+  chartData as LineData,
+  chartOptions as LineOptions,
+} from "@/utils/charts/LineDevicesSale.js";
 
 export default {
   name: "admin-layout",
@@ -78,6 +101,7 @@ export default {
     BarChart,
     Doughnut,
     PieChart,
+    LineChart,
   },
   data() {
     return {
@@ -91,6 +115,9 @@ export default {
       //   Doughnut Data
       DoughnutData,
       DoughnutOptions,
+      //   Line Chart
+      LineData,
+      LineOptions,
     };
   },
   computed: {

@@ -15,10 +15,7 @@
               <p>My Devices Count By Category</p>
             </div>
             <div class="h-64 my-4">
-              <bar-chart :data="BarData" :options="BarOptions" />
-            </div>
-            <div class="h-64 my-4">
-              <bar-chart :data="BarData" :options="BarOptions" />
+              <doughnut-chart :data="BarData" :options="BarOptions" />
             </div>
           </div>
           <div class="py-5">
@@ -61,7 +58,7 @@ import FooterAdmin from "@/components/Admin/Footers/AdminFooter.vue";
 // Charts
 
 import PieChart from "@/components/Admin/stats/PieChart.vue";
-import BarChart from "@/components/Admin/stats/BarChart.vue";
+import DoughnutChart from "@/components/Admin/stats/Doughnut.vue";
 
 import TableLatestTransaction from "@/components/Admin/TableTransaction.vue";
 import TableDeviceOverview from "@/components/Admin/TableOverview.vue";
@@ -88,7 +85,7 @@ export default {
     TableLatestTransaction,
     TableDeviceOverview,
     PieChart,
-    BarChart,
+    DoughnutChart,
   },
   computed: {
     ...mapState({
