@@ -250,7 +250,24 @@ export default {
         });
     },
     async reportItem(item) {
-      console.log(`Reporting a device lost or stolen ${item}`);
+      let formData = new FormData();
+      formData.append("availability", "stolen");
+      this.showProgress = true;
+      await axios
+        .put(`e-hold/v1/device/actions/${item.id}/`, formData, {})
+        .then(() => {
+          setTimeout(() => {
+            Alert({
+              title: `Successfully added ${item.name} to Stolen devices!`,
+              type: "success",
+            });
+            this.showProgress = false;
+          }, 2500);
+        })
+        .catch((error) => {
+          console.log(error);
+          this.showProgress = true;
+        });
     },
     async reportInactive(item) {
       let formData = new FormData();

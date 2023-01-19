@@ -191,6 +191,7 @@ export default {
       inTouchUsername: "danielerat",
       inTouchPassword: "GUcR@.xY59VypWh",
       inTouchVerifCode: "",
+      code: [],
     };
   },
   computed: {},
@@ -201,13 +202,13 @@ export default {
     createVerificationCode() {
       for (let i = 0; i < 6; i++) {
         this.inTouchVerifCode = Math.floor(Math.random() * 9) + 1;
-        console.log(this.inTouchVerifCode);
+        this.code.push(this.inTouchVerifCode);
       }
     },
-    testingIntouch() {
+    verifyWithIntouch(phone) {
       let data = {
-        recipients: this.phoneNumber,
-        message: `Hello, this is your verification code: ${this.inTouchVerifCode}`,
+        recipients: phone,
+        message: `Hello, this is your verification code: ${this.code}`,
         sender: "E-Holdings",
         username: this.inTouchUsername,
         password: this.inTouchPassword,
@@ -225,10 +226,13 @@ export default {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
         // Your Phone Number and ID are Good
         if (this.step == 1) {
-          AlertMe({
-            title: "Enter The verification code you received below",
-            type: "info",
-          });
+          this.verifyWithIntouch(this.phoneNumber);
+          setTimeout(() => {
+            AlertMe({
+              title: "Enter The verification code you received below",
+              type: "info",
+            });
+          }, 2500);
           // Change Step form to go to the second step
           this.step = 2;
         }
