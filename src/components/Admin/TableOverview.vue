@@ -41,7 +41,7 @@
             <td
               class="border-t-0 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap text-left py-2"
             >
-              <p>Iphone 6 Plus GOld</p>
+              <p>Iphone 6 Plus Gold</p>
               <p class="text-xs font-bold">To:Ilunga Gisa Daniel</p>
             </td>
             <td

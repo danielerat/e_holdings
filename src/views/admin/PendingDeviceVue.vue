@@ -34,14 +34,9 @@
         </div>
       </section>
       <!-- ------ -->
-      <div v-for="(trans, index) in transfers" :key="index">
+      <div v-for="(trans, index) in pendingTransfers" :key="index">
         <ul>
-          <li
-            v-if="
-              userInfo.id === trans.transferee.id &&
-              trans.transfer_status === 'pending'
-            "
-          >
+          <li>
             <incoming-device
               :key="index"
               :transfer="trans"
@@ -55,7 +50,6 @@
               {{ trans.device.desc }}
             </incoming-device>
           </li>
-          <li v-else>There's nothing to show</li>
         </ul>
       </div>
       <!-- ---- -->
@@ -117,12 +111,12 @@ export default {
   computed: {
     ...mapState({
       userInfo: (state) => state.userInfo,
-      transfers: (state) => state.transfers,
+      pendingTransfers: (state) => state.pendingTransfers,
     }),
   },
   created() {
     this.$store.dispatch("getCurrentUser");
-    this.$store.dispatch("fetchAllTransfers");
+    this.$store.dispatch("fetchPendingTransfers");
   },
   methods: {},
 };

@@ -24,5 +24,11 @@ const getters = {
   transfers: (state) => {
     return state.transfers;
   },
+  pendingTransfers: (state) => {
+    return state.pendingTransfers;
+  },
+  lostDevices: (state) => {
+    return state.lostDevices;
+  },
 };
 export default getters;
