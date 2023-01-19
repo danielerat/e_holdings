@@ -67,13 +67,13 @@
                 </div>
               </div>
               <incoming-device
-                v-for="(device, cnt) in devices"
-                :key="device"
-                :name="device.name"
-                :type="device.type"
-                :date="device.date"
-                :model="device.model"
-                :pos="cnt % 2 == 1"
+                v-for="(trans, index) in pendingTransfers"
+                :key="index"
+                :name="trans.device.name"
+                :type="trans.device.category"
+                :date="trans.device.date_of_creation"
+                :model="trans.device.device_model"
+                :pos="index % 2 == 1"
               ></incoming-device>
             </div>
             <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
@@ -90,6 +90,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import IncomingDevice from "@/components/Admin/Cards/IncomingDevice.vue";
 import ReportedDevice from "@/components/Admin/ReportedDevices.vue";
@@ -134,6 +135,14 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber;
     },
+  },
+  computed: {
+    ...mapState({
+      pendingTransfers: (state) => state.pendingTransfers,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchPendingTransfers");
   },
 };
 </script>

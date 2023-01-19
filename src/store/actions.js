@@ -145,8 +145,32 @@ const actions = {
         console.log(error.response.status);
       });
   },
+  async fetchPendingTransfers({ state }) {
+    await axios
+      .get("e-hold/v1/transfers/pending/all/account/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((response) => {
+        state.pendingTransfers = response.data;
+      })
+      .catch((error) => {
+        console.log(error.response.status);
+      });
+  },
   async declineDeviceTransfer({ commit }, payload) {
     commit("declineDeviceTransfer", payload);
+  },
+  async fetchLostDevices({ state }) {
+    await axios
+      .get("e-hold/v1/devices/lost/all/")
+      .then((response) => {
+        state.lostDevices = response.data;
+      })
+      .catch((error) => {
+        console.log(error.response.status);
+      });
   },
 };
 export default actions;

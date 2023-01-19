@@ -13,7 +13,7 @@
             <h1
               class="flex-grow basis-1/2 sm:pr-16 text-2xl font-light title-font"
             >
-              All The sold devices under warranty
+              All the sold devices under warranty
             </h1>
           </div>
         </div>

@@ -23,15 +23,17 @@
         <th scope="col" class="py-3 px-1">Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-if="lostDevices.length !== 0">
       <tr
         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+        v-for="(device, index) in lostDevices"
+        :key="index"
       >
         <td class="py-4 px-2 text-site-gray-1 dark:text-site-white-2">
           <div class="flex">
-            <span class="">#568</span>
+            <span class="">#{{ index === 0 ? index + 1 : index + 1 }}</span>
             <span class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1">
-              <fa icon="laptop"></fa>
+              <fa :icon="device.category"></fa>
             </span>
           </div>
         </td>
@@ -41,18 +43,18 @@
         >
           <ul>
             <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-              Apple MacBook Pro 17"
+              {{ device.name }}
             </li>
             <li>
-              <p>Owner:Ilunga Gisa Daniel</p>
-              <p>0783305144</p>
+              <p>Owner:{{ device.owner.name }}</p>
+              <p>{{ device.owner.phone }}</p>
             </li>
           </ul>
         </th>
         <td class="py-4 px-2 collapse hidden lg:table-cell">
           <ul class="text-xs">
-            <li>Model: MacBookPro18,3</li>
-            <li>SN/IMEI: S14525MKGP3572</li>
+            <li>Model: {{ device.device_model }}</li>
+            <li>SN/IMEI: {{ device.mac_address }}</li>
           </ul>
         </td>
 
@@ -83,6 +85,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import Popover from "@/components/shared/popover.vue";
 export default {
@@ -90,6 +93,14 @@ export default {
   components: {
     Popover,
     ActionButton,
+  },
+  computed: {
+    ...mapState({
+      lostDevices: (state) => state.lostDevices,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchLostDevices");
   },
 };
 </script>
