@@ -26,7 +26,11 @@
     "reportDeviceDead": "menyesha igikoresho cyapfuye",
     "onMarket": "Izigurishwa",
     "seeAll": "Reba Zose",
-    "searchPlace": "Ahantu Kugenzura Ibikoresho"
+    "searchPlace": "Ahantu Kugenzura Ibikoresho",
+    "reportDead": "Menyesha gufa",
+    "reportFound": "Menyesha Kuboneka",
+    "reportLost": "Menyesha Gutakara",
+    "reportStolen": "Menyesha Kwibwa"
   },
 
   "landingPage": {
