@@ -198,19 +198,13 @@ export default {
       step: 1,
       inTouchUsername: "danielerat",
       inTouchPassword: "GUcR@.xY59VypWh",
-<<<<<<< HEAD
       users: "",
       code: null,
-=======
-      inTouchVerifCode: "",
-      code: [],
->>>>>>> f073a85f70df81d49f22fe9e1c5042dbec2f5961
     };
   },
   computed: {},
 
   methods: {
-<<<<<<< HEAD
     testingIntouch() {
       //   let data = {
       //     recipients: this.phoneNumber,
@@ -219,22 +213,6 @@ export default {
       //     username: this.inTouchUsername,
       //     password: this.inTouchPassword,
       //   };
-=======
-    createVerificationCode() {
-      for (let i = 0; i < 6; i++) {
-        this.inTouchVerifCode = Math.floor(Math.random() * 9) + 1;
-        this.code.push(this.inTouchVerifCode);
-      }
-    },
-    verifyWithIntouch(phone) {
-      let data = {
-        recipients: phone,
-        message: `Hello, this is your verification code: ${this.code}`,
-        sender: "E-Holdings",
-        username: this.inTouchUsername,
-        password: this.inTouchPassword,
-      };
->>>>>>> f073a85f70df81d49f22fe9e1c5042dbec2f5961
       axios
         .post(
           `https://www.intouchsms.co.rw/api/sendsms/.json?username=danielerat&password=GUcR@.xY59VypWh&senderid=25228&recipients=0736186836&message=this is the dark night`
@@ -246,35 +224,14 @@ export default {
           console.log(error);
         });
     },
-<<<<<<< HEAD
 
     async createAccount(data) {
       return await createUser(data, this.password);
     },
-=======
-    // checkForm2: async function () {
-    //   let formData = new FormData();
-    //   formData.append("email", "rukaraRwa@gmail.com");
-    //   formData.append("nid", "1199980046040099");
-    //   formData.append("password", "rukaraRwa@gmail.com");
-    //   formData.append("phone", "0783307211");
-    //   formData.append("name", "Rukara rwa Bishingwe");
-
-    //   await axios
-    //     .post("e-hold/v1/register/", formData)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error.response.status);
-    //     });
-    // },
->>>>>>> f073a85f70df81d49f22fe9e1c5042dbec2f5961
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
         // Your Phone Number and ID are Good
         if (this.step == 1) {
-<<<<<<< HEAD
           // Check if they exists to NIDA DB
           let matchingUser = FilterUserInfo(
             this.users,
@@ -318,17 +275,6 @@ export default {
               type: "error",
             });
           }
-=======
-          this.verifyWithIntouch(this.phoneNumber);
-          setTimeout(() => {
-            AlertMe({
-              title: "Enter The verification code you received below",
-              type: "info",
-            });
-          }, 2500);
-          // Change Step form to go to the second step
-          this.step = 2;
->>>>>>> f073a85f70df81d49f22fe9e1c5042dbec2f5961
         }
 
         //Check verification code and change step
@@ -397,7 +343,6 @@ export default {
   async mounted() {
     this.users = await getUserInfo();
     this.code = generateVerificationCode();
-    this.testingIntouch();
   },
 };
 </script>
