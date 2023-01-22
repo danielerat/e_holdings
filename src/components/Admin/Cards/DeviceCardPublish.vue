@@ -134,7 +134,29 @@ export default {
   },
   methods: {
     unPublishDevice(item) {
-      console.log(item);
+      let formData = new FormData();
+      formData.append("isPublished", false);
+      axios
+        .put(`e-hold/v1/publish/actions/${item.id}/`, formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then(() => {
+          setTimeout(() => {
+            // this.status = true;
+            AlertMe({
+              title: `Successfully unpublished ${item.name} to public!`,
+              type: "success",
+            });
+          }, 2000);
+          location.reload();
+        })
+        .catch((error) => {
+          AlertMe({
+            title: `Something went wrong. Err(${error.response.status})`,
+          });
+        });
     },
     publishDevice(item) {
       let formData = new FormData();

@@ -96,15 +96,15 @@
       </div>
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
         <device-card
-          v-for="(device, index) in devices"
+          v-for="(device, index) in published"
           :key="index"
           :device="device"
           class="basis-1/4"
-          :name="device.name"
-          :model="device.device_model"
-          :imei="device.mac_address"
-          :status="false"
-          :type="device.category"
+          :name="device.device.name"
+          :model="device.device.device_model"
+          :imei="device.device.mac_address"
+          :status="device.isPublished"
+          :type="device.device.category"
         />
       </div>
       <!-- ---- -->
@@ -136,6 +136,7 @@ export default {
     ...mapState({
       userInfo: (state) => state.userInfo,
       devices: (state) => state.accountDevices,
+      published: (state) => state.published,
     }),
   },
   created() {
@@ -143,6 +144,7 @@ export default {
     this.$store.dispatch("getCurrentUser");
     // get devices
     this.$store.dispatch("fetchDevicesPerAccount");
+    this.$store.dispatch("fetchPublishedPerAccount");
   },
   methods: {},
 };
