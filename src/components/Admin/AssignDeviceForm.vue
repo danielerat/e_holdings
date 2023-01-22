@@ -245,7 +245,11 @@ export default {
       formData.append("mac_address", this.device.imei);
       formData.append("desc", this.device.desc);
       await axios
-        .post("e-hold/v1/device/create/", formData, {})
+        .post("e-hold/v1/device/create/", formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
         .then(() => {
           this.resetForm();
           AlertMe({

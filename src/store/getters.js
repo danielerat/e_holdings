@@ -30,5 +30,8 @@ const getters = {
   lostDevices: (state) => {
     return state.lostDevices;
   },
+  published: (state) => {
+    return state.published;
+  },
 };
 export default getters;

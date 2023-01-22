@@ -172,5 +172,19 @@ const actions = {
         console.log(error.response.status);
       });
   },
+  async fetchPublishedPerAccount({ state }) {
+    await axios
+      .get("e-hold/v1/published/all/account/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((response) => {
+        state.published = response.data;
+      })
+      .catch((error) => {
+        console.log(error.response.status);
+      });
+  },
 };
 export default actions;

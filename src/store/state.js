@@ -14,6 +14,7 @@ const state = () => {
     theme: "light",
     transfers: [],
     pendingTransfers: [],
+    published: [],
   };
 };
 export default state;
