@@ -27,7 +27,7 @@
               <hr class="mt-4 border-b-1 text-site-gray-1" />
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="form" @submit.prevent="checkForm" action="text.com">
+              <form id="form" @submit.prevent="checkForm2" action="text.com">
                 <!-- Basic Information of the User National Id Phone number -->
                 <div v-if="step == 1" class="relative w-full mb-3">
                   <input-text
@@ -141,6 +141,7 @@
                   >
                     Create Account
                   </button>
+                  <button @click="checkForm2">Testing</button>
                 </div>
               </form>
             </div>
@@ -222,6 +223,23 @@ export default {
           console.log(error);
         });
     },
+    // checkForm2: async function () {
+    //   let formData = new FormData();
+    //   formData.append("email", "rukaraRwa@gmail.com");
+    //   formData.append("nid", "1199980046040099");
+    //   formData.append("password", "rukaraRwa@gmail.com");
+    //   formData.append("phone", "0783307211");
+    //   formData.append("name", "Rukara rwa Bishingwe");
+
+    //   await axios
+    //     .post("e-hold/v1/register/", formData)
+    //     .then((response) => {
+    //       console.log(response.data);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error.response.status);
+    //     });
+    // },
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
         // Your Phone Number and ID are Good
