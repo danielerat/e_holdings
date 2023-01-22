@@ -129,7 +129,7 @@ export default {
         this.showProgress = true;
         if (this.step === 1) {
           AlertMe({
-            title: "Enter The verification code you received below",
+            title: "Enter the verification code you received below",
             type: "info",
           });
           // Change Step form to go to the second step

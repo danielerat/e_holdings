@@ -299,7 +299,31 @@ export default {
           console.log(error.response.status);
         });
     },
+<<<<<<< HEAD
     async reportDevice(item, status) {
+=======
+    async reportItem(item) {
+      let formData = new FormData();
+      formData.append("availability", "stolen");
+      this.showProgress = true;
+      await axios
+        .put(`e-hold/v1/device/actions/${item.id}/`, formData, {})
+        .then(() => {
+          setTimeout(() => {
+            Alert({
+              title: `Successfully added ${item.name} to Stolen devices!`,
+              type: "success",
+            });
+            this.showProgress = false;
+          }, 2500);
+        })
+        .catch((error) => {
+          console.log(error);
+          this.showProgress = true;
+        });
+    },
+    async reportInactive(item) {
+>>>>>>> f073a85f70df81d49f22fe9e1c5042dbec2f5961
       let formData = new FormData();
 
       this.showProgressActive = true;

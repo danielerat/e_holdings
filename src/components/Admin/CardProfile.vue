@@ -49,7 +49,7 @@
       <div class="text-center mt-12">
         <h3
           class="text-xl font-semibold leading-normal text-blueGray-700 mb-2"
-          v-if="userInfo !== null"
+          v-if="userInfo !== ''"
         >
           {{ userInfo.name }}
         </h3>
@@ -60,14 +60,9 @@
           Kigali Nyarugenge, Biryogo
         </div>
         <div class="mb-2 text-blueGray-600 mt-10">
-          <fa
-            icon="envelope"
-            class="text-site-gray-2"
-            v-if="userInfo !== null"
-          />
+          <fa icon="envelope" class="text-site-gray-2" v-if="userInfo !== ''" />
           {{ userInfo.email }}
           <br />
-
           <fa icon="phone" class="text-site-gray-2" />
           {{ userInfo.phone }}
         </div>

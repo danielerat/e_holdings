@@ -3,7 +3,7 @@ const state = () => {
     accessToken: "",
     refreshToken: "",
     isAuthenticated: false,
-    userInfo: null,
+    userInfo: "",
     soughtItem: [], // An item being looked up
     devices: [],
     invoices: [],

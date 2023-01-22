@@ -18,7 +18,7 @@
       <form>
         <h6 class="text-sm mt-3 mb-6 font-bold uppercase">User Information</h6>
         <div class="flex flex-wrap">
-          <input-text placeholder="088..." label="Phone Number" name="phone" />
+          <input-text placeholder="078..." label="Phone Number" name="phone" />
           <input-text
             type="number"
             placeholder="National ID"
@@ -53,6 +53,7 @@
         </h6>
         <div class="flex flex-wrap">
           <div class="w-full lg:w-12/12 px-4">
+            <input type="text" v-model="name" />
             <input-text
               type="text"
               placeholder="KN 123 St 132"
@@ -142,6 +143,7 @@ export default {
         district: "",
         sector: "",
       },
+      name: "",
     };
   },
   components: {
@@ -153,7 +155,9 @@ export default {
       userInfo: (state) => state.userInfo,
     }),
   },
-  created() {},
+  created() {
+    // this.name = "Not the samething";
+  },
   methods: {
     editPersonalSettings() {
       console.log("editPersonalSettings...");
