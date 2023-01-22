@@ -28,8 +28,8 @@
           class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4"
         >
           <button
-            class="bg-site-yellow-5 inline-flex py-3 px-5 rounded-lg items-center hover:bg-site-yellow-4 focus:outline-none"
-            @click="reportItem(device)"
+            class="bg-site-yellow-5 inline-flex py-3 px-5 rounded-lg items-center hover:bg-site-yellow-4 focus:outline-none cursor-pointer"
+            @click="reportOnToggle"
           >
             <fa icon="flag" class="text-site-yellow-1" />
             <span class="ml-4 flex items-start flex-col leading-none">
@@ -37,18 +37,52 @@
               <span class="title-font font-medium">Report your Device</span>
             </span>
           </button>
-          <button
-            class="bg-site-green-5 inline-flex py-3 px-5 rounded-lg items-center hover:bg-site-green-4 focus:outline-none"
-            @click="reportInactive(device)"
-          >
-            <fa icon="circle-info" class="text-site-yellow-1" />
-            <span class="ml-4 flex items-start flex-col leading-none">
-              <span class="text-xs text-gray-600 mb-1">Dispose it</span>
-              <span class="title-font font-medium">Report as Dead</span>
-            </span>
-          </button>
+
+          <action-button
+            v-if="deviceAvailabilityStatus === 'inactive'"
+            type="primary"
+            size="lg"
+            text="btn.reportFound"
+            frontIcon="circle-check"
+            :isAnimated="showProgressActive"
+            animatedType="spin"
+            @click="reportDevice(device, 'active')"
+          />
+          <action-button
+            v-else
+            type="yellow-clear"
+            size="lg"
+            text="btn.reportDead"
+            frontIcon="circle-info"
+            :isAnimated="showProgressDead"
+            animatedType="spin"
+            @click="reportDevice(device, 'inactive')"
+          />
         </div>
       </div>
+      <custom-modal :toggle="this.modalIsOpen" @CloseModal="CloseModal">
+        <!-- The two buttons to report lost or stolen -->
+        <div class="flex justify-around">
+          <action-button
+            type="quaternary"
+            size="md"
+            text="btn.reportLost"
+            frontIcon="circle-check"
+            :isAnimated="showProgressLost"
+            animatedType="spin"
+            @click="reportDevice(device, 'lost')"
+          />
+          <action-button
+            type="yellow-clear"
+            size="md"
+            text="btn.reportStolen"
+            frontIcon="circle-info"
+            :isAnimated="showProgressStolen"
+            animatedType="spin"
+            @click="reportDevice(device, 'stolen')"
+          />
+        </div>
+      </custom-modal>
     </section>
     <section class="text-gray-600 body-font overflow-hidden">
       <div class="container px-3 py-10 mx-auto">
@@ -120,18 +154,12 @@
                   frontIcon="download"
                   @click="downloadOwnership(device)"
                 />
-                <action-button
-                  type="tertiary"
-                  size="sm"
-                  text="btn.contract"
-                  frontIcon="file-contract"
-                  @click="downloadContract(device)"
-                />
+
                 <router-link
                   :to="`/${$i18n.locale}/admin/transfer/${device.uuid}`"
                 >
                   <action-button
-                    type="primary"
+                    type="tertiary"
                     size="sm"
                     text="btn.transfer"
                     frontIcon="share"
@@ -167,6 +195,7 @@
 </template>
 
 <script>
+import CustomModal from "@/components/shared/CustomModal";
 import axios from "axios";
 import { mapState } from "vuex";
 import Alert from "@/utils/alerts";
@@ -180,7 +209,7 @@ export default {
   name: "SingleDevice",
   props: {
     device: {
-      type: String,
+      type: Object,
       required: true,
     },
     timeline: {
@@ -191,19 +220,34 @@ export default {
   components: {
     DeviceTimeline,
     ActionButton,
+    CustomModal,
   },
   data() {
     return {
       picture,
       mac,
-      showProgress: false,
+
       deviceOwner: "",
+
+      //   Active and Inactive Device
+      showProgressActive: false,
+      showProgressDead: false,
+      showProgressLost: false,
+      showProgressStolen: false,
+      modalIsOpen: false,
     };
   },
   computed: {
     ...mapState({
       userInfo: (state) => state.userInfo,
     }),
+    // Reactive element to togle the buttons from active to inactive
+    deviceAvailabilityStatus() {
+      return this.device.availability;
+    },
+    isModalVisible() {
+      return this.modalIsOpen;
+    },
   },
   created() {
     this.$store.dispatch("getCurrentUser");
@@ -271,8 +315,22 @@ export default {
     },
     async reportInactive(item) {
       let formData = new FormData();
-      formData.append("availability", "inactive");
-      this.showProgress = true;
+
+      this.showProgressActive = true;
+      if (status == "active") {
+        this.showProgressActive = true;
+        formData.append("availability", "active");
+      } else if (status == "inactive") {
+        this.showProgressDead = true;
+        formData.append("availability", "inactive");
+      } else if (status == "lost") {
+        this.showProgressLost = true;
+        formData.append("availability", "lost");
+      } else if (status == "stolen") {
+        this.showProgressStolen = true;
+        formData.append("availability", "stolen");
+      }
+
       await axios
         .put(`e-hold/v1/device/actions/${item.id}/`, formData, {})
         .then(() => {
@@ -281,12 +339,20 @@ export default {
               title: `Successfully added ${item.name} to Inactive devices!`,
               type: "success",
             });
-            this.showProgress = false;
+            // Emits to the parent so that the device.availability can change it's status
+            this.updateDeviceAvailability(formData.get("availability"));
+            this.showProgressActive = false;
+            this.showProgressStolen = false;
+            this.showProgressDead = false;
+            this.showProgressLost = false;
           }, 2500);
         })
         .catch((error) => {
           console.log(error);
-          this.showProgress = true;
+          this.showProgressActive = false;
+          this.showProgressStolen = false;
+          this.showProgressDead = false;
+          this.showProgressLost = false;
         });
     },
     formatDate(d) {
@@ -302,6 +368,17 @@ export default {
         currency: "RWF",
       }).format(price);
       return formatted;
+    },
+    // Method to emit status to the parent component so that the child can change
+    updateDeviceAvailability(status) {
+      this.$emit("updateDeviceAvailability", status);
+    },
+
+    reportOnToggle() {
+      this.modalIsOpen = !this.modalIsOpen;
+    },
+    CloseModal() {
+      this.modalIsOpen = false;
     },
   },
 };

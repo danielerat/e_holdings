@@ -4,7 +4,8 @@ const state = () => {
     refreshToken: "",
     isAuthenticated: false,
     userInfo: "",
-    soughtItem: [], // An item being looked up
+    // An item being looked up
+    soughtItem: [],
     devices: [],
     invoices: [],
     lostDevices: [],

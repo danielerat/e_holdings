@@ -113,7 +113,10 @@
                         {{ $t("btn.signIn") }}
                       </router-link>
                     </h3>
-                    <img class="w-2/3 mx-20" :src="SuccessPicture" />
+                    <img
+                      class="w-2/3 mx-20"
+                      :src="accountCreationSuccessPicture"
+                    />
                   </div>
                 </div>
 
@@ -156,6 +159,10 @@
 import axios from "axios";
 // import nextElementInList from "@/utils/nextElementInList.js";
 import AlertMe from "@/utils/alerts";
+import generateVerificationCode from "@/utils/generateVerificationCode.js";
+import FilterUserInfo from "@/utils/FilterUserInfo.js";
+import getUserInfo from "@/api/getUserInfo.js";
+import createUser from "@/api/createUser.js";
 // Regular Expressions
 import CheckPhone from "@/utils/CheckPhone";
 import CheckId from "@/utils/CheckId";
@@ -165,7 +172,7 @@ import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 import FooterSimple from "@/components/Admin/Footers/AdminFooter.vue";
 import StepForm from "@/components/shared/StepForm.vue";
 import InputText from "@/components/shared/InputText.vue";
-import SuccessPicture from "@/assets/img/account_success_creation.svg";
+import accountCreationSuccessPicture from "@/assets/img/account_success_creation.svg";
 
 export default {
   name: "Index",
@@ -177,8 +184,8 @@ export default {
   },
   data() {
     return {
-      nationalId: "1199487844234242",
-      phoneNumber: "0783345442",
+      nationalId: "1199880049682119",
+      phoneNumber: "0786186876",
       verificationCode: "",
       password: "",
       errors: {
@@ -187,35 +194,29 @@ export default {
         verificationCode: "",
         password: "",
       },
-      SuccessPicture,
+      accountCreationSuccessPicture,
       step: 1,
       inTouchUsername: "danielerat",
       inTouchPassword: "GUcR@.xY59VypWh",
-      inTouchVerifCode: "",
-      code: [],
+      users: "",
+      code: null,
     };
   },
   computed: {},
-  created() {
-    this.createVerificationCode();
-  },
+
   methods: {
-    createVerificationCode() {
-      for (let i = 0; i < 6; i++) {
-        this.inTouchVerifCode = Math.floor(Math.random() * 9) + 1;
-        this.code.push(this.inTouchVerifCode);
-      }
-    },
-    verifyWithIntouch(phone) {
-      let data = {
-        recipients: phone,
-        message: `Hello, this is your verification code: ${this.code}`,
-        sender: "E-Holdings",
-        username: this.inTouchUsername,
-        password: this.inTouchPassword,
-      };
+    testingIntouch() {
+      //   let data = {
+      //     recipients: this.phoneNumber,
+      //     message: `From E-holdings. Hello, this is your verification code: ${this.code}`,
+      //     sender: "25228",
+      //     username: this.inTouchUsername,
+      //     password: this.inTouchPassword,
+      //   };
       axios
-        .post(`https://www.intouchsms.co.rw/api/sendsms/.json`, data)
+        .post(
+          `https://www.intouchsms.co.rw/api/sendsms/.json?username=danielerat&password=GUcR@.xY59VypWh&senderid=25228&recipients=0736186836&message=this is the dark night`
+        )
         .then((response) => {
           console.log(response.data);
         })
@@ -223,52 +224,74 @@ export default {
           console.log(error);
         });
     },
-    // checkForm2: async function () {
-    //   let formData = new FormData();
-    //   formData.append("email", "rukaraRwa@gmail.com");
-    //   formData.append("nid", "1199980046040099");
-    //   formData.append("password", "rukaraRwa@gmail.com");
-    //   formData.append("phone", "0783307211");
-    //   formData.append("name", "Rukara rwa Bishingwe");
 
-    //   await axios
-    //     .post("e-hold/v1/register/", formData)
-    //     .then((response) => {
-    //       console.log(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error.response.status);
-    //     });
-    // },
+    async createAccount(data) {
+      return await createUser(data, this.password);
+    },
     checkForm: function (e) {
       if (CheckPhone(this.phoneNumber) && CheckId(this.nationalId)) {
         // Your Phone Number and ID are Good
         if (this.step == 1) {
-          this.verifyWithIntouch(this.phoneNumber);
-          setTimeout(() => {
+          // Check if they exists to NIDA DB
+          let matchingUser = FilterUserInfo(
+            this.users,
+            this.phoneNumber,
+            this.nationalId
+          );
+          if (matchingUser.length > 0) {
+            // matchingUser.add({ password: this.password });
+
+            axios
+              .get(`e-hold/v1/user/by/${this.nationalId}`)
+              .then((response) => {
+                if (response.status === 200) {
+                  AlertMe({
+                    title:
+                      "User Having this account already exists, Try logging in",
+                    type: "info",
+                  });
+                } else {
+                  AlertMe({
+                    title: "Enter The verification code you received below",
+                    type: "info",
+                  });
+                  // Change Step form to go to the second step
+                  this.step = 2;
+                }
+                console.log(response.data);
+              })
+              .catch(() => {
+                AlertMe({
+                  title: "Enter The verification code you received below",
+                  type: "info",
+                });
+                // Change Step form to go to the second step
+                this.step = 2;
+              });
+          } else {
+            // User Does not Exists to NIDA DB
             AlertMe({
-              title: "Enter The verification code you received below",
-              type: "info",
+              title: "User Does not exist to nida",
+              type: "error",
             });
-          }, 2500);
-          // Change Step form to go to the second step
-          this.step = 2;
+          }
         }
 
         //Check verification code and change step
         if (this.step == 2) {
-          if (this.verificationCode == "007" && this.step == 2) {
+          //   Send the code to message here
+
+          if (this.verificationCode === this.code && this.step == 2) {
             // Change Step form to go to the second step
             this.step = 3;
             AlertMe({
-              title: "Enter the verification code you received below",
+              title: "Enther Your Password :)",
               type: "success",
             });
           } else if (this.verificationCode != "") {
-            this.errors.verificationCode =
-              "* Invalid code, Please Enter A correct Code.";
+            this.errors.verificationCode = "* Invalid verification code.";
             AlertMe({
-              title: "Invalid verification code",
+              title: "Enter A verification code send to your phone",
               type: "error",
             });
           }
@@ -278,13 +301,20 @@ export default {
         if (this.step == 3) {
           if (CheckPassword(this.password)) {
             // Correct password, accound can be created
+            let matchingUser = FilterUserInfo(
+              this.users,
+              this.phoneNumber,
+              this.nationalId
+            );
+            this.createAccount(matchingUser[0]);
             this.step = 4;
             AlertMe({
               title: "Account Successfully Created",
               type: "success",
             });
-          } else {
-            this.errors.password = "* Password Must be Strong ";
+          } else if (this.password != "") {
+            this.errors.password =
+              "* Must include:( Special character,letter,number) ";
             AlertMe({
               title: "Password Not Strong Enough",
               type: "error",
@@ -309,6 +339,10 @@ export default {
       }
       e.preventDefault();
     },
+  },
+  async mounted() {
+    this.users = await getUserInfo();
+    this.code = generateVerificationCode();
   },
 };
 </script>

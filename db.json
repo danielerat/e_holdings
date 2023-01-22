@@ -13,6 +13,20 @@
         "sector": "Nyarugenge",
         "street_number": "KN 123 ST"
       }
+    },
+    {
+      "first_name": "John",
+      "last_name": "Bon Jones",
+      "phone_number": "0786186876",
+      "national_id": "1199880049682119",
+      "sex": "Male",
+      "dob": "1998-01-11",
+      "address": {
+        "province": "Kigali",
+        "district": "Nyarugenge",
+        "sector": "Nyarugenge",
+        "street_number": "KN 123 ST"
+      }
     }
   ]
 }

@@ -102,6 +102,9 @@
                   class="dark:bg-site-gray-2"
                 />
               </router-link>
+              <router-link :to="`/${$i18n.locale}/admin`">
+                <fa icon="right-from-bracket" class="mx-2" />
+              </router-link>
             </li>
             <li class="flex items-center" v-else>
               <router-link :to="`/${$i18n.locale}/login`">

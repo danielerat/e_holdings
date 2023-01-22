@@ -103,6 +103,12 @@ button {
 .quaternary {
   @apply bg-site-white-5 text-site-gray-1 border-2 border-site-gray-1 hover:bg-site-gray-2 hover:text-site-white-5 active:bg-site-gray-3;
 }
+.yellow {
+  @apply text-site-yellow-5 bg-site-yellow-3 hover:bg-site-yellow-4 active:bg-site-yellow-2 active:text-site-white-4;
+}
+.yellow-clear {
+  @apply bg-site-white-5 text-site-yellow-3 border-2 border-site-yellow-3 hover:bg-site-yellow-4 hover:text-site-gray-1 active:bg-site-yellow-5;
+}
 .sm {
   @apply px-4 py-2 text-xs;
 }

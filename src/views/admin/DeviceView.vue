@@ -4,7 +4,11 @@
     <div class="relative md:ml-64 bg-site-white-5 dark:bg-site-gray-1">
       <admin-navbar path="My Device " down="small" />
 
-      <single-device :timeline="timeline" :device="device" />
+      <single-device
+        :timeline="timeline"
+        :device="device"
+        @updateDeviceAvailability="updateDeviceAvailability"
+      />
 
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
@@ -65,6 +69,9 @@ export default {
         .catch((error) => {
           console.log(error.response.status);
         });
+    },
+    updateDeviceAvailability(status) {
+      this.device.availability = status;
     },
   },
 };

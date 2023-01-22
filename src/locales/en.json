@@ -26,7 +26,11 @@
     "reportDeviceDead": "report as dead",
     "onMarket": "Device On Market",
     "seeAll": "See All",
-    "searchPlace": "Place to Check Devices"
+    "searchPlace": "Place to Check Devices",
+    "reportDead": "Report Dead",
+    "reportFound": "Report Found",
+    "reportLost": "Report Lost",
+    "reportStolen": "Report Stolen"
   },
 
   "landingPage": {

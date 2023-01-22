@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto bg-site-white-4">
-    <div class="flex flex-col self-center py-60">
+    <div class="flex flex-col self-center pt-60">
       <div class="text-center">
         <h1 class="font-light text-6xl text-site-gray-1">
           WANT TO PLAY IT SAFE?
@@ -32,7 +32,7 @@
           </div>
           <ul>
             <li v-for="(item, index) in soughtItem" :key="index">
-              {{ item.name }}
+              {{ item.name }} this is
             </li>
           </ul>
           <button
@@ -44,18 +44,22 @@
             <span class="sr-only">Search</span>
           </button>
         </form>
-
-        <device-search-response
-          :type="soughtItem.length !== 0 ? 'negative' : 'positive'"
-        ></device-search-response>
       </div>
+    </div>
+    <div class="flex justify-center">
+      <device-search-response
+        v-if="soughtItem.length !== 0"
+        type="negative"
+      ></device-search-response>
+      <device-search-response
+        v-if="soughtItem.length == 0 && searching"
+        type="positive"
+      ></device-search-response>
     </div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
-import good from "@/assets/img/good.png";
-import error from "@/assets/img/error.png";
 import DeviceSearchResponse from "@/components/shared/DeviceSearchResponse";
 export default {
   name: "SearchDevice",
@@ -64,9 +68,8 @@ export default {
   },
   data() {
     return {
-      good,
-      error,
       searchString: "",
+      searching: false,
     };
   },
   computed: {
@@ -80,6 +83,7 @@ export default {
   },
   methods: {
     searchAnItem() {
+      this.searching = true;
       this.$store.dispatch("lookUpAnItem", {
         searchString: this.searchString,
         devices: this.devices,

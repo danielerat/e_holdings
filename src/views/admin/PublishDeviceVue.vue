@@ -100,11 +100,11 @@
           :key="index"
           :device="device"
           class="basis-1/4"
-          :name="device.device.name"
-          :model="device.device.device_model"
-          :imei="device.device.mac_address"
-          :status="device.isPublished"
-          :type="device.device.category"
+          :name="device.name"
+          :model="device.device_model"
+          :imei="device.mac_address"
+          :status="true"
+          :type="device.category"
         />
         <hr />
       </div>
