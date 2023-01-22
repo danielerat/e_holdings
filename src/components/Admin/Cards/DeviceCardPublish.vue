@@ -40,23 +40,26 @@
             </div>
           </router-link>
 
-          <a
+          <action-button
             v-if="status"
-            class="inline-flex items-center px-1 rounded border border-site-yellow-1 text-site-yellow-1 hover:bg-transparent hover:text-site-yellow-2 focus:outline-none focus:ring active:text-site-yellow-2 active:bg-site-yellow-5"
+            type="tertiary"
+            size="sm"
+            text="Unpublish"
+            frontIcon="cloud-arrow-down"
             @click="unPublishDevice(device)"
-          >
-            <span class="text-xs font-medium">Unpublish&nbsp;</span>
-            <fa icon="cloud-arrow-down" />
-          </a>
+          ></action-button>
 
-          <a
+          <action-button
             v-else
-            class="inline-flex items-center px-1 rounded border border-site-green-5 text-site-green-1 hover:bg-transparent hover:text-site-green-2 focus:outline-none focus:ring active:text-site-green-2 active:bg-site-green-5"
+            type="yellow-clear"
+            size="sm"
+            text="Unpublish"
+            frontIcon="cloud-arrow-down"
             @click="publishDevice(device)"
           >
             <span class="text-xs font-medium">Publish&nbsp;</span>
             <fa icon="cloud-arrow-up" />
-          </a>
+          </action-button>
         </div>
       </div>
     </div>
@@ -69,7 +72,9 @@ import AlertMe from "@/utils/alerts";
 import published_waved from "@/assets/img/wave.svg";
 import unpublished_wave from "@/assets/img/waveyellow.svg";
 import truncateString from "@/utils/truncateString";
+import ActionButton from "@/components/shared/ActionButton.vue";
 export default {
+  components: { ActionButton },
   name: "DeviceCardPublish",
   props: {
     device: {
