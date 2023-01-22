@@ -3,10 +3,10 @@
     <div v-if="isModalVisible">
       <div
         @click="reportOnToggle"
-        class="absolute bg-black opacity-70 inset-0 z-0"
+        class="absolute bg-black opacity-70 inset-0 z-10"
       ></div>
       <div
-        class="w-full max-w-lg p-3 absolute right-0 my-auto rounded-xl shadow-lg bg-white"
+        class="w-full max-w-lg p-3 fixed right-0 my-auto rounded-xl shadow-lg bg-white z-50"
       >
         <fa icon="times" class="absolute right-3" @click="reportOnToggle"></fa>
         <div>
