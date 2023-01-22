@@ -106,6 +106,7 @@
           :status="device.isPublished"
           :type="device.device.category"
         />
+        <hr />
       </div>
       <!-- ---- -->
       <!-- ---- -->

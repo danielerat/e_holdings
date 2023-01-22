@@ -175,6 +175,7 @@ export default {
               type: "success",
             });
           }, 2000);
+          location.reload(); // refresh to update state.
         })
         .catch((error) => {
           AlertMe({
