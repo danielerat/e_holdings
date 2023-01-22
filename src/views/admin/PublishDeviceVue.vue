@@ -103,7 +103,7 @@
           :name="device.name"
           :model="device.device_model"
           :imei="device.mac_address"
-          :status="true"
+          :status="false"
           :type="device.category"
         />
       </div>
