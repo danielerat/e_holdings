@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Alert from "@/utils/alerts";
 
 import ActionButton from "@/components/shared/ActionButton.vue";
@@ -125,7 +126,20 @@ export default {
   },
   methods: {
     approveDeviceTransfer(item) {
-      console.log(item.id);
+      let formData = new FormData();
+      formData.append("transfer_status", "approved");
+      axios
+        .put(`e-hold/v1/transfer/actions/${item.id}/`, formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
     declineDeviceTransfer: function (item) {
       this.$store
@@ -133,7 +147,7 @@ export default {
         .then(() => {
           this.$store.dispatch("fetchAllTransfers");
           Alert({
-            title: `Device transfer #${item.id} successfully!`,
+            title: `Device transfer of #${item.id} declined!`,
             type: "success",
           });
         })
