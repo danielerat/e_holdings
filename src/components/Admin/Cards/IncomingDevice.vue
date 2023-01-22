@@ -53,45 +53,21 @@
           <div class="mt-5">
             <div class="flex justify-around">
               <!-- Base -->
-              <a
-                class="text-xs group flex items-center basis-2/5 justify-between rounded-lg border border-current px-2 text-site-green-2 transition-colors hover:bg-site-green-1 focus:outline-none focus:ring active:bg-site-green-3"
+              <action-button
+                type="tertiary"
+                size="sm"
+                text="Accept Incoming Device"
+                frontIcon="circle-check"
                 @click="approveDeviceTransfer(transfer)"
-              >
-                <span
-                  class="font-medium transition-colors group-hover:text-white"
-                >
-                  Accept
-                  <br />
-                  Incoming Device
-                </span>
+              />
 
-                <span
-                  class="ml-4 flex-shrink-0 rounded-full border border-current bg-white p-2 text-site-green-2 group-active:text-indigo-500"
-                >
-                  <fa icon="check" class="h-3 w-4" />
-                </span>
-              </a>
-
-              <!-- Border -->
-
-              <a
-                class="text-xs group flex basis-2/5 items-center justify-between rounded-lg border border-current p-2 text-site-yellow-2 transition-colors hover:bg-site-yellow-1 focus:outline-none focus:ring active:bg-site-yellow-2"
+              <action-button
+                type="yellow-clear"
+                size="sm"
+                text="Decline Incoming Device"
+                frontIcon="xmark-circle"
                 @click="declineDeviceTransfer(transfer)"
-              >
-                <span
-                  class="font-medium transition-colors group-hover:text-white"
-                >
-                  Decline
-                  <br />
-                  Incoming Device
-                </span>
-
-                <span
-                  class="ml-4 flex-shrink-0 rounded-full border border-site-yellow-2 bg-white p-2 group-active:border-site-yellow-1"
-                >
-                  <fa icon="times" class="h-3 w-4" />
-                </span>
-              </a>
+              />
             </div>
           </div>
         </div>
@@ -102,7 +78,12 @@
 
 <script>
 import Alert from "@/utils/alerts";
+
+import ActionButton from "@/components/shared/ActionButton.vue";
 export default {
+  components: {
+    ActionButton,
+  },
   props: {
     transfer: {
       type: String,
