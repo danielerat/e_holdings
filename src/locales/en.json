@@ -26,6 +26,7 @@
     "reportDeviceDead": "report as dead",
     "onMarket": "Device On Market",
     "seeAll": "See All",
+    "search": "Search",
     "searchPlace": "Place to Check Devices",
     "reportDead": "Report Dead",
     "reportFound": "Report Found",
@@ -53,9 +54,10 @@
       }
     },
     "publishedDevice": {
-      "title": "Need a device from reliable sources ?      check Out The devices currently being sold!"
+      "title": "Need a device from reliable sources ? ",
+      "title-sub": " check Out The devices currently being sold!"
     },
-    "shortABoutUs": {
+    "shortAboutUs": {
       "title": "All your electronics managed in one place for indubitable ownership",
       "subtitle": "WHAT DO WE DO FOR YOU ?",
       "list": {
@@ -91,7 +93,7 @@
     },
     "Faq": {
       "title": "Can't Find something?",
-      "subTitle": "Can't Find something?",
+      "subTitle": "You might want to check our FAQ, or simply contact us for more explanations",
       "account": {
         "title": "Account related questions",
         "content": {

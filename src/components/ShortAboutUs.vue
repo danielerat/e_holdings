@@ -9,12 +9,12 @@
           <p
             class="my-5 uppercase text-lg text-center text-gray-600 leading-normal dark:text-site-yellow-4"
           >
-            What do we do for you ?
+            {{ $t("landingPage.shortAboutUs.subtitle") }}
           </p>
           <h2
             class="text-4xl lg:text-5xl pt-4 font-extrabold text-center leading-tight text-site-gray-1 lg:w-7/12 md:w-9/12 dark:text-site-yellow-4 dark:drop-shadow-2xl"
           >
-            All your electronics managed in one place for indubitable ownership
+            {{ $t("landingPage.shortAboutUs.title") }}
           </h2>
         </div>
       </div>
@@ -32,15 +32,12 @@
               <h4
                 class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
               >
-                Track you items
+                {{ $t("landingPage.shortAboutUs.list.track.title") }}
               </h4>
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                "E-holdings makes it easy to track your devices no matter the
-                circumstances. With our powerful organization tools, you'll
-                always find it a joke to keep track of your device, we are here
-                to giving you peace of mind."
+                {{ $t("landingPage.shortAboutUs.list.track.text") }}
               </p>
             </div>
           </div>
@@ -52,15 +49,12 @@
               <h4
                 class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
               >
-                Transfer the ownership
+                {{ $t("landingPage.shortAboutUs.list.transfer.title") }}
               </h4>
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                "E-holdings simplifies the process of transferring device
-                ownership. Whether you're transferring a device to a new owner
-                or acquiring it from an organization, our platform makes it
-                easy."
+                {{ $t("landingPage.shortAboutUs.list.transfer.text") }}
               </p>
             </div>
           </div>
@@ -74,15 +68,12 @@
               <h4
                 class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
               >
-                Report stolen devices
+                {{ $t("landingPage.shortAboutUs.list.report.title") }}
               </h4>
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                "With E-holdings, you can quickly and easily report lost or
-                stolen devices to the authorities. Our reporting system
-                streamlines the process, so you can rest easy knowing your
-                devices are protected and ready to be found anytime if lost."
+                {{ $t("landingPage.shortAboutUs.list.report.text") }}
               </p>
             </div>
           </div>
@@ -96,15 +87,12 @@
               <h4
                 class="text-lg font-bold leading-tight text-site-gray-1 dark:text-site-yellow-3"
               >
-                Generate all your documents
+                {{ $t("landingPage.shortAboutUs.list.generate.title") }}
               </h4>
               <p
                 class="text-base text-site-gray-2 leading-normal xl:w-10/12 pt-2 dark:text-site-yellow-5"
               >
-                "E-holdings generates legally binding contracts and documents
-                for your devices, giving you the protection you need. With our
-                document generation feature, you can easily create and manage
-                contracts and other important documents."
+                {{ $t("landingPage.shortAboutUs.list.generate.text") }}
               </p>
             </div>
           </div>

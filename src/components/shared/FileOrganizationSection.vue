@@ -14,12 +14,11 @@
             >
               <fa icon="gears" />
             </div>
-            <h3 class="text-3xl font-semibold">Are you a business owner?</h3>
+            <h3 class="text-3xl font-semibold">
+              {{ $t("landingPage.fileOrganization.title") }}
+            </h3>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-              E-holdings offers you powerful tools for managing and protecting
-              your inventory. You can easily track the devices you've sold,
-              monitor remaining warranty, and generate detailed reports to
-              optimize your operations.
+              {{ $t("landingPage.fileOrganization.text") }}
             </p>
             <ul class="list-none mt-6">
               <li class="py-2">
@@ -32,7 +31,9 @@
                     </span>
                   </div>
                   <div>
-                    <h4 class="text-blueGray-500">Generate Contract</h4>
+                    <h4 class="text-blueGray-500">
+                      {{ $t("landingPage.fileOrganization.list.generate") }}
+                    </h4>
                   </div>
                 </div>
               </li>
@@ -47,7 +48,7 @@
                   </div>
                   <div>
                     <h4 class="text-blueGray-500">
-                      Keep Track of devices under warranty
+                      {{ $t("landingPage.fileOrganization.list.keep") }}
                     </h4>
                   </div>
                 </div>
@@ -62,7 +63,9 @@
                     </span>
                   </div>
                   <div>
-                    <h4 class="text-blueGray-500">Transfer the ownsership</h4>
+                    <h4 class="text-blueGray-500">
+                      {{ $t("landingPage.fileOrganization.list.transfer") }}
+                    </h4>
                   </div>
                 </div>
               </li>

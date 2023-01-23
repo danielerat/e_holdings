@@ -15,13 +15,10 @@
         <h1
           class="title-font sm:text-4xl text-2xl mb-4 font-bold text-site-gray-2 dark:dark:text-site-yellow-4"
         >
-          Not sure about the device you are about to buy? How about we help you
-          check it.
+          {{ $t("landingPage.deviceLookup.title") }}
         </h1>
         <p class="mb-8 leading-relaxed drop-shadow-2xl">
-          With our powerful search capabilities, you can quickly and easily loop
-          up any device by searching with it's unique ID such as serial number,
-          IMEI or any other identifying information to make sure that it's clean
+          {{ $t("landingPage.deviceLookup.text") }}
         </p>
         <div class="flex w-full justify-center items-end">
           <div
@@ -48,7 +45,7 @@
                 class="p-2.5 ml-2 text-sm font-medium text-site-white-5 bg-site-gray-1 rounded-lg border border-site-gray-2 hover:bg-site-gray-2 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-site-yellow-2"
               >
                 <fa icon="search" />
-                <span class="sr-only">Search</span>
+                <span class="sr-only">{{ $t("btn.search") }}</span>
               </button>
             </form>
           </div>

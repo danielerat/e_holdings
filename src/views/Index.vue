@@ -9,29 +9,19 @@
 
   <!-- Why us sectoin  -->
   <center-img-design
-    title_left="We hear you out!"
-    sub_title_left="We are here
-  to simplify your life!"
-    text_left="Our user-friendly interface and
-  unparalleled customer support make it easy for anyone to use E-holdings. We
-  are constantly working to improve our services and make it as user-friendly as
-  possible, if you have any question or feature request please don't hesitate to
-  contact us."
-    title_right="Why choose us?"
-    sub_title_right="IT's not only about
-  device tracking!"
-    text_right="E-holdings is more than just a device tracking
-  and management tool, it's a complete solution for protecting your devices and
-  your business. With our advanced features and intuitive user interface, you
-  can take control of your inventory and safeguard your future."
+    :title_left="$t('landingPage.centerImage.left.title')"
+    :sub_title_left="$t('landingPage.centerImage.left.subTitle')"
+    :text_left="$t('landingPage.centerImage.left.text')"
+    :title_right="$t('landingPage.centerImage.right.title')"
+    :sub_title_right="$t('landingPage.centerImage.right.subTitle')"
+    :text_right="$t('landingPage.centerImage.right.text')"
   />
   <section class="bg-site-white-5 dark:bg-site-gray-1 dark:text-site-white-5">
     <div class="content-center container mx-auto py-6">
       <div class="text-center w-4/5 mx-auto">
-        <h2 class="text-2xl">Can't Find something?</h2>
+        <h2 class="text-2xl">{{ $t("landingPage.Faq.title") }}</h2>
         <h2 class="text-1xl">
-          You might want to check our FAQ, or simply contact us for more
-          explanations
+          {{ $t("landingPage.Faq.subTitle") }}
         </h2>
       </div>
       <div
@@ -39,7 +29,7 @@
       >
         <div class="mx-auto">
           <card-faq
-            title="Account related questions"
+            :title="$t('landingPage.Faq.account.title')"
             color="text-site-yellow-2"
             icon="fingerprint"
           >
@@ -61,7 +51,7 @@
         </div>
         <div class="mx-auto">
           <card-faq
-            title="Security"
+            :title="$t('landingPage.Faq.security.title')"
             color="text-site-green-2"
             icon="file-contract"
           >

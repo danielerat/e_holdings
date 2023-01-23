@@ -26,6 +26,7 @@
     "reportDeviceDead": "menyesha igikoresho cyapfuye",
     "onMarket": "Izigurishwa",
     "seeAll": "Reba Zose",
+    "search": "Shakisha",
     "searchPlace": "Ahantu Kugenzura Ibikoresho",
     "reportDead": "Menyesha gufa",
     "reportFound": "Menyesha Kuboneka",
@@ -53,79 +54,80 @@
       }
     },
     "publishedDevice": {
-      "title": "Ukeneye igikoresho kiva ahantu hizewe? reba Ibikoresho bigurishwa ubu!"
+      "title": "Ukeneye igikoresho kiva ahantu hizewe? ",
+      "title-sub": "reba Ibikoresho bigurishwa ubu!"
     },
-    "shortABoutUs": {
-      "title": "All your electronics managed in one place for indubitable ownership",
+    "shortAboutUs": {
+      "title": "Ibyuma bya elegitoroniki byose, bicungirwa ahantu hamwe kubitunga bidasubirwaho",
       "subtitle": "NIKI TUGUKORA?",
       "list": {
         "track": {
           "title": "Kurikirana ibikoresho",
-          "text": "E-gufata byoroshye gukurikirana ibikoresho byawe uko byagenda kose. Hamwe nibikoresho byacu bikomeye byumuryango, uzahora ubona ari urwenya kugirango ukurikirane ibikoresho byawe, turi hano kugirango tuguhe amahoro yo mumutima"
+          "text": "E-Holdings yoroshya gukurikirana ibikoresho byawe uko byagenda kose. Hamwe nibikoresho byacu bikomeye byumuryango, uzahora ubona ari urwenya kugirango ukurikirane ibikoresho byawe, turi hano kugirango tuguhe amahoro yo mumutima"
         },
         "transfer": {
-          "title": "Transfer the ownership",
-          "text": "E-holdings simplifies the process of transferring device ownership. Whether you're transferring a device to a new owner or acquiring it from an organization, our platform makes it easy."
+          "title": "Hindura nyirubwite",
+          "text": "E-Holdings byoroshya inzira yo kwimura ibikoresho nyirubwite. Waba wimura igikoresho kuri nyiracyo mushya cyangwa kukigura mumuryango, urubuga rwacu rworoshe."
         },
         "report": {
-          "title": "Report stolen devices",
-          "text": "With E-holdings, you can quickly and easily report lost or stolen devices to the authorities. Our reporting system streamlines the process, so you can rest easy knowing your devices are protected and ready to be found anytime if lost."
+          "title": "Menyesha ibikoresho byibwe",
+          "text": "Hamwe na E-holdings, urashobora kwihutira kumenyesha abayobozi ibikoresho byabuze cyangwa byibwe. Sisitemu yacu yo gutanga raporo yerekana inzira, urashobora rero kuruhuka byoroshye uzi ibikoresho byawe birinzwe kandi byiteguye kuboneka igihe icyo aricyo cyose cyatakaye."
         },
         "generate": {
-          "title": "Generate all your documents",
-          "text": "E-holdings generates legally binding contracts and documents for your devices, giving you the protection you need. With our document generation feature, you can easily create and manage contracts and other important documents."
+          "title": "Kora inyandiko zawe zose",
+          "text": "E-Holdings ibyemezo bitanga amasezerano byemewe n'amategeko hamwe nibikoresho byawe, biguha uburinzi ukeneye. Hamwe nimiterere yinyandiko yacu, urashobora gukora byoroshye no gucunga amasezerano nibindi byangombwa."
         }
       }
     },
     "centerImage": {
       "left": {
-        "title": "We hear you out!",
-        "subTitle": "We are here to simplify your life!",
-        "text": "Our user-friendly interface and unparalleled customer support make it easy for anyone to use E-holdings. We are constantly working to improve our services and make it as user-friendly as possible, if you have any question or feature request please don't hesitate to contact us."
+        "title": "Turakumva!",
+        "subTitle": "Tura Kworosha ubuzima!",
+        "text": "Imigaragarire yacu-yumukoresha hamwe nubufasha butagereranywa bwabakiriya byorohereza umuntu wese gukoresha E-gufata. Turahora dukora kugirango tunoze serivisi zacu kandi tuyikoreshe neza-bishoboka, niba ufite ikibazo cyangwa icyifuzo gisabwa, ntutindiganye kutwandikira"
       },
       "right": {
-        "title": "Why choose us?",
-        "subTitle": "IT's not only about device tracking!",
-        "text": "E-holdings is more than just a device tracking and management tool, it's a complete solution for protecting your devices and your business. With our advanced features and intuitive user interface, you can take control of your inventory and safeguard your future."
+        "title": "Kuki wa duhitamo?",
+        "subTitle": "Ntabwo ari ugukurikirana ibikoresho gusa!",
+        "text": "E-holdings birenze igikoresho cyo gukurikirana no kuyobora ibikoresho, ni igisubizo cyuzuye cyo kurinda ibikoresho byawe nubucuruzi bwawe. Hamwe nimikorere yacu yiterambere hamwe nubushakashatsi bwimbitse bwabakoresha, urashobora gufata ibyemezo byawe kandi ukarinda ejo hazaza"
       }
     },
     "Faq": {
-      "title": "Can't Find something?",
-      "subTitle": "Can't Find something?",
+      "title": "Ntushobora kubona ikintu?",
+      "subTitle": "Urashobora gushaka kugenzura ibibazo byacu, cyangwa ukatwandikira kugirango ubone ibisobanuro byinshi",
       "account": {
-        "title": "Account related questions",
+        "title": "Ibibazo bijyanye na konti",
         "content": {
           "one": {
-            "title": "What happens if I lose my E-holdings account password?",
-            "text": "If you lose your E-holdings account password, you can reset it through our password reset feature. You will be prompted the phone number you used to sign in and your id to verify your identity."
+            "title": "Bigenda bite iyo mbuze ijambo ryibanga rya E-gufata?",
+            "text": "Niba utakaje ijambo ryibanga rya E-gufata konte yawe, urashobora kuyisubiramo ukoresheje ijambo ryibanga ryibanga. Uzabazwa numero ya terefone wakoresheje kugirango winjire hamwe na id yawe kugirango umenye umwirondoro wawe."
           },
           "two": {
-            "title": "Who can access my device data and personal information?",
-            "text": "Only authorized users with the correct credentials can access your device data and personal information"
+            "title": "Ninde ushobora kubona ibikoresho byanjye nibikoresho byamakuru?",
+            "text": "Gusa abakoresha babiherewe uburenganzira bafite ibyangombwa byukuri barashobora kubona amakuru yibikoresho byawe namakuru yihariye"
           }
         }
       },
       "security": {
-        "title": "Security",
+        "title": "Umutekano",
         "content": {
           "one": {
-            "title": "What happens if one of my devices is lost or stolen?",
-            "text": "If one of your devices is lost or stolen, you can report it through E-holdings. Our platform allows you to easily report lost or stolen devices to the authorities and track their whereabouts"
+            "title": "Bigenda bite iyo kimwe mu bikoresho byanjye cyatakaye cyangwa cyibwe?",
+            "text": "Niba kimwe mubikoresho byawe cyatakaye cyangwa cyibwe, urashobora kubimenyesha ukoresheje E-gufata. Ihuriro ryacu riragufasha kumenyesha byoroshye ibikoresho byabuze cyangwa byibwe kubayobozi no gukurikirana aho biherereye"
           },
           "two": {
-            "title": "How does E-holdings protect my devices and my personal information?",
-            "text": "E-holdings uses industry-standard security protocols and encryption to protect your devices and personal information. All data is transmitted and stored securely, and access is controlled through user authentication and authorization."
+            "title": "Nigute E-gufata irinda ibikoresho byanjye namakuru yanjye bwite?",
+            "text": "E-gufata ikoresha protocole yumutekano isanzwe hamwe na encryption kugirango urinde ibikoresho byawe namakuru yihariye. Amakuru yose yoherejwe kandi abitswe neza, kandi kwinjira bigenzurwa binyuze mukwemeza no gutanga uburenganzira."
           }
         }
       },
       "help": {
-        "title": "Need More Help ?",
-        "subTitle": "Check out our FAQ you may find some useful tips"
+        "title": "Ukeneye ubufasha bwinshi?",
+        "subTitle": "Reba ibibazo byacu ushobora kubona inama zingirakamaro"
       }
     }
   },
   "footer": {
-    "titel": "Let's keep in touch!",
-    "subTitle": "Find us on any of these platforms, we respond within 24 hours."
+    "titel": "Reka dukomeze kuvugana!",
+    "subTitle": "Mudushakire kurubuga urwo arirwo rwose, turasubiza mumasaha 24."
   }
 }
