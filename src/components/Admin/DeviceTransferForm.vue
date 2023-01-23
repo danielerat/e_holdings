@@ -44,10 +44,10 @@
             ></input-text>
           </div>
           <div v-if="step === 2">
-            <p>The current owner with {{ user.nid }} is being retrieved...</p>
+            <p>The transferee: {{ transferee }}...</p>
           </div>
           <div v-if="step === 3">
-            <h2>Click to confirm the transfer ticket</h2>
+            <h2>Device Transfered!</h2>
           </div>
           <action-button
             type="primary"
@@ -86,6 +86,7 @@ export default {
     return {
       device: "",
       deviceOwner: "",
+      transferee: "",
       user: {
         phone: "",
         nid: "",
@@ -129,16 +130,19 @@ export default {
         this.showProgress = true;
         if (this.step === 1) {
           AlertMe({
-            title: "Enter the verification code you received below",
+            title: "checking if user is user",
             type: "info",
           });
           // Change Step form to go to the second step
+          // Get the user
+          this.retrieveUser(this.user.nid);
+          this.showProgress = false;
           this.step = 2;
         } else if (this.step === 2) {
-          this.step = 3;
-          this.retrieveUser(this.user.nid);
-        } else {
+          this.showProgress = true;
           this.doTransfer();
+          this.step = 3;
+          this.showProgress = false;
         }
       } else {
         AlertMe({
@@ -148,11 +152,15 @@ export default {
       }
       e.preventDefault();
     },
-    doTransfer() {
+    async doTransfer() {
       let formData = new FormData();
-      formData.append("", "");
-      axios
-        .post(`e-hold/v1/transfer/create/`, formData, {})
+      formData.append("device", this.device.id);
+      await axios
+        .post(`e-hold/v1/transfer/create/`, formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
         .then(() => {
           AlertMe({
             title: "Transfer done successfully!",
@@ -167,7 +175,7 @@ export default {
       axios
         .get(`e-hold/v1/user/by/${nid}/`)
         .then((response) => {
-          console.log(response.data);
+          this.transferee = response.data;
         })
         .catch((error) => {
           console.log(error.response.status);
