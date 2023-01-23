@@ -6,8 +6,25 @@
           class="title-font font-medium text-3xl text-site-gray-3"
           v-if="device !== ''"
         >
-          {{ device.name }} {{ userInfo }}
+          {{ device.name }}
         </h1>
+        <div class="flex justify-around font-bold">
+          <p>Model: {{ device.device_model }}</p>
+          <p>
+            category:
+            <fa
+              v-if="device.category == 'phone'"
+              icon="mobile-button"
+              class="text-xl"
+            />
+            <fa
+              v-else-if="device.category == 'computer'"
+              icon="laptop"
+              class="text-xl"
+            />
+            <fa v-else icon="plug" class="text-xl" />
+          </p>
+        </div>
         <p class="leading-relaxed mt-4">
           {{ device.desc }}
         </p>
@@ -44,10 +61,18 @@
             ></input-text>
           </div>
           <div v-if="step === 2">
-            <p>The transferee: {{ transferee }}...</p>
+            <div>
+              <div class="w-2/3 mx-auto">
+                <!-- Successfull Device Transfer -->
+                <img :src="QuestionTransfer" />
+              </div>
+            </div>
           </div>
           <div v-if="step === 3">
-            <h2>Device Transfered!</h2>
+            <div class="w-2/3 mx-auto">
+              <!-- Successfull Device Transfer -->
+              <img :src="SuccessfullTransfer" />
+            </div>
           </div>
           <action-button
             type="primary"
@@ -76,6 +101,10 @@ import CheckId from "@/utils/CheckId";
 import ActionButton from "@/components/shared/ActionButton.vue";
 import InputText from "@/components/shared/InputText.vue";
 import StepMark from "@/components/shared/StepMark.vue";
+
+import SuccessfullTransfer from "@/assets/img/successfull_device_transfer.svg";
+import QuestionTransfer from "@/assets/img/question_device_transfer.svg";
+
 export default {
   name: "DeviceTransferForm",
   components: {
@@ -94,6 +123,8 @@ export default {
       },
       step: 1,
       showProgress: false,
+      SuccessfullTransfer,
+      QuestionTransfer,
     };
   },
   computed: {
@@ -122,7 +153,7 @@ export default {
         this.showProgress = true;
         if (this.step === 1) {
           AlertMe({
-            title: "checking if user is user",
+            title: "Are you sure you want to transfer this device ? ",
             type: "info",
           });
           // Change Step form to go to the second step
