@@ -21,7 +21,7 @@
         <h2 class="text-site-gray-3 text-lg font-medium title-font my-5">
           Transfer the Ownsership
         </h2>
-        <form @submit.prevent="doTransfer" action="text.com">
+        <form @submit.prevent="checkForm" action="text.com">
           <div v-if="step === 1" class="relative my-4">
             <input-text
               type="text"
@@ -117,7 +117,7 @@ export default {
         });
     },
 
-    checkForm: function (e) {
+    checkForm: async function (e) {
       if (CheckPhone(this.user.phone) || CheckId(this.user.nid)) {
         this.showProgress = true;
         if (this.step === 1) {
@@ -132,7 +132,7 @@ export default {
           this.step = 2;
         } else if (this.step === 2) {
           this.showProgress = true;
-          this.doTransfer();
+          await this.doTransfer();
           this.step = 3;
           this.showProgress = false;
         }
@@ -149,8 +149,7 @@ export default {
         await axios
           .get(`e-hold/v1/user/by/${nid}/`)
           .then((response) => {
-            this.transferee = response.data;
-            // console.log(this.transferee);
+            this.transferee = response.data.id;
           })
           .catch((error) => {
             console.log(error.response.status);
@@ -159,18 +158,21 @@ export default {
     },
     async doTransfer() {
       this.showProgress = true;
-      this.retrieveUser(this.user.nid);
-      let formData = new FormData();
-      formData.append("transferor", this.userInfo.id);
-      formData.append("device", this.device.id);
-      formData.append("transferee", this.transferee.id);
-      // console.log(formData.get("transferee"));
       await axios
-        .post(`e-hold/v1/transfer/create/`, formData, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        .post(
+          `e-hold/v1/transfer/create/`,
+          {
+            device: this.device.id,
+            transferor: this.userInfo.id,
+            transferee: this.transferee,
           },
-        })
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              "Content-Type": "application/json",
+            },
+          }
+        )
         .then((response) => {
           AlertMe({
             title: "Your device successfully transfered!",
