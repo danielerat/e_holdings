@@ -136,10 +136,10 @@
               </span>
             </div>
             <!-- <div class="flex">
-            <span class="title-font font-medium text-2xl text-gray-900">
-              Frw 325,000
-            </span>
-          </div> -->
+              <span class="title-font font-medium text-2xl text-gray-900">
+                Frw 325,000
+              </span>
+            </div> -->
             <span
               class="absolute bg-site-white-3 text-site-gray-1 right-0 top-0 rounded-full px-3 title-font py-1.5 text-sm font-medium dark:bg-site-gray-1 dark:text-site-yellow-3"
             >
@@ -293,27 +293,7 @@ export default {
           console.log(error.response.status);
         });
     },
-    async reportItem(item) {
-      let formData = new FormData();
-      formData.append("availability", "stolen");
-      this.showProgress = true;
-      await axios
-        .put(`e-hold/v1/device/actions/${item.id}/`, formData, {})
-        .then(() => {
-          setTimeout(() => {
-            Alert({
-              title: `Successfully added ${item.name} to Stolen devices!`,
-              type: "success",
-            });
-            this.showProgress = false;
-          }, 2500);
-        })
-        .catch((error) => {
-          console.log(error);
-          this.showProgress = true;
-        });
-    },
-    async reportInactive(item) {
+    async reportDevice(item, status) {
       let formData = new FormData();
 
       this.showProgressActive = true;

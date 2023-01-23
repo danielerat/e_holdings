@@ -25,19 +25,25 @@
           <span
             class="absolute left-1/2 -bottom-[1.75rem] -translate-x-1/2 rounded-full border-2 border-site-green-2 bg-site-green-2 text-white"
           >
-            <fa icon="xmark-circle" class="px-1" />
+            <fa v-if="step <= 2" icon="xmark-circle" class="px-1" />
+            <fa v-else icon="check" class="px-1" />
           </span>
-
           <span class="font-bold hidden sm:block">Owner</span>
-
           <fa
-            icon="fingerprint"
+            icon="fingerpr"
             class="ml-auto h-6 w-6 sm:hidden text-site-green-3"
           />
         </li>
 
         <li class="relative text-right">
           <span
+            v-if="step == 3"
+            class="absolute left-2/2 -bottom-[1.75rem] rounded-full border-2 border-site-green-4 bg-site-green-3 text-site-green-1"
+          >
+            <fa icon="check" class="px-1" />
+          </span>
+          <span
+            v-else
             class="absolute left-2/2 -bottom-[1.75rem] rounded-full border-2 border-site-gray-4 bg-site-gray-3 text-site-gray-4"
           >
             <fa icon="check" class="px-1" />
