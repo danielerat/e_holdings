@@ -195,8 +195,8 @@
 </template>
 
 <script>
-import CustomModal from "@/components/shared/CustomModal";
 import axios from "axios";
+import CustomModal from "@/components/shared/CustomModal";
 import { mapState } from "vuex";
 import Alert from "@/utils/alerts";
 import ownershipPdf from "@/utils/ownershipPdf";

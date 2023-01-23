@@ -197,6 +197,12 @@
           v-on:update="device.price = $event"
         />
       </div>
+      <input
+        type="file"
+        ref="fileInput"
+        @change="onImageUpload"
+        accept="image/*"
+      />
       <h6 class="text-sm mt-3 mb-6 font-bold uppercase">Description</h6>
       <div class="flex flex-wrap">
         <div class="w-full lg:w-12/12 px-4">
@@ -298,6 +304,7 @@ export default {
         desc: "",
         warranty: "",
       },
+      deviceImage: "",
       selfRegistrationTerms: true,
 
       options: ["Phone", "Computer", "Tablet", "Whatever"],
@@ -323,6 +330,13 @@ export default {
     }
   },
   methods: {
+    // Uploading the Image
+    onImageUpload() {
+      let fileInput = this.$refs.fileInput;
+      let file = fileInput.files[0];
+      this.deviceImage = file;
+    },
+
     async createDevice() {
       let formData = new FormData();
       formData.append("name", this.device.name);

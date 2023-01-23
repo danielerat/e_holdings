@@ -5,7 +5,7 @@
       <admin-navbar path="My Device " down="small" />
 
       <single-device
-        :timeline="timeline"
+        :timeline="transfers"
         :device="device"
         @updateDeviceAvailability="updateDeviceAvailability"
       />
@@ -35,6 +35,7 @@ export default {
     return {
       device: "",
       deviceOwner: "",
+      transfers: [],
       timeline: {
         one: {
           name: "Mumbere Electronics",
@@ -57,9 +58,24 @@ export default {
   },
   created() {
     this.getDevice(this.$route.params.uuid);
+    this.fetchTransfersPerDevice(this.$route.params.uuid);
     this.$store.dispatch("getCurrentUser");
   },
   methods: {
+    async fetchTransfersPerDevice(uuid) {
+      await axios
+        .get(`e-hold/v1/transfer/history/${uuid}/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          this.transfers = response.data;
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
+    },
     getDevice(uuid) {
       axios
         .get(`e-hold/v1/device/${uuid}/`)

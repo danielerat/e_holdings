@@ -144,7 +144,6 @@
                   >
                     Create Account
                   </button>
-                  <button @click="checkForm2">Testing</button>
                 </div>
               </form>
             </div>
