@@ -154,18 +154,12 @@
                   frontIcon="download"
                   @click="downloadOwnership(device)"
                 />
-                <action-button
-                  type="tertiary"
-                  size="sm"
-                  text="btn.contract"
-                  frontIcon="file-contract"
-                  @click="downloadContract(device)"
-                />
+
                 <router-link
                   :to="`/${$i18n.locale}/admin/transfer/${device.uuid}`"
                 >
                   <action-button
-                    type="primary"
+                    type="tertiary"
                     size="sm"
                     text="btn.transfer"
                     frontIcon="share"
