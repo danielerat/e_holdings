@@ -6,7 +6,7 @@
           class="title-font font-medium text-3xl text-site-gray-3"
           v-if="device !== ''"
         >
-          {{ device.name }}
+          {{ device.name }} {{ userInfo }}
         </h1>
         <p class="leading-relaxed mt-4">
           {{ device.desc }}
@@ -21,7 +21,7 @@
         <h2 class="text-site-gray-3 text-lg font-medium title-font my-5">
           Transfer the Ownsership
         </h2>
-        <form @submit.prevent="checkForm" action="text.com">
+        <form @submit.prevent="doTransfer" action="text.com">
           <div v-if="step === 1" class="relative my-4">
             <input-text
               type="text"
@@ -69,6 +69,7 @@
 <script>
 import axios from "axios";
 import AlertMe from "@/utils/alerts";
+import { mapState } from "vuex";
 // // Regular Expressions
 import CheckPhone from "@/utils/CheckPhone";
 import CheckId from "@/utils/CheckId";
@@ -95,6 +96,11 @@ export default {
       showProgress: false,
     };
   },
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
+  },
   created() {
     this.getDevice(this.$route.params.uuid);
     this.$store.dispatch("getCurrentUser");
@@ -104,27 +110,13 @@ export default {
       axios
         .get(`e-hold/v1/device/${uuid}/`)
         .then((response) => {
-          this.getDeviceOwner(response.data.added_by);
           this.device = response.data;
         })
         .catch((error) => {
           console.log(error.response.status);
         });
     },
-    async getDeviceOwner(id) {
-      await axios
-        .get(`e-hold/v1/user/${id}/`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        })
-        .then((response) => {
-          this.deviceOwner = response.data;
-        })
-        .catch((error) => {
-          console.log(error.response.status);
-        });
-    },
+
     checkForm: function (e) {
       if (CheckPhone(this.user.phone) || CheckId(this.user.nid)) {
         this.showProgress = true;
@@ -152,33 +144,44 @@ export default {
       }
       e.preventDefault();
     },
+    async retrieveUser(nid) {
+      if (nid) {
+        await axios
+          .get(`e-hold/v1/user/by/${nid}/`)
+          .then((response) => {
+            this.transferee = response.data;
+            // console.log(this.transferee);
+          })
+          .catch((error) => {
+            console.log(error.response.status);
+          });
+      }
+    },
     async doTransfer() {
+      this.showProgress = true;
+      this.retrieveUser(this.user.nid);
       let formData = new FormData();
+      formData.append("transferor", this.userInfo.id);
       formData.append("device", this.device.id);
+      formData.append("transferee", this.transferee.id);
+      // console.log(formData.get("transferee"));
       await axios
         .post(`e-hold/v1/transfer/create/`, formData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           },
         })
-        .then(() => {
+        .then((response) => {
           AlertMe({
-            title: "Transfer done successfully!",
+            title: "Your device successfully transfered!",
             type: "success",
           });
+          this.showProgress = false;
+          console.log(response.data);
         })
         .catch((error) => {
-          console.log(`Error(${error.response.status})`);
-        });
-    },
-    retrieveUser(nid) {
-      axios
-        .get(`e-hold/v1/user/by/${nid}/`)
-        .then((response) => {
-          this.transferee = response.data;
-        })
-        .catch((error) => {
-          console.log(error.response.status);
+          console.log(error.response.data);
+          console.log(`Error(${error.message})`);
         });
     },
   },

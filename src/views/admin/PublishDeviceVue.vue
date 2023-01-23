@@ -95,18 +95,32 @@
         </div>
       </div>
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
+        <h2>Your Published Devices</h2>
         <device-card
           v-for="(device, index) in published"
+          :key="index"
+          :device="device"
+          class="basis-1/4"
+          :name="device.device.name"
+          :model="device.device.device_model"
+          :imei="device.device.mac_address"
+          :status="device.isPublished"
+          :type="device.device.category"
+        />
+        <hr />
+        <h1>Publish from your Devices</h1>
+        <device-card
+          v-for="(device, index) in devices"
           :key="index"
           :device="device"
           class="basis-1/4"
           :name="device.name"
           :model="device.device_model"
           :imei="device.mac_address"
-          :status="false"
+          :status="device.is_published"
           :type="device.category"
+          v-show="device.is_published"
         />
-        <hr />
       </div>
       <!-- ---- -->
       <!-- ---- -->

@@ -6,7 +6,7 @@
     <span
       class="absolute top-4 rounded-full py-1.5 text-xs font-medium text-gray-1"
     >
-      <p class="font-bold">{{ truncate_name }}</p>
+      <p class="font-bold">{{ name }}</p>
       <p class="text-xs text-site-gray-3">Model: {{ model }}</p>
     </span>
     <span
@@ -53,7 +53,7 @@
             v-else
             type="yellow-clear"
             size="sm"
-            text="Unpublish"
+            text="publish"
             frontIcon="cloud-arrow-down"
             @click="publishDevice(device)"
           >
