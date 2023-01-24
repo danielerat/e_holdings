@@ -3,7 +3,7 @@
     <div class="flex flex-col self-center py-24">
       <div class="text-center">
         <h1 class="font-bold md:text-3xl text-site-green-2">
-          Want to know howmany have owned this device ?
+          Want to know how many have owned this device ?
         </h1>
         <h1 class="font-light text-4xl md:text-6xl text-site-gray-1">
           You are on the right section
@@ -12,7 +12,7 @@
         <h1 class="text w-4/5 sm:w-1/2 mx-auto text-site-gray-2 px-1 my-5">
           This section will help you track a particular device through time, you
           will be able to see all who ever owned a device over a particular
-          period of time, simply provide the IMEI or Serial Nymber of your
+          period of time, simply provide the IMEI or Serial Number of your
           device.
         </h1>
       </div>
@@ -60,13 +60,20 @@
               <h1
                 class="md:text-3xl text-2xl font-medium title-font text-site-gray-1 dark:text-site-white-4"
               >
-                From The Shop To The current Owner
+                From the Shop to the current Owner
               </h1>
             </div>
-            <device-timeline :timeline="timeline"></device-timeline>
-            <div class="lg:w-4/5 mx-auto flex flex-wrap justify-around">
+
+            <device-timeline :timeline="transfers"></device-timeline>
+
+            <div
+              class="lg:w-4/5 mx-auto flex flex-wrap justify-around"
+              v-if="soughtItem"
+            >
               <div
                 class="relative lg:w-1/2 w-full lg:p-10 lg:py-6 mb-6 lg:mb-0 bg-no-repeat place-self-center dark:bg-site-white-1"
+                v-for="(item, index) in soughtItem"
+                :key="index"
               >
                 <!-- :style="{ backgroundImage: 'url(' + picture + ')' }" -->
                 <h2
@@ -77,7 +84,7 @@
                 <h1
                   class="text-site-gray-1 text-3xl title-font font-bold mb-4 dark:text-site-yellow-3 drop-shadow-lg"
                 >
-                  Mac Book Air 2020
+                  {{ item.name }}
                 </h1>
                 <div class="flex mb-4">
                   <a
@@ -87,15 +94,14 @@
                   </a>
                 </div>
                 <p class="leading-relaxed mb-4">
-                  Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-                  sriracha taximy
+                  {{ item.desc }}
                 </p>
                 <div class="flex border-t border-gray-200 py-2">
                   <span class="text-site-gray-3">Model:</span>
                   <span
                     class="ml-auto font-bold text-site-gray-1 dark:text-site-white-4"
                   >
-                    Hikaru-Nakamura
+                    {{ item.device_model }}
                   </span>
                 </div>
                 <div class="flex border-t border-gray-200 py-2">
@@ -103,7 +109,7 @@
                   <span
                     class="ml-auto font-bold text-site-gray-1 dark:text-site-white-4"
                   >
-                    MAX12-Raport-Carlsen2020
+                    {{ item.serial_number }}
                   </span>
                 </div>
                 <div class="flex border-t border-b mb-6 border-gray-200 py-2">
@@ -111,7 +117,7 @@
                   <span
                     class="ml-auto font-bold text-site-gray-1 dark:text-site-white-4"
                   >
-                    2844 Fabiano Caruana
+                    {{ item.mac_address }}
                   </span>
                 </div>
                 <!-- <div class="flex">
@@ -122,7 +128,7 @@
                 <span
                   class="absolute bg-site-white-3 text-site-gray-1 right-0 top-0 rounded-full px-3 title-font py-1.5 text-sm font-medium dark:bg-site-gray-1 dark:text-site-yellow-3"
                 >
-                  Frw 325,000
+                  {{ formatPrice(item.price) }}
                 </span>
                 <div class="container">
                   <div class="flex justify-around"></div>
@@ -131,7 +137,7 @@
               <img
                 alt="ecommerce"
                 class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-                :src="mac"
+                :src="soughtItem ? mac : ''"
               />
             </div>
           </div>
@@ -144,6 +150,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import { mapState } from "vuex";
 import DeviceTimeline from "@/components/Admin/DeviceTimeline";
 import mac from "@/assets/img/mac.png";
 import picture from "@/assets/img/wave.svg";
@@ -157,6 +165,7 @@ export default {
     return {
       picture,
       mac,
+      searchString: "",
       timeline: {
         one: {
           name: "Mumbere Electronics",
@@ -175,7 +184,50 @@ export default {
           date: "December 31, 2021",
         },
       },
+      transfers: [],
     };
+  },
+  computed: {
+    ...mapState({
+      devices: (state) => state.devices,
+      soughtItem: (state) => state.soughtItem,
+    }),
+  },
+  created() {
+    this.$store.dispatch("fetchAllDevices");
+  },
+  methods: {
+    searchAnItem() {
+      this.$store.dispatch("lookUpAnItem", {
+        searchString: this.searchString,
+        devices: this.devices,
+      });
+      setTimeout(() => {
+        this.fetchTransfersPerDevice(this.soughtItem[0].uuid);
+      }, 500);
+    },
+    formatPrice(price) {
+      let formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "RWF",
+      }).format(price);
+      return formatted;
+    },
+    async fetchTransfersPerDevice(uuid) {
+      await axios
+        .get(`e-hold/v1/transfer/history/${uuid}/`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          this.transfers = response.data;
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.status);
+        });
+    },
   },
 };
 </script>

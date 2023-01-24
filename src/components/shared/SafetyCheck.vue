@@ -30,11 +30,7 @@
               v-model="searchString"
             />
           </div>
-          <ul>
-            <li v-for="(item, index) in soughtItem" :key="index">
-              {{ item.name }} this is
-            </li>
-          </ul>
+
           <button
             type="submit"
             class="p-2.5 ml-2 text-sm font-medium text-white bg-site-gray-1 rounded-lg border border-site-gray-2 hover:bg-site-gray-2 focus:ring-4 focus:outline-none focus:ring-blue-300"

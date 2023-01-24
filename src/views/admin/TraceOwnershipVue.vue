@@ -7,9 +7,6 @@
         down="medium"
       />
       <section class="lithopedion">
-        <!-- My pending devices -->
-
-        <!-- ---- -->
         <safety-check-timeline></safety-check-timeline>
       </section>
       <div class="px-4 md:px-10 mx-auto w-full">
