@@ -11,8 +11,8 @@
             <card-stats
               statSubtitle="Devices"
               :statTitle="devices.length"
-              statArrow="down"
-              statPercent="1.48"
+              :statArrow="devices.length !== 0 ? 'up' : 'down'"
+              :statPercent="devices.length !== 0 ? '0.4' : '0.4'"
               statPercentColor="text-red-500"
               statDescripiron="This week"
               statIconName="chart-bar"
