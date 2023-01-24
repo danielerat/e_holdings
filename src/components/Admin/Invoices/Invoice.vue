@@ -219,6 +219,7 @@
         </tr>
       </thead>
       <!-- Table body -->
+
       <tbody v-if="invoices.length !== 0">
         <tr
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -232,11 +233,11 @@
                 class="p-1 bg-site-yellow-5 rounded-full text-site-yellow-1"
               >
                 <fa
-                  v-if="invoice.device.category == 'phone'"
+                  v-if="invoice.transfer.device.category == 'phone'"
                   icon="mobile-button"
                 ></fa>
                 <fa
-                  v-else-if="invoice.device.category == 'computer'"
+                  v-else-if="invoice.transfer.device.category == 'computer'"
                   icon="laptop"
                 ></fa>
                 <fa v-else icon="plug"></fa>
@@ -249,15 +250,15 @@
           >
             <ul>
               <li class="text-site-gray-1 font-bold dark:text-site-white-5">
-                {{ truncateString(invoice.device.name, 40) }}
+                {{ truncateString(invoice.transfer.device.name, 40) }}
               </li>
-              <li>{{ invoice.device.category }}</li>
+              <li>{{ invoice.transfer.device.category }}</li>
             </ul>
           </th>
           <td class="py-4 px-2 collapse hidden lg:table-cell">
             <ul class="text-xs">
-              <li>Model: {{ invoice.device.device_model }}</li>
-              <li>SN/IMEI: {{ invoice.device.mac_address }}</li>
+              <li>Model: {{ invoice.transfer.device.device_model }}</li>
+              <li>SN/IMEI: {{ invoice.transfer.device.mac_address }}</li>
             </ul>
           </td>
           <td class="py-4 px-2">
@@ -265,14 +266,16 @@
               <li
                 class="text-xs text-site-gray-1 font-bold dark:text-site-white-2"
               >
-                {{ invoice.transferee.name }}
+                {{ invoice.transfer.transferee.name }}
               </li>
-              <li class="text-xs my-1">+25{{ invoice.transferee.phone }}</li>
+              <li class="text-xs my-1">
+                +25{{ invoice.transfer.transferee.phone }}
+              </li>
             </ul>
           </td>
           <td class="text-xm py-4 px-2 hidden md:table-cell">
             <span class="text-site-gray-2 px-2 rounded-full bg-site-white-4">
-              {{ formatDate(invoice.date_of_transfer) }}
+              {{ formatDate(invoice.transfer.date_of_transfer) }}
             </span>
             <p>
               <span
@@ -284,7 +287,7 @@
             </p>
           </td>
           <td class="py-4 px-2 hidden lg:table-cell">
-            {{ formatPrice(invoice.device.price) }}
+            {{ formatPrice(invoice.transfer.device.price) }}
           </td>
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
@@ -296,7 +299,6 @@
               </li>
             </ul>
           </td>
-          <!-- -------------------- -->
         </tr>
       </tbody>
     </table>
@@ -316,7 +318,7 @@ export default {
     }),
   },
   created() {
-    this.$store.dispatch("fetchInvoicesPerAccount");
+    this.$store.dispatch("fetchInvoices");
     this.$store.dispatch("getCurrentUser");
   },
   methods: {

@@ -121,13 +121,9 @@ const actions = {
         console.log(error);
       });
   },
-  async fetchInvoicesPerAccount({ state }) {
+  async fetchInvoices({ state }) {
     await axios
-      .get("e-hold/v1/invoice/all/account/", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      .get("e-hold/v1/invoice/all/")
       .then((response) => {
         state.accountInvoices = response.data;
       })

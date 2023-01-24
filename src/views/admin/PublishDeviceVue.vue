@@ -94,6 +94,7 @@
           </button>
         </div>
       </div>
+
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
         <device-card
           v-for="(device, index) in published"
@@ -107,7 +108,6 @@
           :type="device.device.category"
         />
       </div>
-      <!-- ---- -->
       <!-- ---- -->
       <div class="px-4 md:px-10 mx-auto w-full">
         <footer-admin />
