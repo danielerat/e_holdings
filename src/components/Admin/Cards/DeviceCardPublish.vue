@@ -41,21 +41,27 @@
           </router-link>
 
           <action-button
-            v-if="status"
+            v-if="status.status"
             type="tertiary"
             size="sm"
+            :isAnimated="animationProgress"
+            animatedType="spin"
             text="Unpublish"
             frontIcon="cloud-arrow-down"
-            @click="unPublishDevice(device)"
+            @click="
+              unPublishDevice(status.item_id), updateParent(!status.status)
+            "
           ></action-button>
 
           <action-button
             v-else
             type="yellow-clear"
             size="sm"
+            :isAnimated="animationProgress"
+            animatedType="spin"
             text="publish"
             frontIcon="cloud-arrow-down"
-            @click="publishDevice(device)"
+            @click="publishDevice(status.item_id)"
           >
             <span class="text-xs font-medium">Publish&nbsp;</span>
             <fa icon="cloud-arrow-up" />
@@ -106,27 +112,24 @@ export default {
       },
     },
     status: {
-      type: Boolean,
-      required: false,
-      default: false,
-      validator(value) {
-        return [true, false].includes(value);
-      },
+      type: Object,
+      required: true,
     },
   },
   data() {
     return {
       published_waved,
       unpublished_wave,
+      animationProgress: false,
     };
   },
   computed: {
     picture() {
-      if (this.status == true) return this.published_waved;
+      if (this.status.status == true) return this.published_waved;
       return this.unpublished_wave;
     },
     typeClass() {
-      if (this.status == true) {
+      if (this.status.status == true) {
         return "online";
       } else {
         return "offline";
@@ -139,53 +142,53 @@ export default {
   },
   methods: {
     unPublishDevice(item) {
+      this.animationProgress = true;
       let formData = new FormData();
       formData.append("isPublished", false);
       axios
-        .put(`e-hold/v1/publish/actions/${item.id}/`, formData, {
+        .put(`e-hold/v1/publish/actions/${item}/`, formData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           },
         })
         .then(() => {
-          setTimeout(() => {
-            // this.status = true;
-            AlertMe({
-              title: `Successfully unpublished ${item.name} to public!`,
-              type: "success",
-            });
-          }, 2000);
+          location.reload();
+          AlertMe({
+            title: `Successfully unpublished ${item.name} to public!`,
+            type: "success",
+          });
+          this.animationProgress = false;
+        })
+        .catch((error) => {
+          AlertMe({
+            title: `Something went wrong. Err(${error.response.status})`,
+          });
+          this.animationProgress = false;
+        });
+    },
+    publishDevice(item) {
+      this.animationProgress = true;
+      let formData = new FormData();
+      formData.append("isPublished", true);
+      axios
+        .put(`e-hold/v1/publish/actions/${item}/`, formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then(() => {
+          AlertMe({
+            title: `Successfully unpublished ${item.name} to public!`,
+            type: "success",
+          });
+          this.animationProgress = false;
           location.reload();
         })
         .catch((error) => {
           AlertMe({
             title: `Something went wrong. Err(${error.response.status})`,
           });
-        });
-    },
-    publishDevice(item) {
-      let formData = new FormData();
-      formData.append("device", item.id);
-      axios
-        .post(`e-hold/v1/publish/create/`, formData, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        })
-        .then(() => {
-          setTimeout(() => {
-            // this.status = true;
-            AlertMe({
-              title: `Successfully published ${item.name} to public!`,
-              type: "success",
-            });
-          }, 2000);
-          location.reload(); // refresh to update state.
-        })
-        .catch((error) => {
-          AlertMe({
-            title: `Something went wrong. Err(${error.response.status})`,
-          });
+          this.animationProgress = false;
         });
     },
   },

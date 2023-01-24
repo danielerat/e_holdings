@@ -94,17 +94,19 @@
           </button>
         </div>
       </div>
+
       <div class="flex flex-col md:flex-row justify-around flex-wrap">
         <device-card
-          v-for="(device, index) in published"
+          v-for="(device, index) in devices"
           :key="index"
           :device="device"
           class="basis-1/4"
-          :name="device.device.name"
-          :model="device.device.device_model"
-          :imei="device.device.mac_address"
-          :status="device.isPublished"
-          :type="device.device.category"
+          :name="device.name"
+          :model="device.device_model"
+          :imei="device.mac_address"
+          :status="device.is_published"
+          :type="device.category"
+          @update:myPropObject="updateMyObject"
         />
       </div>
       <!-- ---- -->
@@ -146,6 +148,5 @@ export default {
     this.$store.dispatch("fetchDevicesPerAccount");
     this.$store.dispatch("fetchPublishedPerAccount");
   },
-  methods: {},
 };
 </script>
