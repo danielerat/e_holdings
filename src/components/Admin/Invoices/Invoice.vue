@@ -292,9 +292,15 @@
           <td class="py-4 px-2 text-right">
             <ul class="flex justify-between text-site-green-5 text-md">
               <li class="hover:text-site-green-4">
-                <fa icon="eye" @click="showInvoice"></fa>
+                <fa
+                  icon="eye"
+                  @click="showInvoice(invoice.transfer.device)"
+                ></fa>
               </li>
-              <li class="hover:text-site-green-4" @click="downloadInvoice">
+              <li
+                class="hover:text-site-green-4"
+                @click="downloadInvoice(invoice.transfer.device)"
+              >
                 <fa icon="download"></fa>
               </li>
             </ul>
@@ -307,6 +313,8 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
+import invoicePdf from "@/utils/invoicePdf";
+
 export default {
   name: "Invoice",
 
@@ -322,7 +330,17 @@ export default {
     this.$store.dispatch("getCurrentUser");
   },
   methods: {
-    downloadInvoice() {
+    downloadInvoice(item) {
+      let data = {
+        device: {
+          name: item.name,
+          model: item.device_model,
+          serial: item.serial_number,
+        },
+        owner: this.userInfo.name,
+        date: this.formatDate(item.date_of_creation),
+        action: "open",
+      };
       const Toast = this.$swal.mixin({
         toast: true,
         position: "top-end",
@@ -339,14 +357,20 @@ export default {
         icon: "success",
         title: "Document Generated, Download string in a few",
       });
+      invoicePdf(data);
     },
-    showInvoice() {
-      this.$swal.fire({
-        imageUrl:
-          "https://img.freepik.com/free-vector/consent-concept-illustration_114360-8739.jpg?w=740&t=st=1670101469~exp=1670102069~hmac=71707c4078b8cac7ed325721b0679863a16202cdb50f553712b401159849dcb4",
-        imageHeight: 500,
-        imageAlt: "A tall image",
-      });
+    showInvoice(item) {
+      let data = {
+        device: {
+          name: item.name,
+          model: item.device_model,
+          serial: item.serial_number,
+        },
+        owner: this.userInfo.name,
+        date: this.formatDate(item.date_of_creation),
+        action: "open",
+      };
+      invoicePdf(data);
     },
     formatDate(d) {
       const date = new Date(d);

@@ -64,6 +64,8 @@ function invoicePdf(
         text: [
           "This certificate serves to confirm that the device described above ",
           { text: data.device.name, bold: true },
+          "with Serial Number(SN): ",
+          { text: data.device.serial, bold: true },
           " belongs to ",
           { text: data.owner, bold: true },
           ". The device has been examined and verified to be authentic, in good working condition and in the possession of the aforementioned individual. ",
