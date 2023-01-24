@@ -27,7 +27,7 @@
               <hr class="mt-4 border-b-1 text-site-gray-1" />
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form id="form" @submit.prevent="checkForm2" action="text.com">
+              <form id="form" @submit.prevent="checkForm" action="text.com">
                 <!-- Basic Information of the User National Id Phone number -->
                 <div v-if="step == 1" class="relative w-full mb-3">
                   <input-text
@@ -162,6 +162,7 @@ import generateVerificationCode from "@/utils/generateVerificationCode.js";
 import FilterUserInfo from "@/utils/FilterUserInfo.js";
 import getUserInfo from "@/api/getUserInfo.js";
 import createUser from "@/api/createUser.js";
+import sendMessage from "@/api/sendMessage.js";
 // Regular Expressions
 import CheckPhone from "@/utils/CheckPhone";
 import CheckId from "@/utils/CheckId";
@@ -183,8 +184,8 @@ export default {
   },
   data() {
     return {
-      nationalId: "1199880049682119",
-      phoneNumber: "0786186876",
+      nationalId: "1199880049682117",
+      phoneNumber: "0736186836",
       verificationCode: "",
       password: "",
       errors: {
@@ -204,26 +205,9 @@ export default {
   computed: {},
 
   methods: {
-    testingIntouch() {
-      //   let data = {
-      //     recipients: this.phoneNumber,
-      //     message: `From E-holdings. Hello, this is your verification code: ${this.code}`,
-      //     sender: "25228",
-      //     username: this.inTouchUsername,
-      //     password: this.inTouchPassword,
-      //   };
-      axios
-        .post(
-          `https://www.intouchsms.co.rw/api/sendsms/.json?username=danielerat&password=GUcR@.xY59VypWh&senderid=25228&recipients=0736186836&message=this is the dark night`
-        )
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    async sendTextMessage(phone, code) {
+      return await sendMessage(phone, code);
     },
-
     async createAccount(data) {
       return await createUser(data, this.password);
     },
@@ -254,16 +238,23 @@ export default {
                     title: "Enter The verification code you received below",
                     type: "info",
                   });
+                  //   Send the code to message here
+                  console.log("Sending Text Message");
+                  this.sendTextMessage(this.phoneNumber, this.code);
+                  console.log("Done Text Message");
                   // Change Step form to go to the second step
                   this.step = 2;
                 }
-                console.log(response.data);
               })
               .catch(() => {
                 AlertMe({
                   title: "Enter The verification code you received below",
                   type: "info",
                 });
+                //   Send the code to message here
+                console.log("Sending Text Message");
+                this.sendTextMessage(this.phoneNumber, this.code);
+                console.log("Done Text Message");
                 // Change Step form to go to the second step
                 this.step = 2;
               });
@@ -278,8 +269,6 @@ export default {
 
         //Check verification code and change step
         if (this.step == 2) {
-          //   Send the code to message here
-
           if (this.verificationCode === this.code && this.step == 2) {
             // Change Step form to go to the second step
             this.step = 3;

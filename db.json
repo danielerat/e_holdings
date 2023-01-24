@@ -27,6 +27,20 @@
         "sector": "Nyarugenge",
         "street_number": "KN 123 ST"
       }
+    },
+    {
+      "first_name": "Iyamuremye",
+      "last_name": "Alice",
+      "phone_number": "0736186836",
+      "national_id": "1199880049682117",
+      "sex": "Male",
+      "dob": "1998-01-11",
+      "address": {
+        "province": "Kigali",
+        "district": "Nyarugenge",
+        "sector": "Nyarugenge",
+        "street_number": "KN 123 ST"
+      }
     }
   ]
 }
