@@ -146,7 +146,7 @@ export default {
     },
     // Truncated
     truncated_text() {
-      return truncateString(this.text, 60);
+      return truncateString(this.text, 55);
     },
     truncated_name() {
       return truncateString(this.name, 22);

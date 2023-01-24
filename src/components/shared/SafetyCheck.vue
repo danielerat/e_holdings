@@ -43,14 +43,16 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <device-search-response
-        v-if="soughtItem.length !== 0"
-        type="negative"
-      ></device-search-response>
-      <device-search-response
-        v-if="soughtItem.length == 0 && searching"
-        type="positive"
-      ></device-search-response>
+      <div class="w-2/4">
+        <device-search-response
+          v-if="soughtItem.length !== 0"
+          type="negative"
+        ></device-search-response>
+        <device-search-response
+          v-if="soughtItem.length == 0 && searching"
+          type="positive"
+        ></device-search-response>
+      </div>
     </div>
   </div>
 </template>
