@@ -51,13 +51,15 @@
           </p>
 
           <div class="mt-5">
-            <div class="flex justify-around">
+            <div v-if="accepted == false" class="flex justify-around">
               <!-- Base -->
               <action-button
                 type="tertiary"
                 size="sm"
                 text="Accept Incoming Device"
                 frontIcon="circle-check"
+                :isAnimated="showProgressAccept"
+                animatedType="spin"
                 @click="approveDeviceTransfer(transfer)"
               />
 
@@ -124,8 +126,16 @@ export default {
       default: "",
     },
   },
+  data() {
+    return {
+      accepted: false,
+      showProgressAccept: false,
+      showProgressDecline: false,
+    };
+  },
   methods: {
     approveDeviceTransfer(item) {
+      this.showProgressAccept = true;
       let formData = new FormData();
       formData.append("transfer_status", "approved");
       axios
@@ -135,27 +145,42 @@ export default {
           },
         })
         .then((response) => {
+          Alert({
+            title: `Device transfer of #${item.id} approved!`,
+            type: "success",
+          });
+          this.showProgressAccept = false;
           console.log(response.data);
+          this.accepted = true;
         })
         .catch((error) => {
+          Alert({
+            title: `Error approving device #${item.id}!`,
+            type: "error",
+          });
           console.log(error);
+          this.showProgressAccept = false;
         });
     },
     declineDeviceTransfer: function (item) {
+      this.showProgressDecline = true;
       this.$store
         .dispatch("declineDeviceTransfer", item)
         .then(() => {
           this.$store.dispatch("fetchAllTransfers");
           Alert({
             title: `Device transfer of #${item.id} declined!`,
-            type: "success",
+            type: "error",
           });
+          this.showProgressDecline = false;
+          this.accepted = true;
         })
         .catch((error) => {
           Alert({
             title: `Couldn't decline this transfer. Try again. Error(${error.response.status})`,
             type: "error",
           });
+          this.showProgressDecline = false;
         });
     },
     formatDate(d) {

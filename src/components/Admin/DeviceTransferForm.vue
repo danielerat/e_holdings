@@ -75,6 +75,7 @@
             </div>
           </div>
           <action-button
+            v-if="this.step !== 3"
             type="primary"
             :isAnimated="showProgress"
             animatedType="spin"
