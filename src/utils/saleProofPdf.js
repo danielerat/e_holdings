@@ -7,7 +7,7 @@ function saleProof(
     seller: { name: "xxxxxxxxxxxx", id: "xxxxxxxxxxxx", phone: "xxxxxxxx" },
     buyer: { name: "xxxxxxxxxxxx", id: "xxxxxxxxxxxx", phone: "xxxxxxxx" },
     device: {
-      name: "name",
+      name: "xxxxxxxxxx",
       model: "xxxxxxxxxxxx",
       serial: "xxxxxxxx",
       mac: "xxxxxxxxx",
@@ -46,15 +46,15 @@ function saleProof(
         text: [
           "I, ",
           { text: data.seller.name, bold: true, color: "#102A43" },
-          "with ID or Passport number: ",
+          " with ID or Passport number: ",
           { text: data.seller.id, bold: true, color: "#102A43" },
-          " , Residing In Kigali, Nyarugenge ,Nyarugenge,Agatare and phone number: ",
+          " , residing In Kigali, Nyarugenge, Nyarugenge, Agatare and phone number: ",
           { text: data.seller.phone, bold: true, color: "#102A43" },
-          ' , hereafter called "seller", Sold an equipment to  ',
+          ' , Hereafter called "seller", Sold a device to  ',
           { text: data.buyer.name, bold: true, color: "#102A43" },
-          "Harden with Identity or Passport number:  ",
+          "user with Identity or Passport number: ",
           { text: data.buyer.id, bold: true, color: "#102A43" },
-          " . Residing In Kigali, Nyarugenge ,Nyarugenge,Agatare and phone number:  ",
+          ", residing In Kigali, Nyarugenge, Nyarugenge, Agatare and phone number:  ",
           { text: data.seller.phone, bold: true, color: "#102A43" },
           " , we parties agreed to the the transaction of the following Device:",
         ],
@@ -90,7 +90,9 @@ function saleProof(
 
       {
         text: [
-          "I Mumbere Carlos hereby certify that I am the legitimate owner of this used electrical or electronic equipment described above.I sorely certify that all information in this agreement and in the equipment description above is complete and accurate and that I am competent to sign this agreement. Official Gazette nº 28 of 11/07/2022 35",
+          "I, ",
+          { text: data.buyer.name, bold: true, color: "#102A43" },
+          " hereby certify that I am the legitimate owner of this used electronic equipment described above.I sorely certify that all information in this agreement and in the equipment description above is complete and accurate and that I am competent to sign this agreement. Official Gazette nº 28 of 11/07/2022 35.",
         ],
 
         style: "main",
@@ -108,7 +110,12 @@ function saleProof(
       },
 
       {
-        stack: [{ qr: "text in QR", foreground: "#147D64" }],
+        stack: [
+          {
+            qr: "http://localhost:8080/verify/sale-proof/3bc53215-3baa-4f61-950c-08f1880d6fbb/",
+            foreground: "#147D64",
+          },
+        ],
         style: "qrCode",
       },
     ],

@@ -299,7 +299,7 @@
               </li>
               <li
                 class="hover:text-site-green-4"
-                @click="downloadInvoice(invoice.transfer.device)"
+                @click="downloadSale(invoice.transfer)"
               >
                 <fa icon="download"></fa>
               </li>
@@ -314,6 +314,7 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import invoicePdf from "@/utils/invoicePdf";
+import saleProofPdf from "@/utils/saleProofPdf";
 
 export default {
   name: "Invoice",
@@ -330,17 +331,38 @@ export default {
     this.$store.dispatch("getCurrentUser");
   },
   methods: {
-    downloadInvoice(item) {
-      let data = {
-        device: {
-          name: item.name,
-          model: item.device_model,
-          serial: item.serial_number,
+    downloadSale(item) {
+      // let data = {
+      //   device: {
+      //     name: item.name,
+      //     model: item.device_model,
+      //     serial: item.serial_number,
+      //   },
+      //   owner: this.userInfo.name,
+      //   date: this.formatDate(item.date_of_creation),
+      //   action: "open",
+      // };
+
+      let data2 = {
+        seller: {
+          name: item.transferor.name,
+          id: item.transferor.nid,
+          phone: item.transferor.phone,
         },
-        owner: this.userInfo.name,
+        buyer: {
+          name: item.owner,
+          id: item.transferee.nid,
+          phone: item.transferee.phone,
+        },
+        device: {
+          name: item.device.name,
+          model: item.device.device_model,
+          serial: item.device.serial_number,
+        },
         date: this.formatDate(item.date_of_creation),
         action: "open",
       };
+
       const Toast = this.$swal.mixin({
         toast: true,
         position: "top-end",
@@ -357,7 +379,7 @@ export default {
         icon: "success",
         title: "Document Generated, Download string in a few",
       });
-      invoicePdf(data);
+      saleProofPdf(data2);
     },
     showInvoice(item) {
       let data = {
