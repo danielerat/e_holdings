@@ -362,7 +362,11 @@ export default {
         formData.append("main_image", file.file);
       });
       await axios
-        .post("e-hold/v1/device/create/", formData, {})
+        .post("e-hold/v1/device/create/", formData, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
         .then(() => {
           this.resetForm();
           AlertMe({

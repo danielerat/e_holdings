@@ -253,7 +253,7 @@ export default {
         .then(() => {
           this.resetForm();
           AlertMe({
-            title: "Successfully added your device!",
+            title: "Successfully assign your device!",
             type: "success",
           });
         })
