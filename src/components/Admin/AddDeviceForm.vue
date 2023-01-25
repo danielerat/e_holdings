@@ -274,6 +274,7 @@
 <script>
 import axios from "axios";
 import AlertMe from "@/utils/alerts";
+import UploadableFiles from "@/utils/uploadableFiles";
 import CustomModal from "@/components/shared/CustomModal";
 import { mapState, mapGetters } from "vuex";
 import InputSelectList from "@/components/shared/InputSelectList.vue";
@@ -306,6 +307,7 @@ export default {
       },
       deviceImage: "",
       selfRegistrationTerms: true,
+      fileArray: [],
 
       options: ["Phone", "Computer", "Tablet", "Whatever"],
       warranty: ["1 Week", "1 Month", "3Months", "6 Months", "9 Months"],
@@ -331,10 +333,20 @@ export default {
   },
   methods: {
     // Uploading the Image
-    onImageUpload() {
-      let fileInput = this.$refs.fileInput;
-      let file = fileInput.files[0];
-      this.deviceImage = file;
+    onImageUpload(e) {
+      this.addSingleFile(e.target.files);
+      e.target.value = null;
+    },
+    singleFileExists(otherId) {
+      return this.fileArray.some(({ id }) => id === otherId);
+    },
+    addSingleFile(newFile) {
+      let newUploadableFiles = [...newFile]
+        .map((file) => new UploadableFiles(file))
+        .filter((file) => !this.singleFileExists(file.id));
+      if (this.fileArray.length <= 0) {
+        this.fileArray = this.fileArray.concat(newUploadableFiles);
+      }
     },
 
     async createDevice() {
@@ -345,6 +357,10 @@ export default {
       formData.append("serial_number", this.device.serial_number);
       formData.append("mac_address", this.device.imei);
       formData.append("desc", this.device.desc);
+      // Image - Main Image, can be null
+      this.fileArray.forEach((file) => {
+        formData.append("main_image", file.file);
+      });
       await axios
         .post("e-hold/v1/device/create/", formData, {})
         .then(() => {
